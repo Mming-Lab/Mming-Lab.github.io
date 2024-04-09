@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Privacy Policy
+title: プライバシーポリシー
 ---
 <div class="col-lg-12 text-center">
 	<h2 class="section-heading text-uppercase">Privacy Policy</h2>
@@ -28,7 +28,7 @@ You can opt-out of Google Analytics here: <https://tools.google.com/dlpage/gaopt
 
 {% endif %}
 
-**CHANGES**
+**ポリシーの変更**
 
 当社は、個人的、運営上、法的、または規制上の理由により、本プライバシーポリシーを随時更新することがあります。
 
