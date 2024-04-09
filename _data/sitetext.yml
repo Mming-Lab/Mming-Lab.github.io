@@ -43,7 +43,7 @@
     section: team
     people:
       - name: "宮永　ともひさ"
-        role: "教育版マインクラフトアンバサダー/nエキスパート\nプログラマー"
+        role: "教育版マインクラフトアンバサダー </ br> プログラマー"
         image: assets/img/team/2.jpg
         social:
           - url: https://twitter.com
@@ -51,7 +51,7 @@
           - url: https://facebook.com
             icon: "fab fa-facebook-f"
       - name: "宮永　あかり"
-        role: "環境調整　エキスパート"
+        role: "発達障害児支援士"
         image: assets/img/team/1.jpg
         social:
           - url: https://twitter.com
