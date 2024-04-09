@@ -6,13 +6,12 @@
 #
 # How to use:
 # {{ site.data.navigation[site.locale].nav.<var_name> | default: 'text' }}
-
 # ja: &DEFAULT_JA
   nav:
-    - title: "理念"
-      section: philosophy
     - title: "カリキュラム"
-      section: curriculum
+      section: services
+    - title: "理念"
+      section: about
     - title: "メンター"
       section: team
     - title: "ポートフォリオ"

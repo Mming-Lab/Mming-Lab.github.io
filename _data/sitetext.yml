@@ -14,17 +14,12 @@
     title: ミング -mming- にようこそ！
     text: 発達凸凹っ子専用のクラスもあるプログラミング教室です。
     button: 詳しく
-    buttonlink: "#philosophy"
+    buttonlink: "#services"
 
-  philosophy:
-    title: "理念"
-    text: "理念をここに書く。発達凸凹っ子の親から金を吸い上げる"
-    section: philosophy
-
-  curriculum:
+  services:
     title: "カリキュラム"
     text: "カリキュラムをここに書く"
-    section: curriculum
+    section: services
     list:
       - title: "マインクラフト"
         desc: "教育版マインクラフトでプログラミングを学びます。"
@@ -35,6 +30,11 @@
       - title: "エキスパート"
         desc: "未来のハッカーコース"
         icon: fas fa-code
+
+  about:
+    title: "理念"
+    text: "理念をここに書く。発達凸凹っ子の親から金を吸い上げる"
+    section: about
 
   team:
     title: "メンター"
