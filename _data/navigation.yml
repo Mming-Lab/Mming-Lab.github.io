@@ -17,6 +17,8 @@ ja: &DEFAULT_JA
       section: mentor
     - title: "ポートフォリオ"
       section: portfolio
+ja-JP:
+  <<: *DEFAULT_JA
 
 # English (default)
 # -----------------

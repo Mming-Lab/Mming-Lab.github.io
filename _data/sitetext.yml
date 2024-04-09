@@ -75,6 +75,8 @@ ja: &DEFAULT_JA
         icon: "fab fa-github"
       - url: https://instagram.com
         icon: "fab fa-instagram"
+ja-JP:
+  <<: *DEFAULT_JA
 
 # English (default)
 # -----------------
