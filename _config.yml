@@ -20,15 +20,15 @@ remote_theme: raviriley/agency-jekyll-theme
 url    : "" # サイトの基本ホスト名とプロトコル（例：http://example.com
 baseurl: "" # あなたのサイトのサブパス（例：/blog
 
-title      : Agency Jekyll Theme Demo
-email      : your-email@example.com #this is also the email contact forms will go to
-description: "Agency Bootstrap theme converted to a Jekyll theme, plus new features: Google Analytics, Markdown support, custom pages, and more!"
-author     : Your Name
-# logo:     #optional, defaults to site title
-  # path: assets\img\clients\creative-market.jpg
-  # height: 60 #height in px, defaults to 52px
+title      : ミング -mming- プログラミング教室
+email      : mming.lab@gmail.com #これはまた、電子メールでのお問い合わせフォームの送信先でもあります。
+description: "発達凸凹クラスもある小さなAプログラミング教室"
+author     : ミング -mming-
+# logo:     #任意、デフォルトはサイトタイトル
+# path: assets\img\clients\creative-market.jpg
+# height: 60 #px単位の高さ、デフォルトは52px
 
-locale: "en-US" # See available languages in _data/sitetext.yml
+locale: "en-US" # _data/sitetext.ymlで利用可能な言語を参照してください。
 
 analytics:
   google: #Google Analytics tracking code here
