@@ -22,7 +22,7 @@
     section: services
     list:
       - title: "マインクラフト"
-        desc: "教育版マインクラフトでプログラミングを学びます。"
+        desc: "教育版マインクラフトでプログラミングを学びます"
         icon: fas fa-cube 
       - title: "ロボット toio"
         desc: "小さなキューブ型ロボットを使います"
