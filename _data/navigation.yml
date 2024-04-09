@@ -10,12 +10,12 @@
   nav:
     - title: "カリキュラム"
       section: services
-    - title: "理念"
-      section: about
+    - title: "活動紹介"
+      section: portfolio
     - title: "メンター"
       section: team
-    - title: "ポートフォリオ"
-      section: portfolio
+    - title: "教室情報"
+      section: about
 # ja-JP:
 #   <<: *DEFAULT_JA
 

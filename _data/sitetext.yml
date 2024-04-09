@@ -31,10 +31,11 @@
         desc: "未来のハッカーコース"
         icon: fas fa-code
 
-  about:
-    title: "理念"
-    text: "理念をここに書く。発達凸凹っ子が生きやすい"
-    section: about
+  portfolio:
+    title: "活動紹介"
+    text: "教育版Minecraftのコンテンツの作成も承ります"
+    section: portfolio
+    closebutton: "閉じる"
 
   team:
     title: "メンター"
@@ -57,12 +58,12 @@
             icon: fab fa-twitter
           - url: https://facebook.com
             icon: fab fa-facebook-f
-            
-  portfolio:
-    title: "ポートフォリオ"
-    text: "教育版Minecraftのコンテンツの作成も承ります"
-    section: portfolio
-    closebutton: "閉じる"
+
+
+  about:
+    title: "教室情報"
+    text: "教室情報をここに書く。発達凸凹っ子が生きやすい"
+    section: about
 
   footer:
     legal: "個人情報保護方針"
