@@ -32,7 +32,7 @@
         icon: fas fa-code
 
   portfolio:
-    title: "活動紹介"
+    title: "詳細情報"
     text: "教育版Minecraftのコンテンツの作成も承ります"
     section: portfolio
     closebutton: "閉じる"
@@ -47,7 +47,7 @@
         image: assets/img/team/2.jpg
         social:
           - url: https://twitter.com
-            icon: fab fa-twitter
+            icon: fab fa-x-twitter
           - url: https://facebook.com
             icon: fab fa-facebook-f
       - name: "宮永　あかり"
@@ -55,7 +55,7 @@
         image: assets/img/team/500x500.jpg
         social:
           - url: https://twitter.com
-            icon: fab fa-twitter
+            icon: fab fa-x-twitter
           - url: https://facebook.com
             icon: fab fa-facebook-f
 
@@ -68,12 +68,14 @@
   footer:
     legal: "個人情報保護方針"
     social:
-      - url: https://twitter.com
-        icon: "fab fa-twitter"
-      - url: https://facebook.com
-        icon: "fab fa-facebook-f"
+      - url: https://line.me/ja/
+        icon: "fab fa-brands fa-line"
       - url: https://github.com/Mming-Lab
         icon: "fab fa-github"
+      - url: https://twitter.com
+        icon: "fab fa-x-twitter"
+      - url: https://facebook.com
+        icon: "fab fa-facebook-f"
       - url: https://instagram.com
         icon: "fab fa-instagram"
 # ja-JP:

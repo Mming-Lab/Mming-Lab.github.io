@@ -12,10 +12,10 @@
       section: services
     - title: "活動紹介"
       section: portfolio
-    - title: "メンター"
-      section: team
     - title: "教室情報"
       section: about
+    - title: "メンター"
+      section: team
 # ja-JP:
 #   <<: *DEFAULT_JA
 
