@@ -13,14 +13,12 @@
   header:
     title: ミング -mming- にようこそ！
     text: 発達凸凹っ子専用のクラスもあるプログラミング教室です。
-    subtext: "subtext header";
     button: 詳しく
     buttonlink: "#services"
 
   services:
     title: "カリキュラム"
     text: "カリキュラムをここに書く"
-    subtext: "subtext カリキュラム";
     section: services
     list:
       - title: "マインクラフト"
@@ -36,13 +34,11 @@
   about:
     title: "理念"
     text: "理念をここに書く。発達凸凹っ子が生きやすい"
-    subtext: "subtext 理念";
     section: about
 
   team:
     title: "メンター"
     text: "メンターは変わり者"
-    subtext: "subtext メンター";
     section: team
     people:
       - name: "宮永　ともひさ"
@@ -65,7 +61,6 @@
   portfolio:
     title: "ポートフォリオ"
     text: "教育版Minecraftのコンテンツの作成も承ります"
-    subtext: "subtext ポートフォリオ";
     section: portfolio
     closebutton: "閉じる"
 
