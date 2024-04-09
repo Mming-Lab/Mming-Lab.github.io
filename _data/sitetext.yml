@@ -47,17 +47,17 @@
         image: assets/img/team/2.jpg
         social:
           - url: https://twitter.com
-            icon: fab fa-x-twitter
+            icon: "fab fa-x-twitter"
           - url: https://facebook.com
-            icon: fab fa-facebook-f
+            icon: "fab fa-facebook-f"
       - name: "宮永　あかり"
         role: "環境調整　エキスパート"
         image: assets/img/team/500x500.jpg
         social:
           - url: https://twitter.com
-            icon: fab fa-x-twitter
+            icon: "fab fa-x-twitter"
           - url: https://facebook.com
-            icon: fab fa-facebook-f
+            icon: "fab fa-facebook-f"
 
 
   about:
@@ -69,11 +69,11 @@
     legal: "個人情報保護方針"
     social:
       - url: https://line.me/ja/
-        icon: "fab fa-brands fa-line"
+        icon: "fab fa-line"
       - url: https://github.com/Mming-Lab
         icon: "fab fa-github"
       - url: https://twitter.com
-        icon: "fab fa-x-twitter"
+        icon: "fab fa-brands fa-x-twitter"
       - url: https://facebook.com
         icon: "fab fa-facebook-f"
       - url: https://instagram.com
