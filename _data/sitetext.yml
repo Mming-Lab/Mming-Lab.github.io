@@ -67,7 +67,7 @@
     text: "教育版Minecraftのコンテンツの作成も承ります"
     subtext: "subtext ポートフォリオ";
     section: portfolio
-    closebutton: "Close Project"
+    closebutton: "閉じる"
 
   footer:
     legal: "個人情報保護方針"
