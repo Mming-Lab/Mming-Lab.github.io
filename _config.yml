@@ -22,7 +22,7 @@ baseurl: "" # あなたのサイトのサブパス（例：/blog
 
 title      : ミング -mming-
 email      : mming.lab@gmail.com #これはまた、電子メールでのお問い合わせフォームの送信先でもあります。
-description: "発達凸凹クラスもある小さなプログラミング教室"
+description: "発達凸凹っ子専用クラスもある小さなプログラミング教室"
 author     : ミング -mming-
 # logo:     #任意、デフォルトはサイトタイトル
 # path: assets\img\clients\creative-market.jpg
