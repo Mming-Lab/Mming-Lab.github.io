@@ -10,12 +10,15 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+# サイト設定は、新しいサイトをパーソナライズするために使用されます。
+# HTMLファイルを見てください、{{site.title}}、{{site.email }}などでアクセスできます。
+# 好きなカスタム変数を作成することができ、テンプレートでは {{ site.myvariable }} でアクセスできます。
 
 #theme: jekyll-agency
 remote_theme: raviriley/agency-jekyll-theme
 
-url    : "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "/agency-jekyll-theme-starter" # the subpath of your site, e.g. /blog
+url    : "" # サイトの基本ホスト名とプロトコル（例：http://example.com
+baseurl: "" # あなたのサイトのサブパス（例：/blog
 
 title      : Agency Jekyll Theme Demo
 email      : your-email@example.com #this is also the email contact forms will go to
