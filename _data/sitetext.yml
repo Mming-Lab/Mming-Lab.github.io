@@ -7,6 +7,17 @@
 # How to use:
 # {{ site.data.ui-text[site.locale].<var_name> | default: 'text' }}
 
+# ja-JP
+# -----------------
+ja: &DEFAULT_JA
+  header:
+    title: Welcome to our Studio!
+    text: It's Nice To Meet You
+    button: Tell Me More
+    buttonlink: "#services"
+
+    
+
 # English (default)
 # -----------------
 en: &DEFAULT_EN
