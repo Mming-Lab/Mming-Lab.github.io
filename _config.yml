@@ -31,16 +31,16 @@ author     : ミング -mming-
 locale: "en-US" # _data/sitetext.ymlで利用可能な言語を参照してください。
 
 analytics:
-  google: #Google Analytics tracking code here
+  google: #Googleアナリティクスのトラッキングコード
 
 collections:
   portfolio:
 
 markdown: kramdown
 
-# Uncomment following line to use Formspree form ID based URL instead of email based URL
-# Details: https://help.formspree.io/hc/en-us/articles/360017735154-How-to-prevent-spam
-# formspree_form_path: "f/a_form_id"
+# FormspreeのフォームIDに基づくURLをメールベースのURLの代わりに使用するには、以下の行のコメントを外します。
+# 詳細: https://help.formspree.io/hc/en-us/articles/360017735154-How-to-prevent-spam
+# formspree_form_path： "f/a_form_id"
 
 plugins:
   - jekyll-remote-theme
