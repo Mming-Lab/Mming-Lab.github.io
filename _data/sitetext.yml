@@ -12,7 +12,7 @@
 # ja: &DEFAULT_JA
   header:
     title: mming -ミング- にようこそ！
-    text: 発達凸凹っ子専用のクラスもあるプログラミング教室です。
+    text: 発達凸凹っ子専用のクラスもあるプログラミング教室です
     button: 詳しく
     buttonlink: "#services"
 
