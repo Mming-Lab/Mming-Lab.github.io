@@ -1,6 +1,7 @@
 // Styling for the team section
-section#contact {
+.team {
   background-color: $gray-900;
+}
   .team-member {
     margin-bottom: 50px;
     text-align: center;
@@ -18,4 +19,4 @@ section#contact {
       margin-top: 0;
     }
   }
-}
+
