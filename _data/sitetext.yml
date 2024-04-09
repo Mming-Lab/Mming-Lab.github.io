@@ -36,10 +36,10 @@
         desc: "未来のハッカーコース"
         icon: fas fa-code
 
-  mentor:
+  team:
     title: "メンター"
     text: "理念をここに書く。発達凸凹っ子の親から金を吸い上げる"
-    section: mentor
+    section: team
     people:
       - name: "宮永　ともひさ"
         role: "エキスパート プログラマー"
