@@ -22,6 +22,8 @@ baseurl: "" # あなたのサイトのサブパス（例：/blog
 
 title      : mming -ミング-
 email      : mming.lab@gmail.com #これはまた、電子メールでのお問い合わせフォームの送信先でもあります。
+phone   : "090-1234-5678"
+address : "東京都港区南青山1-1-1"
 description: "発達凸凹っ子専用クラスもある小さなプログラミング教室"
 author     : mming -ミング-
 # logo:     #任意、デフォルトはサイトタイトル

@@ -63,7 +63,12 @@
   about:
     title: "教室情報"
     text: "教室情報をここに書く。発達凸凹っ子が生きやすい"
+    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported."
     section: about
+    map-lon: "139.732"
+    map-lat: "35.663"
+    map-zoom: "15"
+    map-Popup: "mming -ミング-<br>プログラミング教室"
 
   footer:
     legal: "個人情報保護方針"

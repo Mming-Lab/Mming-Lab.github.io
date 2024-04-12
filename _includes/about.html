@@ -13,6 +13,28 @@
         <div class="large text-muted">{{ site.data.sitetext[site.locale].about.body | markdownify }}</div>
       </div>
     </div>
+
+    <div class="row">
+      <div id="map"></div>
+      <script>
+        // リーフレットの初期化
+        var map = L.map('map').setView({lon: 130.55013, lat: 31.59175}, 17);
+  
+        // OpenStreetMapのタイルを追加する
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+        }).addTo(map);
+  
+        // 左下にスケールバーを表示
+        L.control.scale({imperial: true, metric: true}).addTo(map);
+  
+        // 地図上にマーカーを表示する
+        L.marker({lon: 130.55013, lat: 31.59175}).bindPopup('The center<br>of the world').addTo(map)
+        .openPopup();
+      </script>
+    </div>
+
   </div>
 </section>
 {% else %}
@@ -29,6 +51,29 @@
         <div class="large text-muted">{{ site.data.sitetext.about.body | markdownify }}</div>
       </div>
     </div>
+
+    <div class="row">
+      <div id="map"></div>
+      <script>
+        // リーフレットの初期化
+        var map = L.map('map').setView({lon: 130.55013, lat: 31.59175}, 17);
+  
+        // OpenStreetMapのタイルを追加する
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+        }).addTo(map);
+  
+        // 左下にスケールバーを表示
+        L.control.scale({imperial: true, metric: true}).addTo(map);
+  
+        // 地図上にマーカーを表示する
+        L.marker({lon: 130.55013, lat: 31.59175}).bindPopup('The center<br>of the world').addTo(map)
+        .openPopup();
+      </script>
+    </div>
+
+
   </div>
 </section>
 {% endif %}
