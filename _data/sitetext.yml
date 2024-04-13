@@ -9,7 +9,7 @@
 
 # ja-JP
 # -----------------
-# ja: &DEFAULT_JA
+ja: &DEFAULT_JA
   header:
     title: mming -ミング- にようこそ！
     text: 発達凸凹っ子専用のクラスもあるプログラミング教室です
@@ -37,6 +37,43 @@
     section: portfolio
     closebutton: "閉じる"
 
+  timeline:
+    title: "沿革"
+    text: "Lorem ipsum timeline"
+    section: timeline
+    # left is the default
+    #start_align: "left"
+    events:
+      - title: "Our Humble Beginnings"
+        year: "2009-2011"
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+        image: assets/img/timeline/1.jpg
+        alt:
+      - title: "An Agency is Born"
+        year: "March 2011"
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+        image: assets/img/timeline/2.jpg
+        alt:
+      - title: "Jekyll Theme is created"
+        year: "2019"
+        desc: "Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation."
+        image: assets/img/timeline/3.jpg
+        alt: image alt text
+      - title: "Title"
+        year: "2009-2011"
+        desc: "Your description here, **Markdown** is fully supported."
+        image: assets/img/timeline/4.jpg
+        alt:
+        # you can enforce the alignment
+        align: right
+    end: "Be Part <br> of Our <br> Story!"
+
+  about:
+    title: "教室方針"
+    text: "教室情報をここに書く。発達凸凹っ子が生きやすい"
+    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported."
+    section: about
+
   team:
     title: "メンター"
     text: "メンターは変わり者"
@@ -59,13 +96,20 @@
           - url: https://facebook.com
             icon: "fab fa-facebook-f"
 
-
-  about:
-    title: "教室情報"
-    text: "教室情報をここに書く。発達凸凹っ子が生きやすい"
-    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported."
-    section: about
-
+  contact:
+    title: "お問合せ"
+    text: "Lorem ipsumまたは123456789までお電話ください。"
+    section: contact
+    name: "Name*"
+    name-validation: "Please enter your name."
+    email: "Email*"
+    email-validation: "Please enter your email address."
+    phone: "Phone Number"
+    phone-validation: "Please enter your phone number."
+    message: "Message*"
+    message-validation: "Please enter a message."
+    subject: "Contact Form Submission"
+    submit: "Send Message"
 
   footer:
     legal: "個人情報保護方針"
@@ -80,8 +124,8 @@
         icon: "fab fa-facebook-f"
       - url: https://instagram.com
         icon: "fab fa-instagram"
-# ja-JP:
-#   <<: *DEFAULT_JA
+ja-JP:
+   <<: *DEFAULT_JA
 
 # English (default)
 # -----------------
