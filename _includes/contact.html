@@ -1,5 +1,5 @@
 <!-- Contact -->
-{% if site.locale and site.locale != "" and site.locale != nil %}
+<!-- {% if site.locale and site.locale != "" and site.locale != nil %}
 <section class="page-section" id="{{ site.data.sitetext[site.locale].contact.section | default: "contact" }}">
   <div class="container">
     <div class="row">
@@ -13,9 +13,9 @@
       <div class="col-lg-12">
         <form id="contactForm"
           action="https://formspree.io/{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}"
-          novalidate="novalidate" method="POST">
+          novalidate="novalidate" method="POST"> -->
           <!--name="sentMessage"-->
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <input name="name" class="form-control" id="name" type="text"
@@ -57,24 +57,24 @@
           </div>
         </form>
       </div>
-    </div>
+    </div> -->
     <!-- 地図埋め込み -->
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-lg-12 text-center">
         <div class="embed-responsive embed-responsive-16by9">
           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d212.40867670867596!2d130.55013045293293!3d31.59169213806899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1712973630297!5m2!1sja!2sjp" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- 住所 -->
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-lg-12 text-center">
         <div class="text-muted">{{site.data.sitetext[site.locale].contact.c_address | default: "" }}</div>
       </div>
     </div>
   </div>
 </section>
-{% else %}
+{% else %} -->
 <section class="page-section" id="{{ site.data.sitetext.contact.section | default: "contact" }}">
   <div class="container">
     <div class="row">
@@ -149,5 +149,5 @@
     </div>
   </div>
 </section>
-{% endif %}
+<!-- {% endif %} -->
 <!-- End Contact -->

@@ -1,6 +1,6 @@
 <!-- Portfolio Modals -->
 {% for project in site.portfolio %}
-{% if site.locale and site.locale != "" and site.locale != nil %}
+<!-- {% if site.locale and site.locale != "" and site.locale != nil %}
 <div
   class="portfolio-modal modal fade"
   id="p{{ forloop.index }}"
@@ -19,7 +19,7 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
-              <!-- Project Details Go Here -->
+              Project Details Go Here 
               <h2 class="text-uppercase">{{ project.title }}</h2>
               <p class="item-intro text-muted">{{ project.subtitle }}</p>
               <img
@@ -44,7 +44,7 @@
     </div>
   </div>
 </div>
-{% else %}
+{% else %} --> 
 <div
   class="portfolio-modal modal fade"
   id="p{{ forloop.index }}"
@@ -88,6 +88,6 @@
     </div>
   </div>
 </div>
-{% endif %}
+<!-- {% endif %} -->
 {% endfor %}
 <!-- End Portfolio Modals -->
