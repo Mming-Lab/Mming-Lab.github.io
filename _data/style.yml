@@ -1,6 +1,6 @@
 #Color Customization
-highlight: "#54bfff"
-white: "#54bfff"
+highlight: "#54bfff" #"#54bfff"
+white: "#FF0000" #"#54bfff"
 black: "#212529"
 
 #Image Customization
