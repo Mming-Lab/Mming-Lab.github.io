@@ -26,7 +26,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-uppercase ml-auto">
-      {% if site.locale and site.locale != "" and site.locale != nil %}
+      <!-- {% if site.locale and site.locale != "" and site.locale != nil %}
         {%- for link in site.data.navigation[site.locale].nav -%}
         <li class="nav-item">
           {%- if link.url -%}
@@ -44,7 +44,7 @@
           {%- endif -%}
         </li>
         {%- endfor -%}
-      {% else %}
+      {% else %} -->
         {%- for link in site.data.navigation.nav -%}
         <li class="nav-item">
           {%- if link.url -%}
@@ -62,7 +62,7 @@
           {%- endif -%}
         </li>
         {%- endfor -%}
-      {% endif %}
+      <!-- {% endif %} -->
       </ul>
     </div>
   </div>
