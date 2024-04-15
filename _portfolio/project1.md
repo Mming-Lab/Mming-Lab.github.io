@@ -1,15 +1,19 @@
 ---
-title: Project Threads
-subtitle: subtitle lorem ipsum dolor sit amet consectetur.
+title: ふりがなリソースパック
+subtitle: 教育版マインクラフトの『ふりがなリソースパック』
 image: assets/img/portfolio/01-full.jpg
-alt: Shirts on a hanger
+alt: 漢字にフリガナが付いた教育版マインクラフト
 
 caption:
-  title: Threads
-  subtitle: Illustration
+  title: ふりがなリソースパック
+  subtitle: 教育版マインクラフトの『ふりがなリソースパック』
   thumbnail: assets/img/portfolio/01-thumbnail.jpg
 ---
-Use this area to describe your project. **Markdown** supported. This entry (project1.md) uses links for the image sources. All other projects in the portfolio use local images. Both work just fine! Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+プロジェクトを説明するには、このエリアを使用してください。
+**Markdown**をサポートしています。
+このエントリ(project1.md)は画像ソースにリンクを使用しています。
+ポートフォリオ内の他のプロジェクトはすべてローカル画像を使用しています。
+どちらも問題なく動作します！このエントリー（project1.md）では、画像ソースにリンクを使用しています。
 
 {:.list-inline}
 - Date: January 2017
