@@ -80,7 +80,7 @@ ja: &DEFAULT_JA
     section: team
     people:
       - name: "宮永　あかり"
-        role: "**代表**<br />発達障害児支援士"
+        role: "<strong>代表</strong><br />発達障害児支援士"
         image: assets/img/team/1.jpg
         social:
           - url: https://instagram.com
@@ -88,7 +88,7 @@ ja: &DEFAULT_JA
           - url: https://www.facebook.com/dekobokokurashiakari
             icon: "fab fa-facebook-f"
       - name: "宮永　ともひさ"
-        role: "**チーフメンター**<br />教育版マインクラフトアンバサダー<br />Minecraftカップ地区大会審査員"
+        role: "<strong>チーフメンター</strong><br />教育版マインクラフトアンバサダー<br />Minecraftカップ地区大会審査員"
         image: assets/img/team/2.jpg
         social:
           - url: https://twitter.com/Tomohisa_YUTARI
@@ -110,8 +110,8 @@ ja: &DEFAULT_JA
     message-validation: "Please enter a message."
     subject: "Contact Form Submission"
     submit: "Send Message"
-    phone   : "090-1234-5678"
-    address : "東京都港区南青山1-1-1"
+    c_phone   : "090-1234-5678"
+    c_address : "東京都港区南青山1-1-1"
 
   footer:
     legal: "個人情報保護方針"

@@ -61,8 +61,8 @@
     <!-- 電話番号と住所 -->
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h3 class="section-subheading text-muted">{{site.data.sitetext.contact.phone | default: "" }}</h3>
-        <h3 class="section-subheading text-muted">{{site.data.sitetext.contact.address | default: "" }}</h3>
+        <h3 class="section-subheading text-muted">{{site.data.sitetext[site.locale].contact.c_phone | default: "" }}</h3>
+        <h3 class="section-subheading text-muted">{{site.data.sitetext[site.locale].contact.c_address | default: "" }}</h3>
       </div>
     </div>
     <!-- 地図埋め込み -->
@@ -137,8 +137,8 @@
     <!-- 電話番号と住所 -->
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h3 class="section-subheading text-muted">{{site.data.sitetext.contact.phone | default: "" }}</h3>
-        <h3 class="section-subheading text-muted">{{site.data.sitetext.contact.address | default: "" }}</h3>
+        <h3 class="section-subheading text-muted">{{site.data.sitetext.contact.c_phone | default: "" }}</h3>
+        <h3 class="section-subheading text-muted">{{site.data.sitetext.contact.c_address | default: "" }}</h3>
       </div>
     </div>
     <!-- 地図埋め込み -->
