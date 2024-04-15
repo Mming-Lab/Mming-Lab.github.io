@@ -6,7 +6,7 @@
 #
 # How to use:
 # {{ site.data.navigation[site.locale].nav.<var_name> | default: 'text' }}
- ja: &DEFAULT_JA
+#  ja: &DEFAULT_JA
   nav:
     - title: "カリキュラム"
       section: services
@@ -20,8 +20,8 @@
       section: team
     - title: "問い合わせ"
       section: contact
- ja-JP:
-   <<: *DEFAULT_JA
+#  ja-JP:
+#    <<: *DEFAULT_JA
 
 # English (default)
 # -----------------

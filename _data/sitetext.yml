@@ -9,7 +9,7 @@
 
 # ja-JP
 # -----------------
-ja: &DEFAULT_JA
+# ja: &DEFAULT_JA
   header:
     title: mming -ミング- にようこそ！
     text: 発達凸凹っ子専用のクラスもあるプログラミング教室です
@@ -143,8 +143,8 @@ ja: &DEFAULT_JA
         icon: "fab fa-facebook-f"
       - url: https://instagram.com
         icon: "fab fa-instagram"
-ja-JP:
-   <<: *DEFAULT_JA
+# ja-JP:
+#    <<: *DEFAULT_JA
 
 # English (default)
 # -----------------

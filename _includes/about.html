@@ -1,5 +1,5 @@
 <!-- About -->
-{% if site.locale and site.locale != "" and site.locale != nil %}
+<!-- {% if site.locale and site.locale != "" and site.locale != nil %}
 <section class="page-section" id="{{ site.data.sitetext[site.locale].about.section | default: "about" }}">
   <div class="container">
     <div class="row">
@@ -14,7 +14,7 @@
       </div>
     </div>
 </section>
-{% else %}
+{% else %} -->
 <section class="page-section" id="{{ site.data.sitetext.about.section | default: "about" }}">
   <div class="container">
     <div class="row">
@@ -30,5 +30,5 @@
     </div>
   </div>
 </section>
-{% endif %}
+<!-- {% endif %} -->
 <!-- End About -->
