@@ -4,23 +4,23 @@
 
 header:
   title: mming -ミング- にようこそ！
-  text: 発達凸凹っ子専用のクラスもあるプログラミング教室です
+  text: "<strong>2027/07開校</strong><br />発達凸凹っ子専用のクラスもあるプログラミング教室です"
   button: 詳しく
   buttonlink: "#services"
 
 services:
-  title: "カリキュラム"
-  text: "カリキュラムをここに書く"
+  title: "教材"
+  text: "本校にはコースはなく、好きな教材を選んで学びます。教材へ変更しても追加料金はかかりません。"
   section: services
   list:
-    - title: "マインクラフト"
-      desc: "教育版マインクラフトでプログラミングを学びます"
-      icon: fas fa-cube
-    - title: "ロボット toio"
-      desc: "小さなキューブ型ロボットを使います"
+    - title: "toio（トイオ）"
+      desc: "小さなキューブ型ロボットトイ・toio（トイオ）。toioへの命令カードを並べてプログラミングの基本構造(順次、分岐、反復)を学びます。"
       icon: fas fa-robot
+    - title: "マインクラフト"
+      desc: "教育版マインクラフトのコードビルダ機能をつかってプログラミングを学びます。エージェントという名のロボットにプログラミングで命令出来ます。ブロック、java script、pythonの3種類のプログラミング言語が使えます。"
+      icon: fas fa-cube
     - title: "エキスパート"
-      desc: "未来のハッカーコース"
+      desc: "仕様書を読んで自分が作りたいアプリを作ります。プログラミング言語は自由です。"
       icon: fas fa-code
 
 portfolio:
@@ -80,7 +80,7 @@ team:
         - url: https://www.facebook.com/dekobokokurashiakari
           icon: "fab fa-facebook-f"
     - name: "宮永　ともひさ"
-      role: "<strong>チーフメンター</strong><br />教育版マインクラフトアンバサダー<br />Minecraftカップ地区大会審査員"
+      role: "<strong>メンター</strong><br />教育版マインクラフトアンバサダー<br />第5回Minecraftカップ地区大会審査員"
       image: assets/img/team/2.jpg
       social:
         - url: https://twitter.com/Tomohisa_YUTARI

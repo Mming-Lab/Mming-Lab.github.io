@@ -28,8 +28,6 @@ author     : mming -ミング-
 # path: assets\img\clients\creative-market.jpg
 # height: 60 #px単位の高さ、デフォルトは52px
 
-# locale: "ja-JP" # _data/sitetext.ymlで利用可能な言語を参照してください。
-
 analytics:
   google: #Googleアナリティクスのトラッキングコード
 
