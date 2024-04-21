@@ -4,12 +4,12 @@
 nav:
   - title: "教材"
     section: services
-  - title: "詳細情報"
-    section: portfolio
+  # - title: "詳細情報"
+  #   section: portfolio
   - title: "教室情報"
     section: about
-  - title: "沿革"
-    section: timeline
+  # - title: "沿革"
+  #   section: timeline
   - title: "スタッフ"
     section: team
   - title: "問い合わせ"
