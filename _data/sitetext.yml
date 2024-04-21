@@ -73,7 +73,7 @@ team:
   people:
     - name: "宮永　あかり"
       role: "<strong>代表</strong><br />発達障害児支援士"
-      image: assets/img/team/1.jpg
+      image: assets/img/team/500x500.jpg
       social:
         - url: https://instagram.com
           icon: "fab fa-instagram"
@@ -81,7 +81,7 @@ team:
           icon: "fab fa-facebook-f"
     - name: "宮永　ともひさ"
       role: "<strong>メンター</strong><br />教育版マインクラフトアンバサダー<br />第5回Minecraftカップ地区大会審査員"
-      image: assets/img/team/2.jpg
+      image: assets/img/team/500x500.jpg
       social:
         - url: https://twitter.com/Tomohisa_YUTARI
           icon: "fab fa-twitter"
