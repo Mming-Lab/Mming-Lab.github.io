@@ -4,7 +4,7 @@
 
 header:
   title: mming -ミング- にようこそ！
-  text: "2024/07開校<br />発達凸凹っ子専用のクラスもあるプログラミング教室です"
+  text: "2024/07開校 プログラミング教室<br />発達凸凹っ子専用クラスの生徒を募集中"
   button: 詳しく
   buttonlink: "#services"
 
@@ -120,7 +120,7 @@ contact:
   message-validation: "メッセージを入力してください。"
   subject: "お問い合わせフォーム"
   submit: "メッセージ送信"
-  c_address: "〒892-0841 鹿児島県鹿児島市照国町２−１１ 第一天神ビル 1-D"
+  c_address: "〒892-0841 鹿児島県鹿児島市照国町"
 
 footer:
   legal: "個人情報保護方針"
