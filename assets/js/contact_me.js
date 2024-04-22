@@ -10,7 +10,8 @@ $(function() {
     submitSuccess: function($form, event) {
       event.preventDefault(); // デフォルトの送信動作を防ぐ
       // FORMから値を取得する
-	  var url = "https://formspree.io/" + "{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}";
+	    // var url = "https://formspree.io/" + "{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}";
+      var url = "https://script.google.com/macros/s/AKfycbwlY6imoOGCwZg6vfDT5OcCZ23LS2D7o-NFxxlouiw8Seo7TEdKkmzgmRYk1XMvsR2s/exec";
       var name = $("input#name").val();
       var email = $("input#email").val();
       var phone = $("input#phone").val();
