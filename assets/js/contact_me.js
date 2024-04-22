@@ -9,7 +9,7 @@ $(function() {
       event.preventDefault(); // デフォルトの送信動作を防ぐ
       // FORMから値を取得する
 	    // var url = "https://formspree.io/" + "{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}";
-      var url = "https://script.google.com/macros/s/AKfycbyXQ13htjd5-1cdyv3_lCK4-I0bhS1nELs0egDYY10/dev";
+      var url = "https://script.google.com/macros/s/AKfycbyT5SsgYv35_Z7Lv3U8e1XDR_O90qMgbcKVtavDMrSqxiGCy1M9-u7Jou3nLhMNu9eo/exec";
       var name = $("input#name").val();
       var email = $("input#email").val();
       var phone = $("input#phone").val();
