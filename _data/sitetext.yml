@@ -62,20 +62,20 @@ timeline:
 
 about:
   title: "教室方針"
-  text: "教室情報をここに書く。発達凸凹っ子が生きやすい"
-  body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported."
+  text: "発達凸凹っ子が学びやすいように**環境調整**されたプログラミング教室"
+  body: "発達凸凹っ子専用クラスがあります。子どもが興味を待っていることを習わせたいのに発達特性の為に諦めていませんでしたか？"
   section: about
 
 team:
   title: "スタッフ"
-  text: "メンターは変わり者"
+  text: "専門知識を持ったスタッフが対応します。"
   section: team
   people:
     - name: "宮永　あかり"
       role: "<strong>代表</strong><br />発達障害児支援士"
       image: assets/img/team/500x500.jpg
       social:
-        - url: https://instagram.com
+        - url: https://www.instagram.com/akari_dekoboko/
           icon: "fab fa-instagram"
         - url: https://www.facebook.com/dekobokokurashiakari
           icon: "fab fa-facebook-f"
@@ -107,8 +107,8 @@ clients:
       logo: assets/img/clients/creative-market.jpg
 
 contact:
-  title: "お問合せ"
-  text: "下記フォームまたは123456789までお電話ください。"
+  title: "アクセスガイド"
+  text: "こちらよりアクセスください"
   # section: contact
   # name: "氏名*"
   # name-validation: "あなたの氏名を入力してください。"
