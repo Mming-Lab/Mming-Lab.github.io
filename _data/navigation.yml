@@ -2,7 +2,7 @@
 # Work based on https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml
 #
 nav:
-  - title: "教材"
+  - title: "カリキュラム"
     section: services
   # - title: "詳細情報"
   #   section: portfolio

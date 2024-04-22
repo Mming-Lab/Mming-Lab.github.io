@@ -9,8 +9,8 @@ header:
   buttonlink: "#services"
 
 services:
-  title: "教材"
-  text: "本校にはコース毎の料金設定はありません。色んな事に挑戦してください。教材へ変更しても追加料金はかかりません。"
+  title: "カリキュラム"
+  text: "本校にはカリキュラム毎の料金設定はありません。色んな事に挑戦してください。"
   section: services
   list:
     - title: "toio（トイオ）"
@@ -109,17 +109,17 @@ clients:
 contact:
   title: "お問合せ"
   text: "下記フォームまたは123456789までお電話ください。"
-  section: contact
-  name: "氏名*"
-  name-validation: "あなたの氏名を入力してください。"
-  email: "Eメール*"
-  email-validation: "あなたのEメールを入力してください。"
-  phone: "電話番号"
-  phone-validation: "あなたの電話番号を入力してください。"
-  message: "メッセージ*"
-  message-validation: "メッセージを入力してください。"
-  subject: "お問い合わせフォーム"
-  submit: "メッセージ送信"
+  # section: contact
+  # name: "氏名*"
+  # name-validation: "あなたの氏名を入力してください。"
+  # email: "Eメール*"
+  # email-validation: "あなたのEメールを入力してください。"
+  # phone: "電話番号"
+  # phone-validation: "あなたの電話番号を入力してください。"
+  # message: "メッセージ*"
+  # message-validation: "メッセージを入力してください。"
+  # subject: "お問い合わせフォーム"
+  # submit: "メッセージ送信"
   c_address: "〒892-0841 鹿児島県鹿児島市照国町"
 
 footer:
