@@ -3,7 +3,9 @@
   margin: 15px 0;
   text-transform: none;
 }
-
-.h6 {
-  font-size: 8px;
+.small{
+  font-size: 50%;
+  line-height: 40px;
+  text-transform: none;
+  @include heading-font;
 }
