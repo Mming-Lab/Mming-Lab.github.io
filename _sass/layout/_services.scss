@@ -4,7 +4,7 @@
   text-transform: none;
 }
 .small{
-  font-size: 30%;
+  font-size: 8px;
   color: $gray-500;
-  @include heading-font;
+  @include body-font;
 }
