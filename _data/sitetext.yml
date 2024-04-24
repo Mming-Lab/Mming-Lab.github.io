@@ -73,7 +73,7 @@ team:
   people:
     - name: "宮永　あかり"
       role: "<strong>代表</strong><br />発達障害児支援士"
-      image: assets/img/team/500x500.jpg
+      image: assets/img/team/MIYANAGA_akari.jpg
       social:
         - url: https://www.instagram.com/akari_dekoboko/
           icon: "fab fa-instagram"
@@ -81,7 +81,7 @@ team:
           icon: "fab fa-facebook-f"
     - name: "宮永　ともひさ"
       role: "<strong>メンター</strong><br />教育版マインクラフトアンバサダー<br />第5回Minecraftカップ地区大会審査員"
-      image: assets/img/team/500x500.jpg
+      image: assets/img/team/MIYANAGA_Tomohisa.jpg
       social:
         - url: https://twitter.com/Tomohisa_YUTARI
           icon: "fab fa-twitter"
