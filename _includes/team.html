@@ -17,8 +17,8 @@
 			<ul class="list-inline social-buttons">
 			{% for network in person.social %}
 <p>{{ network.icon }}</p>
-<p>{{ network.icon.strip }}</p>
-<p>{{ network.icon[0,5] }}</p>
+<p>{{ network.icon.rtrip }}</p>
+<p>{{ network.icon | slice: 0, 3 }}</p>
 			<li class="list-inline-item">
 				<a href="{{ network.url }}">
 				  {% if network.icon[1, 4] == "fab " %}	
