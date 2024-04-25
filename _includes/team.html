@@ -17,7 +17,8 @@
 			<ul class="list-inline social-buttons">
 			{% for network in person.social %}
 <p>{{network.icon | slice: 0, 3}}</p>
-<p>{{(network.icon | slice: 0, 3) == "fab" }}</p>
+<p>{{network.icon | slice: 0, 3 == "fab" }}</p>
+<p>{{network.icon | slice: 0, 3} == "fab" }</p>
 			<li class="list-inline-item">
 				<a href="{{ network.url }}">
 				  {% if {network.icon | slice: 0, 3} == "fab" %}	
@@ -41,3 +42,4 @@
 	</div>
 </section>
 <!-- End Team -->
+
