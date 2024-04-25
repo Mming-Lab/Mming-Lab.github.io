@@ -27,7 +27,7 @@ author     : mming -ミング-
 # logo:     #任意、デフォルトはサイトタイトル
 # path: assets\img\clients\creative-market.jpg
 # height: 60 #px単位の高さ、デフォルトは52px
-mcDisclaimer: "Minecraft の公式のサービスではありません。Mojang または Microsoft から承認を受けておらず、それとの関連性もありません。"
+mcDisclaimer: "Minecraft の公式の製品/サービスではありません。Mojang または Microsoft から承認を受けておらず、それとの関連性もありません。"
 
 analytics:
   google: #Googleアナリティクスのトラッキングコード
