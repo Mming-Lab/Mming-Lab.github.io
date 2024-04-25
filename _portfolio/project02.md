@@ -1,18 +1,19 @@
 ---
-title: 体験教室
-subtitle: 体験教室
-image: assets/img/portfolio/03-full.jpg
+title: 時間割
+subtitle: 時間割や定休日
+image: assets/img/portfolio/02_時刻.jpg
 alt: 
 
 caption:
-  title: 体験教室
-  subtitle: 体験教室
-  thumbnail: assets/img/portfolio/03-thumbnail.jpg
+  title: 時間割
+  subtitle: 時間割や定休日
+  thumbnail: assets/img/portfolio/02_時刻_ミニ.jpg
 ---
-Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+現在は、発達凸凹っ子対応クラスのみを先行募集しております。定型発達っ子用クラスの募集は後日行います。お待ちください。
 
 {:.list-inline}
-- Date: January 2017
-- Client: Finish
-- Category: Identity
+- 時間割: 土曜日 
+  - 10:30～11:30
+  - 13:00～14:00
+- ただし、第二土曜日は休みです。
 

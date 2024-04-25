@@ -1,23 +1,19 @@
 ---
 title: 料金
-subtitle: 料金
+subtitle: 入会金と月謝
 image: assets/img/portfolio/01_料金.jpg
 alt: 料金
 
 caption:
   title: 料金
-  subtitle: 料金
-  thumbnail: assets/img/portfolio/01_料金.jpg
+  subtitle: 入会金と月謝
+  thumbnail: assets/img/portfolio/01_料金_ミニ.jpg
 ---
-Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
-
-| Head | Head | Head |
-| ---- | ---- | ---- |
-| Text | Text | Text |
-| Text | Text | Text |
+色々なことに挑戦できるようにカリキュラム毎での価格設定はしていません。色々なことに挑戦してください。
 
 {:.list-inline}
-- Date: January 2017
-- Client: Explore
-- Category: Graphic Design
+- 入会金: ASK
+- 月謝: ASK
+- 頻度: 月2回
+- 時間: 一回60分
 
