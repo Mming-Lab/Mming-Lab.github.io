@@ -25,7 +25,7 @@ services:
 
 portfolio:
   title: "詳細情報"
-  text: "料金や時間割などの詳細を説明します"
+  text: "料金や時間割、特徴の詳細を説明"
   section: portfolio
   closebutton: "閉じる"
 
@@ -108,7 +108,7 @@ clients:
 
 contact:
   title: "アクセスガイド"
-  text: ""
+  # text: "こちらからお問い合わせください"
   map: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d212.40867670867596!2d130.55013045293293!3d31.59169213806899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1712973630297!5m2!1sja!2sjp"
   address: "〒892-0841 鹿児島県鹿児島市照国町２−１１ 第一天神ビル 1-D"
   forms: "https://docs.google.com/forms/d/e/1FAIpQLScXEQViRPCFZ6kSRIc_pFx8tHfPEG9dGkiDTLsPPR0xdmo5Gg/viewform?embedded=true"
@@ -116,10 +116,10 @@ contact:
 footer:
   legal: "個人情報保護方針"
   social:
+    - url: https://github.com/Mming-Lab
+      icon: "fab fa-github"
     # - url: https://line.me/ja/
     #   icon: "fab fa-line"
-    # - url: https://github.com/Mming-Lab
-    #   icon: "fab fa-github"
     # - url: https://twitter.com
     #   icon: "fab fa-twitter"
     # - url: https://facebook.com
