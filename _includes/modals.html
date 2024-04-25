@@ -18,7 +18,7 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
-              <!-- Project Details Go Here -->
+              <!-- プロジェクトの詳細はこちら -->
               <h2 class="text-uppercase">{{ project.title }}</h2>
               <p class="item-intro text-muted">{{ project.subtitle }}</p>
               <img
@@ -39,6 +39,14 @@
             </div>
           </div>
         </div>
+        <!-- 免責 -->
+        {% if project.isMc %}
+        <div class="row">
+          <div class="col-lg-8 text-center">
+            <div class="service-small text-muted">{{site.mcDisclaimer }}</div>
+          </div>
+        </div>
+        {% endif %}
       </div>
     </div>
   </div>
