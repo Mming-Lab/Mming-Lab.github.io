@@ -1,12 +1,12 @@
 ---
-title: 特徴１
-subtitle: ふりがなリソースパック
+title: ふりがなリソースパック
+subtitle: 教育版マインクラフトの『ふりがなリソースパック』
 image: assets/img/portfolio/11_ふりがなリソースパック.jpg
 alt: 漢字にフリガナが付いた教育版マインクラフト
 
 caption:
-  title: ふりがなリソースパック
-  subtitle: 教育版マインクラフトの『ふりがなリソースパック』
+  title: 特徴１
+  subtitle: ふりがなリソースパック
   thumbnail: assets/img/portfolio/11_ふりがなリソースパック_ミニ.jpg
 ---
 マインクラフトには難読漢字がたくさん使われています。
