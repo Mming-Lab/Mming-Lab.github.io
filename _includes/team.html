@@ -18,10 +18,13 @@
 			{% for network in person.social %}
 			<li class="list-inline-item">
 				<a href="{{ network.url }}">
+				  <!-- アイコンのパスより画像かfontawesomeか判定 -->
 				  {% assign icon = network.icon | slice: 0, 3 %}		
 				  {% if icon == "fab" %}	
+				  <!-- fontawesomeｍの場合-->
 				  	<i class="{{ network.icon }}"></i>
 				  {% else %}
+				  <!-- 画像の場合-->
 				  	<img class="mx-auto rounded-circle icon" src="{{ network.icon }}" alt="">
 				  {% endif %}
 				</a>
