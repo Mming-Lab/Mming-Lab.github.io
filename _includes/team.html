@@ -19,11 +19,10 @@
 			  <li class="list-inline-item">
 				<a href="{{ network.url }}">
 				  {% if network.icon[1, 4] == "fab " %}	
+					<p>	{{ network.icon[1, 4] }}</p>
 				  	<i class="{{ network.icon }}"></i>
 				  {% else %}
-				  <i>
 				  	<img class="mx-auto rounded-circle icon" src="{{ network.icon }}" alt="">
-				</i>
 				  {% endif %}
 				</a>
 			  </li>
