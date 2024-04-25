@@ -16,13 +16,9 @@
 			<p class="text-muted">{{ person.role }}</p>
 			<ul class="list-inline social-buttons">
 			{% for network in person.social %}
-<p>{{ network.icon }}</p>
-<p>{{ network.icon.rtrip }}</p>
-<p>{{ network.icon | slice: 0, 3 }}</p>
 			<li class="list-inline-item">
 				<a href="{{ network.url }}">
-				  {% if network.icon[1, 4] == "fab " %}	
-
+				  {% if network.icon | slice: 0, 3 == "fab" %}	
 				  	<i class="{{ network.icon }}"></i>
 				  {% else %}
 				  	<img class="mx-auto rounded-circle icon" src="{{ network.icon }}" alt="">
