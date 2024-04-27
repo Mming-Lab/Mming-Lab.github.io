@@ -1,14 +1,14 @@
 ---
 title: ふりがなブロック
 subtitle: コードビルダのブロックにふりがな
-image: assets/img/portfolio/12_ふりがなブロック.png
+image: assets/img/portfolio/22_ふりがなブロック.png
 alt: コードビルダのブロックにふりがな
 isMc: true
 
 caption:
   title: 特徴２
   subtitle: ふりがなブロック
-  thumbnail: assets/img/portfolio/12_ふりがなブロック_ミニ.png
+  thumbnail: assets/img/portfolio/22_ふりがなブロック_ミニ.png
 ---
 コードビルダーのブロックでも、漢字が頻繁に登場します。
 しかし、私たちはその壁を乗り越えるための方法を提供しています。

@@ -1,15 +1,13 @@
 ---
-title: ふりがなリソースパック
-subtitle: 教育版マインクラフトの『ふりがなリソースパック』
-image: assets/img/portfolio/11_ふりがなリソースパック.jpg
+title: 環境調整
+subtitle: 環境調整
+image: assets/img/portfolio/11_環境調整.jpg
 alt: 漢字にフリガナが付いた教育版マインクラフト
 isMc: true
 
 caption:
   title: 特徴１
-  subtitle: ふりがなリソースパック
-  thumbnail: assets/img/portfolio/11_ふりがなリソースパック_ミニ.jpg
+  subtitle: 環境調整
+  thumbnail: assets/img/portfolio/11_環境調整_ミニ.jpg
 ---
-マインクラフトでは、難読な漢字がたくさん使用されていますが、私たちの取り組みでそれらのハードルを下げています。
-当室では、メンターが独自に開発した『ふりがなリソースパック』を導入し、識字障害のある子どもたちにも学習の門戸を開いています。
-このパックは、学習指導要領の学年別漢字配当表に基づいて作成されており、子どもたちの成長段階に合わせてカスタマイズすることが可能です。
+環境調整環境調整環境調整環境調整環境調整環境調整
