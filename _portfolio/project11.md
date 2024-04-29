@@ -3,7 +3,7 @@ title: 発達凸凹っ子のための学習環境の最適化
 subtitle: 個性に合わせた配慮と柔軟性を持つ空間設計
 image: assets/img/portfolio/11_環境調整.jpg
 alt: 発達凸凹っ子のための学習環境の最適化
-isMc: true
+isMc: false
 
 caption:
   title: 特徴１
