@@ -6,7 +6,7 @@ alt: コードビルダのブロックにふりがな
 isMc: true
 
 caption:
-  title: 特徴２
+  title: 特徴３
   subtitle: ふりがなブロック
   thumbnail: assets/img/portfolio/22_ふりがなブロック_ミニ.png
 ---

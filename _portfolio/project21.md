@@ -6,7 +6,7 @@ alt: 漢字にフリガナが付いた教育版マインクラフト
 isMc: true
 
 caption:
-  title: 特徴１
+  title: 特徴２
   subtitle: ふりがなリソースパック
   thumbnail: assets/img/portfolio/21_ふりがなリソースパック_ミニ.jpg
 ---
