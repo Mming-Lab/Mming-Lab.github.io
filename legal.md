@@ -12,15 +12,15 @@ title: プライバシーポリシー
 
 {% if site.analytics.google %}
 
-Automatically Collected (Google Analytics):
+自動収集（Google Analytics）：
 
-When you visit the Site, we automatically receive information about your device from your browser, such as your IP address. As you browse the Site, we also collect information about how you interact with the Site. We refer to this automatically-collected information as “Device Information”.
+お客様が本サイトにアクセスすると、当社はお客様のIPアドレスなど、お客様の端末に関する情報をお客様のブラウザから自動的に受け取ります。また、お客様が本サイトを閲覧する際に、お客様が本サイトとどのように通信したかという情報も収集します。当社は、この自動的に収集される情報を「デバイス情報」と呼んでいます。
 
-We collect Device Information using cookies. “Cookies” are data files that are placed on your device. For more information about cookies and how to disable them, visit http://www.allaboutcookies.org.
+当社は、クッキーを使用してデバイス情報を収集します。「クッキー」とは、お客様のデバイスに配置されるデータファイルです。クッキーの詳細およびクッキーを無効にする方法については、http://www.allaboutcookies.org。
 
-We do this using Google Analytics: <https://www.google.com/intl/en/policies/privacy/>.
+Google Analyticsを使用しています： <https://www.google.com/intl/en/policies/privacy/>。
 
-You can opt-out of Google Analytics here: <https://tools.google.com/dlpage/gaoptout>.
+Google Analyticsのオプトアウトはこちらから行えます： <https://tools.google.com/dlpage/gaoptout>。
 
 {% else %}
 
