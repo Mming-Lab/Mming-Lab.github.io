@@ -18,7 +18,7 @@ services:
       icon: fas fa-robot
     - title: "マインクラフト"
       desc: "教育版マインクラフトのコードビルダ機能をつかってプログラミングを学びます。エージェントという名のロボットにプログラミングで命令出来ます。ブロック、java script、pythonの3種類のプログラミング言語が使えます。"
-      icon: fas fa-cube
+      icon: fas fa-cubes
     - title: "エキスパート"
       desc: "自分が作りたいアプリを作ります。プログラミング言語は自由。仕様書の読み方、情報収集のやり方を教えます。"
       icon: fas fa-code
