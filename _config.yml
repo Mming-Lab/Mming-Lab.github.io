@@ -21,7 +21,7 @@ url    : "" # サイトの基本ホスト名とプロトコル（例：http://ex
 baseurl: "" # あなたのサイトのサブパス（例：/blog
 
 title      : mming -ミング-
-email      : mming.lab@gmail.com #これはまた、電子メールでのお問い合わせフォームの送信先でもあります。
+email      : mming.lab＠gmail.com #これはまた、電子メールでのお問い合わせフォームの送信先でもあります。
 description: "発達凸凹っ子専用クラスもある小さなプログラミング教室"
 author     : mming -ミング-
 # logo:     #任意、デフォルトはサイトタイトル
