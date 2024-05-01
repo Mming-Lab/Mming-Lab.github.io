@@ -1,2 +1,4 @@
-# mming -ミング- プログラミング教室 website
-Based on the [Agency Jekyll Theme](https://github.com/raviriley/agency-jekyll-theme) Starter Template.
+# [mming -ミング- プログラミング教室 website](https://mming-lab.github.io/)
+
+発達凸凹っ子対応クラスがあるプログラミング教室です。
+学校でも療育でもない、もう一つの居場所を目指しています。
