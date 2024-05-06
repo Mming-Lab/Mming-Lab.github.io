@@ -3,7 +3,7 @@
 #
 
 header:
-  title: "mming -ミング-"
+  title: "ミング -mming-"
   text: "プログラミング教室<br />2024/07開校<br />発達凸凹っ子対応クラス<br />先行募集中!"
   button: 詳しく
   buttonlink: "#services"
@@ -118,13 +118,14 @@ contact:
 footer:
   legal: "個人情報保護方針"
   social:
-    - url: https://github.com/Mming-Lab
+    - url: "https://github.com/Mming-Lab"
       icon: "fab fa-github"
+    - url: "https://www.instagram.com/mming.lab/"
+      icon: "fab fa-instagram"
     # - url: https://line.me/ja/
     #   icon: "fab fa-line"
     # - url: https://twitter.com
     #   icon: "fab fa-twitter"
     # - url: https://facebook.com
     #   icon: "fab fa-facebook-f"
-    # - url: https://instagram.com
-    #   icon: "fab fa-instagram"
+
