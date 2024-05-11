@@ -2,10 +2,8 @@
 layout: page
 title: 教育版マインクラフトのキーボード操作を学ぶ為のテンプレートを日本語表示
 ---
-<div class="col-lg-12 text-center">
-	<h2 class="section-heading text-uppercase">教育版マインクラフトのキーボード操作を学ぶ為のテンプレートを日本語表示</h2>
-</div>
 
+# 教育版マインクラフトのキーボード操作を学ぶ為のテンプレートを日本語表示
 ![日本語チュートリアル_サムネイル](./assets/img/keyboard_lesson_ja/00_日本語チュートリアル_サムネイル.png){: img-fluid d-block mx-auto}
 
 教育版マインクラフトのキーボード操作が学べるチュートリアルは英語表示です。操作方法の基礎が学べるように日本語化リソースパックを公開します。
