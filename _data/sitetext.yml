@@ -81,7 +81,7 @@ team:
           icon: "fab fa-facebook-f"
     - name: "宮永　ともひさ"
       role: "<strong>メンター</strong><br />システムエンジニア<br />教育版マインクラフトアンバサダー<br />第5回Minecraftカップ地区大会審査員"
-      image: assets/img/team/MIYANAGA_Tomohisa.jpg
+      image: assets/img/team/500x500.jpg
       social:
         - url: https://twitter.com/Tomohisa_YUTARI
           icon: "fab fa-twitter"
