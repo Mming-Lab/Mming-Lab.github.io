@@ -80,15 +80,15 @@ team:
         - url: https://www.facebook.com/profile.php?id=100089067379994
           icon: "fab fa-facebook-f"
     - name: "宮永　ともひさ"
-      role: "<strong>メンター</strong><br />システムエンジニア<br />"
+      role: "<strong>メンター</strong><br />システムエンジニア<br />教育版マインクラフトアンバサダー<br />第5回Minecraftカップ地区大会審査員"
       image: assets/img/team/tomohisa_image.jpg
       social:
         - url: https://twitter.com/Tomohisa_YUTARI
           icon: "fab fa-twitter"
         - url: https://www.facebook.com/profile.php?id=100081525017355
           icon: "fab fa-facebook-f"
-        # - url: https://www.credly.com/badges/cd089180-e5f5-44bf-bb25-b3dafb703f8e/public_url
-        #   icon: "assets/img/team/minecraft-education-ambassador.png"
+        - url: https://www.credly.com/badges/cd089180-e5f5-44bf-bb25-b3dafb703f8e/public_url
+          icon: "assets/img/team/minecraft-education-ambassador.png"
 
 clients:
   section: clients
