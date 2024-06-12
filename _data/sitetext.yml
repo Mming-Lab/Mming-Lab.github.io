@@ -92,21 +92,21 @@ team:
 
 clients:
   section: clients
-  max-height: 100px
+  max-height: 50px
   horizontal-scrolling: "" #"yes/no"
   list:
     - title: "Minecraftカップ"
       url: https://minecraftcup.com/
-      logo: assets/img/clients/minecraftcup2024.png
+      logo: https://minecraftcup.com/2022/wp-content/themes/minecraft/img/common/logo_2024.png
+    - title: "教育版マインクラフト"
+      url: https://education.minecraft.net/ja-jp
+      logo: https://education.minecraft.net/content/dam/education-edition/logos/education-minecraft-logo.png
+    - title: "じぶんらしい暮らしYUTAR"
+      url: https://yutari.link/
+      logo: https://yutari.link/wp-content/uploads/2022/02/yutari.logo3_-e1644819005624.png
     - title: "マルヤガーデンズ"
       url: https://www.maruya-gardens.com/
-      logo: assets/img/clients/maruya-gardens.png
-    # - title: "themeforest"
-    #   url: https://github.com/raviriley/agency-jekyll-theme
-    #   logo: assets/img/clients/themeforest.jpg
-    # - title: "Creative Market"
-    #   url: https://github.com/raviriley/agency-jekyll-theme
-    #   logo: assets/img/clients/creative-market.jpg
+      logo: https://www.maruya-gardens.com/common/images/common/symbol.png
 
 contact:
   title: "アクセスガイド"
