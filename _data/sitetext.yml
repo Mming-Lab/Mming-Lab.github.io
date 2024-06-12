@@ -25,7 +25,7 @@ services:
 
 portfolio:
   title: "詳細情報"
-  text: "特徴の詳細を説明"
+  #text: "特徴の詳細を説明"
   section: portfolio
   closebutton: "閉じる"
 
@@ -103,7 +103,7 @@ clients:
       logo: https://education.minecraft.net/content/dam/education-edition/logos/education-minecraft-logo.png
     - title: "じぶんらしい暮らしYUTAR"
       url: https://yutari.link/
-      logo: https://yutari.link/wp-content/uploads/2022/02/yutari.logo3_-e1644819005624.png
+      logo: assets/img/clients/yutari-link.png
     - title: "マルヤガーデンズ"
       url: https://www.maruya-gardens.com/
       logo: https://www.maruya-gardens.com/common/images/common/symbol.png
