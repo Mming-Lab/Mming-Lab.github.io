@@ -25,7 +25,7 @@ email      : "mming.lab＠gmail.com" #これはまた、電子メールでのお
 description: "発達凸凹っ子対応クラスがあるプログラミング教室"
 author     : "mming -ミング-"
 # logo:     #任意、デフォルトはサイトタイトル
-# path: assets\img\clients\creative-market.jpg
+path: assets\img\mming-logo.png
 # height: 60 #px単位の高さ、デフォルトは52px
 mcDisclaimer: "Minecraft の公式の製品/サービスではありません。Mojang または Microsoft から承認を受けておらず、それとの関連性もありません。"
 

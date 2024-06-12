@@ -93,14 +93,14 @@ team:
 clients:
   section: clients
   max-height: 100px
-  horizontal-scrolling: "" #"yes/no"
+  horizontal-scrolling: "yes" #"yes/no"
   list:
+     - title: "Minecraftカップ"
+      url: https://minecraftcup.com/
+      logo: assets/img/clients/minecraftcup2024.png
     - title: "マルヤガーデンズ"
       url: https://www.maruya-gardens.com/
       logo: assets/img/clients/maruya-gardens.png
-    # - title: "designmodo"
-    #   url: https://github.com/raviriley/agency-jekyll-theme
-    #   logo: assets/img/clients/designmodo.jpg
     # - title: "themeforest"
     #   url: https://github.com/raviriley/agency-jekyll-theme
     #   logo: assets/img/clients/themeforest.jpg
