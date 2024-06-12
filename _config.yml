@@ -24,9 +24,10 @@ title      : "mming -ミング-"
 email      : "mming.lab＠gmail.com" #これはまた、電子メールでのお問い合わせフォームの送信先でもあります。
 description: "発達凸凹っ子対応クラスがあるプログラミング教室"
 author     : "mming -ミング-"
-logo: assets\img\ロゴ.png    #任意、デフォルトはサイトタイトル
-# path: assets\img\ロゴ.png
-# height: 60 #px単位の高さ、デフォルトは52px
+logo: #任意、デフォルトはサイトタイトル
+  path: assets\img\ロゴ.png
+  height: 52 #px単位の高さ、デフォルトは52px
+
 mcDisclaimer: "Minecraft の公式の製品/サービスではありません。Mojang または Microsoft から承認を受けておらず、それとの関連性もありません。"
 
 analytics:
