@@ -93,7 +93,7 @@ team:
 clients:
   section: clients
   max-height: 100px
-  horizontal-scrolling: "yes" #"yes/no"
+  horizontal-scrolling: "" #"yes/no"
   list:
     - title: "Minecraftカップ"
       url: https://minecraftcup.com/
