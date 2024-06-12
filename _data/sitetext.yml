@@ -95,7 +95,7 @@ clients:
   max-height: 100px
   horizontal-scrolling: "yes" #"yes/no"
   list:
-     - title: "Minecraftカップ"
+    - title: "Minecraftカップ"
       url: https://minecraftcup.com/
       logo: assets/img/clients/minecraftcup2024.png
     - title: "マルヤガーデンズ"
