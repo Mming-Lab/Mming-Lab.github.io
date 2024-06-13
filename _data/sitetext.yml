@@ -77,8 +77,8 @@ team:
       social:
         - url: https://www.instagram.com/akari_dekoboko/
           icon: "fab fa-instagram"
-        - url: https://www.facebook.com/profile.php?id=100089067379994
-          icon: "fab fa-facebook-f"
+        # - url: https://www.facebook.com/profile.php?id=100089067379994
+        #   icon: "fab fa-facebook-f"
     - name: "宮永　ともひさ"
       role: "<strong>メンター</strong><br />システムエンジニア<br />教育版マインクラフトアンバサダー<br />Minecraftカップ地区大会審査員(第5回)"
       image: assets/img/team/tomohisa_image.jpg
