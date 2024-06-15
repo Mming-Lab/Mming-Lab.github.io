@@ -1,7 +1,9 @@
 #Color Customization
-highlight: "#0716FF"
-white: "#54bfff"
-black: "#212529"
+# "#0716FF"->　ロゴの色 青
+# "#54bfff"->　元のHPの色　水色
+highlight: "#54bfff"
+white: "#0716FF" 
+black: "#212529" #"#212529"
 
 #Image Customization
 header-image: "../img/桜島と月.png"
