@@ -1,10 +1,10 @@
 #Color Customization
 # "#0716FF"->　ロゴの色 青
 # "#54bfff"->　元のHPの色　水色
-highlight: "#0716FF" # 使ってない
-white: "#0716FF"  # リンクとかボタンの色
+highlight: "#54bfff" # 使ってない
+white: "#54bfff"  # リンクとかボタンの色
 black: "#212529" #"#212529"
-mainNav: "#54bfff" # メインナビゲーションの色
+
 
 #Image Customization
 header-image: "../img/桜島と月.png"
