@@ -1,8 +1,8 @@
 #Color Customization
 # "#0716FF"->　ロゴの色 青
 # "#54bfff"->　元のHPの色　水色
-highlight: "#54bfff"
-white: "#0716FF" 
+highlight: "#54bfff" # 使ってない
+white: "#54bfff"  # リンクとかボタンの色
 black: "#212529" #"#212529"
 
 #Image Customization
