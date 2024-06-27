@@ -4,7 +4,7 @@
 
 header:
   title: "mming -ミング-"
-  text: "プログラミング教室<br />2024/07/13(土)開校<br />発達多様性クラス<br />(発達凸凹っ子特化)<br />先行募集中!"
+  text: "プログラミング教室<br />2024/07/13(土)開校<br />発達多様性クラス<font size="3">(発達凸凹っ子)</font><br />先行募集中!"
   button: 詳しく
   buttonlink: "#services"
 
