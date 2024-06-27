@@ -10,8 +10,9 @@ caption:
   subtitle: 体験教室
   thumbnail: assets/img/portfolio/00_体験_ミニ.jpg
 ---
-準備中
 
 {:.list-inline}
--  
+- 申込フォーム準備中
+- 近日公開
+
 
