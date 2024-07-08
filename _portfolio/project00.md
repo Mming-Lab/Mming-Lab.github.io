@@ -12,7 +12,7 @@ caption:
 ---
 
 {:.list-inline}
-- 申込フォーム準備中
-- 近日公開
+- [発達多様性クラス申込フォーム](https://forms.gle/xz8XFBwxpzadWekL7)
+- 一般クラスの申込フォーム(準備中)
 
 
