@@ -17,7 +17,8 @@ caption:
 <table>
 	<tbody>
 		<tr>
-			<th colspan="2">土曜日時</th>
+      <th>土曜</th>
+			<th>時刻</th>
 			<th>二回①</th>
 			<th>二回②</th>
 			<th>二回③</th>
@@ -98,11 +99,11 @@ caption:
 </table>
 
 {:.list-inline}
-- <font color="#FF0000">●</font>　第 1 ・ 3 土曜　①10:30～1１:30　コース
-- <font color="#0000FF">●</font>　第 1 ・ 3 土曜　②13:00～14:00　コース
-- <font color="#FFA500">●</font>　第 2 ・ 4 土曜　②13:00～14:00　コース
-- <font color="#008000">●</font>　第 1 ・ 2 ・ 4 土曜　①10:30～1１:30　月 3 回コース
-- <font color="#FFC0CB">●</font>　第 1 ・ 2 ・ 3 ・ 4 土曜　②13:00～14:00　月 4 回コース
+- <font color="#FF0000">●</font> 第 1 ・ 3 土曜　①10:30～11:30　コース
+- <font color="#0000FF">●</font> 第 1 ・ 3 土曜　②13:00～14:00　コース
+- <font color="#FFA500">●</font> 第 2 ・ 4 土曜　②13:00～14:00　コース
+- <font color="#008000">●</font> 第 1 ・ 2 ・ 4 土曜　①10:30～11:30　月 3 回コース
+- <font color="#FFC0CB">●</font> 第 1 ・ 2 ・ 3 ・ 4 土曜　②13:00～14:00　月 4 回コース
 
 ##
 - １: 土曜日 10:30～11:30 （発達多様性特化）
