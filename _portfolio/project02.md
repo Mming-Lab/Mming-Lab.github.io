@@ -19,18 +19,3 @@ caption:
 - ３: 土曜日 14:30～15:30 （一般クラス **準備中**）
 - ※ただし、第二土曜日の10:30～11:30は定休
 
-|header1|header2|header3|
-|:------|:-----:|------:|
-|hoge   |fuga   |piyo   |
-|hoge   |       |piyo   |
-|>      |fuga   |piyo   |
-|hoge   |fuga   |^     |
-|hoge   |>      |piyo   |
-|hoge   |       |       |
-|>      |fuga   |       |
-|>      |>      |piyo    |
-
-| jointed header || header |
-| --- | --- | --- |
-| jointed cell || cell |
-| aaa | bbb | ccc |
