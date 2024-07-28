@@ -80,7 +80,7 @@ team:
         # - url: https://www.facebook.com/profile.php?id=100089067379994
         #   icon: "fab fa-facebook-f"
     - name: "宮永　ともひさ"
-      role: "<strong>メンター</strong><br />システムエンジニア<br />教育版マインクラフトアンバサダー<br />Minecraftカップ地区大会審査員(第5回)"
+      role: "<strong>メンター</strong><br />システムエンジニア<br />教育版マインクラフトアンバサダー<br />Minecraftカップ地区大会審査員(第5・6回)"
       image: assets/img/team/tomohisa_image.jpg
       social:
         - url: https://twitter.com/Tomohisa_YUTARI
