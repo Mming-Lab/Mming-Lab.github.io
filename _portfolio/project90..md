@@ -7,7 +7,7 @@ isMc: false
 
 caption:
   title: 教室スケジュール
-  subtitle: 教室の講座やワークショップのスケジュール
+  subtitle: 講座やワークショップのスケジュール
   thumbnail: assets/img/portfolio/90_講座カレンダー_ミニ.jpg
 ---
 
