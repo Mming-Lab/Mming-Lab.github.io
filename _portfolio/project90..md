@@ -1,13 +1,13 @@
 ---
-title: 講座スケジュール
-subtitle: 資格取得講座やワークショップなどの開講スケジュールです
+title: 教室スケジュール
+subtitle: 教室の資格取得講座やワークショップなどの開講スケジュールです
 image: assets/img/portfolio/90_講座カレンダー.png
 alt: 体験教室
 isMc: false
 
 caption:
-  title: 講座スケジュール
-  subtitle: 講座やワークショップのスケジュール
+  title: 教室スケジュール
+  subtitle: 教室の講座やワークショップのスケジュール
   thumbnail: assets/img/portfolio/90_講座カレンダー_ミニ.jpg
 ---
 
