@@ -10,7 +10,6 @@ caption:
   subtitle: 講座やワークショップのスケジュール
   thumbnail: assets/img/portfolio/90_講座カレンダー_ミニ.jpg
 ---
-資格取得講座やワークショップなどの開講スケジュールです
 
 {:.list-inline}
 - [整理収納教育士認定講座について](https://yutari.link/kyoikushi/)
