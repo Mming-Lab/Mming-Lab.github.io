@@ -10,8 +10,7 @@ caption:
   subtitle: 講座やワークショップのスケジュール
   thumbnail: assets/img/portfolio/90_講座カレンダー_ミニ.jpg
 ---
-
-※休講などにより臨時で教室不在になる場合があります。  当日の営業状況はmmingのInstagramでご確認ください。
+※休講などにより臨時で教室不在になる場合があります。<br/>当日の営業状況はmmingのInstagramでご確認ください。
 <ul class="list-inline social-buttons">
   <li class="list-inline-item">
     <a href="https://www.instagram.com/mming.lab/">
