@@ -12,16 +12,15 @@ caption:
 ---
 
 ※休講などにより臨時で教室不在になる場合があります。
-当日の営業状況はmmingのInstagramでご確認ください。
-<div class="col-md-4 text-center">
-  <ul class="list-inline social-buttons">
-    <li class="list-inline-item">
-      <a href="https://www.instagram.com/mming.lab/">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </li>
-  </ul>
-</div>
+
+　当日の営業状況はmmingのInstagramでご確認ください。
+<ul class="list-inline social-buttons">
+  <li class="list-inline-item">
+    <a href="https://www.instagram.com/mming.lab/">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </li>
+</ul>
 
 
 {:.list-inline}
