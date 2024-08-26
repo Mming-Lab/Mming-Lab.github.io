@@ -1,9 +1,10 @@
 ---
 title: 料金
 subtitle: 入会金と授業料
-image: assets/img/portfolio/01_料金.jpg
-alt: 料金
 isMc: false
+list:
+  - type: img
+    path: assets/img/portfolio/01_料金.jpg
 
 caption:
   title: 料金

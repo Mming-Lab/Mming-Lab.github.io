@@ -1,9 +1,10 @@
 ---
 title: ふりがなブロック
 subtitle: コードビルダのブロックにふりがな
-image: assets/img/portfolio/22_ふりがなブロック.png
-alt: コードビルダのブロックにふりがな
 isMc: true
+list:
+  - type: img
+    path: assets/img/portfolio/22_ふりがなブロック.png
 
 caption:
   title: 特徴３

@@ -1,9 +1,10 @@
 ---
 title: 日本語チュートリアル
 subtitle: 教育版マインクラフトのキーボード操作を学ぶ為のテンプレートを日本語表示
-image: assets/img/portfolio/31_日本語チュートリアル.png
-alt: 教育版マインクラフトのキーボード操作を学ぶ為のテンプレートを日本語表示
 isMc: true
+list:
+  - type: img
+    path: assets/img/portfolio/31_日本語チュートリアル.png
 
 caption:
   title: 社会貢献１

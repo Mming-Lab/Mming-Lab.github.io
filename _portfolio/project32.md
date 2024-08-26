@@ -1,9 +1,10 @@
 ---
 title: 特殊フラット
 subtitle: JAVA 版の設定済みフラットワールドを教育版マインクラフトで再現したフラットテンプレート
-image: assets/img/portfolio/32_フラットテンプレ.png
-alt: JAVA 版の設定済みフラットワールドを教育版マインクラフトで再現
 isMc: true
+list:
+  - type: img
+    path: assets/img/portfolio/32_フラットテンプレ.png
 
 caption:
   title: 社会貢献２

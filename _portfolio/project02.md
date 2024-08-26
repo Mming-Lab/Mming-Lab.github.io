@@ -1,9 +1,10 @@
 ---
 title: 開校時間
 subtitle: 時間割や定休日
-image: assets/img/portfolio/02_時刻.jpg
-alt: 開校時間
 isMc: false
+list:
+  - type: img
+    path: assets/img/portfolio/02_時刻.jpg
 
 caption:
   title: 開校時間

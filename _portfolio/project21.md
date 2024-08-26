@@ -1,9 +1,10 @@
 ---
 title: ふりがなリソースパック
 subtitle: 教育版マインクラフトの『ふりがなリソースパック』
-image: assets/img/portfolio/21_ふりがなリソースパック.jpg
-alt: 漢字にフリガナが付いた教育版マインクラフト
 isMc: true
+list:
+  - type: img
+    path: assets/img/portfolio/21_ふりがなリソースパック.jpg
 
 caption:
   title: 特徴２
