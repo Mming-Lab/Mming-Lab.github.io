@@ -22,7 +22,13 @@
               <h2 class="text-uppercase">{{ project.title }}</h2>
               <p class="item-intro text-muted">{{ project.subtitle }}</p>
               {% if project.video %}
-                <video src="{{ project.video }}" loop autoplay muted></video>
+              <video
+                class="img-fluid d-block mx-auto"
+                src="{{ project.video }}"
+                loop
+                autoplay
+                muted
+              ></video>
               {% else %}
               <img
                 class="img-fluid d-block mx-auto"
@@ -37,8 +43,8 @@
                 type="button"
               >
                 <i class="fas fa-times"></i>
-                {{ site.data.sitetext.portfolio.closebutton |
-                default: "Close Project" }}
+                {{ site.data.sitetext.portfolio.closebutton | default: "Close
+                Project" }}
               </button>
             </div>
           </div>
