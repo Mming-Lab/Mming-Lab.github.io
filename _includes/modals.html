@@ -21,21 +21,22 @@
               <!-- プロジェクトの詳細はこちら -->
               <h2 class="text-uppercase">{{ project.title }}</h2>
               <p class="item-intro text-muted">{{ project.subtitle }}</p>
-              {% if project.video %}
-              <video
-                class="img-fluid d-block mx-auto"
-                src="{{ project.video }}"
-                loop
-                autoplay
-                muted
-              ></video>
-              {% else %}
-              <img
-                class="img-fluid d-block mx-auto"
-                src="{{ project.image }}"
-                alt="{{ project.alt }}"
-              />
-              {% endif %}
+              {% for visual in project.list %} 
+                {% if visual.type == "video" %}
+                <video
+                  class="img-fluid d-block mx-auto"
+                  src="{{ visual.path }}"
+                  loop
+                  autoplay
+                  muted
+                ></video>
+                {% else %}
+                <img
+                  class="img-fluid d-block mx-auto"
+                  src="{{ visual.path }}"
+                />
+                {% endif %} 
+              {% endfor %}
               <p>{{ project.content }}</p>
               <button
                 class="btn btn-primary"

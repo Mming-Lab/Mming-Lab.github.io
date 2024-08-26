@@ -5,7 +5,11 @@ image: assets/img/portfolio/00_体験.jpg
 video: assets/img/portfolio/chicken.mp4
 alt: 体験教室
 isMc: false
-
+list:
+  - type: img
+    path: assets/img/portfolio/00_体験.jpg
+  - type: video
+    path: assets/img/portfolio/chicken.mp4
 caption:
   title: 体験教室
   subtitle: 体験教室
