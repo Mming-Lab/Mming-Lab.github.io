@@ -23,26 +23,18 @@
               <p class="item-intro text-muted">{{ project.subtitle }}</p>
               <!-- 画像とか動画 -->
               {% for visual in project.list %} 
-              <{{visual.type}} 
-                class="img-fluid d-block mx-auto" 
-                src="{{ visual.path }}" 
-                loop autoplay muted>
-              </{{visual.type}}>
-
-              <!-- {% if visual.type == "video" %}
+              {% if visual.type == "video" %}
                 <video
                   class="img-fluid d-block mx-auto"
                   src="{{ visual.path }}"
-                  loop
-                  autoplay
-                  muted
+                  loop autoplay muted
                 ></video>
                 {% else %}
                 <img
                   class="img-fluid d-block mx-auto"
                   src="{{ visual.path }}"
                 />
-                {% endif %}  -->
+                {% endif %} 
               {% endfor %}
               <p>{{ project.content }}</p>
               <button
