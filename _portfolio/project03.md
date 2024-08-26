@@ -5,11 +5,17 @@ isMc: false
 list:
   - type: img
     path: assets/img/portfolio/11_環境調整.jpg
+  - type: img
+    path: assets/img/portfolio/センサリースペース700.jpg
+  - type: img
+    path: assets/img/portfolio/個別スペース700.jpg
+  - type: img
+    path: assets/img/portfolio/教室イメージ700.jpg
 
 caption:
-  title: 特徴１
+  title: 教室環境
   subtitle: 発達凸凹っ子のための学習環境の最適化
-  thumbnail: assets/img/portfolio/11_環境調整_ミニ.jpg
+  thumbnail: assets/img/portfolio/センサリースペース2_400×300.jpg
 ---
 mmingの空間には、様々な形があります
 

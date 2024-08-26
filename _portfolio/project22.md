@@ -7,7 +7,7 @@ list:
     path: assets/img/portfolio/22_ふりがなブロック.png
 
 caption:
-  title: 特徴３
+  title: 特徴２
   subtitle: ふりがなブロック
   thumbnail: assets/img/portfolio/22_ふりがなブロック_ミニ.png
 ---

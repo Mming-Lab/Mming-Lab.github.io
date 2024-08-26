@@ -7,7 +7,7 @@ list:
     path: assets/img/portfolio/21_ふりがなリソースパック.jpg
 
 caption:
-  title: 特徴２
+  title: 特徴１
   subtitle: ふりがなリソースパック
   thumbnail: assets/img/portfolio/21_ふりがなリソースパック_ミニ.jpg
 ---
