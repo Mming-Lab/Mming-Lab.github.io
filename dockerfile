@@ -12,3 +12,6 @@ RUN apk add --no-cache build-base gcc cmake git
 
 # Rubyバンドラーを更新し、Jekyllをインストールする
 RUN gem update bundler && gem install bundler jekyll
+
+# コンテナに接続して、下記を実行すると http://127.0.0.1:4000// でサイトが確認できる
+# bundle exec jekyll serve --trace
