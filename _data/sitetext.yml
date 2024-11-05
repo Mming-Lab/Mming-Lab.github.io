@@ -128,4 +128,7 @@ footer:
     #   icon: "fab fa-twitter"
     # - url: https://facebook.com
     #   icon: "fab fa-facebook-f"
+  terms: 
+    title: "会員規約"
+    file: "assets/pdf/会員規約.pdf"
 
