@@ -17,8 +17,8 @@
 #theme: jekyll-agency
 remote_theme: raviriley/agency-jekyll-theme
 
-url    : "" # サイトの基本ホスト名とプロトコル（例：http://example.com
-baseurl: "" # あなたのサイトのサブパス（例：/blog
+url    : "https://mming-lab.github.io" # サイトの基本ホスト名とプロトコル（例：http://example.com
+baseurl: "/" # あなたのサイトのサブパス（例：/blog
 
 title      : "mming -ミング-"
 email      : "mming.lab＠gmail.com" #これはまた、電子メールでのお問い合わせフォームの送信先でもあります。
