@@ -2,15 +2,17 @@
 # Work based on https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml
 #
 nav:
+  - title: "教室方針"
+    section: about
   - title: "カリキュラム"
     section: services
   - title: "詳細情報"
     section: portfolio
-  - title: "教室方針"
-    section: about
   # - title: "沿革"
   #   section: timeline
   - title: "スタッフ"
     section: team
   - title: "アクセスガイド"
     section: contact
+  - title: "お問い合わせ"
+    section: inquiry 

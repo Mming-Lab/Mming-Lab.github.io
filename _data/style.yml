@@ -4,8 +4,9 @@
 highlight: "#54bfff" # 使ってない
 white: "#54bfff"  # リンクとかボタンの色
 black: "#212529" #"#212529"
-
+navbar-background: "#0716ff" # ナビゲーションバーの背景色
 
 #Image Customization
-header-image: "../img/桜島と月.png"
-contact-image: "../img/map-image.png"
+header-image: "" # "../img/桜島と月.png"
+contact-image: "" # "../img/map-image.png"
+header-video: "../assets/img/TOP_QR"
