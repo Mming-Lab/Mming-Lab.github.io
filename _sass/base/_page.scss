@@ -44,6 +44,9 @@ h6 {
     text-transform: none;
     @include serif-font;
   }
+  // 文字を前面にする
+  position: relative;
+  z-index: 20;
 }
 @media (min-width: 768px) {
   section {
