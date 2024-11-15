@@ -95,6 +95,25 @@
       margin-top: 0;
       margin-bottom: 30px;
     }
+    ul.list-inline-left {
+      margin-top: 0;
+      margin-bottom: 30px;
+      text-align: left;
+      list-style: none;
+    }
+    table{
+      margin: 0 auto;
+      width: 100%;
+      th {
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid $gray-300;
+      }
+      td {
+        padding: 10px;
+        border-bottom: 1px solid $gray-300;
+      }
+    }
     img {
       margin-bottom: 30px;
     }
