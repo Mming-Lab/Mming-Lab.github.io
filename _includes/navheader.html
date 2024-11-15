@@ -48,17 +48,8 @@
 
 
   <!-- Header -->
-  <header class="masthead" id="mainNav">
+  <header class="masthead">
     <div class="container">  
-
-      {%- if site.data.style.header-video -%}
-        <!-- ヘッダーの背景動画 -->
-        <video poster="{{ site.data.style.header-video }}.png" playsinline autoplay muted loop>
-        <source src="{{ site.data.style.header-video }}.webm" type="video/webm">
-        <source src="{{ site.data.style.header-video }}.mp4" type="video/mp4">
-        </video>
-      {%- endif -%}
-
       <div class="intro-text">
         {%- if site.data.sitetext.header.title -%}
             <div class="intro-lead-in">{{ site.data.sitetext.header.title | markdownify }}</div>
@@ -71,5 +62,14 @@
         {%- endif -%}
       </div>
     </div>
+
+    {%- if site.data.style.header-video -%}
+    <!-- ヘッダーの背景動画 -->
+    <video poster="{{ site.data.style.header-video }}.png" playsinline autoplay muted loop>
+    <source src="{{ site.data.style.header-video }}.webm" type="video/webm">
+    <source src="{{ site.data.style.header-video }}.mp4" type="video/mp4">
+    </video>
+    {%- endif -%}
+
   </header>
   <!-- End Header -->
