@@ -7,6 +7,8 @@ black: "#212529" #"#212529"
 navbar-background: "#0716ff" # ナビゲーションバーの背景色
 
 #Image Customization
-header-image: "../img/TOP_QR.png" # "../img/桜島と月.png"
-contact-image: "" # "../img/map-image.png"
-header-video: "../assets/img/TOP_QR"
+header-image: "../img/壮大の自然と月.png"
+# header-image: "../img/桜島と月.png"
+# contact-image: "" # "../img/map-image.png"
+# header-video: "../assets/img/TOP_QR" #_masthead.scssのbackground-imageをコメントアウトする必要あり
+# header-image: "../img/TOP_QR.png"
