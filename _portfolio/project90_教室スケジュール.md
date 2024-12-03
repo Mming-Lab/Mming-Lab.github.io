@@ -18,7 +18,7 @@ caption:
 <div class="row">
   <div class="col-lg-12 text-center">
     <div class="embed-responsive embed-responsive-16by9">
-      <iframe src="https://calendar.google.com/calendar/embed?src=c00249abe49d2427aa7e8ed1b4cbc1c13d183b312fad1993f9dde0164da73b69%40group.calendar.google.com&ctz=UTC"" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      <iframe src="https://calendar.google.com/calendar/embed?src=c00249abe49d2427aa7e8ed1b4cbc1c13d183b312fad1993f9dde0164da73b69%40group.calendar.google.com&ctz=UTC" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
   </div>
 </div> 
