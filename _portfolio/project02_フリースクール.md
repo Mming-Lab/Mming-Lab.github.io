@@ -23,4 +23,9 @@ caption:
 - 探究学習
 - フリースペース
 
-**すらら**[![すらら](https://surala.jp/images/common/logo.png){:class="img-fluid d-block mx-auto"}](https://surala.jp/daysurala/about/){:target="_blank"}
+---
+[![すらら](https://surala.jp/images/common/logo.png){:class="img-fluid d-block mx-auto"}](https://surala.jp/type/truancy){:target="_blank"}
+
+{:.list-inline }
+- 小学１・２年生：国語・算数
+- 小学３～６年生：国語・算数・理科・社会

@@ -95,20 +95,20 @@ clients:
   max-height: 50px
   horizontal-scrolling: "" #"yes/no"
   list:
-    - title: "Minecraftカップ"
-      url: https://minecraftcup.com/
-      logo: https://minecraftcup.com/2022/wp-content/themes/minecraft/img/common/logo_2024.png
-    # - title: "教育版マインクラフト"
-    #   url: https://education.minecraft.net/ja-jp
-    #   logo: https://education.minecraft.net/content/dam/education-edition/logos/education-minecraft-logo.png
+    - title: "教育版マインクラフト"
+      url: https://education.minecraft.net/ja-jp
+      logo: https://education.minecraft.net/content/dam/education-edition/logos/education-minecraft-logo.png
     - title: "すらら"
-      url: https://surala.jp/daysurala/about/
+      url: https://surala.jp/type/disability
       logo: https://surala.jp/images/common/logo.png
-    - title: "マルヤガーデンズ"
-      url: https://www.maruya-gardens.com/
-      logo: https://www.maruya-gardens.com/common/images/common/symbol.png
+    - title: "Minecraftカップ"
+      url: https://minecraftcup.com
+      logo: https://minecraftcup.com/2022/wp-content/themes/minecraft/img/common/logo_2024.png
+    # - title: "マルヤガーデンズ"
+    #   url: https://www.maruya-gardens.com/
+    #   logo: https://www.maruya-gardens.com/common/images/common/symbol.png
     - title: "じぶんらしい暮らしYUTAR"
-      url: https://yutari.link/
+      url: https://yutari.link
       logo: assets/img/clients/yutari-link.png
 
 contact:
