@@ -11,11 +11,11 @@ caption:
   subtitle: 時間割と料金
   thumbnail: assets/img/portfolio/02_フリースクー_ミニ.png
 ---
-# mming＋
+# mming＋ -ミング プラス-
 ## 開設準備中
 
 ---
-### 予定しているの活動内容
+### 予定している活動
 
 {:.list-inline }
 - すららを利用した学習支援
