@@ -85,10 +85,12 @@ team:
       social:
         - url: https://twitter.com/Tomohisa_YUTARI
           icon: "fab fa-twitter"
-        - url: https://www.facebook.com/profile.php?id=100081525017355
-          icon: "fab fa-facebook-f"
         - url: https://www.credly.com/badges/cd089180-e5f5-44bf-bb25-b3dafb703f8e/public_url
           icon: "assets/img/team/minecraft-education-ambassador.png"
+        - url: https://www.instagram.com/miyanaga.tomohisa
+          icon: "fab fa-instagram"
+        # - url: https://www.facebook.com/profile.php?id=100081525017355
+        #   icon: "fab fa-facebook-f"
 
 clients:
   section: clients
