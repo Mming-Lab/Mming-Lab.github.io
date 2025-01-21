@@ -1,4 +1,9 @@
 ---
+caption:
+  title: 体験教室
+  subtitle: 体験教室
+  thumbnail: assets/img/portfolio/教室イメージ4_400×300.jpg
+
 title: 体験教室
 subtitle: 体験教室
 isMc: false
@@ -7,10 +12,6 @@ list:
     path: assets/img/portfolio/教室イメージ4_700.jpg
   - type: video
     path: assets/img/portfolio/chicken.mp4
-caption:
-  title: 体験教室
-  subtitle: 体験教室
-  thumbnail: assets/img/portfolio/教室イメージ4_400×300.jpg
 ---
 
 {:.list-inline}

@@ -1,4 +1,9 @@
 ---
+caption:
+  title: 教室環境
+  subtitle: 発達凸凹っ子のための学習環境の最適化
+  thumbnail: assets/img/portfolio/センサリースペース2_400×300.jpg
+
 title: 発達凸凹っ子のための学習環境の最適化
 subtitle: 個性に合わせた配慮と柔軟性を持つ空間設計
 isMc: false
@@ -11,11 +16,6 @@ list:
     path: assets/img/portfolio/個別スペース700.jpg
   - type: img
     path: assets/img/portfolio/教室イメージ700.jpg
-
-caption:
-  title: 教室環境
-  subtitle: 発達凸凹っ子のための学習環境の最適化
-  thumbnail: assets/img/portfolio/センサリースペース2_400×300.jpg
 ---
 mmingの空間には、様々な形があります
 

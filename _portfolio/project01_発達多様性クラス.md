@@ -1,15 +1,15 @@
 ---
+caption:
+  title: 発達多様性クラス
+  subtitle: 時間割と料金
+  thumbnail: assets/img/portfolio/01_発達多様性クラス_ミニ.png
+
 title: 発達多様性クラス
 subtitle: 時間割と料金
 isMc: false
 list:
   - type: img
     path: assets/img/portfolio/01_発達多様性クラス.png
-
-caption:
-  title: 発達多様性クラス
-  subtitle: 時間割と料金
-  thumbnail: assets/img/portfolio/01_発達多様性クラス_ミニ.png
 ---
 
 現在は、**発達多様性クラスのみ**を先行募集しております。<br>その他のクラスの募集は後日行います。お待ちください。
