@@ -37,34 +37,34 @@ portfolio:
 
 timeline:
   title: "沿革"
-  text: "Lorem ipsum timeline"
-  section: timeline
+  text: "タイムライン"
+  section: タイムライン
   # left is the default
   #start_align: "left"
   events:
-    - title: "Our Humble Beginnings"
+    - title: "ささやかな始まり"
       year: "2009-2011"
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+      desc: "顧客がアディピシングのプロセスに注意を払うことは非常に重要です。それらは、賢者の楽しみを時にはその全体を拒否するようなものであり、実際にどこからでも拒否されるべきものですが、それらはまた、それらを賞賛する人々の苦痛にも当てはまります。"
       image: assets/img/timeline/1.jpg
       alt:
-    - title: "An Agency is Born"
-      year: "March 2011"
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+    - title: "代理店の誕生"
+      year: "2011年3月"
+      desc: "顧客がアディピシングのプロセスに注意を払うことは非常に重要です。それらは、賢者の楽しみを時にはその全体を拒否するようなものであり、実際にどこからでも拒否されるべきものですが、それらはまた、それらを賞賛する人々の苦痛にも当てはまります。"
       image: assets/img/timeline/2.jpg
       alt:
-    - title: "Jekyll Theme is created"
+    - title: "Jekyllテーマ作成"
       year: "2019"
-      desc: "Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation."
+      desc: "Ravi Riley は、Bootstrap ベースのテーマである Agency を Jekyll テーマに変換しました。Jekyll テーマは、Ruby gem として、またはリモートでインストールできます。詳細については、ドキュメントを参照してください"
       image: assets/img/timeline/3.jpg
       alt: image alt text
-    - title: "Title"
+    - title: "タイトル"
       year: "2009-2011"
-      desc: "Your description here, **Markdown** is fully supported."
+      desc: "ここにあるあなたの記述、**Markdown**は完全にサポートされています。"
       image: assets/img/timeline/4.jpg
       alt:
       # you can enforce the alignment
       align: right
-  end: "Be Part <br> of Our <br> Story!"
+  end: "私たちの<br>物語の<br>一部となりましょう！"
 
 team:
   title: "スタッフ"
