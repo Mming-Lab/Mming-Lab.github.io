@@ -4,30 +4,48 @@
 
 header:
   title: "mming -ミング-"
-  text: "教育版マインクラフトでプログラミングを楽しもう！<br />発達多様性クラス募集中<br />"
+  text: "発達凸凹の子どもの可能性を最大限に引き出すプログラミング教室"
   button: 詳しく
-  buttonlink: "#portfolio"
+  buttonlink: "#services"
 
 about:
-  title: "教室方針"
-  text: "学校でも療育でもない、もう一つの居場所になるプログラミング教室"
-  body: "子どもに習い事をさせたいけど…教室に入れるだろうか？理解のある関わり方をしてもらえるだろうか？そんな不安を感じたことはありませんか？プログラミング教室mmingは「発達に凸凹のある子どもやその家庭の選択肢を増やしたい」という思いで立ち上げた教室です。発達障害やグレーゾーン、学校になじむのが難しい子どもたちが自分らしくいられる場所になるよう、環境や関わりに配慮しており、アプローチや指導は子どもに応じた方法です。エンジニアが学びやすい環境の開発も行うので困り感についてもご相談ください！子どもの追求心のサポートや得意を伸ばすことに焦点を当て、お子様が自信を持って成長できるようサポートします。"
+  title: "教室の方針"
+  text: "発達に凸凹のある子どもの学びと成長を支援する特別な教室"
+  body: "「うちの子は教室に馴染めるだろうか？」「理解してもらえるだろうか？」そんな不安を抱えた保護者の方々へ。mming -ミング-は、発達に凸凹のあるお子様とその家族のために生まれた特別な教室です。学校でも療育でもない、もう一つの居場所。ここでは、お子様の独自の才能や興味を大切にし、安心して自分らしく学べる環境を提供しています。感覚過敏、コミュニケーションの難しさ、集中力の課題、これらは弱点ではなく、お子様の独自の特性です。私たちは、その特性を理解し、尊重し、最大限に活かすアプローチを心がけています。専門家でもある私たちが、お子様一人ひとりの困り感に寄り添い、個別最適化された学習環境を開発します。お子様の追求心を育み、得意なことを伸ばすことに全力を注ぎ、自信と喜びを持って成長できるようサポートします。"
   section: about
 
 services:
-  title: "カリキュラム"
-  text: "プログラミングのスキルだけでなく、お子様の「やってみたい!」「面白そう!!」から主体性や問題解決力が身に付く学びを目指しています。"
+  title: "教室の特徴"
+  text: "可能性を最大限に引き出すための特徴"
   section: services
   list:
-    - title: "toio（トイオ）"
-      desc: "小さなキューブ型ロボットトイ・toio（トイオ）。toioへの命令カードを並べてプログラミングの基本構造(順次、分岐、反復)を学びます。"
-      icon: fas fa-robot
-    - title: "マインクラフト"
-      desc: "教育版マインクラフトのコードビルダ機能をつかってプログラミングを学びます。エージェントという名のロボットにプログラミングで命令出来ます。ブロック、JavaScript、Pythonの3種類のプログラミング言語が使えます。"
-      icon: fas fa-cubes
-    - title: "エキスパート"
-      desc: "自分が作りたいアプリを作ります。プログラミング言語は自由。仕様書の読み方、情報収集のやり方を教えます。"
-      icon: fas fa-code
+    - title: "感覚に配慮した空間"
+      desc: "光、音、触感に過敏な子どもたちのために、徹底的に環境を最適化しています。センサリースペース、個別スペース、ワークスペースを用意し、その日の状態に合わせて選べます。"
+      icon: "fas fa-diagnoses"
+      # point:
+      #   - text: "調光可能な照明"
+      #   - text: "防音設計"
+      #   - text: "感覚過敏対応のスペース"
+    - title: "専門知識を持った講師陣"
+      desc: "発達障害の知識と対応について専門的な学習を積んだ講師が、お子様一人ひとりの特性に合わせて柔軟に対応します。"
+      icon: "fas fa-user-friends"
+      # point:
+      #   - text: "少人数制指導"
+      #   - text: "個別学習計画"
+      #   - text: "特性に応じた教材選択"
+    - title: "特性に合わせ教材をカスタム"
+      desc: "識字や左右分別の困難さなど、お子様の特性に合わせ教育版マインクラフトに独自にカスタマイズを加えることでプログラミングの概念や論理的思考の習得に専念できます。"
+      icon: "fas fa-cubes" #"fas fa-code"
+      # point:
+      #   - text: "3つのプログラミング言語"
+      #   - text: "創造的な学び"
+      #   - text: "オリジナルのアドオン制作"
+      
+trial:
+  title: "まずは教室の雰囲気を感じてみませんか？"
+  text: "見学・無料体験は随時受付中です。お子様がリラックスできるよう、一度に1組ずつ体験教室を行っています。"
+  button: "無料体験のお申込み"
+  buttonlink: "https://forms.gle/xz8XFBwxpzadWekL7"
 
 portfolio:
   title: "詳細情報"
@@ -72,7 +90,7 @@ team:
   section: team
   people:
     - name: "宮永　あかり"
-      role: "<strong>代表</strong><br />発達障害生活環境のコーディネーター<br />発達障害児支援士<br />チャイルドカウンセラー<br />グラフィックデザイナー"
+      role: "<strong>代表</strong><br />発達障害当事者として、お子様と保護者の方の気持ちに寄り添った支援を心がけています。<br />発達障害児支援士<br />チャイルドカウンセラー<br />グラフィックデザイナー"
       image: assets/img/team/MIYANAGA_akari.jpg
       social:
         - url: https://www.instagram.com/akari_dekoboko/
@@ -80,17 +98,17 @@ team:
         # - url: https://www.facebook.com/profile.php?id=100089067379994
         #   icon: "fab fa-facebook-f"
     - name: "宮永　ともひさ"
-      role: "<strong>メンター</strong><br />システムエンジニア<br />教育版マインクラフトアンバサダー<br />Minecraftカップ地区大会審査員(第5・6回)"
+      role: "<strong>メンター</strong><br />テクノロジーを通じて、子どもたちの学びを革新的にサポートします。<br />システムエンジニア<br />教育版マインクラフトアンバサダー<br />Minecraftカップ地区大会審査員(第5・6回)"
       image: assets/img/team/tomohisa_image.jpg
       social:
-        - url: https://twitter.com/Tomohisa_YUTARI
-          icon: "fab fa-twitter"
         - url: https://www.credly.com/badges/cd089180-e5f5-44bf-bb25-b3dafb703f8e/public_url
           icon: "assets/img/team/minecraft-education-ambassador.png"
+        - url: https://twitter.com/Tomohisa_YUTARI
+          icon: "fab fa-twitter"
         - url: https://www.instagram.com/miyanaga.tomohisa
           icon: "fab fa-instagram"
-        # - url: https://www.facebook.com/profile.php?id=100081525017355
-        #   icon: "fab fa-facebook-f"
+        - url: https://www.facebook.com/profile.php?id=100081525017355
+          icon: "fab fa-facebook-f"
 
 clients:
   section: clients

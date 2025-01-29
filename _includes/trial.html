@@ -1,0 +1,21 @@
+<!-- 体験教室 -->
+<section class="page-section" id="{{ site.data.sitetext.trial.section | default: "trial" }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">{{ site.data.sitetext.trial.title | default: "" }}</h2>
+        <h3 class="section-subheading text-muted">{{ site.data.sitetext.trial.text | default: "" }}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <div class="large text-muted">{{ site.data.sitetext.trial.body | markdownify }}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">    
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ site.data.sitetext.trial.buttonlink }}" target="_blank">{{ site.data.sitetext.trial.button }}</a>
+    </div>
+  </div>
+</section>
+<!-- End 体験教室 -->

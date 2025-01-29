@@ -6,3 +6,12 @@
 .service-small {
   font-size: xx-small;
 }
+.service-img {
+  width: 125px;
+  height: 125px;
+  border: 3px solid fade-out($black, 0.9);
+}
+.service-info {
+  margin-bottom: 50px;
+  text-align: center;
+}

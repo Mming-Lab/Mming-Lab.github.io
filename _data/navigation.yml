@@ -2,10 +2,12 @@
 # Work based on https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml
 #
 nav:
-  - title: "教室方針"
+  - title: "教室の方針"
     section: about
-  - title: "カリキュラム"
+  - title: "教室の特徴"
     section: services
+  - title: "無料体験"
+    section: trial    
   - title: "詳細情報"
     section: portfolio
   # - title: "沿革"
