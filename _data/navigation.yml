@@ -8,12 +8,14 @@ nav:
     section: about
   - title: "無料体験"
     section: trial    
+  - title: "配慮した空間"
+    section: environment
+  - title: "スタッフ"
+    section: team
   - title: "詳細情報"
     section: portfolio
   # - title: "沿革"
   #   section: timeline
-  - title: "スタッフ"
-    section: team
   - title: "アクセスガイド"
     section: contact
   - title: "お問い合わせ"
