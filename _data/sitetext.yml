@@ -46,7 +46,7 @@ trial:
 environment:
   title: "特性に配慮した空間"
   text: "光や音に敏感な子どもに配慮し空間を整え「 ワークスペース」「個別スペース」「リラックススペース」といった異なる空間を自由に行き来することで周囲の刺激を避けて集中したい日もあれば、みんなと一緒に取り組みたい日もある、といった毎日変化する子どもたちのコンディションに合わせて環境を選択できるサポートをします。"
-  section: "trienvironmental"
+  section: "environment"
   striped: "yes"
   instagram:
     - id: "DAsN1KWPrLn"
