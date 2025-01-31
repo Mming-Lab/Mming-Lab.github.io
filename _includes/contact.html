@@ -1,10 +1,12 @@
-<!-- Contact -->
-<section class="bg-light page-section" id="{{ site.data.sitetext.contact.section | default: "contact" }}">
+<!-- アクセスガイド -->
+{% assign section-id = site.data.sitetext.contact.section | default: "contact" %}<!-- セクションID取得 -->
+<section class="page-section" id="{{section-id}}">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">{{ site.data.sitetext.contact.title | markdownify | default: Contact Us }}</h2>
-        {% if site.data.sitetext.contact.text %}  
+        <h2 class="section-heading text-uppercase">{{ site.data.sitetext.contact.title | markdownify | default: Contact
+          Us }}</h2>
+        {% if site.data.sitetext.contact.text %}
         <h3 class="section-subheading text-muted">{{ site.data.sitetext.contact.text | default: "" }}</h3>
         {% endif %}
       </div>
@@ -14,7 +16,8 @@
       <div class="col-lg-2"></div>
       <div class="col-lg-8 text-center">
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe src="{{site.data.sitetext.contact.map}}" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">読み込んでいます…</iframe>
+          <iframe src="{{site.data.sitetext.contact.map}}" style="border:1;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">読み込んでいます…</iframe>
         </div>
       </div>
       <div class="col-lg-2"></div>
@@ -28,3 +31,11 @@
   </div>
 </section>
 <!-- End Contact -->
+
+<!-- 背景色追加 -->
+{% if site.data.sitetext.contact.striped == "yes" %}
+<script>
+  document.getElementById("{{section-id}}").classList.add("bg-striped");
+</script>
+{% endif %}
+<!-- End 背景色追加 -->

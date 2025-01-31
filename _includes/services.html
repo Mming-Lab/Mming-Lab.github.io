@@ -1,5 +1,6 @@
 <!-- Services -->
-<section class="page-section" id="{{ site.data.sitetext.services.section | default: " services" }}">
+{% assign section-id = site.data.sitetext.services.section | default: "services" %}<!-- セクションID取得 -->
+<section class="page-section" id="{{section-id}}">
   <div class="container">
 
     <div class="row">
@@ -41,3 +42,11 @@
   </div>
 </section>
 <!-- End Services -->
+
+<!-- 背景色追加 -->
+{% if site.data.sitetext.services.striped == "yes" %}
+<script>
+  document.getElementById("{{section-id}}").classList.add("bg-striped");
+</script>
+{% endif %}
+<!-- End 背景色追加 -->

@@ -72,3 +72,8 @@ img::selection {
 img::-moz-selection {
   background: transparent;
 }
+
+// 背景色の設定
+.bg-striped {
+  background-color: $striped-color ;
+}

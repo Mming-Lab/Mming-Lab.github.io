@@ -21,6 +21,7 @@ $primary: {{ site.data.style.highlight | default: "#fed136" }} !default;
 $white: {{ site.data.style.white | default: "#fff" }} !default;
 $black: {{ site.data.style.black | default: "#000" }} !default;
 $navbar-background: {{ site.data.style.navbar-background | default: "#0716ff" }} !default;
+$striped-color: {{ site.data.style.striped-color | default: "#f8f9fa" }} !default;
 
 // Custom Images
 $header-image: "{{ site.data.style.header-image | default: "" }}";

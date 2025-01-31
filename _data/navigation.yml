@@ -3,20 +3,20 @@
 #
 nav:
   - title: "教室の特徴"
-    section: services
+    section: "services"
   - title: "教室の方針"
-    section: about
+    section: "about"
   - title: "無料体験"
-    section: trial    
+    section: "trial"    
   - title: "配慮した空間"
-    section: environment
+    section: "environment"
   - title: "スタッフ"
-    section: team
+    section: "team"
   - title: "詳細情報"
-    section: portfolio
+    section: "portfolio"
   # - title: "沿革"
   #   section: timeline
   - title: "アクセスガイド"
-    section: contact
+    section: "contact"
   - title: "お問い合わせ"
-    section: inquiry 
+    section: "inquiry" 

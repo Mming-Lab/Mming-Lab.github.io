@@ -1,5 +1,6 @@
 <!-- 体験教室 -->
-<section class="page-section" id="{{ site.data.sitetext.trial.section | default: "trial" }}">
+{% assign section-id = site.data.sitetext.trial.section | default: "trial" %}<!-- セクションID取得 -->
+<section class="page-section" id="{{section-id}}">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -13,9 +14,18 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-8 mx-auto text-center">    
-      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ site.data.sitetext.trial.buttonlink }}" target="_blank">{{ site.data.sitetext.trial.button }}</a>
+      <div class="col-lg-8 mx-auto text-center">
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
+          href="{{ site.data.sitetext.trial.buttonlink }}" target="_blank">{{ site.data.sitetext.trial.button }}</a>
+      </div>
     </div>
-  </div>
 </section>
 <!-- End 体験教室 -->
+
+<!-- 背景色追加 -->
+{% if site.data.sitetext.trial.striped == "yes" %}
+<script>
+  document.getElementById("{{section-id}}").classList.add("bg-striped");
+</script>
+{% endif %}
+<!-- End 背景色追加 -->

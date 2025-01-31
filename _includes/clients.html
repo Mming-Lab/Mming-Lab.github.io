@@ -1,14 +1,25 @@
 <!-- Clients -->
-<section class="bg-light py-5" id="{{ site.data.sitetext.clients.section | default: "clients" }}">
+{% assign section-id = site.data.sitetext.clients.section | default: "clients" %}<!-- セクションID取得 -->
+<section class="py-5" id="{{section-id}}">
   <div class="container">
-    <div class="row" {% if site.data.sitetext.clients.horizontal-scrolling == "yes" %} id="scrolling-clients" {% endif %}>
-    {% for client in site.data.sitetext.clients.list %}
+    <div class="row" {% if site.data.sitetext.clients.horizontal-scrolling=="yes" %} id="scrolling-clients" {% endif %}>
+      {% for client in site.data.sitetext.clients.list %}
       <div class="col-md-3 col-sm-6">
         <a href="{{ client.url }}">
-          <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{{ client.title }}" style="max-height: {{ site.data.sitetext.clients.max-height | default: "100px" }}">
+          <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{{ client.title }}"
+            style="max-height: {{ site.data.sitetext.clients.max-height | default: " 100px" }}">
         </a>
       </div>
-    {% endfor %}
+      {% endfor %}
     </div>
   </div>
 </section>
+<!-- End Clients -->
+
+<!-- 背景色追加 -->
+{% if site.data.sitetext.clients.striped == "yes" %}
+<script>
+  document.getElementById("{{section-id}}").classList.add("bg-striped");
+</script>
+{% endif %}
+<!-- End 背景色追加 -->

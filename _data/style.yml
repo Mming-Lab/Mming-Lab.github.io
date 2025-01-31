@@ -5,6 +5,7 @@ highlight: "#54bfff" # 使ってない
 white: "#54bfff"  # リンクとかボタンの色
 black: "#212529" #"#212529"
 navbar-background: "#0716ff" # ナビゲーションバーの背景色
+striped-color: "#F4FAFF" # 背景色
 
 #Image Customization
 header-image: "../img/マイクラ風2.png"

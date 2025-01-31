@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="footer" id="footer" style="background-color: white">
+<footer class="footer" id="footer">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-4">
@@ -58,3 +58,10 @@
 </script>
 {% endif %}
 <!-- End Footer -->
+<!-- 背景色追加 -->
+{% if site.data.sitetext.footer.striped == "yes" %}
+<script>
+  document.getElementById("footer").classList.add("bg-striped");
+</script>
+{% endif %}
+<!-- End 背景色追加 -->

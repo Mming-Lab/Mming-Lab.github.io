@@ -1,5 +1,6 @@
 <!-- 感覚に配慮した空間-->
-<section class="bg-light page-section" id="{{ site.data.sitetext.environment.section | default: "environment" }}">
+{% assign section-id = site.data.sitetext.environment.section | default: "environment" %}<!-- セクションID取得 -->
+<section class="page-section" id="{{section-id}}">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -15,7 +16,7 @@
                     data-instgrm-permalink="https://www.instagram.com/p/{{ instagram.id }}/?utm_source=ig_embed&amp;utm_campaign=loading"
                     data-instgrm-version="14"
                     style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                    <div style="padding:16px;"> 
+                    <div style="padding:16px;">
                         <a href="https://www.instagram.com/p/{{ instagram.id }}/?utm_source=ig_embed&amp;utm_campaign=loading"
                             style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
                             target="_blank">
@@ -109,3 +110,11 @@
         </div>
     </div>
 </section>
+
+<!-- 背景色追加 -->
+{% if site.data.sitetext.environment.striped == "yes" %}
+<script>
+    document.getElementById("{{section-id}}").classList.add("bg-striped");
+</script>
+{% endif %}
+<!-- End 背景色追加 -->
