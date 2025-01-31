@@ -1,7 +1,10 @@
 <!-- 教室の方針 -->
 {% assign section-id = site.data.sitetext.about.section | default: "about" %}<!-- セクションID取得 -->
+<!-- 背景色判定 -->
 {% if site.data.sitetext.about.striped == 'yes' %}
   {% assign bg-striped = "bg-striped" %}
+{% else %}
+  {% assign bg-striped = "" %}
 {% endif %}
 
 <section class="page-section {{bg-striped}}" id="{{section-id}}">
@@ -119,11 +122,3 @@
   </div>
 </section>
 <!-- End 教室の方針 -->
-
-<!-- 背景色追加 -->
-<!-- {% if site.data.sitetext.about.striped == "yes" %}
-<script>
-  document.getElementById("{{section-id}}").classList.add("bg-striped");
-</script>
-{% endif %} -->
-<!-- End 背景色追加 -->

@@ -1,6 +1,12 @@
-<!-- Portfolio Grid -->
+<!-- 詳細情報 -->
 {% assign section-id = site.data.sitetext.portfolio.section | default: "portfolio" %}<!-- セクションID取得 -->
-<section class="page-section" id="{{section-id}}">
+<!-- 背景色判定 -->
+{% if site.data.sitetext.portfolio.striped == 'yes' %}
+  {% assign bg-striped = "bg-striped" %}
+{% else %}
+  {% assign bg-striped = "" %}
+{% endif %}
+<section class="page-section {{bg-striped}}" id="{{section-id}}">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -30,11 +36,4 @@
   </div>
 </section>
 {% include modals.html %}
-
-<!-- 背景色追加 -->
-{% if site.data.sitetext.portfolio.striped == "yes" %}
-<script>
-  document.getElementById("{{section-id}}").classList.add("bg-striped");
-</script>
-{% endif %}
-<!-- End 背景色追加 -->
+<!-- End 詳細情報 -->

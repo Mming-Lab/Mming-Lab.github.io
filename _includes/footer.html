@@ -1,5 +1,11 @@
 <!-- Footer -->
-<footer class="footer" id="footer">
+ <!-- 背景色判定 -->
+{% if site.data.sitetext.footer.striped == 'yes' %}
+  {% assign bg-striped = "bg-striped" %}
+{% else %}
+  {% assign bg-striped = "" %}
+{% endif %}
+<footer class="footer {{bg-striped}}" id="footer">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-4">
@@ -58,10 +64,3 @@
 </script>
 {% endif %}
 <!-- End Footer -->
-<!-- 背景色追加 -->
-{% if site.data.sitetext.footer.striped == "yes" %}
-<script>
-  document.getElementById("footer").classList.add("bg-striped");
-</script>
-{% endif %}
-<!-- End 背景色追加 -->

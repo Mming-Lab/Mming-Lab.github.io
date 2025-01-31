@@ -1,6 +1,12 @@
-<!-- Services -->
+<!-- 教室の特徴 -->
 {% assign section-id = site.data.sitetext.services.section | default: "services" %}<!-- セクションID取得 -->
-<section class="page-section" id="{{section-id}}">
+<!-- 背景色判定 -->
+{% if site.data.sitetext.services.striped == 'yes' %}
+  {% assign bg-striped = "bg-striped" %}
+{% else %}
+  {% assign bg-striped = "" %}
+{% endif %}
+<section class="page-section {{bg-striped}}" id="{{section-id}}">
   <div class="container">
 
     <div class="row">
@@ -41,12 +47,4 @@
     </div>
   </div>
 </section>
-<!-- End Services -->
-
-<!-- 背景色追加 -->
-{% if site.data.sitetext.services.striped == "yes" %}
-<script>
-  document.getElementById("{{section-id}}").classList.add("bg-striped");
-</script>
-{% endif %}
-<!-- End 背景色追加 -->
+<!-- End 教室の特徴 -->
