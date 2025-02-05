@@ -22,9 +22,9 @@ baseurl: "/" # あなたのサイトのサブパス（例：/blog
 
 title      : "mming -ミング-"
 email      : "mming.lab＠gmail.com" #これはまた、電子メールでのお問い合わせフォームの送信先でもあります。
-description: "発達多様性(発達障害・グレーゾーン)クラスがある鹿児島のプログラミング教室。無料体験レッスン受付中。"
+description: "発達多様性(発達障害・グレーゾーン)クラスがある鹿児島のプログラミング教室。無料体験教室受付中。"
 author     : "mming -ミング-"
-keywords   : "発達障害,グレーゾーン,発達多様性,プログラミング教室,鹿児島,無料体験レッスン"
+keywords   : "発達障害,グレーゾーン,発達多様性,プログラミング教室,鹿児島,教育版マインクラフト,プログラミング"
 logo: #任意、デフォルトはサイトタイトル
   path: assets\img\mmingロゴ_白水色.png
   height: 52 #px単位の高さ、デフォルトは52px
@@ -49,7 +49,7 @@ plugins:
 ogp:
   site_name: "mming -ミング-"
   title: "【公式】mming -ミング- | 発達多様性の可能性を最大限に引き出すプログラミング教室"
-  description: "発達多様性(発達障害・グレーゾーン)クラスがある鹿児島のプログラミング教室。無料体験レッスン受付中。"
+  description: "発達多様性(発達障害・グレーゾーン)クラスがある鹿児島のプログラミング教室。無料体験教室受付中。"
   image: "https://mming-lab.github.io/assets/img/mming_ogp.png"
   url: "https://mming-lab.github.io"
   type: website
