@@ -20,7 +20,7 @@ remote_theme: raviriley/agency-jekyll-theme
 url    : "https://mming-lab.github.io" # サイトの基本ホスト名とプロトコル（例：http://example.com
 baseurl: "/" # あなたのサイトのサブパス（例：/blog
 
-title      : "【公式】mming -ミング- | 発達多様性の可能性を最大限に引き出すプログラミング教室"
+title      : "mming -ミング-"
 email      : "mming.lab＠gmail.com" #これはまた、電子メールでのお問い合わせフォームの送信先でもあります。
 description: "発達多様性(発達障害・グレーゾーン)クラスがある鹿児島のプログラミング教室。無料体験レッスン受付中。"
 author     : "mming -ミング-"
