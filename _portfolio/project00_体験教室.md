@@ -14,8 +14,11 @@ list:
     path: assets/img/portfolio/chicken.mp4
 ---
 
-{:.list-inline}
-- [発達多様性クラス申込フォーム](https://forms.gle/xz8XFBwxpzadWekL7)
-- 一般クラスの申込フォーム(準備中)
+### まずは教室の雰囲気を感じてみませんか？
+
+### お子様がリラックスできるよう、一度に1組ずつ体験教室を行っています。
+
+### [発達多様性クラス申込フォーム](https://forms.gle/xz8XFBwxpzadWekL7)
+
 
 
