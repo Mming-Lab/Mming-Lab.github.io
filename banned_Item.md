@@ -19,7 +19,7 @@ config.jsで禁止アイテムをリスト管理します。
     コンテキストメニューから[プログラムから開く] -> [Minecraft Education]を選択します。  
     ![01_プログラムから開く](/assets/img/banned_Item/01_プログラムから開く.png){:class="img-fluid d-block mx-auto"}
 
-2. Minecraft Educationが立ち上がり、インポートが完了したことを確認してください。  
+1. Minecraft Educationが立ち上がり、インポートが完了したことを確認してください。  
   ![02_インポート](/assets/img/banned_Item/02_インポート.png){:class="img-fluid d-block mx-auto"}
 
 ***
@@ -29,10 +29,10 @@ config.jsで禁止アイテムをリスト管理します。
 ### 📘ワールドに適用
 
 1. ワールドの設定画面を開きます。
-2. 禁止アイテム管理を有効化します。  
+1. 禁止アイテム管理を有効化します。  
    ![03_有効化](assets/img/banned_Item/03_有効化.png){:class="img-fluid d-block mx-auto"}
 
-3. 確認メッセージの[それでもパックを追加する]ボタンを押下します。  
+1. 確認メッセージの[それでもパックを追加する]ボタンを押下します。  
    ![04_アップデート](assets/img/banned_Item/04_アップデート.png){:class="img-fluid d-block mx-auto"}
 
 ### 📘config.jsの場所
@@ -47,23 +47,20 @@ config.jsはワールドフォルダの中にあります。
         マイクラでワールドを実行するとフォルダの更新日時が変わるので、更新日時から対象を推測します。  
         推測したフォルダ内の「levelname.txt」ファイルでワールド名を確認します。
 
-2. config.jsの場所  
+1. config.jsの場所  
   ワールドフォルダ内の「\behavior_packs\BannedItems\scripts\config.js」にあります。  
   ![05_パス](assets/img/banned_Item/05_パス.png){:class="img-fluid d-block mx-auto"}
 
 ### 📘アイテムの追記の仕方
 
 1. config.jsをテキストエディタで開きます。
-2. 既存のアイテム名の下に1行追加します。  
+1. 既存のアイテム名の下に1行追加します。  
     ![06_追記1](assets/img/banned_Item/06_追記1.png){:class="img-fluid d-block mx-auto"}
-
-3. 禁止したいアイテムを追加していきます。**<span style="color: #ff0000;">アイテム名は「"」で囲み、終わりに「,」が必要です</span>**。  
+1. 禁止したいアイテムを追加していきます。**<span style="color: #ff0000;">アイテム名は「"」で囲み、終わりに「,」が必要です</span>**。  
     ![07_追記2](assets/img/banned_Item/07_追記2.png){:class="img-fluid d-block mx-auto"}
-
-4. アイテム名は、コマンド入力時のオートコンプリートや、統合版マインクラフトの情報から調べてください。  
+1. アイテム名は、コマンド入力時のオートコンプリートや、統合版マインクラフトの情報から調べてください。  
     ![08_アイテム名](assets/img/banned_Item/08_アイテム名.png){:class="img-fluid d-block mx-auto"}
-
-5. config.jsを保存します。
+1. config.jsを保存します。
 
 ### 設定を反映
 
