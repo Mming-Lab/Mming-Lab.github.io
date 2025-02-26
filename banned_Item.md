@@ -12,9 +12,6 @@ config.jsで禁止アイテムをリスト管理します。
 ***
 
 ## 📚導入方法
-
-### 📘インポート
-
 1. ダウンロードした「禁止アイテム管理.mcpack」ファイルを選択し、右クリックします。
     コンテキストメニューから[プログラムから開く] -> [Minecraft Education]を選択します。
     ![01_プログラムから開く](/assets/img/banned_Item/01.png){:class="img-fluid d-block mx-auto"}
