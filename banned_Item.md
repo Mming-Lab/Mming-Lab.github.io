@@ -16,8 +16,8 @@ config.jsで禁止アイテムをリスト管理します。
 ### 📘インポート
 
 1. ダウンロードした「禁止アイテム管理.mcpack」ファイルを選択し、右クリックします。
-   コンテキストメニューから[プログラムから開く] -> [Minecraft Education]を選択します。
-   ![01_プログラムから開く](/assets/img/banned_Item/01.png){:class="img-fluid d-block mx-auto"}
+    コンテキストメニューから[プログラムから開く] -> [Minecraft Education]を選択します。
+    ![01_プログラムから開く](/assets/img/banned_Item/01.png){:class="img-fluid d-block mx-auto"}
 1.  Minecraft Educationが立ち上がり、インポートが完了したことを確認してください。
     ![02_インポート](/assets/img/banned_Item/02.png){:class="img-fluid d-block mx-auto"}
 
@@ -29,10 +29,9 @@ config.jsで禁止アイテムをリスト管理します。
 
 1. ワールドの設定画面を開きます。
 1. 禁止アイテム管理を有効化します。  
-   ![03_有効化](assets/img/banned_Item/03_有効化.png){:class="img-fluid d-block mx-auto"}
-
+   ![03_有効化](assets/img/banned_Item/03.png){:class="img-fluid d-block mx-auto"}
 1. 確認メッセージの[それでもパックを追加する]ボタンを押下します。  
-   ![04_アップデート](assets/img/banned_Item/04_アップデート.png){:class="img-fluid d-block mx-auto"}
+   ![04_アップデート](assets/img/banned_Item/04.png){:class="img-fluid d-block mx-auto"}
 
 ### 📘config.jsの場所
 
@@ -47,18 +46,18 @@ config.jsはワールドフォルダの中にあります。
         推測したフォルダ内の「levelname.txt」ファイルでワールド名を確認します。
 
 1. config.jsの場所  
-  ワールドフォルダ内の「\behavior_packs\BannedItems\scripts\config.js」にあります。  
-  ![05_パス](assets/img/banned_Item/05_パス.png){:class="img-fluid d-block mx-auto"}
+    ワールドフォルダ内の「\behavior_packs\BannedItems\scripts\config.js」にあります。  
+    ![05_パス](assets/img/banned_Item/05.png){:class="img-fluid d-block mx-auto"}
 
 ### 📘アイテムの追記の仕方
 
 1. config.jsをテキストエディタで開きます。
 1. 既存のアイテム名の下に1行追加します。  
-    ![06_追記1](assets/img/banned_Item/06_追記1.png){:class="img-fluid d-block mx-auto"}
+    ![06_追記1](assets/img/banned_Item/06.png){:class="img-fluid d-block mx-auto"}
 1. 禁止したいアイテムを追加していきます。**<span style="color: #ff0000;">アイテム名は「"」で囲み、終わりに「,」が必要です</span>**。  
-    ![07_追記2](assets/img/banned_Item/07_追記2.png){:class="img-fluid d-block mx-auto"}
+    ![07_追記2](assets/img/banned_Item/07.png){:class="img-fluid d-block mx-auto"}
 1. アイテム名は、コマンド入力時のオートコンプリートや、統合版マインクラフトの情報から調べてください。  
-    ![08_アイテム名](assets/img/banned_Item/08_アイテム名.png){:class="img-fluid d-block mx-auto"}
+    ![08_アイテム名](assets/img/banned_Item/08.png){:class="img-fluid d-block mx-auto"}
 1. config.jsを保存します。
 
 ### 設定を反映
@@ -68,7 +67,6 @@ config.jsはワールドフォルダの中にあります。
 - ワールドを開き直す
 - reloadコマンドを実行して、スクリプトを再読み込みする  
     ![09_reload](assets/img/banned_Item/09_reload.png){:class="img-fluid d-block mx-auto"}
-
 
 
 ***
