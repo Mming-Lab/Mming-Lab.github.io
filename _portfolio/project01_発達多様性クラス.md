@@ -28,14 +28,13 @@ list:
 - <span style="color: #ff0000; ">●</span>第 1 ・ 3　土曜　①10:30～11:30　プログラミングコース
 - <span style="color: #0000ff; ">●</span>第 1 ・ 3　土曜　②13:00～14:00　デジタルアドベンチャーコース
 - <span style="color: #ff9900; ">●</span>第 2 ・ 4　土曜　②13:00～14:00　プログラミングコース
-- <span style="color: #6aa84f; ">●</span>第 1 ・ 2 ・ 4　土曜　①10:30～11:30　月 3 回コース　プログラミングコース
-- <span style="color: #e06666; ">●</span>第 1 ・ 2 ・ 3 ・ 4　土曜　②13:00～14:00　月 4 回コース　PG＆デジタルADVコース	
+- <span style="color: #6aa84f; ">●</span>第 1 ・ 2 ・ 4　土曜　①10:30～11:30　月 3 回コース　プログラミングコース	
 
 <table>
   <thead>
     <tr>
       <th >日程</th>
-      <th colspan="5">コース</th>
+      <th colspan="4">コース</th>
       <th >時刻</th>
     </tr>
   </thead>
@@ -46,7 +45,6 @@ list:
     <td></td>
     <td></td>
     <td><span style="color: #6aa84f; ">●</span></td>
-    <td></td>
     <td>①10:30～11:30</td>
   </tr>
   <tr>
@@ -54,12 +52,10 @@ list:
     <td><span style="color: #0000ff; ">●</span></td>
     <td></td>
     <td></td>
-    <td><span style="color: #e06666; ">●</span></td>
     <td>②13:00～14:00</td>
   </tr>
   <tr>
     <td rowspan="2">第２土曜日</td>
-    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -71,7 +67,6 @@ list:
     <td></td>
     <td><span style="color: #ff9900; ">●</span></td>
     <td></td>
-    <td><span style="color: #e06666; ">●</span></td>
     <td>②13:00～14:00</td>
   </tr>
   <tr>
@@ -80,7 +75,6 @@ list:
     <td></td>
     <td></td>
     <td><span style="color: #6aa84f; ">●</span></td>
-    <td></td>
     <td>①10:30～11:30</td>
   </tr>
   <tr>
@@ -88,7 +82,6 @@ list:
     <td><span style="color: #0000ff; ">●</span></td>
     <td></td>
     <td></td>
-    <td><span style="color: #e06666; ">●</span></td>
     <td>②13:00～14:00</td>
   </tr>
   <tr>
@@ -97,7 +90,6 @@ list:
     <td></td>
     <td></td>
     <td><span style="color: #6aa84f; ">●</span></td>
-    <td></td>
     <td>①10:30～11:30</td>
   </tr>
   <tr>
@@ -105,7 +97,6 @@ list:
     <td></td>
     <td><span style="color: #ff9900; ">●</span></td>
     <td></td>
-    <td><span style="color: #e06666; ">●</span></td>
     <td>②13:00～14:00</td>
   </tr>
   </tbody>
@@ -114,8 +105,7 @@ list:
 ---
 　
 ##### 料金
-**入会金：**16,500円  
-※2025年03月より、入会金を24,000円に改訂いたします。
+**入会金：**24,000円  
 
 <table>
   <thead>
@@ -132,10 +122,6 @@ list:
   <tr>
   <td><span style="color: #6aa84f; ">●</span></td>
   <td>19,500円 / 3 回　</td>
-  </tr>
-  <tr>
-  <td><span style="color: #e06666; ">●</span></td>
-  <td>26,000円 / 4 回</td>
   </tr>
   </tbody>
 </table>
