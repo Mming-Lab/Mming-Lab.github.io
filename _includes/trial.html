@@ -2,9 +2,9 @@
 {% assign section-id = site.data.sitetext.trial.section | default: "trial" %}<!-- セクションID取得 -->
 <!-- 背景色判定 -->
 {% if site.data.sitetext.trial.striped == 'yes' %}
-  {% assign bg-striped = "bg-striped" %}
+{% assign bg-striped = "bg-striped" %}
 {% else %}
-  {% assign bg-striped = "" %}
+{% assign bg-striped = "" %}
 {% endif %}
 <section class="page-section {{bg-striped}}" id="{{section-id}}">
   <div class="container">
@@ -21,9 +21,10 @@
     </div>
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
-          href="{{ site.data.sitetext.trial.buttonlink }}" target="_blank">{{ site.data.sitetext.trial.button }}</a>
+        <a class="btn btn-primary btn-xl text-uppercase portfolio-link" data-toggle="modal"
+          href="{{ site.data.sitetext.trial.buttonlink }}">{{ site.data.sitetext.trial.button }}</a>
       </div>
     </div>
+
 </section>
 <!-- End 体験教室 -->
