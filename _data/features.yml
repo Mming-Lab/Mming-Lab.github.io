@@ -154,7 +154,7 @@ items:
       - title: "前半30分：マンツーマンでじっくり学習"
         content: "周りを気にせず、自分のペースで確実にスキルを身につけます"
         points:
-          - icon: "pace"
+          - icon: "speed"
             text: "その子のペースに完全に合わせる"
           - icon: "adjust"
             text: "習得度に応じて内容を柔軟に調整"
