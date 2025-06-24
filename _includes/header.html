@@ -27,27 +27,7 @@
             <!-- ナビゲーションメニュー -->
             <ul class="nav-menu" id="main-menu">
                 {% if page.url contains 'trial' %}
-                    <!-- Trial page navigation -->
-                    <li class="nav-item">
-                        <a href="/" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">home</span>
-                            トップページ
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#aptitude-start" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">quiz</span>
-                            適性チェック
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#trial-application" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">event</span>
-                            体験申込み
-                        </a>
-                    </li>
-                {% elsif page.url contains 'blog' or page.layout == 'post' %}
-                    <!-- Blog/Post page navigation -->
+                    <!-- Trial page navigation - 統一ナビゲーション -->
                     <li class="nav-item">
                         <a href="/" class="nav-link">
                             <span class="material-icons" aria-hidden="true">home</span>
@@ -56,7 +36,45 @@
                     </li>
                     <li class="nav-item">
                         <a href="/#about" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">info</span>
+                            教室について
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/#features" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">star</span>
+                            特徴
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/#faq" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">help</span>
+                            FAQ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blog/" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">article</span>
+                            お知らせ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/trial/" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">event</span>
+                            体験申込み
+                        </a>
+                    </li>
+                {% elsif page.url contains 'blog' or page.layout == 'post' %}
+                    <!-- Blog/Post page navigation - 統一ナビゲーション -->
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
                             <span class="material-icons" aria-hidden="true">home</span>
+                            トップページ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/#about" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">info</span>
                             教室について
                         </a>
                     </li>
