@@ -16,7 +16,7 @@ description: "教育現場での活用を想定した教育版マインクラフ
 
 ## 教育版マインクラフト　禁止アイテム管理
 
-### [![禁止アイテム管理](https://kyouzai.jp/material/8565/){:target="_blank"}](https://kyouzai.jp/material/8565/){:target="_blank"}
+### [禁止アイテム管理](https://kyouzai.jp/material/8565/){:target="_blank"}
 
 特定のアイテムやブロックの使用を制限するためのビヘイビアーパック（ゲーム内の動作を変更するファイル群）です。これにより、先⽣は児童／⽣徒が学習目標に集中できる環境を整え、不適切なアイテムの使用を防止できます。
 
@@ -29,7 +29,7 @@ description: "教育現場での活用を想定した教育版マインクラフ
 
 ## 教育版マインクラフトのフラットテンプレート
 
-### [![フラットテンプレート](https://kyouzai.jp/material/7877/){:target="_blank"}](https://kyouzai.jp/material/7877/){:target="_blank"}
+### [フラットテンプレート](https://kyouzai.jp/material/7877/){:target="_blank"}
 
 JAVA版の環境を教育版で再現したテンプレートです。既存の知識や経験を活かしながら、教育版ならではの機能を使用できます。
 
@@ -42,7 +42,7 @@ JAVA版の環境を教育版で再現したテンプレートです。既存の�
 
 ## 教育版マインクラフトの日本語チュートリアル
 
-### [![日本語チュートリアル](https://kyouzai.jp/material/7585/){:target="_blank"}](https://kyouzai.jp/material/7585/){:target="_blank"}
+### [日本語チュートリアル](https://kyouzai.jp/material/7585/){:target="_blank"}
 
 教育版マインクラフトの基本操作を日本語で学べるリソースパック（ゲーム内の表示や音声を変更するファイル群）です。言語の壁を取り除くことで、誰もが直感的に操作を学ぶことができます。
 
