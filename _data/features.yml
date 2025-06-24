@@ -35,7 +35,7 @@ items:
     number: "01" # 表示番号（視覚的順序）
     title: "当事者による共感ベースの支援" # 特徴名（h3要素）
     summary: "代表自身が発達障害当事者。同じ経験をしてきたからこそ、お子様の気持ちに寄り添えます" # 要約（カード表面に表示）
-    icon: security # Material Iconsアイコン名
+    icon: favorite # Material Iconsアイコン名
     # 画像設定（画像スライダー用）
     images:
       main: # メイン画像（最初に表示）
@@ -55,20 +55,20 @@ items:
       - title: "同じ経験をしてきた指導者" # 詳細見出し
         content: "一般的な対応に加えて、実体験に基づいた具体的なサポートを提供します" # 説明文
         points: # 具体的なポイント（アイコン付きリスト）
-          - icon: "psychology" # Material Iconsアイコン
+          - icon: "hearing" # Material Iconsアイコン
             text: "感覚過敏の辛さを体感として知っています"
-          - icon: "volunteer_activism"
+          - icon: "visibility"
             text: "「できない」の裏にある本当の困りごとに気づけます"
-          - icon: "favorite"
+          - icon: "chat_bubble"
             text: "お子様が安心できる声かけとタイミングを心得ています"
       - title: "保護者の方とも同じ目線で"
         content: "お子様だけでなく、保護者の方の不安や悩みにも当事者視点でお応えします"
         points:
-          - icon: "forum"
+          - icon: "question_answer"
             text: "『うちの子だけ？』という不安に経験からお答えします"
           # - icon: "lightbulb"
           #   text: "家庭での接し方のヒントも具体的にアドバイス"
-          - icon: "handshake"
+          - icon: "feedback"
             text: "月次報告でお子様の様子をフィードバックします"
 
   # ========================================
@@ -78,7 +78,7 @@ items:
     number: "02" # 表示番号
     title: "完全カスタマイズされた学習環境" # 特徴名
     summary: "感覚特性も学習スタイルも十人十色。だから環境も教材も、お子様一人ひとりに合わせて調整します" # 要約
-    icon: tune # Material Icons（設定・調整を表現）
+    icon: settings # Material Icons（設定・調整を表現）
     images:
       main:
         src: "assets/images/features/environment_main.jpg"
@@ -116,27 +116,27 @@ items:
       - title: "その日の調子に合わせた環境選択"
         content: "体調や気分は日々変わるもの。だから毎回、最適な環境を選べます"
         points:
-          - icon: "monitor"
+          - icon: "groups"
             text: "学習や協働を行うワークスペース"
           - icon: "person"
             text: "刺激を避け、集中する個別スペース"
-          - icon: "weekend"
+          - icon: "height"
             text: "考えるときに動きたい子のための上下昇降デスク"
           # - icon: "light_mode"
           #   text: "照明：300〜1000ルクスで調整可能"
       - title: "お子様専用にカスタマイズした教材"
         content: "市販教材では対応できない、一人ひとりの特性に合わせた学習ツール"
         points:
-          - icon: "text_format"
+          - icon: "translate"
             text: "ふりがな対応：読み書き困難をサポート"
-          - icon: "extension"
+          - icon: "navigation"
             text: "航行灯仕様：左右弁別サポート"
 
   - id: "method"
     number: "03"
     title: "個別と協働のハイブリッド授業"
     summary: "60分で『できる』と『つながる』を両立。スキル習得と社会性向上を同時にサポート"
-    icon: school
+    icon: groups
     # images:
     #   main:
     #     src: "assets/images/features/method_main.jpg"
@@ -154,11 +154,11 @@ items:
       - title: "前半30分：マンツーマンでじっくり学習"
         content: "周りを気にせず、自分のペースで確実にスキルを身につけます"
         points:
-          - icon: "psychology"
+          - icon: "pace"
             text: "その子のペースに完全に合わせる"
-          - icon: "tune"
+          - icon: "adjust"
             text: "習得度に応じて内容を柔軟に調整"
-          - icon: "emoji_events"
+          - icon: "celebration"
             text: "小さな成功体験を積み重ねる"
       - title: "後半30分：マインクラフトで協働実践"
         content: "世界中の研究で実証された、発達特性のある子どもに最適な協働環境で実践"
