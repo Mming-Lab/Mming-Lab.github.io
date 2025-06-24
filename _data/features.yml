@@ -1,0 +1,181 @@
+# ========================================
+# mmingプログラミング教室 - 特徴セクション設定
+# ========================================
+#
+# 使用場所: index.html > features-section.html
+# 表示順序: ヒーロー → 教室について → **特徴（ここ）** → FAQ → 料金 → アクセス → チーム
+#
+# このファイルはmmingの3つの核心価値を定義し、
+# 画像スライダー付きのアコーディオンカードとして表示されます。
+#
+# 重要: 01→02→03の順序で表示され、各特徴は詳細な画像とポイントを含みます
+#
+
+# セクション基本情報
+title: "mmingが選ばれる3つの理由" # メインタイトル（h2要素として表示）
+subtitle: "発達特性のあるお子様に、本当に必要な支援を" # サブタイトル（補足説明）
+# ========================================
+# 3つの特徴詳細定義
+# ========================================
+#
+# 各特徴の構成:
+# - 基本情報: id, number, title, summary, icon
+# - 画像: main（メイン画像）+ detail（詳細画像群）
+# - 詳細説明: details配列（タイトル + 内容 + ポイント）
+#
+# 表示形式: アコーディオンカード + 画像スライダー
+# JavaScript: simple-main.js の toggleFeature() 関数で制御
+#
+
+items:
+  # ========================================
+  # 特徴01: 当事者性による支援
+  # ========================================
+  - id: "safety" # 識別子（CSS・JavaScript用）
+    number: "01" # 表示番号（視覚的順序）
+    title: "当事者による共感ベースの支援" # 特徴名（h3要素）
+    summary: "代表自身が発達障害当事者。同じ経験をしてきたからこそ、お子様の気持ちに寄り添えます" # 要約（カード表面に表示）
+    icon: security # Material Iconsアイコン名
+    # 画像設定（画像スライダー用）
+    images:
+      main: # メイン画像（最初に表示）
+        src: "assets/images/features/safety_main.jpg" # 画像パス
+        alt: "テントがあるセンサリ―スペースの様子" # アクセシビリティ用alt属性
+        caption: "センサリ―スペース"
+        width: 600 # 推奨幅（iPhone最適化: 600x600推奨）
+        height: 600 # 推奨高さ
+      detail: # 詳細画像（スライダーで切り替え）
+        src: "assets/images/features/safety_detail.jpg"
+        alt: "寄り添った声掛けの様子"
+        caption: "寄り添った声掛け"
+        width: 600 # 注: iPhone向けは正方形(600x600)が最適
+        height: 600
+    # 詳細説明（アコーディオン展開時に表示）
+    details:
+      - title: "同じ経験をしてきた指導者" # 詳細見出し
+        content: "一般的な対応に加えて、実体験に基づいた具体的なサポートを提供します" # 説明文
+        points: # 具体的なポイント（アイコン付きリスト）
+          - icon: "psychology" # Material Iconsアイコン
+            text: "感覚過敏の辛さを体感として知っています"
+          - icon: "volunteer_activism"
+            text: "「できない」の裏にある本当の困りごとに気づけます"
+          - icon: "favorite"
+            text: "お子様が安心できる声かけとタイミングを心得ています"
+      - title: "保護者の方とも同じ目線で"
+        content: "お子様だけでなく、保護者の方の不安や悩みにも当事者視点でお応えします"
+        points:
+          - icon: "forum"
+            text: "『うちの子だけ？』という不安に経験からお答えします"
+          # - icon: "lightbulb"
+          #   text: "家庭での接し方のヒントも具体的にアドバイス"
+          - icon: "handshake"
+            text: "月次報告でお子様の様子をフィードバックします"
+
+  # ========================================
+  # 特徴02: 学習環境の個別最適化
+  # ========================================
+  - id: "environment" # 識別子
+    number: "02" # 表示番号
+    title: "完全カスタマイズされた学習環境" # 特徴名
+    summary: "感覚特性も学習スタイルも十人十色。だから環境も教材も、お子様一人ひとりに合わせて調整します" # 要約
+    icon: tune # Material Icons（設定・調整を表現）
+    images:
+      main:
+        src: "assets/images/features/environment_main.jpg"
+        alt: "最適化された学習環境の全体像"
+        caption: "上下昇降デスクとバランスボール"
+        width: 600
+        height: 600
+      detail:
+        - src: "assets/images/features/workspace.jpg"
+          alt: "ワークスペースの様子"
+          caption: "ワークスペース"
+          width: 600
+          height: 600
+        - src: "assets/images/features/individual_space.jpg"
+          alt: "仕切りで区切られた個別スペース"
+          caption: "個別スペース"
+          width: 600
+          height: 600
+        - src: "assets/images/features/mc_furigana.jpg"
+          alt: "マイクラにふりがな対応"
+          caption: "独自開発：マイクラにふりがな対応"
+          width: 600
+          height: 600
+        - src: "assets/images/features/furigana_block.png"
+          alt: "ふりがな対応ブロックの画面"
+          caption: "独自開発：<br>プログラミングブロックにふりがな対応"
+          width: 600
+          height: 600
+        - src: "assets/images/features/agent_left_right.png"
+          alt: "エージェントの航行灯仕様"
+          caption: "独自開発：左右弁別補助<br>航行灯仕様"
+          width: 600
+          height: 600
+    details:
+      - title: "その日の調子に合わせた環境選択"
+        content: "体調や気分は日々変わるもの。だから毎回、最適な環境を選べます"
+        points:
+          - icon: "monitor"
+            text: "学習や協働を行うワークスペース"
+          - icon: "person"
+            text: "刺激を避け、集中する個別スペース"
+          - icon: "weekend"
+            text: "考えるときに動きたい子のための上下昇降デスク"
+          # - icon: "light_mode"
+          #   text: "照明：300〜1000ルクスで調整可能"
+      - title: "お子様専用にカスタマイズした教材"
+        content: "市販教材では対応できない、一人ひとりの特性に合わせた学習ツール"
+        points:
+          - icon: "text_format"
+            text: "ふりがな対応：読み書き困難をサポート"
+          - icon: "extension"
+            text: "航行灯仕様：左右弁別サポート"
+
+  - id: "method"
+    number: "03"
+    title: "個別と協働のハイブリッド授業"
+    summary: "60分で『できる』と『つながる』を両立。スキル習得と社会性向上を同時にサポート"
+    icon: school
+    # images:
+    #   main:
+    #     src: "assets/images/features/method_main.jpg"
+    #     alt: "マインクラフトでプログラミングを学ぶ様子"
+    #     caption: "マイクラでプログラミング"
+    #     width: 600
+    #     height: 600
+    #   detail:
+    #     src: "assets/images/features/method_detail.jpg"
+    #     alt: "協働活動で楽しく学ぶ子どもたち"
+    #     caption: "ワークスペース"
+    #     width: 600
+    #     height: 600
+    details:
+      - title: "前半30分：マンツーマンでじっくり学習"
+        content: "周りを気にせず、自分のペースで確実にスキルを身につけます"
+        points:
+          - icon: "psychology"
+            text: "その子のペースに完全に合わせる"
+          - icon: "tune"
+            text: "習得度に応じて内容を柔軟に調整"
+          - icon: "emoji_events"
+            text: "小さな成功体験を積み重ねる"
+      - title: "後半30分：マインクラフトで協働実践"
+        content: "世界中の研究で実証された、発達特性のある子どもに最適な協働環境で実践"
+        points:
+          - icon: "construction"
+            text: "Minecraft を活用した共同制作：建築家・採掘者・デザイナー等の役割を通じて、子どもたちが自然に協力し合う学び"
+            link: "https://www.researchgate.net/publication/315682057"
+          - icon: "psychology"
+            text: "認知的柔軟性が有意に改善：ADHD傾向のある子どもにおいて、Minecraft 遊びによって実行機能の向上が科学的に確認"
+            link: "https://www.researchgate.net/publication/359214738"
+          - icon: "groups"
+            text: "社会性スキルが実生活にも向上：仮想環境で練習することで、日常の対人コミュニケーションにもスキルが効果的に移行"
+            link: "https://games.jmir.org/2020/2/e14369/"
+
+# 画像スライダー設定
+slider:
+  enabled: true
+  autoplay: false # 自動再生はしない（アクセシビリティ配慮）
+  indicators: true
+  swipe: true

@@ -1,0 +1,330 @@
+<!-- ========================================
+     特徴セクション - mmingの3つの核心価値
+     ========================================
+     
+     データソース: _data/features.yml
+     CSS: _sass/components/_features.scss
+     JavaScript: assets/js/simple-main.js (toggleFeature関数)
+     
+     機能:
+     - 3つの特徴をアコーディオンカードで表示
+     - 各カードに画像スライダー搭載
+     - クリックで詳細情報を展開/折りたたみ
+     - iPhone最適化済み（正方形画像推奨）
+     
+     構造:
+     1. カードヘッダー（番号・タイトル・アイコン）
+     2. 要約文
+     3. 画像スライダー（メイン画像 + 詳細画像群）
+     4. 詳細説明（アコーディオン展開部分）
+     ======================================== -->
+<section class="features-section" id="features" aria-labelledby="features-title">
+    <div class="section-container">
+        <!-- セクションヘッダー -->
+        <div class="section-header">
+            <h2 id="features-title">{{ site.data.features.title }}</h2>
+            {% if site.data.features.subtitle %}
+            <p class="section-subtitle">{{ site.data.features.subtitle }}</p>
+            {% endif %}
+        </div>
+        
+        <div class="features-grid">
+            {% for feature in site.data.features.items %}
+            <article class="feature-item" data-feature-id="{{ feature.id }}">
+                <!-- 特徴カードヘッダー -->
+                <div class="feature-header">
+                    <span class="feature-number">{{ feature.number }}</span>
+                    <div class="feature-title-group">
+                        <h3>{{ feature.title }}</h3>
+                    </div>
+                    <span class="material-icons feature-icon" aria-hidden="true">{{ feature.icon }}</span>
+                </div>
+                <p class="feature-summary">{{ feature.summary }}</p>
+                
+                <!-- 画像スライダー（「詳しく見る」の直上に配置） -->
+                {% if feature.images.main %}
+                <div class="feature-image-slider" data-feature-slider="{{ feature.id }}">
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <!-- メイン画像 -->
+                            <div class="slide active">
+                                <img src="{{ feature.images.main.src | relative_url }}" 
+                                     alt="{{ feature.images.main.alt }}" 
+                                     width="{{ feature.images.main.width }}"
+                                     height="{{ feature.images.main.height }}"
+                                     loading="eager">
+                                {% if feature.images.main.caption %}
+                                <div class="slide-caption">{{ feature.images.main.caption }}</div>
+                                {% endif %}
+                            </div>
+                            
+                            <!-- 詳細画像 -->
+                            {% if feature.images.detail %}
+                                {% if feature.images.detail[0].src %}
+                                    {% for image in feature.images.detail %}
+                                    <div class="slide">
+                                        <img src="{{ image.src | relative_url }}" 
+                                             alt="{{ image.alt }}" 
+                                             width="{{ image.width }}"
+                                             height="{{ image.height }}"
+                                             loading="lazy">
+                                        {% if image.caption %}
+                                        <div class="slide-caption">{{ image.caption }}</div>
+                                        {% endif %}
+                                    </div>
+                                    {% endfor %}
+                                {% elsif feature.images.detail.src %}
+                                    <div class="slide">
+                                        <img src="{{ feature.images.detail.src | relative_url }}" 
+                                             alt="{{ feature.images.detail.alt }}" 
+                                             width="{{ feature.images.detail.width }}"
+                                             height="{{ feature.images.detail.height }}"
+                                             loading="lazy">
+                                        {% if feature.images.detail.caption %}
+                                        <div class="slide-caption">{{ feature.images.detail.caption }}</div>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        
+                        <!-- シンプルなスライダーナビゲーション -->
+                        {% assign total_images = 1 %}
+                        {% if feature.images.detail %}
+                            {% if feature.images.detail[0].src %}
+                                {% assign total_images = total_images | plus: feature.images.detail.size %}
+                            {% elsif feature.images.detail.src %}
+                                {% assign total_images = total_images | plus: 1 %}
+                            {% endif %}
+                        {% endif %}
+                        
+                        {% if total_images > 1 %}
+                        <div class="slider-navigation">
+                            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); slideImage(this, -1)" aria-label="前の画像">
+                                <span class="material-icons">chevron_left</span>
+                            </button>
+                            
+                            <!-- スライダーインジケーター（ナビゲーション内に統合） -->
+                            <div class="slider-indicators" data-total="{{ total_images }}">
+                                {% for i in (1..total_images) %}
+                                <button class="indicator{% if forloop.first %} active{% endif %}" 
+                                        onclick="event.stopPropagation(); goToSlide(this, {{ forloop.index0 }})"
+                                        aria-label="{{ i }}番目の画像を表示"
+                                        data-index="{{ forloop.index0 }}">
+                                </button>
+                                {% endfor %}
+                            </div>
+                            
+                            <button class="slider-btn next-btn" onclick="event.stopPropagation(); slideImage(this, 1)" aria-label="次の画像">
+                                <span class="material-icons">chevron_right</span>
+                            </button>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+                
+                <!-- 詳細説明アコーディオン -->
+                <div class="feature-details-accordion" onclick="toggleFeatureDetails(this)" role="button" tabindex="0" aria-expanded="false" aria-controls="feature-details-{{ feature.id }}">
+                    <div class="accordion-header">
+                        <span class="accordion-text">詳しく見る</span>
+                        <span class="material-icons accordion-icon" aria-hidden="true">expand_more</span>
+                    </div>
+                </div>
+                
+                <!-- 詳細説明コンテンツ -->
+                <div class="feature-details" id="feature-details-{{ feature.id }}" aria-hidden="true">
+                    <!-- 詳細説明セクション -->
+                    {% for detail in feature.details %}
+                    <div class="detail-section">
+                        <h4>{{ detail.title }}</h4>
+                        <p>{{ detail.content }}</p>
+                        
+                        {% if detail.points %}
+                        <ul class="detail-points">
+                            {% for point in detail.points %}
+                            <li>
+                                <span class="material-icons point-icon" aria-hidden="true">{{ point.icon }}</span>
+                                {% if point.link %}
+                                <a href="{{ point.link }}" target="_blank" rel="noopener noreferrer" class="evidence-link">
+                                    {{ point.text }}
+                                    <span class="material-icons link-icon" aria-hidden="true">open_in_new</span>
+                                </a>
+                                {% else %}
+                                {{ point.text }}
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+    // 詳細説明アコーディオンのトグル
+    window.toggleFeatureDetails = function(accordionButton) {
+        const featureItem = accordionButton.closest('.feature-item');
+        const details = featureItem.querySelector('.feature-details');
+        const icon = accordionButton.querySelector('.accordion-icon');
+        
+        if (!details || !icon) {
+            console.error('詳細説明の要素が見つかりません');
+            return;
+        }
+        
+        const isExpanded = accordionButton.getAttribute('aria-expanded') === 'true';
+        
+        if (isExpanded) {
+            // 閉じる
+            accordionButton.setAttribute('aria-expanded', 'false');
+            details.setAttribute('aria-hidden', 'true');
+            details.style.display = 'none';
+            icon.textContent = 'expand_more';
+            accordionButton.querySelector('.accordion-text').textContent = '詳しく見る';
+        } else {
+            // 開く
+            accordionButton.setAttribute('aria-expanded', 'true');
+            details.setAttribute('aria-hidden', 'false');
+            details.style.display = 'block';
+            icon.textContent = 'expand_less';
+            accordionButton.querySelector('.accordion-text').textContent = '閉じる';
+        }
+    }
+    
+    // スマート省略表示の更新
+    function updateSmartIndicators(indicatorsContainer, currentIndex, totalSlides) {
+        const indicators = indicatorsContainer.querySelectorAll('.indicator');
+        
+        if (totalSlides <= 4) {
+            // 4枚以下は通常表示
+            indicators.forEach(function(indicator, index) {
+                indicator.classList.remove('visible', 'ellipsis');
+                indicator.style.display = 'flex';
+            });
+            return;
+        }
+        
+        // 5枚以上はスマート省略表示
+        indicators.forEach(function(indicator) {
+            indicator.classList.remove('visible', 'ellipsis');
+            indicator.style.display = 'none';
+        });
+        
+        // 現在位置周辺を表示
+        if (currentIndex <= 1) {
+            // 最初の方: ●●●・
+            indicators[0].classList.add('visible');
+            indicators[0].style.display = 'flex';
+            indicators[1].classList.add('visible');
+            indicators[1].style.display = 'flex';
+            indicators[2].classList.add('visible');
+            indicators[2].style.display = 'flex';
+            if (totalSlides > 3) {
+                indicators[3].classList.add('ellipsis');
+                indicators[3].style.display = 'flex';
+            }
+        } else if (currentIndex >= totalSlides - 2) {
+            // 最後の方: ・●●●
+            if (totalSlides > 3) {
+                indicators[totalSlides - 4].classList.add('ellipsis');
+                indicators[totalSlides - 4].style.display = 'flex';
+            }
+            indicators[totalSlides - 3].classList.add('visible');
+            indicators[totalSlides - 3].style.display = 'flex';
+            indicators[totalSlides - 2].classList.add('visible');
+            indicators[totalSlides - 2].style.display = 'flex';
+            indicators[totalSlides - 1].classList.add('visible');
+            indicators[totalSlides - 1].style.display = 'flex';
+        } else {
+            // 真ん中: ・●●・
+            indicators[0].classList.add('ellipsis');
+            indicators[0].style.display = 'flex';
+            indicators[currentIndex - 1].classList.add('visible');
+            indicators[currentIndex - 1].style.display = 'flex';
+            indicators[currentIndex].classList.add('visible');
+            indicators[currentIndex].style.display = 'flex';
+            indicators[currentIndex + 1].classList.add('visible');
+            indicators[currentIndex + 1].style.display = 'flex';
+            indicators[totalSlides - 1].classList.add('ellipsis');
+            indicators[totalSlides - 1].style.display = 'flex';
+        }
+    }
+    
+    // シンプルな画像スライダー（スマート省略表示対応）
+    function slideImage(button, direction) {
+        const sliderContainer = button.closest('.feature-image-slider');
+        const slides = sliderContainer.querySelectorAll('.slide');
+        const indicatorsContainer = sliderContainer.querySelector('.slider-indicators');
+        const indicators = sliderContainer.querySelectorAll('.indicator');
+        const currentSlide = sliderContainer.querySelector('.slide.active');
+        const currentIndex = Array.from(slides).indexOf(currentSlide);
+        
+        let newIndex = currentIndex + direction;
+        if (newIndex >= slides.length) newIndex = 0;
+        if (newIndex < 0) newIndex = slides.length - 1;
+        
+        // スライド切り替え
+        slides.forEach(function(slide, index) {
+            slide.classList.toggle('active', index === newIndex);
+        });
+        
+        // インジケーター更新
+        indicators.forEach(function(indicator, index) {
+            indicator.classList.toggle('active', index === newIndex);
+        });
+        
+        // スマート省略表示更新
+        updateSmartIndicators(indicatorsContainer, newIndex, slides.length);
+    }
+    
+    // インジケーターで直接スライドに移動（スマート省略表示対応）
+    function goToSlide(button, targetIndex) {
+        const sliderContainer = button.closest('.feature-image-slider');
+        const slides = sliderContainer.querySelectorAll('.slide');
+        const indicatorsContainer = sliderContainer.querySelector('.slider-indicators');
+        const indicators = sliderContainer.querySelectorAll('.indicator');
+        
+        // スライド切り替え
+        slides.forEach(function(slide, index) {
+            slide.classList.toggle('active', index === targetIndex);
+        });
+        
+        // インジケーター更新
+        indicators.forEach(function(indicator, index) {
+            indicator.classList.toggle('active', index === targetIndex);
+        });
+        
+        // スマート省略表示更新
+        updateSmartIndicators(indicatorsContainer, targetIndex, slides.length);
+    }
+    
+    // 初期化処理
+    document.addEventListener('DOMContentLoaded', function() {
+        // スマート省略表示の初期化
+        const sliderContainers = document.querySelectorAll('.feature-image-slider');
+        sliderContainers.forEach(function(container) {
+            const indicatorsContainer = container.querySelector('.slider-indicators');
+            const slides = container.querySelectorAll('.slide');
+            if (indicatorsContainer && slides.length > 4) {
+                updateSmartIndicators(indicatorsContainer, 0, slides.length);
+            }
+        });
+        
+        // キーボード対応
+        const accordionButtons = document.querySelectorAll('.feature-details-accordion');
+        accordionButtons.forEach(function(button) {
+            button.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleFeatureDetails(button);
+                }
+            });
+        });
+    });
+    </script>
+</section>

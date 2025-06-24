@@ -1,0 +1,27 @@
+# アクセス情報専用
+title: "アクセス"
+
+# ラベル
+labels:
+  address: "住所:"
+  access: "アクセス:"
+  hours: "営業時間:"
+  parking: "駐車場:"
+
+# 実際の情報
+info:
+  address: "鹿児島市照国町２−１１ 第一天神ビル 1-D"
+  access_methods:
+    - type: "市電"
+      description: "高見馬場電停から徒歩7分"
+    - type: "バス"
+      description: "山下小学校前バス停から徒歩4分"
+  class_hours: "第一～四土曜日 09:30-15:30（授業時間）"
+  parking: "公共交通機関かコインパーキングをご利用ください"
+
+# 地図設定
+map:
+  enabled: true
+  embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1320.676516819757!2d130.5495539240489!3d31.591766442521344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x353e6700584290b5%3A0x5a5528e333af3ae!2zbW1pbmcgLeODn-ODs-OCsC0!5e0!3m2!1sja!2sjp!4v1749968749837!5m2!1sja!2sjp"
+  link_url: "https://goo.gl/maps/..."
+  link_text: "Googleマップで開く"

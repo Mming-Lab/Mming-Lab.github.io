@@ -1,0 +1,80 @@
+<!-- ========================================
+     最新のお知らせセクション - ブログ記事の最新投稿表示
+     ========================================
+     
+     データソース: _data/blog.yml + site.posts
+     CSS: _sass/components/_blog.scss
+     
+     このセクションの目的:
+     - 最新のブログ記事をトップページに表示
+     - 保護者の関心を引く学習コンテンツの紹介
+     - ブログページへの誘導
+     
+     構成（画面表示順序）:
+     1. セクションヘッダー（タイトル・サブタイトル）
+     2. 最新記事カード（最大3件）
+     3. ブログページへのリンク
+     ======================================== -->
+{% if site.data.blog.show_on_homepage and site.posts.size > 0 %}
+<section class="latest-posts-section" id="latest-posts" aria-labelledby="latest-posts-title">
+    <div class="section-container">
+        <!-- セクションヘッダー部分 -->
+        <div class="section-header">
+            <h2 id="latest-posts-title">{{ site.data.blog.title }}</h2>
+            <p class="section-subtitle">{{ site.data.blog.subtitle }}</p>
+        </div>
+        
+        <!-- 最新記事一覧 -->
+        <div class="latest-posts-grid">
+            {% for post in site.posts limit:site.data.blog.posts_count %}
+            <article class="post-card" itemscope itemtype="http://schema.org/BlogPosting">
+                <a href="{{ post.url | relative_url }}" class="post-card-wrapper" aria-label="{{ post.title }}を読む">
+                    <div class="post-card-content">
+                        <div class="post-meta">
+                            <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+                                {{ post.date | date: "%Y年%m月%d日" }}
+                            </time>
+                            {% if post.categories %}
+                            <div class="post-categories">
+                                {% for category in post.categories limit:2 %}
+                                <span class="category-tag">{{ category }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        
+                        <h3 itemprop="name headline">{{ post.title }}</h3>
+                        
+                        {% if post.description %}
+                        <p class="post-excerpt" itemprop="description">{{ post.description | truncate: 100 }}</p>
+                        {% else %}
+                        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+                        {% endif %}
+                        
+                        {% if post.tags %}
+                        <div class="post-tags">
+                            {% for tag in post.tags limit:3 %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="post-card-link">
+                        <span class="material-icons" aria-hidden="true">arrow_forward</span>
+                    </div>
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+        
+        <!-- ブログページへのリンク -->
+        <div class="latest-posts-cta">
+            <a href="/blog/" class="cta-button secondary">
+                <span class="material-icons" aria-hidden="true">article</span>
+                すべてのお知らせを見る
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}

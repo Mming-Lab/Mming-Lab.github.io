@@ -1,0 +1,110 @@
+/**
+ * mmingプログラミング教室 - ベーススタイル
+ * CSSリセットと基本スタイル定義
+ */
+
+// ========================================
+// CSS リセット
+// ========================================
+
+// ボックスサイジングの統一（すべての要素にborder-boxを適用）
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// ========================================
+// HTML・BODY 基本設定
+// ========================================
+
+html {
+  font-size: $font-size-base;         // ベースフォントサイズ設定
+  scroll-behavior: smooth;            // スムーズスクロール有効
+}
+
+body {
+  margin: 0;                          // デフォルトマージンをリセット
+  padding: 0;                         // デフォルトパディングをリセット
+  font-family: $font-family-base;     // Noto Sans JPベースのフォント設定
+  font-weight: 400;                   // 標準フォントウェイト
+  line-height: $line-height-base;     // 読みやすい行高（1.6）
+  color: $text-color;                 // メインテキストカラー
+  background-color: $background-color; // 背景色（白）
+  overflow-x: hidden;                 // 横スクロールを防止
+}
+
+// ========================================
+// タイポグラフィ
+// ========================================
+
+// 見出し要素の統一スタイル（デジタル庁準拠）
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-base;     // フォントファミリー統一
+  font-weight: 700;                   // ボールドウェイト
+  line-height: $line-height-normal;   // 見出し用の行高（1.4）
+  margin: 0 0 $space-2 0;             // 下マージン（8pxベース）
+  color: $text-color;                 // テキストカラー統一
+}
+
+// 見出しレベル別フォントサイズ（デジタル庁準拠）
+h1 { font-size: $font-size-4xl; }    // 44px（主要見出し）
+h2 { font-size: $font-size-3xl; }    // 32px（大見出し）
+h3 { font-size: $font-size-2xl; }    // 24px（中見出し）
+h4 { font-size: $font-size-xl; }     // 20px（小見出し）
+h5 { font-size: $font-size-lg; }     // 18px（大きめ本文）
+h6 { font-size: $font-size-base; }   // 16px（本文基準）
+
+// 段落要素のマージン設定（デジタル庁準拠）
+p {
+  margin: 0 0 $space-2 0;             // 下マージン（8pxベース）
+  line-height: $line-height-relaxed;  // 本文標準行高（1.6）
+}
+
+// ========================================
+// 共通ユーティリティクラス
+// ========================================
+
+// セクションコンテナ（レスポンシブ対応）
+.section-container {
+  max-width: $max-width;              // 最大幅制限
+  margin: 0 auto;                     // 中央寄せ
+  padding: $section-padding;          // セクション内余白
+}
+
+// セクションヘッダー（中央寄せ・下マージン設定）
+.section-header {
+  text-align: center;                 // 中央寄せ
+  margin-bottom: $space-6;            // 下マージン（8pxベース）
+}
+
+// ========================================
+// アクセシビリティ機能
+// ========================================
+
+// フォントサイズ調整機能
+.font-size-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  
+  button {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background: rgba(26, 115, 232, 0.1);
+    border: 1px solid rgba(26, 115, 232, 0.3);
+    
+    &:hover {
+      background: rgba(26, 115, 232, 0.2);
+    }
+  }
+}
+
+// 行間の調整
+.readable-mode {
+  p, li {
+    line-height: 2;
+    letter-spacing: 0.05em;
+  }
+}

@@ -1,0 +1,352 @@
+/**
+ * mmingプログラミング教室 - Design System Variables
+ * 全体リファクタリング 2024年12月 - 統合デザインシステム変数
+ */
+
+// ========================================
+// カラーパレット - デジタル庁準拠
+// ========================================
+
+// プライマリーカラー（デジタル庁準拠v2.4.0）
+$primary-color: #0066CC; // デジタル庁ブルー（標準）
+$primary-50: #E3F2FD; // 極薄ブルー（バックグラウンド用）
+$primary-100: #BBDEFB; // 薄ブルー（セカンダリ用）
+$primary-300: #64B5F6; // ミディアムライト（アクセント用）
+$primary-500: #0066CC; // スタンダード（メインカラー）
+$primary-700: #1976D2; // ダーク（ホバー用）
+$primary-900: #0D47A1; // 極濃（アクティブ用）
+
+// セカンダリーカラー（デジタル庁準拠・コントラスト確保）
+$secondary-color: #42A5F5; // セカンダリカラー（コントラスト比3.8:1）
+$secondary-light: $primary-50; // セカンダリライト
+$secondary-dark: $primary-700; // セカンダリダーク（濃色）
+
+// Legacy compatibility (既存コードとの互換性)
+$primary-light: $primary-300; // プライマリライト
+$primary-dark: $primary-700; // プライマリダーク
+
+// ターシャリーカラー（支援色）
+$tertiary-color: #4FC3F7; // シアン系（情報表示用）
+
+// 実用機能カラー（ビジネス必須）
+$success-color: #2E7D32; // サクセス（緑）
+$warning-color: #F57C00; // 警告（オレンジ）
+$error-color: #C62828; // エラー（赤）
+$info-color: $primary-color; // 情報（プライマリ使用）
+
+// アクセントカラー（控えめな強調用）
+$accent-color: $primary-300; // アクセント（ミディアムライト使用）
+
+// アイコンカラー（デジタル庁準拠・コントラスト比確保）
+$icon-color-primary: $primary-700; // プライマリアイコン（7:1）
+$icon-color-secondary: #1565C0; // セカンダリアイコン（5:1）
+$icon-color-muted: #666666; // ミュートアイコン（5.74:1）
+
+// ベースカラー
+$background-color: #FFFFFF; // メイン背景（白）
+$surface-color: #FAFAFA; // サーフェス背景（極薄グレー）
+$card-background: #FFFFFF; // カード背景（白）
+$border-color: #E0E0E0; // ボーダー色（ライトグレー）
+
+// 共通カラー（ニュートラル・デジタル庁準拠）
+$gray-50: #FAFAFA; // 極薄グレー
+$gray-100: #F5F5F5; // 薄グレー
+$gray-200: #EEEEEE;
+$gray-300: #E0E0E0; // ライトグレー
+$gray-400: #BDBDBD;
+$gray-500: #9E9E9E; // ミディアムグレー
+$gray-600: #6D4C41;
+$gray-700: #616161; // ダークグレー
+$gray-800: #424242;
+$gray-900: #212121; // 極濃グレー
+
+
+// テキストカラー（デジタル庁準拠）
+$text-color: $gray-900; // メインテキスト（極濃グレー）
+$text-secondary: $gray-700; // セカンダリテキスト（ダークグレー）
+$text-muted: #666666; // ミュートテキスト（コントラスト比5.74:1）
+$text-inverse: #FFFFFF; // 反転テキスト（白）
+
+// インタラクションカラー（デジタル庁準拠v2.4.0）
+$hover-color: rgba($primary-color, 0.08); // ホバー背景（薄く）
+$hover-surface: $primary-50; // ホバー時サーフェス
+$focus-color: $primary-color; // フォーカス色
+$focus-ring: rgba($primary-color, 0.3); // フォーカスリング
+$active-color: $primary-900; // アクティブ色（極濃）
+$pressed-color: $primary-700; // プレス時色
+
+// リンクカラー（デジタル庁準拠・コントラスト強化）
+$link-color: $primary-color; // リンクデフォルト（4.5:1準拠）
+$link-visited: #551A8B; // 訪問済み（紫・識別性考慮）
+$link-hover: $primary-700; // ホバー時（ダーク）
+$link-active: $primary-900; // アクティブ時（極濃）
+$link-focus: $primary-color; // フォーカス時（標準）
+
+// ========================================
+// タイポグラフィ
+// ========================================
+
+// フォントファミリー
+$font-family-base: 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-heading: $font-family-base;
+$font-family-monospace: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+// フォントサイズ（デジタル庁準拠v2.4.0 - 完全階層）
+// ベースサイズ（本文・UI用）
+$font-size-xs: 0.75rem; // 12px（キャプション・制約時のみ）
+$font-size-sm: 0.875rem; // 14px（小テキスト・制約時）
+$font-size-base: 1rem; // 16px（標準本文・基準）
+$font-size-lg: 1.125rem; // 18px（重要本文）
+$font-size-xl: 1.25rem; // 20px（小見出し）
+
+// 見出しサイズ（Standard用）
+$font-size-2xl: 1.5rem; // 24px（中見出し）
+$font-size-3xl: 1.875rem; // 30px（大見出し）
+$font-size-4xl: 2.25rem; // 36px（主要見出し）
+
+// ディスプレイサイズ（視覚的インパクト用）
+$font-size-5xl: 3rem; // 48px（Display Small）
+$font-size-6xl: 3.5rem; // 56px（Display Medium）
+$font-size-7xl: 4rem; // 64px（Display Large）
+
+// デジタル庁テキストスタイル分類（Display/Standard/Dense/Oneline）
+
+// Standard (Std) - 記事・見出し・本文用
+$font-size-heading-lg: $font-size-4xl; // 36px
+$font-size-heading-md: $font-size-3xl; // 30px
+$font-size-heading-sm: $font-size-2xl; // 24px
+$font-size-body-lg: $font-size-lg; // 18px
+$font-size-body-md: $font-size-base; // 16px
+
+
+// Oneline (Oln) - UI要素・ボタン・ラベル用
+$font-size-ui-lg: $font-size-base; // 16px
+$font-size-ui-md: $font-size-sm; // 14px
+$font-size-ui-sm: $font-size-xs; // 12px
+
+// ライン高（デジタル庁準拠v2.4.0 - 詳細分類）
+$line-height-none: 1.0; // 100%（タイトなレイアウト用）
+$line-height-tight: 1.2; // 120%（見出し用）
+$line-height-snug: 1.3; // 130%（サブ見出し用）
+$line-height-normal: 1.4; // 140%（UI要素用）
+$line-height-relaxed: 1.6; // 160%（本文標準）
+$line-height-loose: 1.8; // 180%（読みやすさ重視）
+
+// テキストスタイル別ライン高
+$line-height-display: $line-height-tight; // Display用（視覚的インパクト）
+$line-height-heading: $line-height-snug; // 見出し用（バランス重視）
+$line-height-body: $line-height-relaxed; // 本文用（読みやすさ）
+$line-height-ui: $line-height-normal; // UI用（コンパクト）
+$line-height-dense: $line-height-normal; // Dense用（情報密度重視）
+
+// Letter Spacing（デジタル庁準拠）
+$letter-spacing-tighter: -0.025em; // -2.5%（大見出し用）
+$letter-spacing-tight: -0.01em; // -1%（見出し用）
+$letter-spacing-normal: 0; // 0%（標準）
+$letter-spacing-wide: 0.01em; // 1%（本文強調用）
+$letter-spacing-wider: 0.02em; // 2%（UI要素用）
+$letter-spacing-widest: 0.05em; // 5%（キャプション用）
+
+// Legacy compatibility（既存コードとの互換性）
+$line-height-base: $line-height-relaxed; // 本文標準
+
+// フォントウェイト
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// ========================================
+// レスポンシブブレークポイント
+// ========================================
+
+// Mobile-first design breakpoints
+$breakpoint-xs: 475px; // Small mobile
+$breakpoint-sm: 640px; // Mobile
+$breakpoint-md: 768px; // Tablet
+$breakpoint-lg: 1024px; // Desktop
+$breakpoint-xl: 1280px; // Large desktop
+$breakpoint-2xl: 1536px; // Extra large
+
+// Legacy compatibility
+$breakpoint-mobile: $breakpoint-md;
+$breakpoint-tablet: $breakpoint-lg;
+
+// ========================================
+// スペーシング（デジタル庁準拠v2.4.0 - 8pxベースシステム完全版）
+// ========================================
+
+// 基本8pxベーススペーシング
+$space-0: 0; // 0px（リセット用）
+$space-px: 1px; // 1px（ボーダー用）
+$space-0-5: 0.125rem; // 2px（マイクロスペーシング）
+$space-1: 0.25rem; // 4px（極小）
+$space-1-5: 0.375rem; // 6px（調整用）
+$space-2: 0.5rem; // 8px（小）
+$space-2-5: 0.625rem; // 10px（調整用）
+$space-3: 0.75rem; // 12px（小中）
+$space-3-5: 0.875rem; // 14px（調整用）
+$space-4: 1rem; // 16px（標準）
+$space-5: 1.25rem; // 20px（中小）
+$space-6: 1.5rem; // 24px（中）
+$space-7: 1.75rem; // 28px（中大）
+$space-8: 2rem; // 32px（大）
+$space-9: 2.25rem; // 36px（大+）
+$space-10: 2.5rem; // 40px（特大）
+$space-11: 2.75rem; // 44px（特大+）
+$space-12: 3rem; // 48px（セクション小）
+$space-14: 3.5rem; // 56px（セクション中）
+$space-16: 4rem; // 64px（セクション大）
+$space-20: 5rem; // 80px（セクション特大）
+$space-24: 6rem; // 96px（セクション最大）
+
+// ネガティブスペーシング（オーバーラップ用）
+$space-n-1: -0.25rem; // -4px
+$space-n-2: -0.5rem; // -8px
+$space-n-4: -1rem; // -16px
+
+// 従来互換（レガシーサポート）
+$space-xs: $space-1; // 4px
+$space-sm: $space-3; // 12px
+$space-md: $space-4; // 16px
+$space-lg: $space-6; // 24px
+$space-xl: $space-8; // 32px
+
+// ========================================
+// レイアウト
+// ========================================
+
+// コンテナとセクション（デジタル庁準拠v2.4.0）
+$max-width: 1200px; // コンテナ最大幅
+$max-width-sm: 640px; // 小コンテナ
+$max-width-md: 768px; // 中コンテナ
+$max-width-lg: 1024px; // 大コンテナ
+$max-width-xl: 1280px; // 特大コンテナ
+
+// セクションパディング（デジタル庁階層）
+$section-padding-sm: $space-12 $space-4; // 48px 16px（小セクション）
+$section-padding-md: $space-16 $space-4; // 64px 16px（標準セクション）
+$section-padding-lg: $space-20 $space-4; // 80px 16px（大セクション）
+$section-padding-xl: $space-24 $space-4; // 96px 16px（特大セクション）
+
+// レスポンシブセクションパディング
+$section-padding: $space-12 $space-4; // モバイル（48px 16px）
+$section-padding-desktop: $space-16 $space-8; // デスクトップ（64px 32px）
+
+// コンテナパディング
+$container-padding: 0 $space-4; // 標準（0 16px）
+$container-padding-lg: 0 $space-8; // 大（0 32px）
+
+// デジタル庁グリッドシステム準拠
+$grid-margin: $space-4; // グリッドマージン（16px）
+$grid-margin-lg: $space-8; // グリッドマージン大（32px）
+$grid-gutter: $space-4; // グリッドガター（16px）
+$grid-gutter-lg: $space-6; // グリッドガター大（24px）
+$grid-columns: 12; // 12カラムシステム
+
+// Border radius
+$border-radius-sm: 0.25rem; // 4px
+$border-radius-md: 0.5rem; // 8px
+$border-radius: 0.5rem; // 8px（デフォルト）
+$border-radius-lg: 0.75rem; // 12px
+$border-radius-xl: 1rem; // 16px
+$border-radius-2xl: 1.5rem; // 24px
+$border-radius-full: 9999px;
+
+// Z-index layers
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;
+$z-toast: 1080;
+
+// ========================================
+// アニメーション・トランジション
+// ========================================
+
+// Duration
+$duration-75: 75ms;
+$duration-100: 100ms;
+$duration-150: 150ms;
+$duration-200: 200ms;
+$duration-300: 300ms;
+$duration-500: 500ms;
+$duration-700: 700ms;
+$duration-1000: 1000ms;
+
+// Easing
+$ease-linear: linear;
+$ease-in: cubic-bezier(0.4, 0, 1, 1);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+// Combined transitions
+$transition-base: all $duration-200 $ease-out;
+$transition-fast: all $duration-150 $ease-out;
+$transition-slow: all $duration-300 $ease-out;
+
+// ========================================
+// シャドウ
+// ========================================
+
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+$shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+// ========================================
+// アクセシビリティ（デジタル庁準拠v2.4.0・WCAG AA準拠）
+// ========================================
+
+// タッチターゲットサイズ（WCAG 2.1準拠）
+$min-touch-target: 44px; // 最小タッチターゲット
+
+// フォーカス管理（WCAG 2.1準拠）
+$focus-ring-width: 2px; // フォーカスリング幅
+$focus-ring-offset: 2px; // フォーカスリングオフセット
+$focus-ring-color: $focus-color; // フォーカスリング色
+$focus-ring-style: solid; // フォーカスリングスタイル
+
+// ハイコントラストモード対応
+$high-contrast-outline: 2px solid; // ハイコントラストアウトライン
+$high-contrast-bg: ButtonFace; // ハイコントラスト背景
+$high-contrast-text: ButtonText; // ハイコントラストテキスト
+$high-contrast-border: ButtonBorder; // ハイコントラストボーダー
+
+// カラーコントラスト比（WCAG AA準拠）
+$contrast-ratio-normal: 4.5; // 通常テキスト（4.5:1）
+$contrast-ratio-large: 3.0; // 大テキスト（3:1）
+$contrast-ratio-ui: 3.0; // UI要素（3:1）
+$contrast-ratio-aaa: 7.0; // AAA レベル（7:1）
+
+// 動きの軽減対応（prefers-reduced-motion）
+$reduced-motion-duration: 0.01ms; // 動き軽減時の最小時間
+$reduced-motion-scale: 1; // 動き軽減時のスケール
+
+// スクリーンリーダー対応
+$sr-only-clip: rect(0, 0, 0, 0); // スクリーンリーダー専用クリップ
+$sr-only-position: absolute; // スクリーンリーダー専用ポジション
+$sr-only-width: 1px; // スクリーンリーダー専用幅
+$sr-only-height: 1px; // スクリーンリーダー専用高さ
+$sr-only-margin: -1px; // スクリーンリーダー専用マージン
+$sr-only-padding: 0; // スクリーンリーダー専用パディング
+$sr-only-overflow: hidden; // スクリーンリーダー専用オーバーフロー
+$sr-only-border: 0; // スクリーンリーダー専用ボーダー
+
+// ========================================
+// パフォーマンス最適化
+// ========================================
+
+// Content visibility
+$content-visibility-hidden: hidden;
+
+// Will-change optimization
+$will-change-scroll: scroll-position;

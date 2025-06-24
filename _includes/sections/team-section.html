@@ -1,0 +1,53 @@
+<!-- チーム紹介セクション -->
+<section class="team-section" id="team">
+    <div class="section-container">
+        <div class="section-header">
+            <h2>{{ site.data.team.title }}</h2>
+            <p class="section-subtitle">{{ site.data.team.subtitle }}</p>
+        </div>
+        
+        <div class="team-grid">
+            {% for member in site.data.team.members %}
+            <div class="team-member-card">
+                <div class="member-photo">
+                    <img src="{{ member.photo }}" alt="{{ member.name }}の写真" loading="lazy">
+                </div>
+                
+                <div class="member-info">
+                    <h3 class="member-name">{{ member.name }}</h3>
+                    <p class="member-role">{{ member.role }}</p>
+                    
+                    <div class="member-qualifications">
+                        <h4>資格・専門性</h4>
+                        <ul>
+                            {% for qualification in member.qualifications %}
+                            <li>{{ qualification }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+                    <blockquote class="member-philosophy">
+                        <p>{{ member.philosophy }}</p>
+                    </blockquote>
+                    
+                    {% if member.social %}
+                    <div class="member-social">
+                        {% for social in member.social %}
+                        <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" 
+                           aria-label="{{ member.name }}の{{ social.name }}">
+                            {% if social.type == "image" %}
+                                <img src="{{ social.icon }}" alt="{{ social.name }}">
+                            {% else %}
+                                <i class="{{ social.icon }}" aria-hidden="true"></i>
+                            {% endif %}
+                            <span>{{ social.name }}</span>
+                        </a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

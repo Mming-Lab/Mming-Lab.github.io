@@ -1,0 +1,127 @@
+# ========================================
+# Jekyll設定ファイル - mmingプログラミング教室
+# ========================================
+#
+# このファイルはJekyll静的サイトジェネレータの
+# 全体設定を管理します。
+#
+# 重要: 設定変更後はJekyllサーバーの再起動が必要
+#
+# GitHub Pages互換性: 全設定がGitHub Pages準拠
+# Ruby: 3.3.4, Jekyll: 3.10.0, github-pages gem: 232
+#
+# 最終更新: 2024年12月（全体リファクタリング時）
+# ========================================
+
+# ========================================
+# サイト基本設定
+# ========================================
+title: mming
+description: 特別な配慮が必要な子ども向けプログラミング教室
+baseurl: ""
+url: "https://mming-lab.github.io"
+
+# 言語・文字コード設定
+lang: ja_JP
+encoding: utf-8
+timezone: Asia/Tokyo
+
+# Jekyll設定（GitHub Pages準拠）
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+highlighter: rouge
+permalink: pretty
+incremental: false
+
+# プラグイン（GitHub Pagesでサポートされているもの）
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
+  - jekyll-redirect-from
+
+# ビルド設定
+source: .
+destination: ./_site
+keep_files:
+  - .git
+  - .nojekyll
+
+# 除外ファイル
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - CHANGELOG.md
+  - docker-compose.yml
+  - Dockerfile
+  - "*.sh"
+  - .claude/
+
+# 含めるファイル
+include:
+  - _pages
+  - .htaccess
+
+# コレクション（必要に応じて）
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# デフォルト設定
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      lang: "ja"
+      permalink: "/blog/:slug/"
+  - scope:
+      path: ""
+    values:
+      lang: "ja"
+
+# Sass設定
+sass:
+  sass_dir: _sass
+  style: expanded
+  sourcemap: true
+
+# GitHub Pages互換性
+github: [metadata]
+
+# SEO設定（プラグイン用のため維持）
+# Jekyll SEOプラグインが参照するため、基本情報のみ保持
+# 詳細なサイト情報は _data/config.yml で管理
+
+# Google Analytics（必要に応じて設定）
+# google_analytics: UA-XXXXXXXXX-X
+
+# その他設定
+future: false
+show_drafts: false
+unpublished: false
+
+# 開発時設定
+livereload: true
+port: 4000
+host: 0.0.0.0

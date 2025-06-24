@@ -1,0 +1,100 @@
+<!-- 適性診断システムJS読み込み -->
+<script src="{{ '/assets/js/aptitude-check.js' | relative_url }}"></script>
+
+<script>
+/**
+ * 適性診断データ（Jekyllから動的生成）
+ * YAMLファイルのデータをJavaScriptオブジェクトに変換
+ */
+const aptitudeData = {
+    questions: [
+        {% for question in site.data.aptitude_check.questions %}
+        {
+            id: "{{ question.id }}",
+            title: "{{ question.title }}",
+            description: "{{ question.description }}",
+            importance: "{{ question.importance }}",
+            max_points: {{ question.max_points }},
+            options: [
+                {% for option in question.options %}
+                {
+                    value: "{{ option.value }}",
+                    text: "{{ option.text }}",
+                    points: {{ option.points }}
+                }{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+            ]
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ],
+    results: {
+        {% for result_type in site.data.aptitude_check.results %}
+        {{ result_type[0] }}: {
+            {% if result_type[1].min_total %}
+            min_total: {{ result_type[1].min_total }},
+            min_core: {{ result_type[1].min_core }},
+            {% elsif result_type[1].max_total %}
+            max_total: {{ result_type[1].max_total }},
+            max_core: {{ result_type[1].max_core }},
+            {% endif %}
+            icon: "{{ result_type[1].icon }}",
+            title: "{{ result_type[1].title }}",
+            message: `{{ result_type[1].message | strip_newlines }}`,
+            sub_message: "{{ result_type[1].sub_message }}",
+            {% if result_type[1].expected_outcomes %}
+            expected_outcomes: [
+                {% for outcome in result_type[1].expected_outcomes %}
+                "{{ outcome }}"{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+            ],
+            {% endif %}
+            {% if result_type[1].recommended_approach %}
+            recommended_approach: [
+                {% for approach in result_type[1].recommended_approach %}
+                "{{ approach }}"{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+            ],
+            {% endif %}
+            {% if result_type[1].alternative_fields %}
+            alternative_fields: {
+                visual_spatial: "{{ result_type[1].alternative_fields.visual_spatial }}",
+                music_arts: "{{ result_type[1].alternative_fields.music_arts }}",
+                interpersonal: "{{ result_type[1].alternative_fields.interpersonal }}",
+                physical_kinesthetic: "{{ result_type[1].alternative_fields.physical_kinesthetic }}"
+            },
+            {% endif %}
+            {% if result_type[1].encouragement %}
+            encouragement: `{{ result_type[1].encouragement | strip_newlines }}`,
+            {% endif %}
+            cta: {
+                text: "{{ result_type[1].cta.text }}",
+                action: "{{ result_type[1].cta.action }}"
+            }
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    },
+    scoring: {
+        max_total: {{ site.data.aptitude_check.scoring.max_total }},
+        max_core: {{ site.data.aptitude_check.scoring.max_core }},
+        thresholds: {
+            high: {
+                total: {{ site.data.aptitude_check.scoring.thresholds.high.total }},
+                core: {{ site.data.aptitude_check.scoring.thresholds.high.core }}
+            },
+            medium: {
+                total: {{ site.data.aptitude_check.scoring.thresholds.medium.total }},
+                core: {{ site.data.aptitude_check.scoring.thresholds.medium.core }}
+            },
+            low: {
+                total: {{ site.data.aptitude_check.scoring.thresholds.low.total }}
+            }
+        }
+    }
+};
+
+// ページロード時に適性診断システムを初期化
+document.addEventListener('DOMContentLoaded', function() {
+    // 適性診断システムを初期化（外部JSファイルの関数を呼び出し）
+    initializeAptitudeCheck(aptitudeData);
+});
+</script>

@@ -1,0 +1,50 @@
+<!-- よくある質問セクション -->
+<section class="faq-section" id="faq">
+    <div class="section-container">
+        <div class="section-header">
+            <h2>{{ site.data.faq.title }}</h2>
+        </div>
+        
+        <div class="faq-list">
+            {% for item in site.data.faq.items %}
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question" aria-expanded="false" aria-controls="faq-answer-{{ forloop.index }}">
+                    <span class="question-text">{{ item.question }}</span>
+                    <span class="material-icons toggle-icon" aria-hidden="true">expand_more</span>
+                </div>
+                <div class="faq-answer" id="faq-answer-{{ forloop.index }}" aria-hidden="true">
+                    <div class="faq-answer-content">
+                        {{ item.answer | markdownify }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <script>
+        function toggleFAQ(faqItem) {
+            const question = faqItem.querySelector('.faq-question');
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = faqItem.querySelector('.toggle-icon');
+            
+            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+            
+            if (isExpanded) {
+                // 閉じる
+                question.setAttribute('aria-expanded', 'false');
+                answer.setAttribute('aria-hidden', 'true');
+                answer.style.display = 'none';
+                icon.textContent = 'expand_more';
+                faqItem.classList.remove('expanded');
+            } else {
+                // 開く
+                question.setAttribute('aria-expanded', 'true');
+                answer.setAttribute('aria-hidden', 'false');
+                answer.style.display = 'block';
+                icon.textContent = 'expand_less';
+                faqItem.classList.add('expanded');
+            }
+        }
+        </script>
+    </div>
+</section>

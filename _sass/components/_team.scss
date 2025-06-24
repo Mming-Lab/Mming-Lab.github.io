@@ -1,0 +1,327 @@
+/**
+ * mmingプログラミング教室 - チーム紹介セクションスタイル
+ * デジタル庁デザインシステム準拠
+ */
+
+// ========================================
+// チーム紹介セクション メイン
+// ========================================
+
+// チーム紹介セクション全体
+.team-section {
+  background: $background-color;          // 白背景
+  padding: $section-padding;              // セクション標準パディング
+}
+
+// チームグリッド
+.team-grid {
+  display: grid;                         // グリッドレイアウト
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); // レスポンシブグリッド
+  gap: $space-6;                        // 48px メンバー間のスペース
+  margin-top: $space-6;                 // 48px 上マージン
+}
+
+// ========================================
+// チームメンバーカード
+// ========================================
+
+// メンバーカード
+.team-member-card {
+  background: white;                     // 白背景
+  border-radius: $border-radius-lg;     // 16px 角丸
+  padding: $space-6;                    // 48px 内側余白
+  box-shadow: $shadow;                  // 標準影効果
+  border: 2px solid transparent;         // 透明ボーダー
+  transition: $transition-base;          // ホバーアニメーション
+  
+  // ホバー状態
+  &:hover {
+    transform: translateY(-4px);         // 上に浮く効果
+    box-shadow: $shadow-lg;              // 強い影
+    border-color: rgba($primary-color, 0.1); // 薄いプライマリボーダー
+  }
+}
+
+// ========================================
+// メンバー写真
+// ========================================
+
+// 写真コンテナ
+.member-photo {
+  margin-bottom: $space-4;              // 32px 下マージン
+  text-align: center;                   // 中央寄せ
+  
+  img {
+    width: 120px;                       // 固定幅
+    height: 120px;                      // 固定高さ
+    border-radius: 50%;                 // 円形
+    object-fit: cover;                  // 比率維持でトリミング
+    border: 4px solid $primary-color;   // プライマリカラーボーダー
+    box-shadow: 0 4px 12px rgba($primary-color, 0.2); // 薄い影
+  }
+}
+
+// ========================================
+// メンバー情報
+// ========================================
+
+// 名前
+.member-name {
+  font-size: $font-size-xl;            // 24px
+  font-weight: 700;                     // ボールド
+  color: $text-color;                   // テキストカラー
+  margin-bottom: $space-1;              // 8px 下マージン
+  text-align: center;                   // 中央寄せ
+}
+
+// 役職
+.member-role {
+  font-size: $font-size-base;          // 16px
+  color: $primary-color;                // プライマリカラー
+  font-weight: 600;                     // セミボールド
+  text-align: center;                   // 中央寄せ
+  margin-bottom: $space-4;              // 32px 下マージン
+  line-height: $line-height-normal;     // 1.4
+}
+
+// ========================================
+// 資格・専門性
+// ========================================
+
+// 資格セクション
+.member-qualifications {
+  margin-bottom: $space-4;              // 32px 下マージン
+  
+  h4 {
+    font-size: $font-size-sm;           // 14px
+    font-weight: 600;                   // セミボールド
+    color: $text-secondary;             // セカンダリテキストカラー
+    margin-bottom: $space-2;            // 16px 下マージン
+    text-transform: uppercase;          // 大文字
+    letter-spacing: 0.5px;              // 文字間隔
+  }
+  
+  ul {
+    list-style: none;                   // リストマーカーなし
+    margin: 0;                          // マージンなし
+    padding: 0;                         // パディングなし
+    
+    li {
+      padding: $space-1 $space-2;       // 8px 16px パディング
+      margin-bottom: $space-1;          // 8px 下マージン
+      background: rgba($primary-color, 0.05); // 薄いプライマリ背景
+      border-radius: $border-radius-sm; // 4px 角丸
+      font-size: $font-size-sm;         // 14px
+      color: $text-color;               // テキストカラー
+      position: relative;               // アイコン配置用
+      padding-left: $space-6;           // 48px 左パディング（間隔拡大）
+      
+      &::before {
+        content: '✓';                   // チェックマーク
+        position: absolute;             // 絶対配置
+        left: $space-3;                 // 24px 左位置（中央寄り）
+        color: $primary-color;          // プライマリカラー
+        font-weight: bold;              // ボールド
+      }
+      
+      &:last-child {
+        margin-bottom: 0;               // 最後のアイテムはマージンなし
+      }
+    }
+  }
+}
+
+// ========================================
+// 理念・メッセージ
+// ========================================
+
+// 理念ブロック
+.member-philosophy {
+  background: linear-gradient(135deg, rgba($primary-color, 0.05), rgba($secondary-color, 0.05)); // グラデーション背景
+  border-left: 4px solid $primary-color; // 左ボーダー
+  padding: $space-3;                    // 24px パディング
+  margin: $space-4 0;                   // 32px 上下マージン
+  border-radius: 0 $border-radius-md $border-radius-md 0; // 右側のみ角丸
+  position: relative;                   // 引用符配置用
+  
+  p {
+    font-size: $font-size-base;         // 16px
+    color: $text-color;                 // テキストカラー
+    line-height: $line-height-relaxed;  // 1.6
+    margin: 0;                          // マージンなし
+    font-style: italic;                 // イタリック（理念なので例外的に使用）
+  }
+  
+}
+
+// ========================================
+// ソーシャルリンク
+// ========================================
+
+// ソーシャルリンクコンテナ（フッターと同じスタイル）
+.member-social {
+  margin-top: $space-4;                // 32px 上マージン
+  display: flex;                       // フレックスレイアウト
+  justify-content: center;             // 中央寄せ
+  gap: $space-2;                      // 16px リンク間のスペース
+  
+  // ソーシャルリンク（フッターと同じスタイル）
+  a {
+    display: inline-flex;               // inline-flexに変更でより自然な幅
+    align-items: center;
+    gap: $space-2;                     // 16px アイコンとテキストの間隔（拡大）
+    padding: $space-2 $space-3;       // 16px 24px パディング
+    background: white;                 // 白背景
+    border: 1px solid rgba($primary-color, 0.2);
+    border-radius: $border-radius-md;   // 8px 角丸
+    color: $primary-color;
+    text-decoration: none;
+    transition: $transition-base;
+    min-height: 44px;                  // デジタル庁準拠タッチターゲット
+    font-size: $font-size-sm;          // 14px フォントサイズ
+    
+    &:hover,
+    &:focus {
+      background: rgba($primary-color, 0.2);
+      border-color: rgba($primary-color, 0.4);
+      color: $primary-color;
+      transform: translateY(-2px);
+    }
+    
+    &:focus {
+      outline: 2px solid rgba($primary-color, 0.5);
+      outline-offset: 2px;
+    }
+    
+    i {
+      font-size: 24px;                 // Font Awesomeアイコンサイズ（デスクトップでも拡大）
+      flex-shrink: 0;
+      width: 24px;                     // 幅固定でアイコンを揃える
+      text-align: center;
+    }
+    
+    // 画像アイコン（Minecraft Ambassador用）
+    img {
+      width: 24px;                     // 固定幅（フッターと同じ）
+      height: 24px;                    // 固定高さ（フッターと同じ）
+      object-fit: contain;             // 比率維持
+      border-radius: 2px;              // 小さな角丸
+    }
+    
+    span {
+      font-size: $font-size-sm;        // 14px
+      font-weight: 500;
+      display: inline;                 // 確実に表示
+    }
+  }
+}
+
+// ========================================
+// レスポンシブデザイン
+// ========================================
+
+// タブレット対応
+@media (max-width: $breakpoint-tablet) {
+  
+  // チームグリッドを1カラムに
+  .team-grid {
+    grid-template-columns: 1fr;        // 1カラム
+    gap: $space-4;                     // 32px ギャップ削減
+  }
+  
+  // メンバーカードの調整
+  .team-member-card {
+    padding: $space-4;                  // 32px パディング削減
+  }
+  
+  // 写真サイズ調整
+  .member-photo img {
+    width: 100px;                       // 幅削減
+    height: 100px;                      // 高さ削減
+  }
+}
+
+// モバイル対応
+@media (max-width: $breakpoint-mobile) {
+  
+  // チームグリッド
+  .team-grid {
+    grid-template-columns: 1fr;        // 1カラム
+    gap: $space-3;                     // 24px さらにギャップ削減
+  }
+  
+  // メンバーカードの調整
+  .team-member-card {
+    padding: $space-3;                  // 24px パディング削減
+  }
+  
+  // 写真サイズ調整
+  .member-photo {
+    margin-bottom: $space-3;            // 24px 下マージン削減
+    
+    img {
+      width: 80px;                      // さらに幅削減
+      height: 80px;                     // さらに高さ削減
+      border-width: 3px;                // ボーダー幅削減
+    }
+  }
+  
+  // 名前のフォントサイズ調整
+  .member-name {
+    font-size: $font-size-lg;          // 20px フォントサイズ削減
+  }
+  
+  // 理念ブロックの調整
+  .member-philosophy {
+    padding: $space-2;                  // 16px パディング削減
+    margin: $space-3 0;                // 24px マージン削減
+  }
+  
+  // ソーシャルリンクの調整（フッターと同じスタイル）
+  .member-social {
+    gap: $space-3;                     // 間隔を広く
+    justify-content: center;           // モバイルでは中央寄せ
+    
+    a {
+      padding: $space-2;               // 上下左右同じパディング
+      min-width: 48px;                 // 最小幅確保
+      justify-content: center;         // アイコンを中央寄せ
+      
+      i {
+        font-size: 30px;               // アイコンサイズを1.5倍に（20px→30px）
+      }
+      
+      img {
+        width: 30px;                   // 画像アイコンサイズもフッターと同じ
+        height: 30px;                  // 画像アイコンサイズもフッターと同じ
+      }
+      
+      span {
+        display: none;                 // モバイルでは文字を非表示
+      }
+    }
+  }
+}
+
+// ========================================
+// アクセシビリティ対応
+// ========================================
+
+// フォーカス状態の改善
+.social-link:focus {
+  outline: 2px solid $primary-color;    // フォーカスアウトライン
+  outline-offset: 2px;                  // アウトライン間隔
+}
+
+// 動きの軽減対応
+@media (prefers-reduced-motion: reduce) {
+  .team-member-card,
+  .social-link {
+    transition: none;                   // アニメーション無効
+  }
+  
+  .team-member-card:hover,
+  .social-link:hover {
+    transform: none;                    // 移動効果無効
+  }
+}

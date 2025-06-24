@@ -1,0 +1,443 @@
+// ========================================
+// 固定フッターCTA
+// ========================================
+
+.fixed-footer-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(white, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid $border-color;
+  box-shadow: $shadow-lg;
+  z-index: $z-fixed;
+  padding: $space-2;
+  
+  .cta-container {
+    max-width: $max-width;
+    margin: 0 auto;
+    text-align: center;
+    
+    .cta-button {
+      @include button-primary;
+      display: inline-flex;
+      align-items: center;
+      gap: $space-1;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: $transition-base;
+      border: none;
+      cursor: pointer;
+      min-height: 44px;
+      box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+      
+      &:hover,
+      &:focus {
+        background: darken($primary-color, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba($primary-color, 0.4);
+      }
+      
+      &:focus {
+        outline: 2px solid rgba($primary-color, 0.5);
+        outline-offset: 2px;
+      }
+      
+      .material-icons {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+// メインコンテンツのパディング調整（固定フッターのため）
+main {
+  padding-bottom: 80px; // 固定フッターCTAの高さ分
+}
+
+// Footer Styles（ミニマル・実用性重視）
+.site-footer {
+  background: $text-color;
+  color: white;
+  padding: $space-4 $space-2;      // 大幅縮小（32px 16px）
+  margin-top: $space-8;            // 64px
+}
+
+.footer-container {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;  // 左2:右1の比率
+  gap: $space-6;                   // 48px セクション間の間隔
+  margin-bottom: $space-4;         // 32px 下マージン
+  align-items: start;              // 上寄せ
+  
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;    // モバイルでは1カラム
+    gap: $space-4;                 // 間隔を削減
+    text-align: center;
+  }
+}
+
+.footer-section {
+  h3 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  p {
+    color: rgba(white, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin-bottom: 0.5rem;
+      
+      a {
+        color: rgba(white, 0.8);
+        text-decoration: none;
+        transition: $transition-base;
+        
+        &:hover,
+        &:focus {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+.footer-cta {
+  background: rgba($primary-color, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border: 1px solid rgba($primary-color, 0.2);
+  
+  h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  p {
+    color: rgba(white, 0.9);
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: $secondary-color;
+    color: $text-color;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: $transition-base;
+    
+    &:hover,
+    &:focus {
+      background: lighten($secondary-color, 10%);
+      transform: translateY(-2px);
+    }
+    
+    .material-icons {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(white, 0.2);
+  padding-top: 1.5rem;
+  text-align: center;
+  
+  p {
+    color: rgba(white, 0.6);
+    margin: 0;
+    font-size: $font-size-sm;  // 14px デジタル庁準拠
+  }
+}
+
+// 連絡先情報セクション
+.footer-contact {
+  margin-top: $space-4;              // 32px 上マージン
+  
+  h4 {
+    color: white;
+    font-size: $font-size-base;      // 16px
+    margin-bottom: $space-2;         // 16px 下マージン
+    font-weight: 600;
+  }
+  
+  .contact-info {
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: $space-2;                 // 16px アイコンとテキストの間隔
+      margin-bottom: $space-2;       // 16px 下マージン
+      color: rgba(white, 0.8);
+      
+      .material-icons {
+        color: $secondary-color;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+      
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: $transition-base;
+        
+        &:hover,
+        &:focus {
+          color: white;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// フッターリンクリスト
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  li {
+    margin-bottom: $space-2;         // 16px 下マージン
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    a {
+      display: flex;
+      align-items: center;
+      gap: $space-1;                 // 8px アイコンとテキストの間隔
+      color: rgba(white, 0.8);
+      text-decoration: none;
+      transition: $transition-base;
+      font-size: $font-size-sm;     // 14px
+      padding: $space-1 0;           // 8px 縦パディング（クリック領域拡大）
+      
+      &:hover,
+      &:focus {
+        color: white;
+        text-decoration: underline;
+      }
+      
+      .material-icons {
+        font-size: 16px;
+        color: $secondary-color;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.footer-social {
+  margin-top: $space-4;              // 32px 上マージン
+  
+  h4 {
+    color: white;
+    font-size: $font-size-base;      // 16px
+    margin-bottom: $space-2;         // 16px 下マージン
+    font-weight: 600;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: $space-2;                   // 16px アイコン間のスペース
+    justify-content: flex-start;     // 左寄せ
+    flex-wrap: wrap;                 // 改行許可
+    
+    .social-link {
+      display: inline-flex;          // inline-flexに変更でより自然な幅
+      align-items: center;
+      gap: $space-2;                 // 16px アイコンとテキストの間隔（拡大）
+      padding: $space-2 $space-3;   // 16px 24px パディング
+      background: rgba(white, 0.1);  // 薄い白背景
+      border: 1px solid rgba(white, 0.2);
+      border-radius: $border-radius-md; // 8px 角丸
+      color: rgba(white, 0.8);
+      text-decoration: none;
+      transition: $transition-base;
+      min-height: 44px;              // デジタル庁準拠タッチターゲット
+      
+      &:hover,
+      &:focus {
+        background: rgba(white, 0.2);
+        border-color: rgba(white, 0.4);
+        color: white;
+        transform: translateY(-2px);
+      }
+      
+      &:focus {
+        outline: 2px solid rgba(white, 0.5);
+        outline-offset: 2px;
+      }
+      
+      i {
+        font-size: 24px;              // Font Awesomeアイコンサイズ（デスクトップでも拡大）
+        flex-shrink: 0;
+        width: 24px;                  // 幅固定でアイコンを揃える
+        text-align: center;
+      }
+      
+      .social-label {
+        font-size: $font-size-sm;     // 14px
+        font-weight: 500;
+        display: inline;               // 確実に表示
+      }
+    }
+  }
+}
+
+// Minecraft免責事項
+.footer-disclaimer {
+  margin-top: $space-4;              // 32px 上マージン
+  padding: $space-3;                 // 24px パディング
+  background: rgba(white, 0.05);     // 非常に薄い白背景
+  border: 1px solid rgba(white, 0.1);
+  border-radius: $border-radius-md;  // 8px 角丸
+  border-left: 4px solid $warning-color; // 左側に警告色のボーダー
+  
+  .disclaimer-text {
+    color: rgba(white, 0.7);
+    font-size: $font-size-xs;        // 12px 小さめフォント
+    line-height: 1.4;
+    margin: 0;
+    font-style: italic;               // イタリック（免責事項用のみ例外）
+  }
+}
+
+// Contact information styling
+.contact-info {
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: rgba(white, 0.8);
+    
+    .material-icons {
+      color: $secondary-color;
+      font-size: 1.25rem;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: $transition-base;
+      
+      &:hover,
+      &:focus {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: $breakpoint-mobile) {
+  // 固定フッターCTAのモバイル調整
+  .fixed-footer-cta {
+    padding: 0.75rem 1rem;
+    
+    .cta-container .cta-button {
+      padding: 0.875rem 1.5rem;
+      font-size: $font-size-sm;  // 14px デジタル庁準拠
+      
+      .material-icons {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  
+  // メインコンテンツのパディング調整（モバイル）
+  main {
+    padding-bottom: 70px; // モバイルでの固定フッターCTAの高さ分
+  }
+  
+  .site-footer {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  // モバイルでのSNSリンク調整
+  .footer-social {
+    margin-top: $space-3;            // モバイルでは上マージン削減
+    
+    .social-links {
+      justify-content: center;       // モバイルでは中央寄せ
+      gap: $space-3;                 // 間隔を広く
+      
+      .social-link {
+        padding: $space-2;           // 上下左右同じパディング
+        min-width: 48px;             // 最小幅確保
+        justify-content: center;     // アイコンを中央寄せ
+        
+        i {
+          font-size: 30px;           // アイコンサイズを1.5倍に（20px→30px）
+        }
+        
+        .social-label {
+          display: none;             // モバイルでは文字を非表示
+        }
+      }
+    }
+  }
+  
+  // モバイルでの免責事項調整
+  .footer-disclaimer {
+    margin-top: $space-3;            // 上マージン削減
+    padding: $space-2;               // パディング削減
+    
+    .disclaimer-text {
+      font-size: $font-size-xs;       // 12px デジタル庁準拠最小サイズ
+      line-height: 1.3;
+    }
+  }
+  
+  .footer-cta {
+    padding: 1.5rem;
+    
+    .cta-button {
+      padding: 0.875rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+  
+  .footer-social {
+    gap: 0.75rem;
+    
+    a {
+      width: 36px;
+      height: 36px;
+      
+      .material-icons {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

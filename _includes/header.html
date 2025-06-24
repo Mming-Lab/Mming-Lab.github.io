@@ -1,0 +1,101 @@
+<!-- サイトヘッダー -->
+<header class="site-header" role="banner">
+    <nav class="main-navigation" role="navigation" aria-label="{{ site.data.ui_text.navigation.main_navigation_label }}">
+        <div class="nav-container">
+            <!-- サイトロゴ/タイトル -->
+            <div class="site-branding">
+                <a href="{{ '/' | relative_url }}" class="site-title-link" aria-label="{{ site.data.config.site.name }} ホームページ">
+                    {% if site.data.config.site.logo %}
+                    <img src="{{ site.data.config.site.logo | relative_url }}" 
+                         alt="{{ site.data.config.site.name }} ロゴ" 
+                         class="site-logo"
+                         width="40"
+                         height="40">
+                    {% endif %}
+                    <div class="site-title-group">
+                        <span class="site-title">{{ site.data.config.site.name }}</span>
+                        <span class="site-tagline">{{ site.data.config.site.tagline }}</span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- モバイルメニュートグル -->
+            <button class="mobile-menu-toggle" aria-label="{{ site.data.ui_text.navigation.mobile_menu_open }}" aria-expanded="false" aria-controls="main-menu">
+                <span class="material-icons">menu</span>
+            </button>
+            
+            <!-- ナビゲーションメニュー -->
+            <ul class="nav-menu" id="main-menu">
+                {% if page.url contains 'trial' %}
+                    <!-- Trial page navigation -->
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">home</span>
+                            トップページ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#aptitude-start" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">quiz</span>
+                            適性チェック
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#trial-application" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">event</span>
+                            体験申込み
+                        </a>
+                    </li>
+                {% elsif page.url contains 'blog' or page.layout == 'post' %}
+                    <!-- Blog/Post page navigation -->
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">home</span>
+                            トップページ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/#about" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">home</span>
+                            教室について
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/#features" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">star</span>
+                            特徴
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/#faq" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">help</span>
+                            FAQ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blog/" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">article</span>
+                            お知らせ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/trial/" class="nav-link">
+                            <span class="material-icons" aria-hidden="true">event</span>
+                            体験申込み
+                        </a>
+                    </li>
+                {% else %}
+                    <!-- Main page navigation -->
+                    {% for item in site.data.navigation.main %}
+                    <li class="nav-item">
+                        <a href="{{ item.url }}" class="nav-link"{% if item.full_title %} aria-label="{{ item.full_title }}"{% endif %}>
+                            {% if item.icon %}<span class="material-icons" aria-hidden="true">{{ item.icon }}</span>{% endif %}
+                            {{ item.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</header>

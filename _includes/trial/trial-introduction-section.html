@@ -1,0 +1,20 @@
+<!-- 適性診断の紹介セクション -->
+<section class="introduction-section">
+    <div class="section-container">
+        <div class="introduction-banner">
+            <div class="banner-decoration">
+                <span class="material-icons decoration-icon" aria-hidden="true">psychology</span>
+            </div>
+            <div class="banner-content">
+                <h2>{{ site.data.aptitude_check.introduction.title }}</h2>
+                <div class="introduction-message">
+                    {{ site.data.aptitude_check.introduction.message | markdownify }}
+                </div>
+                <div class="duration-badge">
+                    <span class="material-icons" aria-hidden="true">schedule</span>
+                    所要時間: {{ site.data.aptitude_check.introduction.duration }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

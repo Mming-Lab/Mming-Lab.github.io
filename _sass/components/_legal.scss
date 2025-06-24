@@ -1,0 +1,343 @@
+/**
+ * mmingプログラミング教室 - 法的文書（プライバシーポリシー等）スタイル
+ * デジタル庁デザインシステム準拠
+ */
+
+// ========================================
+// 法的文書ページ メイン
+// ========================================
+
+.legal-page {
+  min-height: 100vh;
+  background: $background-color;
+  padding: $space-8 $space-2;                // 64px 16px
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-8 $space-4;              // 64px 32px
+  }
+}
+
+.legal-container {
+  max-width: 800px;                          // 読みやすい幅に制限
+  margin: 0 auto;
+  background: white;
+  border-radius: $border-radius-lg;          // 16px
+  box-shadow: $shadow;
+  overflow: hidden;
+}
+
+// ========================================
+// ヘッダーセクション
+// ========================================
+
+.legal-header {
+  background: linear-gradient(135deg, $primary-color, $primary-700);
+  color: white;
+  padding: $space-6 $space-4;               // 48px 32px
+  text-align: center;
+  
+  h1 {
+    font-size: $font-size-2xl;              // 32px
+    font-weight: 700;
+    margin: 0 0 $space-2 0;                 // 16px 下マージン
+    
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-3xl;            // 36px
+    }
+  }
+  
+  .last-updated {
+    color: rgba(white, 0.8);
+    font-size: $font-size-sm;               // 14px
+    margin: 0;
+  }
+}
+
+// ========================================
+// 目次（Table of Contents）
+// ========================================
+
+.table-of-contents {
+  background: rgba($primary-color, 0.05);
+  border: 1px solid rgba($primary-color, 0.2);
+  border-radius: $border-radius-md;          // 8px
+  padding: $space-4;                        // 32px
+  margin: $space-4 0 $space-6 0;            // 32px 上、48px 下
+  
+  h2 {
+    font-size: $font-size-lg;               // 20px
+    font-weight: 600;
+    color: $primary-color;
+    margin: 0 0 $space-3 0;                 // 24px 下マージン
+    padding-bottom: $space-2;               // 16px 下パディング
+    border-bottom: 1px solid rgba($primary-color, 0.2);
+  }
+  
+  ol {
+    margin: 0;
+    padding-left: $space-4;                // 32px 左パディング
+    counter-reset: toc-counter;
+    
+    li {
+      font-size: $font-size-base;          // 16px
+      line-height: $line-height-normal;    // 1.4
+      margin-bottom: $space-2;             // 16px 下マージン
+      list-style: none;
+      counter-increment: toc-counter;
+      position: relative;
+      
+      &::before {
+        content: counter(toc-counter) ".";
+        font-weight: 600;
+        color: $primary-color;
+        margin-right: $space-2;            // 16px 右マージン
+      }
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      a {
+        color: $text-color;
+        text-decoration: none;
+        transition: $transition-base;
+        
+        &:hover,
+        &:focus {
+          color: $primary-color;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    padding: $space-3;                     // 24px（モバイル）
+    margin: $space-3 0 $space-4 0;         // 24px 上、32px 下
+    
+    h2 {
+      font-size: $font-size-base;          // 16px（モバイル）
+    }
+    
+    ol {
+      padding-left: $space-3;              // 24px（モバイル）
+      
+      li {
+        font-size: $font-size-sm;          // 14px（モバイル）
+      }
+    }
+  }
+}
+
+// ========================================
+// コンテンツセクション
+// ========================================
+
+.legal-content {
+  padding: $space-6 $space-4;               // 48px 32px
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-8 $space-6;             // 64px 48px
+  }
+}
+
+.legal-section {
+  margin-bottom: $space-6;                  // 48px 下マージン
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  h2 {
+    font-size: $font-size-xl;               // 24px
+    font-weight: 700;
+    color: $primary-color;
+    margin: 0 0 $space-4 0;                 // 32px 下マージン
+    padding-bottom: $space-2;               // 16px 下パディング
+    border-bottom: 2px solid rgba($primary-color, 0.2);
+  }
+  
+  h3 {
+    font-size: $font-size-lg;               // 20px
+    font-weight: 600;
+    color: $text-color;
+    margin: $space-4 0 $space-3 0;          // 32px 上、24px 下
+  }
+  
+  h4 {
+    font-size: $font-size-base;             // 16px
+    font-weight: 600;
+    color: $primary-color;
+    margin: $space-3 0 $space-2 0;          // 24px 上、16px 下
+  }
+  
+  p {
+    font-size: $font-size-base;             // 16px
+    line-height: $line-height-relaxed;      // 1.6
+    color: $text-color;
+    margin-bottom: $space-3;                // 24px 下マージン
+    
+    &.intro-text {
+      font-size: $font-size-lg;             // 20px
+      font-weight: 500;
+      color: $text-secondary;
+      background: rgba($primary-color, 0.05);
+      padding: $space-4;                    // 32px
+      border-radius: $border-radius-md;     // 8px
+      border-left: 4px solid $primary-color;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  ul, ol {
+    margin: $space-3 0;                     // 24px 上下マージン
+    padding-left: $space-4;                // 32px 左パディング
+    
+    li {
+      font-size: $font-size-base;          // 16px
+      line-height: $line-height-relaxed;   // 1.6
+      color: $text-color;
+      margin-bottom: $space-2;             // 16px 下マージン
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  a {
+    color: $primary-color;
+    text-decoration: underline;
+    transition: $transition-base;
+    
+    &:hover,
+    &:focus {
+      color: $primary-700;
+      text-decoration: none;
+    }
+  }
+}
+
+// ========================================
+// 情報ボックス
+// ========================================
+
+.info-box {
+  background: rgba($info-color, 0.05);
+  border: 1px solid rgba($info-color, 0.2);
+  border-radius: $border-radius-md;          // 8px
+  padding: $space-4;                        // 32px
+  margin: $space-4 0;                       // 32px 上下マージン
+  
+  h4 {
+    color: $info-color;
+    margin-top: 0;
+    margin-bottom: $space-3;                // 24px 下マージン
+  }
+  
+  ul {
+    margin: 0;
+    
+    li {
+      margin-bottom: $space-2;              // 16px 下マージン
+      
+      strong {
+        color: $info-color;
+      }
+    }
+  }
+}
+
+// ========================================
+// 連絡先情報
+// ========================================
+
+.contact-info {
+  background: rgba($secondary-color, 0.05);
+  border: 1px solid rgba($secondary-color, 0.2);
+  border-radius: $border-radius-md;          // 8px
+  padding: $space-4;                        // 32px
+  margin-top: $space-4;                     // 32px 上マージン
+  
+  p {
+    margin-bottom: $space-2;                // 16px 下マージン
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    strong {
+      color: $secondary-color;
+      font-weight: 600;
+    }
+  }
+}
+
+// ========================================
+// フッターセクション
+// ========================================
+
+.legal-footer {
+  background: $surface-color;               // 薄いグレー背景
+  padding: $space-4;                       // 32px
+  text-align: center;
+  border-top: 1px solid rgba($gray-300, 0.5);
+  
+  p {
+    font-size: $font-size-sm;               // 14px
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+// ========================================
+// レスポンシブデザイン
+// ========================================
+
+@media (max-width: $breakpoint-mobile) {
+  .legal-page {
+    padding: $space-4 $space-1;             // 32px 8px（よりコンパクト）
+  }
+  
+  .legal-header {
+    padding: $space-4 $space-3;             // 32px 24px
+    
+    h1 {
+      font-size: $font-size-xl;             // 24px（モバイル）
+    }
+  }
+  
+  .legal-content {
+    padding: $space-4 $space-3;             // 32px 24px
+  }
+  
+  .legal-section {
+    margin-bottom: $space-4;                // 32px（間隔を詰める）
+    
+    h2 {
+      font-size: $font-size-lg;             // 20px（モバイル）
+    }
+    
+    h3 {
+      font-size: $font-size-base;           // 16px（モバイル）
+    }
+    
+    p.intro-text {
+      font-size: $font-size-base;           // 16px（モバイル）
+      padding: $space-3;                    // 24px
+    }
+  }
+  
+  .info-box,
+  .contact-info {
+    padding: $space-3;                      // 24px（モバイル）
+    margin: $space-3 0;                     // 24px 上下
+  }
+  
+  ul, ol {
+    padding-left: $space-3;                 // 24px（モバイル）
+  }
+}

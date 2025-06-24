@@ -1,0 +1,33 @@
+---
+---
+
+/**
+ * mmingプログラミング教室 - メインスタイルシート
+ * JekyllによってコンパイルされるメインのSCSSファイル
+ */
+
+// ========================================
+// パーシャルファイルのインポート
+// ========================================
+
+// 基本設定とユーティリティ
+@import "variables";                    // Sass変数定義
+@import "mixins";                      // Sassミックスイン
+@import "base";                        // CSSリセットと基本スタイル
+
+// コンポーネント別スタイル
+@import "components/header";            // ヘッダー・ナビゲーション
+@import "components/hero";             // ヒーローセクション
+@import "components/about";            // 教室について（対象者情報統合済み）
+@import "components/team";             // チーム紹介
+@import "components/features";         // 特徴セクション
+@import "components/image-slider";     // 画像スライダー
+@import "components/blog";             // ブログ・お知らせセクション
+@import "components/aptitude-check";   // 適性診断システム
+@import "components/faq";              // よくある質問
+@import "components/pricing-access";   // 料金・スケジュール・アクセス
+@import "components/footer";           // フッター
+@import "components/section-divider";  // セクション区切り
+@import "components/legal";            // 法的文書ページ
+@import "components/accessibility";    // アクセシビリティ機能
+@import "components/performance";      // パフォーマンス最適化

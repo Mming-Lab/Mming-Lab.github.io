@@ -1,0 +1,54 @@
+<!-- アクセスセクション -->
+<section class="access-section" id="access">
+    <div class="section-container">
+        <div class="section-header">
+            <h2>{{ site.data.access.title }}</h2>
+        </div>
+        
+        <div class="access-grid">
+            <!-- アクセス詳細（左側） -->
+            <div class="access-section-left">
+                <div class="access-details">
+                    <p><strong>{{ site.data.access.labels.address }}</strong> {{ site.data.access.info.address }}</p>
+                    
+                    <div class="access-methods">
+                        <strong>{{ site.data.access.labels.access }}</strong>
+                        {% for method in site.data.access.info.access_methods %}
+                        <p class="access-method">
+                            <span class="access-type">{{ method.type }}</span>
+                            {{ method.description }}
+                        </p>
+                        {% endfor %}
+                    </div>
+                    
+                    <p><strong>{{ site.data.access.labels.parking }}</strong> {{ site.data.access.info.parking }}</p>
+                </div>
+            </div>
+            
+            <!-- 地図（右側） -->
+            {% if site.data.access.map.enabled and site.data.access.map.embed_url %}
+            <div class="access-section-right">
+                <div class="map-container">
+                    <iframe 
+                        src="{{ site.data.access.map.embed_url }}" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="mmingプログラミング教室の地図">
+                    </iframe>
+                    {% if site.data.access.map.link_url %}
+                    <p class="map-link">
+                        <a href="{{ site.data.access.map.link_url }}" target="_blank" rel="noopener noreferrer">
+                            {{ site.data.access.map.link_text }}
+                        </a>
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

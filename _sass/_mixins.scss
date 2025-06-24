@@ -1,0 +1,503 @@
+/**
+ * mmingプログラミング教室 - Sass ミックスイン
+ * デジタル庁デザインシステムβ版v2.4.0準拠
+ * 再利用可能なCSS関数とコンポーネントライブラリ
+ */
+
+// ========================================
+// デジタル庁準拠ボタンコンポーネント
+// ========================================
+
+// ベースボタン（デジタル庁準拠）
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: $space-11;              // 44px（アクセシビリティ準拠）
+  padding: $space-3 $space-4;         // 12px 16px
+  border: 1px solid transparent;
+  border-radius: $border-radius;      // 8px
+  font-family: $font-family-base;
+  font-size: $font-size-ui-lg;        // 16px
+  font-weight: $font-weight-semibold; // 600
+  line-height: $line-height-ui;       // 1.4
+  letter-spacing: $letter-spacing-wider; // 0.02em
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: $transition-base;
+  user-select: none;
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  &:focus {
+    outline: 2px solid $focus-color;
+    outline-offset: 2px;
+  }
+}
+
+// プライマリボタン
+@mixin button-primary {
+  @include button-base;
+  background-color: $primary-color;
+  color: $text-inverse;
+  border-color: $primary-color;
+  
+  &:hover:not(:disabled) {
+    background-color: $primary-700;
+    border-color: $primary-700;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: $primary-900;
+    border-color: $primary-900;
+  }
+}
+
+// セカンダリボタン
+@mixin button-secondary {
+  @include button-base;
+  background-color: transparent;
+  color: $primary-color;
+  border-color: $primary-color;
+  
+  &:hover:not(:disabled) {
+    background-color: $primary-50;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: $primary-100;
+  }
+}
+
+// ========================================
+// デジタル庁準拠カードコンポーネント
+// ========================================
+
+// ベースカード
+@mixin card-base {
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-lg;    // 12px
+  box-shadow: $shadow-sm;
+  overflow: hidden;
+}
+
+// インタラクティブカード（クリック可能）
+@mixin card-interactive {
+  @include card-base;
+  cursor: pointer;
+  transition: $transition-base;
+  border-color: $primary-color;
+  
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: $shadow;
+  }
+  
+  &:focus-within {
+    outline: 2px solid $focus-ring;
+    outline-offset: 2px;
+  }
+}
+
+// 情報表示カード（静的）
+@mixin card-static {
+  @include card-base;
+  border-color: rgba($primary-color, 0.2);
+}
+
+// ========================================
+// デジタル庁準拠フォームコンポーネント
+// ========================================
+
+// ベースインプット
+@mixin input-base {
+  display: block;
+  width: 100%;
+  min-height: $space-11;              // 44px
+  padding: $space-3 $space-4;         // 12px 16px
+  border: 1px solid $border-color;
+  border-radius: $border-radius;      // 8px
+  background-color: $background-color;
+  font-family: $font-family-base;
+  font-size: $font-size-ui-lg;        // 16px
+  line-height: $line-height-ui;       // 1.4
+  color: $text-color;
+  transition: $transition-base;
+  
+  &::placeholder {
+    color: $text-muted;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: $focus-color;
+    box-shadow: 0 0 0 2px $focus-ring;
+  }
+  
+  &:invalid {
+    border-color: $error-color;
+  }
+  
+  &:disabled {
+    background-color: $surface-color;
+    color: $text-muted;
+    cursor: not-allowed;
+  }
+}
+
+// ========================================
+// レスポンシブ対応ミックスイン
+// ========================================
+
+// メディアクエリ用ミックスイン
+@mixin media($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: #{$breakpoint-mobile - 1px}) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: #{$breakpoint-tablet}) {
+      @content;
+    }
+  }
+}
+
+// ========================================
+// フレックスボックス関連ミックスイン
+// ========================================
+
+// フレックス中央寄せ
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// フレックス垂直中央寄せ
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+// フレックス水平中央寄せ
+@mixin flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+// セカンダリボタン（デジタル庁準拠）
+@mixin button-secondary {
+  @include button-base;
+  background: white;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+  
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background: $secondary-color;
+    color: $primary-color;
+    border-color: $primary-dark;
+    transform: translateY(-1px);
+  }
+}
+
+// ========================================
+// カード関連ミックスイン
+// ========================================
+
+// ベースカードスタイル（デジタル庁準拠）
+@mixin card-base {
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: $shadow-sm;
+  border: 1px solid $border-color;
+  transition: $transition-base;
+}
+
+// アコーディオンカード（クリック可能・デジタル庁準拠）
+@mixin card-accordion {
+  background: white;
+  border-radius: $border-radius-lg;      // 12px角丸（目立たせる）
+  border: 1px solid $primary-color;      // 適度なボーダー（デジタル庁準拠）
+  cursor: pointer;
+  box-shadow: $shadow-sm;                // 控えめな影（デジタル庁準拠）
+  transition: $transition-base;
+  
+  &:hover {
+    transform: translateY(-1px);          // 控えめな浮き上がり効果
+    box-shadow: $shadow-md;               // 強い影
+    border-color: $primary-dark;          // ボーダー強調
+  }
+  
+  &.expanded {
+    box-shadow: $shadow-md;               // 中程度の影効果（過度でない）
+    border-color: $primary-dark;          // 強調ボーダー
+  }
+}
+
+// 情報バナー（静的表示・デジタル庁準拠）
+@mixin info-banner($color: $primary-color) {
+  background: rgba($color, 0.05);        // シンプルな薄い背景
+  border: 1px solid rgba($color, 0.2);   // 細い境界線（情報表示用）
+  border-radius: $border-radius-lg;      // 標準的な角丸
+  cursor: default;                       // 通常のカーソル（クリック不可を示す）
+  box-shadow: none;                      // 影なし（静的コンテンツ）
+  position: relative;
+}
+
+// 情報リボン（静的表示・デジタル庁準拠）
+@mixin info-ribbon($color: $secondary-color) {
+  background: white;
+  border: 1px solid rgba($color, 0.3);   // 細いボーダー（情報表示用）
+  border-radius: $border-radius-xl;      // 標準的な角丸
+  cursor: default;                       // 通常のカーソル（クリック不可を示す）
+  box-shadow: none;                      // 影なし（静的コンテンツ）
+}
+
+// レガシー互換（ホバー効果付きカード）
+@mixin card-interactive {
+  @include card-base;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: rgba($primary-color, 0.2);
+  }
+}
+
+// ========================================
+// テキスト関連ミックスイン
+// ========================================
+
+// テキスト省略
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 複数行テキスト省略
+@mixin text-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// ========================================
+// フォーム関連ミックスイン（デジタル庁準拠）
+// ========================================
+
+
+// プライマリインプット
+@mixin input-primary {
+  @include input-base;
+  background-color: white;
+  
+  &:hover:not(:disabled) {
+    border-color: $primary-light;
+  }
+}
+
+// エラー状態のインプット
+@mixin input-error {
+  @include input-base;
+  border-color: $error-color;
+  
+  &:focus {
+    border-color: $error-color;
+    box-shadow: 0 0 0 2px rgba($error-color, 0.2);
+  }
+}
+
+// 成功状態のインプット（実用性向上）
+@mixin input-success {
+  @include input-base;
+  border-color: $success-color;
+  
+  &:focus {
+    border-color: $success-color;
+    box-shadow: 0 0 0 2px rgba($success-color, 0.2);
+  }
+}
+
+// 警告状態のインプット（実用性向上）
+@mixin input-warning {
+  @include input-base;
+  border-color: $warning-color;
+  
+  &:focus {
+    border-color: $warning-color;
+    box-shadow: 0 0 0 2px rgba($warning-color, 0.2);
+  }
+}
+
+// ========================================
+// レイアウトシステム（デジタル庁準拠・実用性重視）
+// ========================================
+
+// 12カラムグリッドシステム（軽量実装）
+@mixin grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: $space-4; // 32px ガター
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $space-4;
+}
+
+// カラムスパン（実用的な範囲）
+@mixin grid-span($columns) {
+  grid-column: span $columns;
+}
+
+// レスポンシブカラム
+@mixin grid-responsive($mobile, $desktop) {
+  grid-column: span $mobile;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-column: span $desktop;
+  }
+}
+
+// ========================================
+// アニメーション関連ミックスイン
+// ========================================
+
+// フェードイン
+@mixin fade-in($duration: 0.3s) {
+  animation: fadeIn $duration ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// スライドアップ
+@mixin slide-up($duration: 0.6s) {
+  animation: slideUp $duration ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// ========================================
+// ユーティリティ関数
+// ========================================
+
+// 色の透明度調整
+@function alpha($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+// コンテナパディング計算
+@function container-padding($size: 'default') {
+  @if $size == 'small' {
+    @return 1rem;
+  } @else if $size == 'large' {
+    @return 2rem;
+  } @else {
+    @return 1.5rem;
+  }
+}
+
+// ========================================
+// デジタル庁準拠アクセシビリティミックスイン
+// ========================================
+
+// スクリーンリーダー専用（sr-only）
+@mixin sr-only {
+  position: $sr-only-position;
+  width: $sr-only-width;
+  height: $sr-only-height;
+  padding: $sr-only-padding;
+  margin: $sr-only-margin;
+  overflow: $sr-only-overflow;
+  clip: $sr-only-clip;
+  white-space: nowrap;
+  border: $sr-only-border;
+}
+
+// スクリーンリーダー専用を表示状態に戻す
+@mixin sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: inherit;
+  }
+}
+
+// フォーカス可能要素のスタイル
+@mixin focusable {
+  &:focus {
+    outline: $focus-ring-width $focus-ring-style $focus-ring-color;
+    outline-offset: $focus-ring-offset;
+  }
+  
+  // ハイコントラストモード対応
+  @media (prefers-contrast: high) {
+    &:focus {
+      outline: $high-contrast-outline;
+    }
+  }
+}
+
+// 動きの軽減対応
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: $reduced-motion-duration !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: $reduced-motion-duration !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ハイコントラストモード対応
+@mixin high-contrast {
+  @media (prefers-contrast: high) {
+    background-color: $high-contrast-bg !important;
+    color: $high-contrast-text !important;
+    border-color: $high-contrast-border !important;
+  }
+}
+
+// タッチターゲットサイズ確保
+@mixin touch-target($size: $min-touch-target) {
+  min-width: $size;
+  min-height: $size;
+}

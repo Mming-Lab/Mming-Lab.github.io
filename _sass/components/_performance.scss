@@ -1,0 +1,245 @@
+/**
+ * mmingプログラミング教室 - パフォーマンス最適化スタイル
+ * 読み込み速度とレンダリング性能の最適化
+ */
+
+// ========================================
+// 画像最適化
+// ========================================
+
+// 画像遅延読み込み
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+// 画像プレースホルダー
+.image-placeholder {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+// ========================================
+// レンダリング最適化
+// ========================================
+
+// GPUアクセラレーション対象要素
+.hero-image,
+.question-card,
+.result-card,
+.cta-button {
+  will-change: transform;
+  
+  // アニメーション完了後にwill-changeを削除
+  &:not(:hover):not(:focus) {
+    will-change: auto;
+  }
+}
+
+// レイアウトシフト防止
+.aspect-ratio-container {
+  position: relative;
+  width: 100%;
+  
+  &::before {
+    content: '';
+    display: block;
+    padding-top: var(--aspect-ratio, 56.25%); // デフォルト16:9
+  }
+  
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// 16:9アスペクト比
+.aspect-ratio-16-9 {
+  --aspect-ratio: 56.25%;
+}
+
+// 4:3アスペクト比
+.aspect-ratio-4-3 {
+  --aspect-ratio: 75%;
+}
+
+// 1:1アスペクト比
+.aspect-ratio-1-1 {
+  --aspect-ratio: 100%;
+}
+
+// ========================================
+// フォント最適化
+// ========================================
+
+// フォント表示最適化
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-display: swap; // フォント読み込み中もテキストを表示
+}
+
+// テキストレンダリング最適化
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ========================================
+// スクロール最適化
+// ========================================
+
+// スムーズスクロール
+html {
+  scroll-behavior: smooth;
+  
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+// パッシブスクロール
+.scroll-container {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; // iOS対応
+}
+
+// ========================================
+// アニメーション最適化
+// ========================================
+
+// transform/opacityのみのアニメーション（リフロー回避）
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ========================================
+// 動きの軽減設定対応
+// ========================================
+
+@media (prefers-reduced-motion: reduce) {
+  // すべてのアニメーションを無効化
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  // ホバー効果のtransformを無効化
+  .cta-button:hover,
+  .question-card:hover,
+  .result-card:hover {
+    transform: none !important;
+  }
+}
+
+// ========================================
+// コンテンツ可視性最適化
+// ========================================
+
+// 非表示コンテンツのレンダリングをスキップ
+.accordion-content:not(.expanded),
+.modal:not(.active),
+.dropdown:not(.open) {
+  content-visibility: hidden;
+}
+
+// ビューポート外のコンテンツの最適化
+.off-screen {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px; // 推定サイズ
+}
+
+// ========================================
+// 重要なリソースの優先読み込み
+// ========================================
+
+// 重要な画像の即座読み込み
+.hero-image img,
+.logo img {
+  loading: eager;
+}
+
+// 重要でない画像の遅延読み込み
+.feature-image img,
+.material-image img {
+  loading: lazy;
+}
+
+// ========================================
+// レスポンシブ最適化
+// ========================================
+
+// コンテナクエリ対応（将来対応）
+@supports (container-type: inline-size) {
+  .responsive-container {
+    container-type: inline-size;
+  }
+  
+  @container (min-width: 768px) {
+    .responsive-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+// ========================================
+// 印刷最適化
+// ========================================
+
+@media print {
+  // 印刷不要な要素を非表示
+  .mobile-menu-toggle,
+  .fixed-footer-cta,
+  .scroll-to-top,
+  video,
+  iframe {
+    display: none !important;
+  }
+  
+  // 印刷用スタイル
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+  }
+  
+  // ページ区切り制御
+  .page-break-before {
+    page-break-before: always;
+  }
+  
+  .page-break-after {
+    page-break-after: always;
+  }
+  
+  .page-break-avoid {
+    page-break-inside: avoid;
+  }
+}

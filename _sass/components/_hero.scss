@@ -1,0 +1,192 @@
+/**
+ * mmingプログラミング教室 - ヒーローセクションスタイル
+ * メインビジュアルエリアのデザインとレスポンシブ対応
+ */
+
+// ========================================
+// ヒーローセクション メイン
+// ========================================
+
+// ヒーローセクション全体（デジタル庁準拠）
+.hero-section {
+  // グラデーション背景（薄青からプライマリカラーへ）
+  background: linear-gradient(135deg, $surface-color 0%, rgba($primary-color, 0.1) 100%);
+  padding: $space-10 $space-2 $space-8;     // 上下左右のパディング（8pxベース）
+  position: relative;                        // 装飾要素の配置用
+  overflow: hidden;                          // 装飾要素のはみ出し防止
+}
+
+// ヒーローコンテナ
+.hero-container {
+  max-width: $max-width;                     // 最大幅制限
+  margin: 0 auto;                           // 中央寄せ
+  position: relative;                        // 装飾要素より前面に
+  z-index: 2;                               // z-index設定
+  display: grid;                            // グリッドレイアウト
+  grid-template-columns: 1fr 1fr;           // 2列レイアウト
+  align-items: center;                      // 垂直中央寄せ
+  gap: $space-6;                           // 列間のスペース（8pxベース）
+  
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;            // モバイルでは1列
+    gap: $space-4;                        // スペース削減（8pxベース）
+  }
+}
+
+// ヒーロー画像
+.hero-image {
+  position: relative;                       // 配置用
+  z-index: 3;                              // コンテンツより前面
+  
+  picture {
+    display: block;                         // ブロック要素
+    width: 100%;                           // 全幅
+    height: auto;                          // 高さ自動
+  }
+  
+  img {
+    width: 100%;                           // 全幅
+    height: auto;                          // 高さ自動
+    aspect-ratio: 1;                       // 正方形のアスペクト比を維持
+    border-radius: 16px;                   // 角丸
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); // 影効果
+    object-fit: contain;                   // 画像全体を表示（クロップしない）
+    background: #f0f0f0;                   // 読み込み中の背景色
+  }
+}
+
+// ========================================
+// ヒーローコンテンツ
+// ========================================
+
+// ヒーローコンテンツ（テキスト部分）
+.hero-content {
+  text-align: left;                         // 左寄せ（グリッドレイアウト用）
+  
+  @media (max-width: $breakpoint-mobile) {
+    text-align: center;                     // モバイルでは中央寄せ
+  }
+}
+
+// メインタイトル（デジタル庁準拠）
+.hero-title {
+  font-size: clamp($font-size-3xl, 5vw, $font-size-4xl); // レスポンシブ（30px-36px・実用サイズ）
+  font-weight: 700;                         // ボールド
+  color: $text-color;                       // テキストカラー
+  margin-bottom: $space-3;                  // 下マージン（8pxベース）
+  line-height: $line-height-tight;         // 行高（1.2）
+  
+  // ハイライト部分（強調テキスト）
+  .highlight {
+    color: $primary-color;                  // プライマリカラー
+    position: relative;                     // 装飾線の配置用
+    
+    // 装飾的な下線
+    &::after {
+      content: '';                          // 空のコンテンツ
+      position: absolute;                   // 絶対配置
+      bottom: -2px;                        // 少し下に配置
+      left: 0;                             // 左端から
+      right: 0;                            // 右端まで
+      height: 3px;                         // 線の太さ
+      background: linear-gradient(90deg, $secondary-color, $primary-color); // グラデーション
+      border-radius: 2px;                  // 角丸
+    }
+  }
+}
+
+// サブタイトル（デジタル庁準拠）
+.hero-subtitle {
+  font-size: clamp($font-size-lg, 3vw, $font-size-2xl); // レスポンシブ（18px-24px）
+  color: $text-secondary;                   // セカンダリテキストカラー
+  margin-bottom: $space-4;                  // 下マージン（8pxベース）
+  line-height: $line-height-relaxed;       // 行高（1.5）
+  max-width: 600px;                        // 最大幅制限
+  margin-left: auto;                       // 中央寄せ
+  margin-right: auto;                      // 中央寄せ
+}
+
+// 説明文
+.hero-description {
+  font-size: 1.1rem;                       // フォントサイズ
+  color: $text-color;                       // テキストカラー
+  margin-bottom: 3rem;                      // 下マージン
+  line-height: 1.6;                        // 読みやすい行高
+  max-width: 700px;                        // 最大幅制限
+  margin-left: auto;                       // 中央寄せ
+  margin-right: auto;                      // 中央寄せ
+}
+
+// ========================================
+// CTA（Call to Action）ボタン
+// ========================================
+
+// メインCTAボタン
+.hero-cta {
+  .cta-button {
+    @include button-primary;
+    font-size: 1.1rem;
+    
+    .material-icons {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// ========================================
+// 装飾要素
+// ========================================
+
+// 右上の装飾円（セカンダリカラー）
+.hero-section::before {
+  content: '';                              // 空のコンテンツ
+  position: absolute;                       // 絶対配置
+  top: -50%;                               // 上に配置（一部はみ出し）
+  right: -20%;                             // 右に配置（一部はみ出し）
+  width: 200px;                            // 幅
+  height: 200px;                           // 高さ
+  background: radial-gradient(circle, rgba($secondary-color, 0.1), transparent); // 放射グラデーション
+  border-radius: 50%;                      // 円形
+  z-index: 1;                              // コンテンツより背面
+}
+
+// 左下の装飾円（プライマリカラー）
+.hero-section::after {
+  content: '';                              // 空のコンテンツ
+  position: absolute;                       // 絶対配置
+  bottom: -30%;                            // 下に配置（一部はみ出し）
+  left: -10%;                              // 左に配置（一部はみ出し）
+  width: 150px;                            // 幅
+  height: 150px;                           // 高さ
+  background: radial-gradient(circle, rgba($primary-color, 0.08), transparent); // 放射グラデーション
+  border-radius: 50%;                      // 円形
+  z-index: 1;                              // コンテンツより背面
+}
+
+// ========================================
+// レスポンシブデザイン
+// ========================================
+
+// モバイル・タブレット対応
+@media (max-width: $breakpoint-mobile) {
+  
+  // ヒーローセクションのパディング調整
+  .hero-section {
+    padding: 4rem 1rem 3rem;                // モバイルでパディング削減
+  }
+  
+  // CTAボタンのサイズ調整
+  .hero-cta {
+    padding: 0.875rem 1.5rem;               // パディング削減
+    font-size: 1rem;                        // フォントサイズ削減
+  }
+  
+  // ヒーロー画像のモバイル調整
+  .hero-image {
+    img {
+      max-width: 300px;                      // モバイルでの最大幅制限
+      margin: 0 auto;                        // 中央寄せ
+      display: block;                        // ブロック表示で中央寄せ有効化
+    }
+  }
+}

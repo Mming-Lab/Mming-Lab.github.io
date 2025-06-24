@@ -1,0 +1,104 @@
+<!-- 料金・スケジュールセクション -->
+<section class="pricing-schedule-section" id="pricing-schedule">
+    <div class="section-container">
+        <div class="section-header">
+            <h2>{{ site.data.pricing.title }}</h2>
+        </div>
+        
+        <div class="pricing-schedule-grid">
+            <!-- 料金 -->
+            <div class="pricing-card">
+                <h3>{{ site.data.pricing.plan.name }}</h3>
+                
+                <!-- 入会金 -->
+                <div class="enrollment-fee">
+                    <span class="fee-label">入会金</span>
+                    <span class="fee-amount">{{ site.data.pricing.enrollment_fee.amount }}</span>
+                    <span class="fee-note">（{{ site.data.pricing.enrollment_fee.note }}）</span>
+                </div>
+                
+                <!-- 月謝 -->
+                <div class="price">
+                    <span class="price-label">月謝</span>
+                    <span class="price-amount">{{ site.data.pricing.plan.price }}</span>
+                    <span class="price-period">{{ site.data.pricing.plan.period }}</span>
+                </div>
+                
+                <ul class="pricing-features">
+                    {% for feature in site.data.pricing.plan.features %}
+                    <li>
+                        <span class="material-icons" aria-hidden="true">check</span>
+                        {{ feature }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+                {% if site.data.pricing.plan.note %}
+                <p class="pricing-note">{{ site.data.pricing.plan.note }}</p>
+                {% endif %}
+            </div>
+            
+            <!-- スケジュール -->
+            <div class="schedule-info">
+                <h3>{{ site.data.schedule.title }}</h3>
+                
+
+                <!-- スケジュール表 -->
+                <div class="schedule-table-wrapper">
+                    <h4>{{ site.data.schedule.schedule_table.title }}</h4>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                {% for header in site.data.schedule.schedule_table.headers %}
+                                {% if forloop.first %}
+                                <th class="day-header">{{ header }}</th>
+                                {% else %}
+                                <th class="time-header">
+                                    {% assign time_parts = header | split: '-' %}
+                                    <span class="time-start">{{ time_parts[0] }}</span><span class="time-hyphen">-</span><span class="time-end">{{ time_parts[1] }}</span>
+                                </th>
+                                {% endif %}
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in site.data.schedule.schedule_table.rows %}
+                            <tr>
+                                <td class="week-cell">{{ row.week }}</td>
+                                {% for slot in row.slots %}
+                                {% if slot == '×' %}
+                                <td class="slot-cell unavailable">{{ slot }}</td>
+                                {% else %}
+                                {% comment %}満員クラスの判定（YMLデータから取得）{% endcomment %}
+                                {% if site.data.schedule.full_classes contains slot %}
+                                <td class="slot-cell available class-{{ slot | downcase }} full">{{ slot }}</td>
+                                {% else %}
+                                <td class="slot-cell available class-{{ slot | downcase }}">{{ slot }}</td>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 凡例 -->
+                <div class="schedule-legend">
+                    <p>
+                        <span class="legend-available">{{ site.data.schedule.legend.available }}</span> / 
+                        <span class="legend-unavailable">{{ site.data.schedule.legend.unavailable }}</span> / 
+                        <span class="legend-full">打消し線 = 満員</span>
+                    </p>
+                </div>
+
+                <!-- 受講方法 -->
+                <div class="class-info">
+                    <h4>{{ site.data.schedule.class_info.title }}</h4>
+                    <p class="class-description">{{ site.data.schedule.class_info.description }}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,174 @@
+<!-- 体験申込セクション（アコーディオン形式） -->
+<section class="trial-application-section" id="trial-application">
+    <div class="section-container">
+        <!-- セクションヘッダー（常時表示） -->
+        <div class="section-header">
+            <h2>{{ site.data.aptitude_check.trial_application.title }}</h2>
+            <p>{{ site.data.aptitude_check.trial_application.description }}</p>
+        </div>
+        
+        <!-- 対象者の確認 -->
+        <div class="eligibility-notice">
+            <div class="notice-header">
+                <span class="material-icons" aria-hidden="true">verified</span>
+                <h3>対象となるお子様</h3>
+            </div>
+            <p>以下のいずれかに該当するお子様が対象です：</p>
+            <ul class="eligibility-list">
+                <li>療育・放課後等デイサービス・特別支援学級に在籍中のお子様</li>
+                <li>過去に上記サービスを利用されていたお子様</li>
+                <li>発達障害・グレーゾーンなど特性をお持ちのお子様</li>
+            </ul>
+        </div>
+        
+        <div class="application-accordion">
+            <button class="application-toggle" aria-expanded="false" aria-controls="application-form" onclick="toggleApplication(this)">
+                <div class="toggle-header">
+                    <span class="material-icons" aria-hidden="true">{{ site.data.aptitude_check.trial_application.icon }}</span>
+                    <div class="toggle-content">
+                        <h3>申し込みフォームを開く</h3>
+                        <p>上記の条件を確認してから、こちらをクリックしてお申し込みください</p>
+                    </div>
+                </div>
+                <span class="material-icons toggle-icon" aria-hidden="true">{{ site.data.aptitude_check.trial_application.expand_icon }}</span>
+            </button>
+            
+            <div class="application-form" id="application-form" aria-hidden="true">
+                <div class="google-form-container">
+                    <!-- プリロード用の隠しiframe -->
+                    <iframe 
+                        id="preload-iframe"
+                        src="{{ site.data.config.integrations.google_forms.trial_application }}?embedded=true" 
+                        width="100%" 
+                        height="1200" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        title="体験授業申込フォーム"
+                        style="display: none; border: none; background: white; min-height: 600px;"
+                        loading="eager">
+                    </iframe>
+                    
+                    <!-- 初回表示用のプレースホルダー -->
+                    <div id="form-placeholder" class="form-loading-placeholder">
+                        <div class="loading-content">
+                            <span class="material-icons" style="font-size: 48px; color: #0066CC;">assignment</span>
+                            <h3>体験授業申込フォーム</h3>
+                            <p>フォームを表示するには、上のボタンをクリックしてください。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 読み込み中表示 -->
+                    <div id="form-loading" class="form-loading-placeholder" style="display: none;">
+                        <div class="loading-content">
+                            <div class="loading-spinner"></div>
+                            <h3>フォームを準備しています...</h3>
+                            <p>しばらくお待ちください...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    let formReady = false;
+    let accordionOpened = false;
+    
+    // アイコン名をYAMLから取得
+    const expandIcon = '{{ site.data.aptitude_check.trial_application.expand_icon }}';
+    const collapseIcon = '{{ site.data.aptitude_check.trial_application.collapse_icon }}';
+    
+    // ページ読み込み完了後にiframeの準備状況をチェック
+    document.addEventListener('DOMContentLoaded', function() {
+        const preloadIframe = document.getElementById('preload-iframe');
+        
+        // プリロードiframeの読み込み完了を監視
+        preloadIframe.onload = function() {
+            formReady = true;
+            console.log('Googleフォームの準備完了');
+        };
+        
+        // 読み込みエラー時の処理
+        preloadIframe.onerror = function() {
+            console.log('Googleフォームの読み込みに失敗');
+            formReady = false;
+        };
+        
+        // 5秒でタイムアウト（ネットワークが遅い場合の対策）
+        setTimeout(() => {
+            if (!formReady) {
+                console.log('Googleフォーム読み込みタイムアウト - 代替表示を準備');
+            }
+        }, 5000);
+    });
+    
+    function toggleApplication(button) {
+        const form = document.querySelector('.application-form');
+        const icon = button.querySelector('.toggle-icon');
+        
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        
+        if (isExpanded) {
+            // 閉じる
+            button.setAttribute('aria-expanded', 'false');
+            form.setAttribute('aria-hidden', 'true');
+            form.style.display = 'none';
+            icon.textContent = expandIcon;
+        } else {
+            // 開く
+            button.setAttribute('aria-expanded', 'true');
+            form.setAttribute('aria-hidden', 'false');
+            form.style.display = 'block';
+            icon.textContent = collapseIcon;
+            
+            // 初回展開時のみフォーム表示処理
+            if (!accordionOpened) {
+                showGoogleForm();
+                accordionOpened = true;
+            }
+        }
+    }
+    
+    function showGoogleForm() {
+        const placeholderDiv = document.getElementById('form-placeholder');
+        const loadingDiv = document.getElementById('form-loading');
+        const preloadIframe = document.getElementById('preload-iframe');
+        
+        if (formReady) {
+            // フォームが準備完了している場合 - 即座に表示
+            placeholderDiv.style.display = 'none';
+            preloadIframe.style.display = 'block';
+            preloadIframe.style.animation = 'fadeInUp 0.3s ease';
+        } else {
+            // まだ読み込み中の場合 - ローディング表示
+            placeholderDiv.style.display = 'none';
+            loadingDiv.style.display = 'block';
+            
+            // フォーム読み込み完了まで待機
+            const checkFormReady = setInterval(() => {
+                if (formReady) {
+                    clearInterval(checkFormReady);
+                    loadingDiv.style.display = 'none';
+                    preloadIframe.style.display = 'block';
+                    preloadIframe.style.animation = 'fadeInUp 0.3s ease';
+                }
+            }, 100);
+            
+            // 10秒でタイムアウト - 代替手段を提示
+            setTimeout(() => {
+                if (!formReady) {
+                    clearInterval(checkFormReady);
+                    loadingDiv.innerHTML = `
+                        <div class="loading-content">
+                            <span class="material-icons" style="font-size: 48px; color: #f44336;">error</span>
+                            <h3>フォームの読み込みに時間がかかっています</h3>
+                            <p><a href="{{ site.data.config.integrations.google_forms.trial_application }}" target="_blank" rel="noopener noreferrer" class="btn-primary">別ウィンドウで開く</a></p>
+                        </div>
+                    `;
+                }
+            }, 10000);
+        }
+    }
+    </script>
+</section>

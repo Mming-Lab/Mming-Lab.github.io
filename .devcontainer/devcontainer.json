@@ -1,0 +1,72 @@
+{
+    "name": "mming Jekyll Development",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "args": {
+            "USERNAME": "vscode",
+            "USER_UID": 1000,
+            "USER_GID": 1000
+        }
+    },
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+    
+    // VS Code設定
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.vscode-json",
+                "redhat.vscode-yaml",
+                "bradlc.vscode-tailwindcss",
+                "ms-vscode.live-server",
+                "yzhang.markdown-all-in-one",
+                "formulahendry.auto-rename-tag",
+                "christian-kohler.path-intellisense",
+                "ms-vscode.references-view"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "editor.formatOnSave": true,
+                "editor.tabSize": 2,
+                "editor.insertSpaces": true,
+                "files.associations": {
+                    "*.yml": "yaml",
+                    "*.yaml": "yaml"
+                },
+                "yaml.format.enable": true,
+                "yaml.format.singleQuote": false,
+                "yaml.format.bracketSpacing": true
+            }
+        }
+    },
+    
+    // ポートフォワーディング
+    "forwardPorts": [4000, 35729],
+    "portsAttributes": {
+        "4000": {
+            "label": "Jekyll Server",
+            "onAutoForward": "notify"
+        },
+        "35729": {
+            "label": "LiveReload",
+            "onAutoForward": "silent"
+        }
+    },
+    
+    // コンテナ起動後のコマンド
+    "postCreateCommand": "bundle install",
+    
+    // ユーザー設定
+    "remoteUser": "vscode",
+    
+    // コンテナの機能
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    
+    // マウント設定
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ]
+}

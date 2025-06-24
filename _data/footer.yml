@@ -1,0 +1,22 @@
+# フッター情報
+mcDisclaimer: "Minecraft の公式の製品/サービスではありません。Mojang または Microsoft から承認を受けておらず、それとの関連性もありません。"
+
+social:
+  - platform: "Github"
+    url: "https://github.com/Mming-Lab"
+    icon: "fab fa-github"
+  - platform: "Instagram"
+    url: "https://www.instagram.com/mming.lab/"
+    icon: "fab fa-instagram"
+
+links:
+  - text: "お問合せ"
+    url: "https://docs.google.com/forms/d/e/1FAIpQLScXEQViRPCFZ6kSRIc_pFx8tHfPEG9dGkiDTLsPPR0xdmo5Gg/viewform"
+  - text: "プライバシーポリシー"
+    url: "/legal"
+  - text: "会員規約"
+    url: "/assets/pdf/会員規約.pdf"
+
+copyright:
+  year: 2025
+  text: "mming All rights reserved."

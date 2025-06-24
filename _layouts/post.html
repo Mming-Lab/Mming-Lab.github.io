@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<article class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                {{ page.date | date: "%Y年%m月%d日" }}
+            </time>
+            {% if page.categories %}
+            <div class="post-categories">
+                {% for category in page.categories %}
+                <span class="category-tag">{{ category }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+        {% if page.description %}
+        <p class="post-description" itemprop="description">{{ page.description }}</p>
+        {% endif %}
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        {{ content }}
+    </div>
+
+    {% if page.tags %}
+    <footer class="post-footer">
+        <div class="post-tags">
+            <h3>タグ</h3>
+            {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+    </footer>
+    {% endif %}
+</article>
+
+<nav class="post-navigation">
+    <a href="/blog/" class="back-to-blog">
+        <span class="material-icons" aria-hidden="true">arrow_back</span>
+        ブログ一覧に戻る
+    </a>
+</nav>

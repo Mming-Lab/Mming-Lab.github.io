@@ -1,0 +1,391 @@
+/**
+ * mmingプログラミング教室 - 特徴セクションスタイル
+ * アコーディオン機能付きの特徴カード表示
+ */
+
+// ========================================
+// 特徴セクション メイン
+// ========================================
+
+// 特徴セクション全体
+.features-section {
+  padding: $section-padding;              // セクション標準パディング
+  background: $surface-color;             // 薄青背景
+}
+
+// 特徴コンテナ
+.features-container {
+  max-width: $max-width;                  // 最大幅制限
+  margin: 0 auto;                        // 中央寄せ
+}
+
+// ========================================
+// 特徴グリッドレイアウト
+// ========================================
+
+// 特徴グリッド
+.features-grid {
+  display: grid;                         // グリッドレイアウト
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // レスポンシブグリッド
+  gap: 2rem;                            // カード間のスペース
+  margin-top: 3rem;                     // 上マージン
+  align-items: start;                   // 各カードの高さを独立（アコーディオン問題解決）
+}
+
+// 特徴カード（画像スライダー常時表示＋詳細アコーディオン）
+.feature-item {
+  @include card-accordion;               // 統一されたアコーディオンスタイル
+  padding: 2rem;                        // 内側余白
+  position: relative;                    // 位置基準
+  
+  // シンプルな縦積みレイアウト
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;                        // 32px ギャップ
+}
+
+// ========================================
+// 特徴カード ヘッダー
+// ========================================
+
+// 特徴ヘッダー
+.feature-header {
+  display: flex;                         // フレックスレイアウト
+  align-items: flex-start;               // 上寄せ
+  gap: 0.75rem;                         // 要素間のスペース（削減）
+  margin-bottom: 0;                     // 下マージンはflexギャップで調整
+}
+
+// 詳細説明アコーディオンボタン
+.feature-details-accordion {
+  @include card-accordion;              // 統一されたアコーディオンスタイル
+  padding: $space-3;                   // 24px パディング
+  cursor: pointer;                     // ポインターカーソル
+  transition: $transition-base;        // ホバーアニメーション
+  background: rgba($primary-color, 0.05); // 薄い背景色
+  border: 1px solid rgba($primary-color, 0.2); // 薄いボーダー
+  
+  &:hover {
+    background: rgba($primary-color, 0.1); // ホバー時背景強調
+    border-color: rgba($primary-color, 0.3); // ホバー時ボーダー強調
+  }
+  
+  &:focus {
+    outline: 2px solid $focus-color;   // フォーカス表示
+    outline-offset: 2px;
+  }
+  
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-2;                     // 16px ギャップ
+    
+    .accordion-text {
+      font-weight: 600;                // セミボールド
+      color: $primary-color;           // プライマリカラー
+      font-size: $font-size-base;     // 16px
+    }
+    
+    .accordion-icon {
+      color: $primary-color;           // プライマリカラー
+      font-size: $font-size-xl;       // 20px
+      transition: transform 0.3s ease; // 回転アニメーション
+    }
+  }
+  
+  // 展開状態のアイコン回転
+  &[aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg);
+  }
+  
+  // 動きの軽減対応
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    
+    .accordion-icon {
+      transition: none;
+    }
+    
+    &[aria-expanded="true"] .accordion-icon {
+      transform: none;
+    }
+  }
+}
+
+// 特徴番号バッジ
+.feature-number {
+  background: $primary-color;            // プライマリカラー背景
+  color: white;                         // 白テキスト
+  width: 32px;                          // 幅
+  height: 32px;                         // 高さ
+  border-radius: 50%;                   // 円形
+  display: flex;                        // フレックスレイアウト
+  align-items: center;                  // 垂直中央寄せ
+  justify-content: center;              // 水平中央寄せ
+  font-weight: 700;                     // ボールド
+  font-size: 1.1rem;                    // フォントサイズ
+  flex-shrink: 0;                       // 縮小しない
+}
+
+// 特徴タイトルグループ
+.feature-title-group {
+  flex: 1;                              // 残りスペースを占有
+  margin-right: 0;                      // 右余白なし（トグルアイコンは絶対配置）
+  
+  h3 {
+    margin: 0;                          // マージンなし
+    font-size: $font-size-2xl;         // フォントサイズ（24px）
+    font-weight: 700;                   // ボールド
+    color: $text-color;                 // テキストカラー
+    line-height: $line-height-normal;   // 行高（1.4）
+    padding-right: 0;                   // パディングなし（トグルアイコンは充分離れている）
+  }
+}
+
+// 特徴要約（デジタル庁準拠）
+.feature-summary {
+  color: $text-secondary;               // セカンダリテキストカラー
+  margin: 0;                           // マージンはflexギャップで調整
+  font-size: $font-size-base;         // フォントサイズ（16px）
+  line-height: $line-height-relaxed;  // 行高（1.6）
+  margin-left: 3.25rem;                // feature-number + gap分のインデント
+}
+
+// 特徴アイコン
+.feature-icon {
+  color: $primary-color;               // プライマリカラー
+  font-size: 2rem;                    // 大きなアイコン
+  flex-shrink: 0;                     // 縮小しない
+  margin-right: 0;                     // 右余白なし（トグルアイコンは絶対配置）
+}
+
+// ========================================
+// アコーディオン トグルボタン
+// ========================================
+
+// 詳細表示トグルボタン
+.feature-toggle {
+  background: none;                     // 背景なし
+  border: 1px solid rgba($primary-color, 0.3); // 薄いボーダー
+  border-radius: 6px;                   // 角丸
+  padding: 0.75rem 1rem;               // 内側余白
+  width: 100%;                         // 全幅
+  display: flex;                       // フレックスレイアウト
+  align-items: center;                 // 垂直中央寄せ
+  justify-content: space-between;      // 両端揃え
+  cursor: pointer;                     // ポインターカーソル
+  transition: $transition-base;        // ホバーアニメーション
+  margin-bottom: 1rem;                 // 下マージン
+  
+  // ホバー・フォーカス状態
+  &:hover,
+  &:focus {
+    background: rgba($primary-color, 0.05); // 薄い背景色
+    border-color: $primary-color;       // プライマリカラーボーダー
+  }
+  
+  // トグルテキスト
+  .toggle-text {
+    font-weight: 600;                   // セミボールド
+    color: $text-color;                 // テキストカラー
+  }
+  
+  // トグルアイコン
+  .toggle-icon {
+    color: $primary-color;              // プライマリカラー
+    transition: transform 0.3s ease;   // 回転アニメーション
+  }
+  
+  // 展開状態のアイコン（回転）
+  &[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);          // 180度回転
+  }
+}
+
+// 特徴セクション専用スライダー設定
+.feature-image-slider {
+  .slider-track {
+    min-height: 240px;                  // 最小高さ（固定高さから変更）
+    height: auto;                       // 自動高さでアスペクト比維持
+  }
+  
+  .slide img {
+    height: auto;                       // 自動高さ
+    max-height: 300px;                  // 最大高さ制限
+    object-fit: contain;                // contain で画像全体を表示
+    background: $surface-color;         // 背景色
+  }
+  
+  // モバイル対応
+  @media (max-width: $breakpoint-mobile) {
+    .slider-track {
+      min-height: 180px;                // モバイルでは最小高さ削減
+    }
+    
+    .slide img {
+      max-height: 220px;                // モバイルでは最大高さ削減
+    }
+  }
+}
+
+// 詳細説明コンテンツ  
+.feature-details {
+  display: none;
+  padding-top: $space-4;               // 32px 上パディング
+  border-top: 1px solid rgba($text-secondary, 0.1);
+  
+  &[aria-hidden="false"] {
+    display: block;
+    animation: fadeInUp 0.3s ease;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-details .detail-section {
+  margin-bottom: 2rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  h4 {
+    color: $text-color;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  p {
+    color: $text-secondary;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+}
+
+.feature-details .detail-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    
+    .point-icon {
+      color: $icon-color-primary;         // デジタル庁準拠（コントラスト比7:1）
+      font-size: 1.2rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    
+    // エビデンスリンクスタイル
+    .evidence-link {
+      color: $link-color;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: $transition-base;
+      
+      &:hover {
+        color: $link-hover;
+        text-decoration: underline;
+      }
+      
+      &:focus {
+        outline: 2px solid $focus-color;
+        outline-offset: 2px;
+      }
+      
+      .link-icon {
+        font-size: 1rem;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+      }
+      
+      &:hover .link-icon {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+
+// Special styling for prominent features
+.feature-item.highlight {
+  background: linear-gradient(135deg, $surface-color, white);
+  border-color: $primary-color;
+  border-width: 3px;
+  
+  &:hover {
+    border-color: darken($primary-color, 10%);
+  }
+  
+  .feature-icon {
+    background: $primary-color;
+    box-shadow: 0 4px 16px rgba($primary-color, 0.3);
+  }
+}
+
+// レスポンシブ調整（デジタル庁準拠）
+@media (max-width: $breakpoint-mobile) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: $space-3;                      // 8pxベース（24px）
+  }
+  
+  .feature-item {
+    padding: $space-3;                  // 8pxベース（24px）
+    gap: $space-3;                      // 24px ギャップ
+  }
+  
+  // 特徴セクション画像スライダーの高さ調整は上記で設定済み
+  
+  // モバイルでのヘッダーレイアウト調整
+  .feature-header {
+    gap: $space-1;                      // ギャップ削減（8px）
+  }
+  
+  .feature-title-group {
+    h3 {
+      font-size: $font-size-xl;         // モバイルでは20pxに削減
+    }
+  }
+  
+  .feature-summary {
+    margin-left: 3.25rem;               // インデント維持
+  }
+  
+  .feature-icon {
+    font-size: $font-size-2xl;         // アイコンサイズ削減（24px相当）
+  }
+  
+  // 詳細説明アコーディオン（モバイル）
+  .feature-details-accordion {
+    padding: $space-2;                  // パディング削減（16px）
+    
+    .accordion-header {
+      .accordion-text {
+        font-size: $font-size-sm;      // モバイルでは14px
+      }
+      
+      .accordion-icon {
+        font-size: $font-size-lg;      // モバイルでは18px
+      }
+    }
+  }
+}

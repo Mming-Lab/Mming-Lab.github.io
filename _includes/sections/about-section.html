@@ -1,0 +1,58 @@
+<!-- ========================================
+     教室についてセクション - mmingの使命と専門性
+     ========================================
+     
+     データソース: _data/about.yml
+     CSS: _sass/components/_about.scss
+     
+     このセクションの目的:
+     - mmingの教室理念と専門性を説明
+     - 対象者情報を明確に提示
+     - 保護者の不安に寄り添うメッセージ
+     - 当事者性による信頼構築
+     
+     構成（画面表示順序）:
+     1. セクションヘッダー（タイトル・サブタイトル・専門性・理念）
+     2. 対象者情報（療育・放デイ・特別支援等）
+     3. mmingの約束（4つの約束）
+     4. mmingのアプローチ（4つのアプローチ）
+     ======================================== -->
+<section class="about-section" id="about" aria-labelledby="about-title">
+    <div class="section-container">
+        <!-- セクションヘッダー部分 -->
+        <div class="section-header">
+            <h2 id="about-title">{{ site.data.about.title }}</h2>
+            <p class="section-subtitle">{{ site.data.about.message }}</p>
+            
+            <!-- 当事者性の説明（理由を近くに配置） -->
+            <div class="expertise-summary">
+                <p>{{ site.data.about.expertise_summary }}</p>
+            </div>
+            
+            <p class="section-message">{{ site.data.about.philosophy }}</p>
+        </div>
+        
+        <!-- 対象者情報（統合） -->
+        <div class="target-info-section">
+            <p class="target-lead">{{ site.data.about.target_info.lead_text }}</p>
+            <ul class="target-list">
+                {% for target in site.data.about.target_info.target_list %}
+                <li>{{ target }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <!-- mmingの約束 -->
+        <div class="promises-section">
+            <h3>
+                <span class="material-icons" aria-hidden="true">{{ site.data.about.promises.icon }}</span>
+                {{ site.data.about.promises.title }}
+            </h3>
+            <ul class="promises-list">
+                {% for promise in site.data.about.promises.items %}
+                <li>{{ promise }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,37 @@
+<!-- ヒーローセクション -->
+<section class="hero-section" id="hero" aria-labelledby="hero-title">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title" id="hero-title">
+                {% for item in site.data.hero.main_copy %}
+                    {% if item.emphasis == 'strong' %}
+                        <strong>{{ item.text }}</strong>
+                    {% else %}
+                        {{ item.text }}
+                    {% endif %}
+                    {% unless forloop.last %}<br>{% endunless %}
+                {% endfor %}
+            </h1>
+            
+            <p class="hero-subtitle">{{ site.data.hero.sub_copy }}</p>
+            
+            <div class="hero-cta">
+                <a href="{{ site.data.hero.cta.primary.url }}" 
+                   class="cta-button primary" 
+                   aria-describedby="hero-subtitle"
+                   role="button">
+                    <span class="material-icons" aria-hidden="true">{{ site.data.hero.cta.primary.icon }}</span>
+                    {{ site.data.hero.cta.primary.text }}
+                </a>
+            </div>
+        </div>
+        
+        {% if site.data.hero.background_image.enabled %}
+        <div class="hero-image">
+            <img src="{{ site.data.hero.background_image.src | relative_url }}" 
+                 alt="{{ site.data.hero.background_image.alt }}" 
+                 loading="eager">
+        </div>
+        {% endif %}
+    </div>
+</section>

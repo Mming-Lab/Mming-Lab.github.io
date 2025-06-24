@@ -1,0 +1,282 @@
+/**
+ * mmingプログラミング教室 - FAQセクションスタイル
+ * よくある質問のアコーディオンUI
+ */
+
+// ========================================
+// FAQセクション メイン
+// ========================================
+
+// FAQセクション全体
+.faq-section {
+  background: $surface-color;              // 薄青背景
+  padding: $section-padding;               // セクション標準パディング
+}
+
+// FAQコンテナ
+.faq-container {
+  max-width: 800px;                       // 最大幅制限（読みやすさ重視）
+  margin: 0 auto;                         // 中央寄せ
+}
+
+// ========================================
+// FAQ アイテム
+// ========================================
+
+// FAQリスト
+.faq-list {
+  list-style: none;                       // リストマーカーなし
+  margin: 0;                             // マージンリセット
+  padding: 0;                            // パディングリセット
+  display: flex;                         // フレックスレイアウト
+  flex-direction: column;                 // 縦方向配置
+  gap: 1rem;                             // アイテム間のスペース
+}
+
+// FAQアイテム（アコーディオンカード - クリック可能）
+.faq-item {
+  @include card-accordion;               // 統一されたアコーディオンスタイル
+  background: rgba($surface-color, 0.5); // 薄い青背景
+  overflow: hidden;                      // はみ出し防止
+}
+
+// ========================================
+// FAQ 質問（トグルボタン）
+// ========================================
+
+// FAQ質問ボタン（カード全体をクリック可能に）
+.faq-question {
+  width: 100%;                           // 全幅
+  background: none;                      // 背景なし
+  border: none;                          // ボーダーなし
+  padding: 1.5rem;                      // 内側余白
+  text-align: left;                      // 左寄せ
+  cursor: pointer;                       // ポインターカーソル
+  display: flex;                         // フレックスレイアウト
+  align-items: center;                   // 垂直中央寄せ
+  justify-content: space-between;        // 両端揃え
+  gap: 1rem;                            // 間隔
+  transition: $transition-base;          // ホバーアニメーション
+  font-family: inherit;                  // フォント継承
+  font-size: inherit;                    // フォントサイズ継承
+  
+  // ホバー・フォーカス状態
+  &:hover,
+  &:focus {
+    background: rgba($primary-color, 0.05); // 薄い背景色
+  }
+  
+  // フォーカス時のアウトライン
+  &:focus {
+    outline: 2px solid $primary-color;    // プライマリカラーアウトライン
+    outline-offset: -2px;                 // 内側にオフセット
+  }
+  
+  // 質問テキスト
+  .question-text {
+    font-size: 1.1rem;                   // フォントサイズ
+    font-weight: 600;                     // セミボールド
+    color: $text-color;                   // テキストカラー
+    line-height: 1.4;                    // 行高
+    flex: 1;                             // 残りスペースを占有
+  }
+  
+  // トグルアイコン
+  .toggle-icon {
+    color: $primary-color;               // プライマリカラー
+    font-size: 1.5rem;                  // アイコンサイズ
+    transition: transform 0.3s ease;    // 回転アニメーション
+    flex-shrink: 0;                     // 縮小しない
+  }
+  
+  // 展開状態のアイコン（回転）
+  &[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);           // 180度回転
+  }
+}
+
+// ========================================
+// FAQ 回答
+// ========================================
+
+// FAQ回答コンテナ
+.faq-answer {
+  display: none;                         // 初期状態は非表示
+  background: white;                     // 白背景
+  
+  // 展開状態
+  &.expanded {
+    display: block;                      // 表示状態
+  }
+}
+
+// FAQ回答コンテンツ
+.faq-answer-content {
+  padding: 0 1.5rem 1.5rem 1.5rem;     // 内側余白
+  border-top: 1px solid rgba($primary-color, 0.1); // 上ボーダー
+  
+  p {
+    font-size: 1rem;                     // フォントサイズ
+    color: $text-color;                  // テキストカラー
+    line-height: 1.6;                   // 読みやすい行高
+    margin: 1rem 0 0 0;                 // 上マージンのみ
+    
+    // 最後の段落のマージン調整
+    &:last-child {
+      margin-bottom: 0;                  // 下マージンなし
+    }
+  }
+  
+  // リスト要素のスタイル
+  ul, ol {
+    margin: 1rem 0;                     // 上下マージン
+    padding-left: 1.5rem;              // 左パディング
+    
+    li {
+      margin-bottom: 0.5rem;            // 下マージン
+      line-height: 1.6;                // 行高
+      color: $text-color;               // テキストカラー
+      
+      &:last-child {
+        margin-bottom: 0;               // 最後のアイテムはマージンなし
+      }
+    }
+  }
+  
+  // 強調テキスト
+  strong {
+    color: $primary-color;              // プライマリカラー
+    font-weight: 600;                   // セミボールド
+  }
+  
+  // リンクスタイル
+  a {
+    color: $primary-color;              // プライマリカラー
+    text-decoration: underline;          // 下線
+    transition: $transition-base;        // ホバーアニメーション
+    
+    &:hover,
+    &:focus {
+      color: darken($primary-color, 15%); // 暗いプライマリカラー
+      text-decoration: none;             // 下線なし
+    }
+  }
+}
+
+// ========================================
+// FAQ セクションヘッダー
+// ========================================
+
+// FAQセクションタイトル
+.faq-section .section-header {
+  text-align: center;                    // 中央寄せ
+  margin-bottom: 3rem;                   // 下マージン
+  
+  h2 {
+    font-size: 2.5rem;                   // 大きなフォント
+    color: $text-color;                  // テキストカラー
+    margin-bottom: 1rem;                 // 下マージン
+    
+    // タイトル装飾
+    &::after {
+      content: '';                       // 空のコンテンツ
+      display: block;                    // ブロック要素
+      width: 60px;                       // 幅
+      height: 4px;                       // 高さ
+      background: linear-gradient(90deg, $secondary-color, $primary-color); // グラデーション
+      margin: 1rem auto 0 auto;         // 中央寄せ
+      border-radius: 2px;                // 角丸
+    }
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;                   // フォントサイズ
+    color: $text-secondary;              // セカンダリテキストカラー
+    line-height: 1.5;                   // 行高
+    max-width: 600px;                    // 最大幅制限
+    margin: 0 auto;                      // 中央寄せ
+  }
+}
+
+// ========================================
+// レスポンシブデザイン
+// ========================================
+
+// タブレット対応
+@media (max-width: $breakpoint-tablet) {
+  .faq-container {
+    max-width: 100%;                     // 全幅使用
+  }
+  
+  .faq-section .section-header h2 {
+    font-size: 2rem;                     // フォントサイズ削減
+  }
+}
+
+// モバイル対応
+@media (max-width: $breakpoint-mobile) {
+  
+  // FAQ質問ボタンの調整
+  .faq-question {
+    padding: 1.25rem;                    // パディング削減
+    gap: 0.75rem;                       // ギャップ削減
+    
+    .question-text {
+      font-size: 1rem;                   // フォントサイズ削減
+    }
+    
+    .toggle-icon {
+      font-size: 1.25rem;                // アイコンサイズ削減
+    }
+  }
+  
+  // FAQ回答コンテンツの調整
+  .faq-answer-content {
+    padding: 0 1.25rem 1.25rem 1.25rem; // パディング削減
+    
+    p {
+      font-size: $font-size-base;        // 16px デジタル庁準拠
+    }
+  }
+  
+  // セクションヘッダーの調整
+  .faq-section .section-header {
+    margin-bottom: 2rem;                 // マージン削減
+    
+    h2 {
+      font-size: 1.75rem;                // フォントサイズ削減
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;                 // フォントサイズ削減
+    }
+  }
+}
+
+// ========================================
+// アクセシビリティ強化
+// ========================================
+
+// アニメーション削減設定
+@media (prefers-reduced-motion: reduce) {
+  .faq-question .toggle-icon,
+  .faq-answer,
+  .faq-item {
+    transition: none;                    // アニメーションなし
+  }
+  
+  .faq-answer.expanded {
+    display: block;                      // 表示状態（アニメーション削減時も）
+  }
+}
+
+// ハイコントラストモード対応
+@media (prefers-contrast: high) {
+  .faq-item {
+    border-color: $text-color;           // より濃いボーダー
+  }
+  
+  .faq-question:focus {
+    outline: 3px solid $text-color;      // より濃いアウトライン
+  }
+}

@@ -1,0 +1,191 @@
+/**
+ * mmingプログラミング教室 - 実用的アクセシビリティスタイル
+ * デジタル庁準拠・実用レベルのアクセシビリティ
+ */
+
+// ========================================
+// スキップリンク
+// ========================================
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: $space-1;
+  background: $primary-color;
+  color: white;
+  padding: $space-1;
+  text-decoration: none;
+  border-radius: $border-radius-sm;
+  font-weight: 700;
+  font-size: $font-size-base;
+  z-index: 9999;
+  
+  &:focus {
+    top: $space-1;
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+}
+
+// ========================================
+// フォーカス管理
+// ========================================
+
+// 共通フォーカススタイル
+*:focus {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
+
+// ボタンのフォーカス
+button:focus,
+.cta-button:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
+
+// リンクのフォーカス
+a:focus {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+  text-decoration: underline;
+}
+
+// ========================================
+// 視覚的補助機能
+// ========================================
+
+// スクリーンリーダー専用テキスト
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// ========================================
+// 動きの設定（prefers-reduced-motion対応）
+// ========================================
+
+// アニメーション無効化
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ========================================
+// 高コントラストモード対応
+// ========================================
+
+@media (prefers-contrast: high) {
+  // ボーダーを強調
+  .question-card,
+  .result-card,
+  .option-label {
+    border-width: 2px;
+    border-color: $text-color;
+  }
+  
+  // 影効果を無効化
+  .question-card,
+  .result-card,
+  .hero-image img {
+    box-shadow: none;
+  }
+}
+
+// ========================================
+// 色覚サポート
+// ========================================
+
+// 色に依存しない情報伝達のため、アイコンや形状で補完
+.success-indicator::before {
+  content: '✓';
+  margin-right: 0.5rem;
+  color: $success-color;
+}
+
+.error-indicator::before {
+  content: '⚠';
+  margin-right: 0.5rem;
+  color: $error-color;
+}
+
+.info-indicator::before {
+  content: 'ℹ';
+  margin-right: 0.5rem;
+  color: $primary-color;
+}
+
+// ========================================
+// タッチターゲット最適化
+// ========================================
+
+// 最小タップターゲットサイズ確保（44px以上）
+button,
+.cta-button,
+input[type="radio"],
+input[type="checkbox"],
+a {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+// ラジオボタンとチェックボックスのタップエリア拡張
+input[type="radio"],
+input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+// ========================================
+// テキスト読みやすさ向上
+// ========================================
+
+// 行間調整モード
+.readable-mode {
+  p, li {
+    line-height: 2;
+    letter-spacing: 0.05em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.6;
+  }
+}
+
+// フォントサイズ調整
+.font-size-large {
+  font-size: 1.2em;
+}
+
+.font-size-xlarge {
+  font-size: 1.4em;
+}
+
+// ========================================
+// 言語サポート
+// ========================================
+
+// 日本語フォント最適化
+:lang(ja) {
+  font-feature-settings: "palt" 1;
+  text-spacing: ideograph-alpha ideograph-numeric;
+}
+
+// 英語圏向け調整
+:lang(en) {
+  font-feature-settings: "kern" 1, "liga" 1;
+}

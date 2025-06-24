@@ -1,0 +1,326 @@
+/**
+ * ブログ・お知らせセクションスタイル
+ * トップページとブログ一覧ページのスタイル定義
+ */
+
+// ========================================
+// 最新のお知らせセクション（トップページ）
+// ========================================
+
+.latest-posts-section {
+  padding: $section-padding;                // セクション標準パディング
+  background: $background-color;            // 白背景
+}
+
+.latest-posts-grid {
+  display: grid;                           // グリッドレイアウト
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // レスポンシブグリッド
+  gap: $space-6;                          // 48px ギャップ
+  margin-top: $space-8;                   // 64px 上マージン
+}
+
+// ========================================
+// ブログ記事カード（共通）
+// ========================================
+
+.post-card,
+.blog-card {
+  @include card-accordion;                 // 基本カードスタイル
+  transition: $transition-base;           // ホバーアニメーション
+  
+  &:hover {
+    transform: translateY(-2px);          // 軽い浮き上がり
+    box-shadow: $shadow-lg;               // 大きな影
+    border-color: $primary-color;         // プライマリボーダー
+  }
+}
+
+.post-card-wrapper,
+.blog-card-wrapper {
+  display: flex;                          // フレックスレイアウト
+  justify-content: space-between;         // 両端揃え
+  align-items: flex-start;                // 上寄せ
+  gap: $space-4;                         // 32px ギャップ
+  padding: $space-6;                      // 48px パディング
+  text-decoration: none;                  // リンク装飾なし
+  color: inherit;                         // 色継承
+  width: 100%;                           // 全幅
+  height: 100%;                          // 全高
+  
+  &:hover {
+    color: inherit;                       // ホバー時も色継承
+    text-decoration: none;                // ホバー時も装飾なし
+    
+    h3, h2 {
+      color: $primary-color;              // タイトルのみプライマリカラー
+    }
+  }
+}
+
+.post-card-content,
+.blog-card-content {
+  flex: 1;                               // 残りスペースを占有
+  display: flex;                         // フレックスレイアウト
+  flex-direction: column;                // 縦方向配置
+  gap: $space-3;                        // 24px ギャップ
+}
+
+// ========================================
+// 記事メタ情報
+// ========================================
+
+.post-meta,
+.blog-meta {
+  display: flex;                         // フレックスレイアウト
+  align-items: center;                   // 垂直中央寄せ
+  gap: $space-3;                        // 24px ギャップ
+  font-size: $font-size-sm;             // 14px フォントサイズ
+  color: $text-secondary;               // セカンダリテキストカラー
+  margin-bottom: 0;                     // 下マージンなし（ギャップで調整）
+  
+  time {
+    font-weight: 500;                   // ミディアムウェイト
+    color: $text-color;                 // メインテキストカラー
+  }
+}
+
+.post-categories,
+.blog-categories {
+  display: flex;                        // フレックスレイアウト
+  gap: $space-1;                       // 8px ギャップ
+}
+
+.category-tag {
+  background: rgba($primary-color, 0.1); // 薄いプライマリ背景
+  color: $primary-color;                // プライマリテキスト
+  padding: $space-1 $space-2;          // 8px 16px パディング
+  border-radius: $border-radius-sm;     // 小さな角丸
+  font-size: $font-size-xs;            // 12px フォントサイズ
+  font-weight: 600;                     // セミボールド
+  text-transform: capitalize;           // 先頭文字大文字
+}
+
+// ========================================
+// 記事タイトルとコンテンツ
+// ========================================
+
+.post-card h3,
+.blog-card h2 {
+  margin: 0;                            // マージンなし
+  font-size: $font-size-xl;            // 20px フォントサイズ
+  font-weight: 700;                     // ボールド
+  line-height: $line-height-tight;     // 1.2 行高
+  color: $text-color;                   // テキストカラー
+}
+
+.post-excerpt,
+.blog-excerpt {
+  color: $text-secondary;               // セカンダリテキストカラー
+  line-height: $line-height-relaxed;   // 1.6 行高
+  margin: 0;                           // マージンなし
+  font-size: $font-size-base;         // 16px フォントサイズ
+}
+
+// ========================================
+// タグ表示
+// ========================================
+
+.post-tags,
+.blog-tags {
+  display: flex;                        // フレックスレイアウト
+  flex-wrap: wrap;                      // 折り返し
+  gap: $space-1;                       // 8px ギャップ
+  margin-top: auto;                     // 上部自動マージン（下部固定）
+}
+
+.tag {
+  background: rgba($text-secondary, 0.1); // 薄いグレー背景
+  color: $text-secondary;               // セカンダリテキスト
+  padding: $space-1 $space-2;          // 8px 16px パディング
+  border-radius: $border-radius-sm;     // 小さな角丸
+  font-size: $font-size-xs;            // 12px フォントサイズ
+  font-weight: 500;                     // ミディアムウェイト
+}
+
+// ========================================
+// カードリンクアイコン
+// ========================================
+
+.post-card-link,
+.blog-card-link {
+  background: rgba($primary-color, 0.1); // 薄いプライマリ背景
+  border: 1px solid rgba($primary-color, 0.2); // 薄いボーダー
+  border-radius: $border-radius;        // 角丸
+  width: 44px;                          // 幅（アクセシビリティ準拠）
+  height: 44px;                         // 高さ
+  display: flex;                        // フレックスレイアウト
+  align-items: center;                  // 垂直中央寄せ
+  justify-content: center;              // 水平中央寄せ
+  text-decoration: none;                // 装飾なし
+  transition: $transition-base;         // ホバーアニメーション
+  flex-shrink: 0;                      // 縮小しない
+  
+  .material-icons {
+    color: $primary-color;              // プライマリカラー
+    font-size: $font-size-lg;          // 18px アイコンサイズ
+  }
+  
+  &:hover {
+    background: rgba($primary-color, 0.2); // 濃いプライマリ背景
+    border-color: $primary-color;       // プライマリボーダー
+    transform: translateX(2px);         // 軽い右移動
+  }
+}
+
+// ========================================
+// CTAボタン
+// ========================================
+
+.latest-posts-cta {
+  text-align: center;                   // 中央寄せ
+  margin-top: $space-8;                // 64px 上マージン
+  
+  .cta-button {
+    @include button-secondary;          // セカンダリボタンスタイル
+  }
+}
+
+// ========================================
+// ブログ一覧ページ専用
+// ========================================
+
+.blog-section {
+  padding: $section-padding;            // セクション標準パディング
+  background: $background-color;        // 白背景
+  min-height: 60vh;                    // 最小高さ
+}
+
+.blog-posts {
+  display: flex;                        // フレックスレイアウト
+  flex-direction: column;               // 縦方向配置
+  gap: $space-6;                       // 48px ギャップ
+  margin-top: $space-8;                // 64px 上マージン
+}
+
+.no-posts {
+  text-align: center;                   // 中央寄せ
+  padding: $space-12;                  // 96px パディング
+  color: $text-secondary;              // セカンダリテキスト
+  font-size: $font-size-lg;           // 18px フォントサイズ
+}
+
+// ========================================
+// ブログ記事ページ専用
+// ========================================
+
+.blog-post {
+  max-width: 800px;                    // 最大幅制限
+  margin: 0 auto;                      // 中央寄せ
+  padding: $space-8 $space-4;         // パディング
+  
+  .post-header {
+    margin-bottom: $space-8;           // 64px 下マージン
+    text-align: center;                // 中央寄せ
+    
+    .post-meta {
+      justify-content: center;          // 中央寄せ
+      margin-bottom: $space-4;         // 32px 下マージン
+    }
+    
+    .post-title {
+      font-size: $font-size-4xl;       // 36px フォントサイズ
+      font-weight: 700;                // ボールド
+      color: $text-color;              // テキストカラー
+      margin: 0 0 $space-4 0;          // マージン
+      line-height: $line-height-tight; // 1.2 行高
+    }
+    
+    .post-description {
+      font-size: $font-size-lg;        // 18px フォントサイズ
+      color: $text-secondary;          // セカンダリテキスト
+      margin: 0;                       // マージンなし
+      font-style: italic;              // イタリック
+    }
+  }
+  
+  .post-content {
+    line-height: $line-height-relaxed; // 1.6 行高
+    
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: $space-8;            // 64px 上マージン
+      margin-bottom: $space-4;         // 32px 下マージン
+      color: $text-color;              // テキストカラー
+      
+      &:first-child {
+        margin-top: 0;                 // 最初の見出しは上マージンなし
+      }
+    }
+    
+    p {
+      margin-bottom: $space-4;         // 32px 下マージン
+    }
+    
+    img {
+      max-width: 100%;                 // 最大幅制限
+      height: auto;                    // 自動高さ
+      border-radius: $border-radius;   // 角丸
+      box-shadow: $shadow;             // 影効果
+      margin: $space-6 0;              // 48px 上下マージン
+    }
+  }
+  
+  .post-footer {
+    margin-top: $space-8;              // 64px 上マージン
+    padding-top: $space-6;             // 48px 上パディング
+    border-top: 1px solid rgba($text-secondary, 0.2); // 上ボーダー
+    
+    .post-tags {
+      h3 {
+        font-size: $font-size-lg;      // 18px フォントサイズ
+        margin-bottom: $space-3;       // 24px 下マージン
+      }
+    }
+  }
+}
+
+.post-navigation {
+  text-align: center;                  // 中央寄せ
+  margin-top: $space-8;               // 64px 上マージン
+  
+  .back-to-blog {
+    @include button-secondary;         // セカンダリボタンスタイル
+    text-decoration: none;             // 装飾なし
+  }
+}
+
+// ========================================
+// レスポンシブデザイン
+// ========================================
+
+@media (max-width: $breakpoint-mobile) {
+  .latest-posts-grid,
+  .blog-posts {
+    grid-template-columns: 1fr;       // モバイルでは1列
+    gap: $space-4;                    // 32px ギャップ
+  }
+  
+  .post-card,
+  .blog-card {
+    padding: $space-4;                // 32px パディング
+    flex-direction: column;           // モバイルでは縦積み
+    
+    .post-card-link,
+    .blog-card-link {
+      align-self: flex-end;           // 右寄せ
+      margin-top: $space-3;          // 24px 上マージン
+    }
+  }
+  
+  .blog-post {
+    padding: $space-6 $space-3;      // パディング調整
+    
+    .post-header .post-title {
+      font-size: $font-size-3xl;     // 30px フォントサイズ
+    }
+  }
+}

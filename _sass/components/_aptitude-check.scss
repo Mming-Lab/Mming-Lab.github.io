@@ -1,0 +1,1085 @@
+/**
+ * mmingプログラミング教室 - 適性診断システムスタイル
+ * 体験ページの適性診断UIコンポーネント
+ */
+
+// ========================================
+// 適性診断 メインセクション
+// ========================================
+
+// 体験ページヒーロー装飾（デジタル庁準拠）
+.trial-hero {
+  background: linear-gradient(135deg, $surface-color 0%, rgba($secondary-color, 0.5) 100%);
+  padding: $space-6 $space-2;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-6 $space-4;           // 48px 32px（統一）
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(26, 115, 232, 0.1) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .section-container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .section-header {
+    h1 {
+      font-size: $font-size-4xl;
+      color: $primary-color;
+      font-weight: 700;
+      margin-bottom: $space-3;
+      line-height: $line-height-tight;
+    }
+    
+    .section-subtitle {
+      font-size: $font-size-xl;
+      color: $text-color;
+      font-weight: 600;
+      margin-bottom: $space-2;
+      line-height: $line-height-normal;
+    }
+    
+    .section-message {
+      font-size: $font-size-lg;
+      color: $text-secondary;
+      margin-bottom: $space-2;
+      line-height: $line-height-normal;
+    }
+    
+    .section-note {
+      font-size: $font-size-base;
+      color: $primary-color;
+      background: rgba($primary-color, 0.05);
+      padding: $space-2;
+      border-radius: $border-radius;
+      border-left: 4px solid $primary-color;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+}
+
+// フローティングアニメーション
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+// ========================================
+// 体験ページ 共通セクション
+// ========================================
+
+// 適性診断の紹介セクション（デジタル庁準拠）
+.introduction-section {
+  background: rgba($surface-color, 0.3);   // 薄い青背景
+  padding: $space-6 $space-2;             // 48px 16px
+  text-align: center;                      // 中央揃え
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-6 $space-4;           // 48px 32px
+  }
+  
+  .introduction-banner {
+    @include info-banner($primary-color); // 統一された情報バナースタイル
+    max-width: 800px;                      // 最大幅制限
+    margin: 0 auto;                        // 中央寄せ
+    padding: $space-6 $space-4;          // 内側余白（8pxベース）
+    overflow: hidden;
+    
+    .banner-decoration {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 80px;
+      height: 80px;
+      background: rgba($secondary-color, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      .decoration-icon {
+        font-size: 2rem;
+        color: $secondary-color;
+      }
+    }
+    
+    .banner-content {
+      position: relative;
+      z-index: 1;
+      
+      h2 {
+        font-size: 1.8rem;                  // フォントサイズ
+        color: $text-color;                 // テキストカラー
+        margin-bottom: 1.5rem;              // 下マージン
+        font-weight: 700;                   // ボールド
+      }
+      
+      .introduction-message {
+        color: $text-secondary;             // セカンダリテキストカラー
+        margin-bottom: 1.5rem;              // 下マージン
+        line-height: 1.6;                  // 読みやすい行高
+        
+        p {
+          margin-bottom: 1rem;              // 段落間のマージン
+        }
+      }
+      
+      .duration-badge {
+        display: inline-flex;               // インラインフレックス
+        align-items: center;                // 垂直中央寄せ
+        gap: 0.5rem;                       // 間隔
+        color: $primary-color;             // プライマリカラー
+        font-weight: 600;                  // セミボールド
+        background: white;                 // 白背景
+        padding: 0.75rem 1.5rem;          // 内側余白
+        border-radius: 25px;               // 丸い角
+        box-shadow: 0 2px 8px rgba($primary-color, 0.15); // 軽い影
+        border: 2px solid rgba($primary-color, 0.2);
+        
+        .material-icons {
+          font-size: 1.2rem;               // アイコンサイズ
+        }
+      }
+    }
+  }
+}
+
+
+// mmingの価値観セクション
+.belief-section {
+  background: white;                      // 白背景
+  padding: $space-6 $space-2;             // 48px 16px
+  text-align: center;                    // 中央揃え
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-6 $space-4;           // 48px 32px
+  }
+  
+  .belief-banner {
+    @include info-banner($secondary-color); // 統一された情報バナースタイル
+    max-width: 800px;                    // 最大幅制限
+    margin: 0 auto;                      // 中央寄せ
+    padding: $space-6 $space-4;         // 内側余白（48px 32px 統一）
+    
+    h2 {
+      font-size: $font-size-xl;          // 24px デジタル庁準拠
+      color: $text-color;                // テキストカラー
+      margin-bottom: $space-4;           // 32px 下マージン
+      font-weight: 700;                  // ボールド
+    }
+    
+    .belief-ribbon-list {
+      list-style: none;                  // リストスタイルなし
+      padding: 0;                        // パディングなし
+      margin: 0;                         // マージンなし
+      display: flex;                     // フレックスレイアウト
+      flex-direction: column;            // 縦方向配置
+      gap: $space-3;                     // アイテム間のスペース（24px）
+    }
+    
+    .belief-ribbon {
+      @include info-ribbon($secondary-color); // 統一された情報リボンスタイル
+      display: flex;                     // フレックスレイアウト
+      align-items: center;               // 垂直中央寄せ
+      justify-content: center;           // 水平中央寄せ
+      gap: $space-3;                    // アイコンとテキストの間隔（24px）
+      padding: $space-3 $space-4;       // 内側余白（24px 32px）
+      position: relative;
+      
+      .belief-icon {
+        color: $secondary-color;         // セカンダリカラー
+        font-size: 1.3rem;              // アイコンサイズ
+        flex-shrink: 0;                 // 縮小しない
+      }
+      
+      .belief-text {
+        color: $text-color;              // テキストカラー
+        font-size: 1rem;                // フォントサイズ
+        line-height: 1.5;               // 行高
+        font-weight: 500;               // 中程度のウェイト
+      }
+    }
+  }
+}
+
+// 適性診断開始セクション
+.aptitude-check-section,
+.aptitude-start-section {
+  background: $surface-color;               // 薄青背景
+  padding: $space-6 $space-2;              // 48px 16px（統一）
+  text-align: center;                      // 中央寄せ
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-6 $space-4;            // 48px 32px（統一）
+  }
+}
+
+// 開始コンテンツ
+.start-content {
+  max-width: 800px;                        // 最大幅制限
+  margin: 0 auto;                          // 中央寄せ
+  
+  h3 {
+    font-size: $font-size-2xl;            // 30px デジタル庁準拠
+    color: $text-color;                    // テキストカラー
+    margin-bottom: $space-3;               // 24px 下マージン
+  }
+  
+  p {
+    font-size: $font-size-lg;             // 18px 説明文フォントサイズ
+    color: $text-secondary;                // セカンダリテキストカラー
+    margin-bottom: $space-4;               // 32px 下マージン
+    line-height: $line-height-relaxed;     // 1.6 読みやすい行高
+  }
+}
+
+// 開始アクション
+.start-actions {
+  margin-top: $space-4;                    // 32px 上マージン
+}
+
+// ========================================
+// 適性診断 プログレスバー
+// ========================================
+
+// プログレスコンテナ
+.progress-container {
+  margin-bottom: 2rem;                     // 下マージン
+  text-align: center;                      // 中央寄せ
+}
+
+// プログレスバー
+.progress-bar {
+  width: 100%;                             // 全幅
+  height: 8px;                            // 高さ
+  background: rgba($primary-color, 0.1);   // 薄いプライマリカラー背景
+  border-radius: 4px;                      // 角丸
+  margin-bottom: 1rem;                     // 下マージン
+  overflow: hidden;                        // はみ出し防止
+}
+
+// プログレス進行状況
+.progress-fill {
+  height: 100%;                           // 高さ100%
+  background: linear-gradient(90deg, $secondary-color, $primary-color); // グラデーション
+  border-radius: 4px;                     // 角丸
+  transition: width 0.3s ease;           // 幅の変化をアニメーション
+  width: 0%;                              // 初期状態は0%
+}
+
+// プログレステキスト
+.progress-text {
+  font-size: $font-size-sm;               // 14px デジタル庁準拠
+  color: $text-secondary;                  // セカンダリテキストカラー
+  font-weight: 500;                       // 中程度のウェイト
+}
+
+// ========================================
+// 適性診断 質問UI
+// ========================================
+
+// 質問コンテナ
+.question-container {
+  margin-bottom: 2rem;                     // 下マージン
+}
+
+// 質問カード
+.question-card {
+  @include card-interactive;
+  border-radius: 16px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  
+  // カードの装飾的な背景
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, alpha($secondary-color, 0.1) 0%, transparent 70%);
+    border-radius: 0 0 0 100px;
+  }
+}
+
+// 質問タイトル
+.question-title {
+  font-size: 1.5rem;                      // フォントサイズ
+  font-weight: 700;                       // ボールド
+  color: $text-color;                     // テキストカラー
+  margin-bottom: 1rem;                    // 下マージン
+  line-height: 1.4;                      // 行高
+}
+
+// 質問説明
+.question-description {
+  font-size: 1rem;                        // フォントサイズ
+  color: $text-secondary;                  // セカンダリテキストカラー
+  margin-bottom: 1.5rem;                  // 下マージン
+  line-height: 1.6;                      // 読みやすい行高
+}
+
+// 選択肢コンテナ
+.options-container {
+  display: flex;                           // フレックスレイアウト
+  flex-direction: column;                  // 縦方向配置
+  gap: 1rem;                              // 選択肢間のスペース
+}
+
+// 選択肢ラベル
+.option-label {
+  display: flex;                           // フレックスレイアウト
+  align-items: center;                     // 中央寄せに変更
+  gap: 1rem;                              // ラジオボタンとテキストの間隔
+  padding: 1rem;                          // 内側余白
+  border: 2px solid rgba($primary-color, 0.1); // 薄いボーダー
+  border-radius: 8px;                      // 角丸
+  cursor: pointer;                         // ポインターカーソル
+  transition: $transition-base;            // ホバーアニメーション
+  background: rgba($surface-color, 0.3);   // 薄い背景色
+  
+  // ホバー状態
+  &:hover {
+    border-color: rgba($primary-color, 0.3); // ボーダー色変更
+    background: rgba($primary-color, 0.05);  // 背景色変更
+  }
+  
+  // 選択状態（ラジオボタンがチェックされている時）
+  &:has(input:checked) {
+    border-color: $primary-color;           // プライマリカラーボーダー
+    background: rgba($primary-color, 0.1);  // プライマリカラー背景
+    box-shadow: 0 2px 8px rgba($primary-color, 0.2); // 影効果
+  }
+  
+  // ラジオボタン
+  input[type="radio"] {
+    flex-shrink: 0;                        // 縮小しない
+    width: 1.25rem;                        // 幅
+    height: 1.25rem;                       // 高さ
+    margin: 0;                             // マージンなし
+    accent-color: $primary-color;          // アクセントカラー
+  }
+}
+
+// 選択肢テキスト
+.option-text {
+  font-size: 1rem;                        // フォントサイズ
+  color: $text-color;                     // テキストカラー
+  line-height: 1.5;                      // 行高
+}
+
+// ========================================
+// 適性診断 ナビゲーション
+// ========================================
+
+// ナビゲーションコンテナ
+.question-navigation {
+  display: flex;                           // フレックスレイアウト
+  justify-content: space-between;          // 両端揃え
+  align-items: center;                     // 垂直中央寄せ
+  margin-top: 2rem;                       // 上マージン
+  gap: 1rem;                              // ボタン間のスペース
+}
+
+// ========================================
+// 適性診断 結果表示
+// ========================================
+
+// 結果セクション
+.result-section {
+  background: $surface-color;              // 薄青背景
+  padding: $space-8 $space-2;              // 64px 16px
+  text-align: center;                     // 中央寄せ
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-8 $space-4;            // 64px 32px
+  }
+}
+
+// 結果カード
+.result-card {
+  background: white;                       // 白背景
+  border-radius: 20px;                     // より大きな角丸
+  padding: 3rem 2rem;                     // 内側余白
+  max-width: 600px;                       // 最大幅制限
+  margin: 0 auto;                         // 中央寄せ
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12); // より深い影効果
+  border: 2px solid rgba($primary-color, 0.15); // 少し太いボーダー
+  position: relative;
+  overflow: hidden;
+  
+  // 結果カードの装飾的背景
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba($secondary-color, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba($primary-color, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  
+  // アニメーション効果
+  animation: slideInUp 0.6s ease-out;
+}
+
+// スライドインアニメーション
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// 結果アイコン
+.result-icon {
+  margin-bottom: 1.5rem;                  // 下マージン
+  
+  .material-icons {
+    font-size: 4rem;                      // 大きなアイコン
+    color: $primary-color;                // プライマリカラー
+  }
+}
+
+// 結果タイトル
+.result-title {
+  font-size: 2rem;                        // 大きなフォント
+  font-weight: 700;                       // ボールド
+  color: $text-color;                     // テキストカラー
+  margin-bottom: 1.5rem;                 // 下マージン
+}
+
+// 結果メッセージ
+.result-message {
+  font-size: 1.1rem;                      // フォントサイズ
+  color: $text-color;                     // テキストカラー
+  line-height: 1.6;                      // 読みやすい行高
+  margin-bottom: 1.5rem;                 // 下マージン
+}
+
+// 結果サブメッセージ
+.result-sub-message {
+  font-size: 1rem;                        // フォントサイズ
+  color: $text-secondary;                  // セカンダリテキストカラー
+  margin-bottom: 2rem;                    // 下マージン
+  line-height: 1.5;                      // 行高
+}
+
+// 結果の励ましメッセージ（Low判定用）
+.result-encouragement {
+  background: rgba($secondary-color, 0.05);
+  border-left: 4px solid $secondary-color;
+  border-radius: $border-radius;
+  padding: $space-4;
+  margin: $space-4 0;
+  font-size: $font-size-base;
+  color: $text-color;
+  line-height: $line-height-relaxed;
+  font-style: italic;
+}
+
+// 結果アクション
+.result-actions {
+  margin-top: 2rem;                       // 上マージン
+}
+
+// ========================================
+// 確認事項セクション
+// ========================================
+
+// 対象者確認セクション
+.eligibility-notice {
+  max-width: 700px;
+  margin: 0 auto $space-6;
+  background: rgba($secondary-color, 0.05);
+  border: 2px solid rgba($secondary-color, 0.2);
+  border-radius: $border-radius-lg;
+  padding: $space-6;
+  
+  .notice-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-2;
+    margin-bottom: $space-4;
+    
+    .material-icons {
+      color: $secondary-color;
+      font-size: 1.5rem;
+    }
+    
+    h3 {
+      font-size: $font-size-xl;
+      color: $text-color;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+  
+  p {
+    font-size: $font-size-base;
+    color: $text-color;
+    text-align: center;
+    margin-bottom: $space-3;
+    line-height: $line-height-relaxed;
+  }
+  
+  .eligibility-list {
+    list-style: none;
+    margin: 0 0 $space-4 0;
+    padding: 0;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    li {
+      padding: $space-2 0 $space-2 $space-6;
+      font-size: $font-size-base;
+      color: $text-color;
+      position: relative;
+      line-height: $line-height-relaxed;
+      
+      &::before {
+        content: '✓';
+        color: $secondary-color;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        top: $space-2;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+// ========================================
+// 体験申込セクション（アコーディオン）
+// ========================================
+
+// 体験申込セクション
+.trial-application-section {
+  background: white;                       // 白背景
+  padding: $space-6 $space-2;              // 48px 16px（統一）
+  text-align: center;                      // 中央寄せ
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-6 $space-4;            // 48px 32px（統一）
+  }
+}
+
+// アコーディオンコンテナ（クリック可能）
+.application-accordion {
+  @include card-accordion;                // 統一されたアコーディオンスタイル
+  max-width: 800px;                       // 最大幅制限
+  margin: 0 auto;                         // 中央寄せ
+  background: rgba($surface-color, 0.5);  // 薄い青背景
+  overflow: hidden;                       // はみ出し防止
+}
+
+// アコーディオントグルボタン
+.application-toggle {
+  width: 100%;                           // 全幅
+  background: none;                      // 背景なし
+  border: none;                          // ボーダーなし
+  padding: $space-4;                    // 内側余白（32px）
+  text-align: left;                      // 左寄せ
+  cursor: pointer;                       // ポインターカーソル
+  display: flex;                         // フレックスレイアウト
+  align-items: center;                   // 垂直中央寄せ
+  justify-content: space-between;        // 両端揃え
+  gap: $space-3;                        // 間隔（24px）
+  transition: $transition-base;          // ホバーアニメーション
+  
+  &:hover,
+  &:focus {
+    background: rgba($primary-color, 0.05); // 薄い背景色
+  }
+  
+  &:focus {
+    outline: 2px solid $primary-color;    // プライマリカラーアウトライン
+    outline-offset: -2px;                 // 内側にオフセット
+  }
+  
+  .toggle-icon {
+    color: $primary-color;               // プライマリカラー
+    font-size: 1.5rem;                  // アイコンサイズ
+    transition: transform 0.3s ease;    // 回転アニメーション
+    flex-shrink: 0;                     // 縮小しない
+  }
+  
+  &[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);           // 180度回転
+  }
+}
+
+// トグルヘッダー
+.toggle-header {
+  display: flex;                         // フレックスレイアウト
+  align-items: center;                   // 垂直中央寄せ
+  gap: 1rem;                            // 間隔
+  flex: 1;                              // 残りスペースを占有
+  
+  .material-icons {
+    color: $secondary-color;             // セカンダリカラー
+    font-size: 2rem;                    // アイコンサイズ
+    flex-shrink: 0;                     // 縮小しない
+  }
+}
+
+// トグルコンテンツ
+.toggle-content {
+  flex: 1;                              // 残りスペースを占有
+  
+  h3 {
+    font-size: 1.5rem;                   // フォントサイズ
+    color: $text-color;                  // テキストカラー
+    margin: 0 0 0.5rem 0;               // 下マージンのみ
+    font-weight: 700;                    // ボールド
+  }
+  
+  p {
+    font-size: 1rem;                     // フォントサイズ
+    color: $text-secondary;              // セカンダリテキストカラー
+    line-height: 1.5;                   // 行高
+    margin: 0;                          // マージンなし
+  }
+}
+
+// アプリケーションフォーム
+.application-form {
+  display: none;                         // 初期状態は非表示
+  background: white;                     // 白背景
+  
+  &.expanded {
+    display: block;                      // 展開時は表示
+    animation: fadeInUp 0.3s ease;       // フェードインアニメーション
+  }
+}
+
+// Googleフォームコンテナ
+.google-form-container {
+  max-width: 800px;                      // 最大幅制限
+  margin: 0 auto;                        // 中央寄せ
+  position: relative;                    // ローディング表示のため
+}
+
+// フォーム読み込みプレースホルダー
+.form-loading-placeholder {
+  background: white;
+  border-radius: 12px;
+  padding: $space-8 $space-4;           // 64px 32px
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid $border-color;
+  
+  .loading-content {
+    h3 {
+      color: $text-color;
+      font-size: $font-size-xl;          // 20px
+      margin: $space-4 0 $space-2 0;     // 32px 0 16px 0
+      font-weight: 600;
+    }
+    
+    p {
+      color: $text-secondary;
+      font-size: $font-size-base;        // 16px
+      line-height: $line-height-relaxed; // 1.6
+      margin: 0;
+      
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        font-weight: 600;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// ローディングスピナー
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto $space-3 auto;         // 0 auto 24px auto
+  border: 3px solid rgba($primary-color, 0.2);
+  border-radius: 50%;
+  border-top: 3px solid $primary-color;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// フォーム埋め込み
+.form-embed {
+  border-radius: 12px;                   // 角丸
+  overflow: hidden;                      // はみ出し防止
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); // 影効果
+  
+  iframe {
+    width: 100%;                         // 全幅
+    border: none;                        // ボーダーなし
+    background: white;                   // 白背景
+  }
+}
+
+// フェードインアニメーション
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ========================================
+// 共通ボタンスタイル
+// ========================================
+
+// CTAボタン（共通）
+.cta-button {
+  display: inline-flex;                   // インラインフレックス
+  align-items: center;                    // 垂直中央寄せ
+  gap: 0.5rem;                          // アイコンとテキストの間隔
+  padding: 1rem 2rem;                   // 内側余白
+  border-radius: 50px;                   // 丸い角
+  text-decoration: none;                  // 下線なし
+  font-weight: 700;                      // ボールド
+  font-size: 1rem;                      // フォントサイズ
+  transition: $transition-base;           // ホバーアニメーション
+  border: none;                          // ボーダーなし
+  cursor: pointer;                       // ポインターカーソル
+  min-height: 44px;                      // アクセシビリティ準拠の最小高さ
+  
+  // プライマリボタン
+  &.primary {
+    background: $primary-color;           // プライマリカラー背景
+    color: white;                        // 白テキスト
+    box-shadow: 0 4px 12px rgba($primary-color, 0.3); // 影効果
+    
+    &:hover,
+    &:focus {
+      background: darken($primary-color, 10%); // 暗いプライマリカラー
+      transform: translateY(-2px);        // 上に浮く効果
+      box-shadow: 0 6px 16px rgba($primary-color, 0.4); // 強い影
+    }
+    
+    &:disabled {
+      background: rgba($primary-color, 0.5); // 薄いプライマリカラー
+      cursor: not-allowed;                // 禁止カーソル
+      transform: none;                    // 変形なし
+      box-shadow: none;                   // 影なし
+    }
+  }
+  
+  // セカンダリボタン
+  &.secondary {
+    background: white;                    // 白背景
+    color: $primary-color;               // プライマリカラーテキスト
+    border: 2px solid $primary-color;    // プライマリカラーボーダー
+    
+    &:hover,
+    &:focus {
+      background: $primary-color;         // プライマリカラー背景
+      color: white;                      // 白テキスト
+      transform: translateY(-2px);       // 上に浮く効果
+    }
+  }
+  
+  .material-icons {
+    font-size: 1.2rem;                   // アイコンサイズ
+  }
+}
+
+// ========================================
+// トランジション効果の改善
+.question-card,
+.result-card,
+.option-label,
+.cta-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// レスポンシブデザイン
+// ========================================
+
+// モバイル・タブレット対応
+@media (max-width: $breakpoint-mobile) {
+  
+  // ヒーローセクションの調整
+  .trial-hero {
+    padding: 3rem 1rem;
+    
+    .section-header h1 {
+      font-size: 2rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+  
+  // 質問カードのパディング調整
+  .question-card {
+    padding: 1.5rem;                     // パディング削減
+  }
+  
+  // 質問タイトルのフォントサイズ調整
+  .question-title {
+    font-size: 1.25rem;                  // フォントサイズ削減
+  }
+  
+  // 選択肢ラベルの調整
+  .option-label {
+    padding: 0.875rem;                   // パディング削減
+    gap: 0.75rem;                       // ギャップ削減
+  }
+  
+  // ナビゲーションボタンの調整
+  .question-navigation {
+    flex-direction: column;               // 縦方向配置
+    gap: 1rem;                          // ギャップ
+    
+    .cta-button {
+      width: 100%;                      // 全幅
+      justify-content: center;           // 中央寄せ
+    }
+  }
+  
+  // 結果カードの調整
+  .result-card {
+    padding: 2rem 1.5rem;               // パディング削減
+  }
+  
+  // 結果タイトルの調整
+  .result-title {
+    font-size: 1.5rem;                   // フォントサイズ削減
+  }
+  
+  // introduction-section モバイル調整
+  .introduction-section {
+    padding: 2rem 1rem;                 // パディング削減
+    
+    .introduction-banner {
+      padding: 2rem 1.5rem;             // パディング削減
+      
+      .banner-decoration {
+        top: -15px;                     // 位置調整
+        right: -15px;                   // 位置調整
+        width: 60px;                    // サイズ削減
+        height: 60px;                   // サイズ削減
+        
+        .decoration-icon {
+          font-size: 1.5rem;            // アイコンサイズ削減
+        }
+      }
+      
+      .banner-content h2 {
+        font-size: 1.5rem;              // フォントサイズ削減
+      }
+      
+      .duration-badge {
+        padding: 0.5rem 1rem;           // パディング削減
+        font-size: $font-size-sm;       // 14px デジタル庁準拠
+      }
+    }
+  }
+  
+  
+  // belief-section モバイル調整
+  .belief-section {
+    padding: $space-4 $space-2;         // パディング削減（32px 16px）
+    
+    .belief-banner {
+      padding: $space-4 $space-3;       // パディング削減（32px 24px）
+      
+      h2 {
+        font-size: $font-size-lg;        // 20px フォントサイズ削減
+      }
+      
+      .belief-ribbon {
+        padding: $space-2 $space-3;     // パディング削減（16px 24px）
+        flex-direction: column;          // 縦方向配置
+        gap: $space-1;                  // ギャップ削減（8px）
+        text-align: center;             // 中央揃え維持
+        
+        .belief-text {
+          font-size: $font-size-sm;     // 14px デジタル庁準拠
+        }
+      }
+    }
+  }
+  
+  // eligibility-notice モバイル調整
+  .eligibility-notice {
+    padding: $space-4;
+    
+    .notice-header {
+      flex-direction: column;
+      gap: $space-1;
+      
+      h3 {
+        font-size: $font-size-lg;
+      }
+    }
+    
+    .eligibility-list {
+      padding: 0;
+      
+      li {
+        font-size: $font-size-sm;
+        padding-left: $space-4;
+      }
+    }
+  }
+  
+  // application-section モバイル調整
+  .application-toggle {
+    padding: 1.5rem;                    // パディング削減
+    
+    .toggle-header {
+      flex-direction: column;            // 縦方向配置
+      align-items: center;               // 中央寄せ
+      text-align: center;                // 中央揃え
+      gap: 0.5rem;                      // ギャップ削減
+    }
+    
+    .toggle-content {
+      text-align: center;                // 中央揃え
+      
+      h3 {
+        font-size: 1.3rem;               // フォントサイズ削減
+      }
+    }
+  }
+}
+
+// ========================================
+// 確認事項セクション（デジタル庁準拠）
+// ========================================
+
+.confirmation-section {
+  padding: $space-8 $space-2;
+  background: $surface-color;
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-8 $space-4;
+  }
+  
+  .confirmation-card {
+    @include card-accordion;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: $space-6;
+    
+    @media (min-width: $breakpoint-md) {
+      padding: $space-8;
+    }
+    
+    h2 {
+      font-size: $font-size-2xl;
+      color: $primary-color;
+      font-weight: 700;
+      margin-bottom: $space-4;
+      text-align: center;  // タイトルを中央揃え
+      
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-size-3xl;
+      }
+    }
+    
+    .main-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: $space-2;
+      font-size: $font-size-lg;
+      color: $text-color;
+      font-weight: 600;
+      margin-bottom: $space-4;
+      text-align: center;
+      
+      .material-icons {
+        color: $primary-color;
+        font-size: $font-size-xl;
+      }
+    }
+    
+    .eligibility-check {
+      text-align: left;  // リスト部分は左揃え
+      
+      .eligibility-title {
+        font-size: $font-size-base;
+        color: $text-color;
+        font-weight: 600;
+        margin-bottom: $space-3;
+      }
+      
+      .eligibility-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          position: relative;
+          padding-left: $space-6;
+          margin-bottom: $space-2;
+          color: $text-color;
+          font-size: $font-size-base;
+          line-height: $line-height-relaxed;
+          
+          &::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: $success-color;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# ========================================
+# ブログ・お知らせセクション設定
+# ========================================
+# ファイル目的: トップページのお知らせセクション表示設定
+#
+# 使用箇所:
+# - index.html の latest-posts-section.html インクルード
+# - _includes/sections/latest-posts-section.html でデータ参照
+#
+# データ構造:
+# - title/subtitle: セクションヘッダー
+# - show_on_homepage: トップページ表示設定
+# - posts_count: トップページ表示記事数
+# ========================================
+
+# セクションヘッダー
+title: "最新のお知らせ"
+subtitle: "お知らせをお届けします"
+
+# トップページ表示設定
+show_on_homepage: true
+posts_count: 3 # トップページに表示する最新記事数
+
+# ブログページ設定
+blog_page_title: "お知らせコンテンツ"
+blog_page_description: "mmingのお知らせをお届けします。"

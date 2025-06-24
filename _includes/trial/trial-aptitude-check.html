@@ -1,0 +1,60 @@
+<!-- 適性チェックセクション -->
+<main>
+<section class="aptitude-check-section" id="aptitude-start">
+    <div class="section-container">
+        <div class="aptitude-start">
+            <div class="start-content">
+                <h2>{{ site.data.aptitude_check.start_section.title }}</h2>
+                <p>{{ site.data.aptitude_check.start_section.description }}</p>
+                
+                <div class="start-actions">
+                    <button id="start-aptitude-check" class="cta-button primary">
+                        <span class="material-icons" aria-hidden="true">{{ site.data.aptitude_check.start_section.button.icon }}</span>
+                        {{ site.data.aptitude_check.start_section.button.text }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 適性チェック質問セクション（初期は非表示） -->
+<section class="question-section" id="aptitude-check-container" style="display: none;">
+    <div class="section-container">
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="current-question">1</span> / <span id="total-questions">8</span>
+            </div>
+        </div>
+        
+        <div class="question-container" id="question-container">
+            <div class="question-card" id="question-card">
+                <!-- JavaScript で動的に生成 -->
+            </div>
+        </div>
+        
+        <div class="question-navigation">
+            <button id="prev-button" class="cta-button secondary" style="display: none;">
+                <span class="material-icons" aria-hidden="true">arrow_back</span>
+                前の質問
+            </button>
+            <button id="next-button" class="cta-button primary" disabled>
+                次の質問
+                <span class="material-icons" aria-hidden="true">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- 結果表示セクション（初期は非表示） -->
+<section class="result-section" id="result-container" style="display: none;">
+    <div class="section-container">
+        <div class="result-content" id="result-content">
+            <!-- JavaScript で動的に生成 -->
+        </div>
+    </div>
+</section>
+</main>

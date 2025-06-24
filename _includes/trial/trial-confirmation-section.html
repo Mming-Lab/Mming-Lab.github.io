@@ -1,0 +1,22 @@
+<!-- 確認事項セクション -->
+<section class="confirmation-section" aria-labelledby="confirmation-title">
+    <div class="section-container">
+        <div class="confirmation-card text-center">
+            <h2 id="confirmation-title">{{ site.data.confirmation.title }}</h2>
+            <div class="confirmation-content">
+                <p class="main-message">
+                    <span class="material-icons" aria-hidden="true">info</span>
+                    {{ site.data.confirmation.main_message }}
+                </p>
+                <div class="eligibility-check">
+                    <p class="eligibility-title">{{ site.data.confirmation.eligibility_title }}</p>
+                    <ul class="eligibility-list" role="list">
+                        {% for item in site.data.confirmation.eligibility_items %}
+                        <li role="listitem">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

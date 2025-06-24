@@ -1,0 +1,308 @@
+/**
+ * 画像スライダーコンポーネント
+ * 再利用可能な画像スライダーのスタイル定義
+ */
+
+// ========================================
+// スライダーコンテナ
+// ========================================
+
+.feature-image-slider {
+  margin: 1.5rem 0;                        // 上下マージン
+  position: relative;                      // 相対位置（ナビゲーション配置用）
+  
+  .slider-container {
+    position: relative;                    // 相対位置
+    overflow: hidden;                      // はみ出し防止
+    border-radius: 12px;                   // 角丸
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); // 影効果
+    background: white;                     // 白背景
+    min-height: 200px;                     // 最小高さ確保
+    display: flex;                         // フレックスレイアウト
+    flex-direction: column;                // 縦方向配置に変更
+  }
+}
+
+// ========================================
+// スライダートラック
+// ========================================
+
+.slider-track {
+  display: flex;                          // フレックスレイアウト
+  width: 100%;                           // 全幅
+  position: relative;                    // 相対位置
+  flex: 1;                               // 残りスペースを占有
+  align-items: center;                   // 垂直中央寄せ
+  justify-content: center;               // 水平中央寄せ
+}
+
+// ========================================
+// スライド要素
+// ========================================
+
+.slide {
+  width: 100%;                           // 全幅
+  flex-shrink: 0;                        // 縮小しない
+  position: relative;                    // 相対位置
+  opacity: 0;                            // 初期状態は透明
+  visibility: hidden;                    // 初期状態は非表示
+  position: absolute;                    // 絶対位置（重ね合わせ）
+  top: 0;                               // 上端
+  left: 0;                              // 左端
+  
+  // アクティブスライド
+  &.active {
+    opacity: 1;                          // 不透明
+    visibility: visible;                 // 表示
+    position: relative;                  // 相対位置に戻す
+    animation: slideInFade 0.3s ease;    // フェードインアニメーション
+  }
+  
+  img {
+    width: 100%;                         // 全幅
+    height: auto;                        // 自動高さ
+    aspect-ratio: 1;                     // 正方形のアスペクト比を維持
+    display: block;                      // ブロック要素
+    object-fit: contain;                 // contain で画像全体を表示（クロップしない）
+    background: rgba($surface-color, 0.5); // 読み込み中の背景色
+    max-width: 100%;                     // 最大幅制限
+    border-radius: 8px;                  // 角丸追加
+  }
+}
+
+// ========================================
+// スライドキャプション
+// ========================================
+
+.slide-caption {
+  position: absolute;                    // 絶対位置
+  bottom: 0;                            // 下端
+  left: 0;                              // 左端
+  right: 0;                             // 右端
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7)); // グラデーション背景
+  color: white;                         // 白テキスト
+  padding: 2rem 1.5rem 1rem;           // 内側余白
+  font-size: $font-size-sm;             // 14px デジタル庁準拠
+  font-weight: 500;                     // 中程度のウェイト
+  text-align: center;                   // 中央寄せ
+}
+
+// ========================================
+// スライダーナビゲーション（下部配置）
+// ========================================
+
+.slider-navigation {
+  display: flex;                        // フレックスレイアウト
+  justify-content: space-between;       // 両端揃え
+  align-items: center;                  // 垂直中央寄せ
+  padding: $space-3 $space-4;          // パディング
+  background: rgba(255, 255, 255, 0.95); // 半透明白背景
+  border-top: 1px solid rgba($text-secondary, 0.1); // 上ボーダー
+}
+
+.slider-btn {
+  background: rgba($primary-color, 0.1); // 薄いプライマリ背景
+  border: 1px solid rgba($primary-color, 0.2); // 薄いボーダー
+  border-radius: $border-radius;        // 角丸
+  width: 44px;                          // 幅（アクセシビリティ準拠）
+  height: 44px;                         // 高さ
+  display: flex;                        // フレックスレイアウト
+  align-items: center;                  // 垂直中央寄せ
+  justify-content: center;              // 水平中央寄せ
+  cursor: pointer;                      // ポインターカーソル
+  transition: $transition-base;         // ホバーアニメーション
+  
+  .material-icons {
+    font-size: 1.25rem;                 // アイコンサイズ（少し小さく）
+    color: $primary-color;              // プライマリカラー
+  }
+  
+  // ホバー・フォーカス状態
+  &:hover,
+  &:focus {
+    background: rgba($primary-color, 0.2); // 濃いプライマリ背景
+    border-color: $primary-color;       // プライマリボーダー
+    transform: translateY(-1px);        // 軽い浮き上がり
+  }
+  
+  // アクティブ状態
+  &:active {
+    transform: translateY(0);           // 元の位置
+    background: rgba($primary-color, 0.3); // さらに濃い背景
+  }
+}
+
+// ========================================
+// スライダーインジケーター
+// ========================================
+
+.slider-indicators {
+  display: flex;                        // フレックスレイアウト
+  justify-content: center;              // 中央寄せ
+  align-items: center;                  // 垂直中央寄せ
+  gap: 0.25rem;                        // インジケーター間のスペース
+  flex: 1;                             // 残りスペースを占有（ナビゲーション内で中央配置）
+  
+  // スマート省略表示（5枚以上で適用）
+  &[data-total="5"],
+  &[data-total="6"],
+  &[data-total="7"],
+  &[data-total="8"],
+  &[data-total="9"] {
+    .indicator {
+      display: none;                    // 初期状態で全て非表示
+      
+      // 常に表示するインジケーター（現在位置周辺）
+      &.visible {
+        display: flex;
+      }
+      
+      // 省略表示用のドット
+      &.ellipsis {
+        display: flex;
+        cursor: default;
+        background: transparent;
+        min-height: auto;
+        min-width: auto;
+        
+        &::after {
+          content: '・';
+          color: rgba($text-secondary, 0.7);
+          font-size: 1rem;
+          background: transparent;
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+.indicator {
+  width: 16px;                          // 幅（線状に変更）
+  height: 2px;                          // 高さ（細い線）
+  border-radius: 1px;                   // 小さな角丸
+  border: none;                         // ボーダーなし
+  background: transparent;              // 透明背景に変更
+  cursor: pointer;                      // ポインターカーソル
+  transition: $transition-base;         // ホバーアニメーション
+  min-height: 44px;                     // アクセシビリティ準拠
+  min-width: 44px;                      // アクセシビリティ準拠
+  display: flex;                        // フレックスレイアウト
+  align-items: center;                  // 垂直中央寄せ
+  justify-content: center;              // 水平中央寄せ
+  position: relative;                   // 疑似要素用
+  
+  // 見た目の線は疑似要素で作成
+  &::after {
+    content: '';
+    width: 16px;
+    height: 2px;
+    background: rgba($text-secondary, 0.5);
+    border-radius: 1px;
+    transition: $transition-base;
+  }
+  
+  // ホバー状態
+  &:hover::after {
+    background: rgba($primary-color, 0.8); // プライマリカラー
+    width: 20px;                        // 幅拡張
+  }
+  
+  // アクティブ状態
+  &.active::after {
+    background: $primary-color;         // プライマリカラー背景
+    width: 24px;                        // さらに幅拡張
+  }
+  
+  // フォーカス状態（アクセシビリティ）
+  &:focus {
+    outline: 1px solid $primary-color;  // フォーカスアウトライン（細く）
+    outline-offset: 1px;                // オフセット
+  }
+}
+
+// ========================================
+// アニメーション
+// ========================================
+
+@keyframes slideInFade {
+  from {
+    opacity: 0;                         // 透明
+    transform: translateX(20px);        // 右から
+  }
+  to {
+    opacity: 1;                         // 不透明
+    transform: translateX(0);           // 元の位置
+  }
+}
+
+// ========================================
+// レスポンシブデザイン
+// ========================================
+
+// モバイル対応
+@media (max-width: $breakpoint-mobile) {
+  
+  .feature-image-slider {
+    margin: 1rem 0;                     // マージン削減
+    
+    .slider-container {
+      min-height: 150px;                // モバイルでは最小高さ削減
+    }
+  }
+  
+  .slider-navigation {
+    padding: $space-2 $space-3;        // パディング削減
+  }
+  
+  .slider-btn {
+    width: 40px;                        // 幅削減
+    height: 40px;                       // 高さ削減
+    
+    .material-icons {
+      font-size: 1rem;                 // アイコンサイズ削減
+    }
+  }
+  
+  .slide {
+    img {
+      max-width: 280px;                 // モバイルでの最大幅制限（正方形対応）
+      margin: 0 auto;                   // 中央寄せ
+      object-fit: contain;              // アスペクト比維持
+      aspect-ratio: 1;                  // 正方形維持
+    }
+  }
+  
+  .slide-caption {
+    padding: 1.5rem 1rem 0.75rem;      // パディング削減
+    font-size: $font-size-xs;          // 12px デジタル庁準拠最小サイズ
+  }
+  
+  
+  .indicator {
+    min-width: 40px;                    // モバイルでのタッチターゲット
+    min-height: 40px;                   // モバイルでのタッチターゲット
+    
+    &::after {
+      width: 12px;                      // モバイルでは線を少し短く
+      height: 2px;
+    }
+    
+    // モバイルでのホバー・アクティブ効果
+    &:hover::after {
+      width: 16px;                      // 控えめな拡張
+    }
+    
+    &.active::after {
+      width: 18px;                      // アクティブ時の拡張
+    }
+  }
+}
+
+// タブレット対応
+@media (max-width: $breakpoint-tablet) {
+  .feature-image-slider {
+    margin: 1.25rem 0;                  // マージン調整
+  }
+}

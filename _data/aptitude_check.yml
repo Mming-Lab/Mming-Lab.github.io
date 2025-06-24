@@ -1,0 +1,350 @@
+# ========================================
+# 適性診断システム - プログラミング学習適性判定
+# ========================================
+# ファイル目的: 発達特性のあるお子様のプログラミング学習適性を多角的に診断
+#             論理的思考、集中力、エラー対処能力等を重み付け採点で判定
+#
+# 使用箇所:
+# - index.html: 適性診断への導入（index_pageセクション）
+# - trial/index.html: 完全な適性診断システム実装
+# - _includes/trial/trial-aptitude-check.html: 診断UI
+# - assets/js/aptitude-check.js: 採点ロジック実装
+#
+# データ構造:
+# - index_page: トップページ用の軽量版表示設定
+# - scoring: 採点システム設定（最大点、閾値、重み）
+# - questions: 10問の診断質問（core/high/standard/support別）
+# - results: 3段階判定結果（high/medium/low）
+# - trial関連: 体験ページ用の詳細設定
+# ========================================
+
+# index.html用の軽量表示設定
+# 適性診断への関心喚起と誘導が目的
+index_page:
+  title: "体験前の適性チェック" # セクションタイトル
+  subtitle: "体験をご検討の方へ：事前に簡単なチェックをお試しいただけます" # 説明サブタイトル
+  intro_content:
+    - text: "体験申し込みをお考えの方に、参考として簡単な適性チェックをご用意しました。" # 導入説明1
+    - text: "お子様の特性を事前に確認することで、体験当日により具体的なお話ができます。" # 導入説明2
+  button_text: "チェックしてみる" # CTAボタンテキスト
+
+# trial/index.html用の完全診断システム
+title: "体験申込み - プログラミング適性チェック"
+subtitle: "特別な配慮が必要なお子様専門のプログラミング教室です"
+message: "発達特性のあるお子様が、安心して学べる環境をご用意しています"
+note: "苦手の克服より、強みを最大限に"
+
+introduction:
+  title: "適性チェックについて"
+  message: "お子様の「できること」「好きなこと」に注目し、プログラミングが新しい得意分野になるかを確認します。苦手の克服ではなく、強みを伸ばすことを大切にします。"
+  duration: "約5-8分"
+  purpose: "お子様の個性と強みを理解するために"
+
+# 採点システム設定
+# 科学的根拠に基づく重み付け採点システム
+scoring:
+  max_total: 70 # 全問合計最高点（重み付け後）
+  max_core: 30 # コア問題（Q1-Q3）最高点
+
+  # 判定閾値（パーセント計算後の基準値）
+  thresholds:
+    high: # 高適性：プログラミングに非常に向いている
+      total: 50 # 全体70点中50点以上（約72%）
+      core: 20 # コア30点中20点以上（約67%）
+    medium: # 中適性：体験授業で確認推奨
+      total: 35 # 全体70点中35点以上（50%）
+      core: 15 # コア30点中15点以上（50%）
+    low: # 低適性：他分野が適している可能性
+      total: 0 # 上記基準未満
+
+# 質問
+questions:
+  - id: "q1"
+    title: "問題解決思考パターン"
+    description: "状況：おもちゃが壊れた、ゲームがうまくいかない時"
+    importance: "core"
+    max_points: 10
+    options:
+      - value: "B"
+        text: "大人に「直して」「やって」と頼む"
+        points: 2
+      - value: "D"
+        text: "いろいろ試して自分で直そうとする"
+        points: 10
+      - value: "A"
+        text: "すぐに諦めて他のことをする"
+        points: 0
+      - value: "C"
+        text: "「なんで壊れたんだろう？」と原因を考えようとする"
+        points: 8
+
+  - id: "q2"
+    title: "論理的説明能力"
+    description: "お子さんが体験したことを説明する時"
+    importance: "core"
+    max_points: 10
+    options:
+      - value: "C"
+        text: "順序立てて詳しく説明する"
+        points: 8
+      - value: "A"
+        text: "「楽しかった」「面白かった」だけで終わる"
+        points: 0
+      - value: "D"
+        text: "手順や理由も含めて論理的に説明する"
+        points: 10
+      - value: "B"
+        text: "感想と簡単な内容を話す"
+        points: 2
+
+  - id: "q3"
+    title: "論理的思考の日常表現"
+    description: "日常会話での特徴"
+    importance: "core"
+    max_points: 10
+    options:
+      - value: "D"
+        text: "「もし～なら」「～の場合は」という仮定の話ができる"
+        points: 10
+      - value: "B"
+        text: "事実を簡潔に伝える"
+        points: 2
+      - value: "A"
+        text: "感情的な表現が多い（「嫌い」「好き」など）"
+        points: 0
+      - value: "C"
+        text: "「なぜなら～」「だから～」という理由をよく話す"
+        points: 8
+
+  - id: "q4"
+    title: "集中パターンの特徴"
+    description: "お子さんの集中の仕方で最も当てはまるもの"
+    importance: "high"
+    max_points: 7
+    options:
+      - value: "A"
+        text: "どんなことも長くは集中できない"
+        points: 0
+      - value: "D"
+        text: "興味がなくても必要なことには集中できる"
+        points: 3
+      - value: "C"
+        text: "興味のあることだけ長時間集中できる"
+        points: 7
+      - value: "B"
+        text: "短時間なら何でも集中できる"
+        points: 1
+
+  - id: "q5"
+    title: "細部への注意・正確性"
+    description: "作品作りや課題への取り組み方"
+    importance: "high"
+    max_points: 7
+    options:
+      - value: "C"
+        text: "細部まできちんと作り込みたがる"
+        points: 6
+      - value: "A"
+        text: "大雑把でも完成すればよいと考える"
+        points: 0
+      - value: "D"
+        text: "完璧になるまで何度も修正したがる"
+        points: 7
+      - value: "B"
+        text: "見た目が良ければ細部は気にしない"
+        points: 1
+
+  - id: "q6"
+    title: "エラー・失敗への対処能力"
+    description: "お子さんが間違いや失敗をした時"
+    importance: "high"
+    max_points: 7
+    options:
+      - value: "B"
+        text: "泣いたり怒ったりして、しばらく立ち直れない"
+        points: 1
+      - value: "D"
+        text: "「どこが間違ったかな？」と原因を考える"
+        points: 7
+      - value: "C"
+        text: "がっかりするが、「もう一回やってみる」と言う"
+        points: 4
+      - value: "A"
+        text: "すぐに投げ出してしまう"
+        points: 0
+
+  - id: "q7"
+    title: "抽象化・パターン認識能力"
+    description: "数字、図形、音楽、言葉など"
+    importance: "standard"
+    max_points: 5
+    options:
+      - value: "A"
+        text: "特にパターンには興味を示さない"
+        points: 0
+      - value: "C"
+        text: "複雑なパターンや規則性を見つけるのが得意"
+        points: 4
+      - value: "D"
+        text: "パターンを見つけると、次を予測したがる"
+        points: 5
+      - value: "B"
+        text: "簡単なパターンなら気づくことがある"
+        points: 2
+
+  - id: "q8"
+    title: "創造性・独創的発想"
+    description: "何かを作る時や問題を解く時"
+    importance: "standard"
+    max_points: 5
+    options:
+      - value: "B"
+        text: "少し変更を加えることがある"
+        points: 2
+      - value: "D"
+        text: "既存のものを見て「もっと良い方法がある」と考える"
+        points: 5
+      - value: "A"
+        text: "教えられた通りにしかできない"
+        points: 0
+      - value: "C"
+        text: "「こうしたらどうかな？」と独自のアイデアを出す"
+        points: 4
+
+  - id: "q9"
+    title: "ルール理解・遵守能力"
+    description: "ゲームや活動のルールについて"
+    importance: "standard"
+    max_points: 5
+    options:
+      - value: "D"
+        text: "ルールを覚えた上で、より良いルールを提案する"
+        points: 5
+      - value: "A"
+        text: "ルールを覚えるのが苦手で、よく間違える"
+        points: 0
+      - value: "C"
+        text: "ルールをきちんと覚えて、正確に守ろうとする"
+        points: 4
+      - value: "B"
+        text: "教えてもらえば従うが、自分からは覚えない"
+        points: 1
+
+  - id: "q10"
+    title: "継続学習意欲"
+    description: "新しいことを学ぶ時"
+    importance: "support"
+    max_points: 3
+    options:
+      - value: "C"
+        text: "難しくても「やってみたい」という気持ちが強い"
+        points: 2
+      - value: "A"
+        text: "興味を示さず、やりたがらない"
+        points: 0
+      - value: "D"
+        text: "「どうやったらできるようになるか」を積極的に質問する"
+        points: 3
+      - value: "B"
+        text: "楽しければやるが、難しくなると嫌がる"
+        points: 1
+
+# 結果パターン（保護者の気持ちに寄り添った表現）
+results:
+  high:
+    min_total: 50
+    min_core: 20
+    icon: star
+    title: "お子様にプログラミングはとても向いていそうです"
+    message: |
+      お子様の持つ素晴らしい特性が、
+      プログラミングの分野でとても活かされそうです。
+
+      集中力や論理的な思考力など、
+      お子様が日頃から見せている「得意なこと」が
+      プログラミングでも大きな強みになります。
+    sub_message: "体験授業では、きっとお子様の新しい一面を発見できるでしょう"
+    encouragement: |
+      お子様の「好きなこと」「得意なこと」を大切に、
+      新しい可能性を一緒に見つけていきませんか。
+    cta:
+      text: "体験授業に申し込む"
+      action: "schedule"
+
+  medium:
+    min_total: 35
+    min_core: 15
+    icon: psychology
+    title: "プログラミングを体験してみませんか"
+    message: |
+      お子様は、プログラミングに必要な
+      いくつかの素晴らしい力をお持ちです。
+
+      実際に体験してみることで、
+      お子様がどのように反応されるかを
+      一緒に確認させていただけませんか。
+    sub_message: "お子様のペースに合わせて、楽しく進められるよう工夫いたします"
+    encouragement: |
+      どのような結果になっても、
+      お子様の頑張りを一緒に応援させてください。
+    cta:
+      text: "体験授業で確認する"
+      action: "consult_and_trial"
+
+  low:
+    max_total: 34
+    max_core: 14
+    icon: favorite
+    title: "お子様には他の分野がより向いていそうです"
+    message: |
+      今回のチェック結果では、プログラミング以外の分野で
+      お子様の才能がより発揮される可能性が高いようです。
+
+      お子様には必ず輝ける分野があります。
+      プログラミングにこだわらず、お子様が自然に楽しめる
+      活動を見つけてあげてください。
+    sub_message: "無理にプログラミングを学ぶ必要はありません"
+    alternative_suggestions: |
+      例えば、ものづくりがお好きなら工作や手工芸、
+      音楽がお好きなら楽器演奏、
+      体を動かすことがお好きならスポーツなど、
+      お子様に合った分野を探してみてください。
+    encouragement: |
+      お子様の笑顔と自信を育むことが最も大切です。
+      得意分野を見つけて、そこで成功体験を
+      積み重ねていただければと思います。
+    cta:
+      text: "ホームページに戻る"
+      action: "close"
+
+# mmingの価値観
+our_belief:
+  title: "お子様の笑顔が一番です"
+  subtitle: "苦手の克服より、強みを最大限に"
+  message: "すべてのお子様にプログラミングが向いているわけではありません。事前にしっかりと適性を確認し、お子様にとって最適な選択をしていただきたいと考えています。"
+  items:
+    - icon: "block"
+      text: "楽しめないお子様には無理強いしません"
+    - icon: "schedule"
+      text: "お子様の貴重な時間を大切にします"
+    - icon: "sentiment_satisfied"
+      text: "失敗体験でお子様の自信を失わせたくありません"
+  additional_message: "このチェックで「向いていない」という結果が出た場合、無理にお申し込みいただく必要はありません。お子様には必ず他に輝ける分野があります。"
+
+# 適性チェック開始セクション
+start_section:
+  title: "お子様の特性を理解しましょう"
+  description: "発達特性のあるお子様がプログラミングを楽しめるか、簡単な質問でチェックします。"
+  message: "お子様の普段の様子を思い浮かべながら、最も当てはまるものを一つお選びください"
+  button:
+    text: "チェックを始める"
+    icon: "play_arrow"
+
+# 体験申込セクション
+trial_application:
+  title: "体験授業お申し込み"
+  icon: "event"
+  description: "チェック結果を参考に、体験授業への参加をご検討ください。"
+  note: "※チェック結果は参考です。実際の様子は体験授業でご確認ください"
+  expand_icon: "expand_more"
+  collapse_icon: "expand_less"
