@@ -3,7 +3,7 @@ title: "料金・スケジュール"
 
 # 料金プラン（最初に表示される重要情報）
 plan:
-  name: "指導プラン"
+  name: "料金"
   price: "¥13,000"
   period: "月2回 各60分"
   features:
