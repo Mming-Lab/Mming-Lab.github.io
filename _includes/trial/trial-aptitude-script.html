@@ -14,6 +14,10 @@ const aptitudeData = {
             title: "{{ question.title }}",
             description: "{{ question.description }}",
             importance: "{{ question.importance }}",
+            context: "{{ question.context }}",
+            {% if question.neurodivergent_potential %}
+            neurodivergent_potential: "{{ question.neurodivergent_potential }}",
+            {% endif %}
             max_points: {{ question.max_points }},
             options: [
                 {% for option in question.options %}
@@ -89,7 +93,14 @@ const aptitudeData = {
                 total: {{ site.data.aptitude_check.scoring.thresholds.low.total }}
             }
         }
+    },
+    {% if site.data.aptitude_check.important_notice %}
+    important_notice: {
+        title: "{{ site.data.aptitude_check.important_notice.title }}",
+        content: `{{ site.data.aptitude_check.important_notice.content | strip_newlines }}`,
+        footer: "{{ site.data.aptitude_check.important_notice.footer }}"
     }
+    {% endif %}
 };
 
 // ページロード時に適性診断システムを初期化

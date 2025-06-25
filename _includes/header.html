@@ -26,85 +26,19 @@
             
             <!-- ナビゲーションメニュー -->
             <ul class="nav-menu" id="main-menu">
-                {% if page.url contains 'trial' %}
-                    <!-- Trial page navigation - 統一ナビゲーション -->
-                    <li class="nav-item">
-                        <a href="/" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">home</span>
-                            トップページ
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#about" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">info</span>
-                            教室について
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#features" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">star</span>
-                            特徴
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#faq" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">help</span>
-                            FAQ
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/blog/" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">article</span>
-                            お知らせ
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/trial/" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">event</span>
-                            体験申込み
-                        </a>
-                    </li>
-                {% elsif page.url contains 'blog' or page.layout == 'post' %}
-                    <!-- Blog/Post page navigation - 統一ナビゲーション -->
-                    <li class="nav-item">
-                        <a href="/" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">home</span>
-                            トップページ
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#about" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">info</span>
-                            教室について
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#features" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">star</span>
-                            特徴
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#faq" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">help</span>
-                            FAQ
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/blog/" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">article</span>
-                            お知らせ
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/trial/" class="nav-link">
-                            <span class="material-icons" aria-hidden="true">event</span>
-                            体験申込み
-                        </a>
-                    </li>
-                {% else %}
+                {% if page.url == '/' or page.url == '/index.html' %}
                     <!-- Main page navigation -->
                     {% for item in site.data.navigation.main %}
+                    <li class="nav-item">
+                        <a href="{{ item.url }}" class="nav-link"{% if item.full_title %} aria-label="{{ item.full_title }}"{% endif %}>
+                            {% if item.icon %}<span class="material-icons" aria-hidden="true">{{ item.icon }}</span>{% endif %}
+                            {{ item.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                {% else %}
+                    <!-- Global navigation for all other pages -->
+                    {% for item in site.data.navigation.global %}
                     <li class="nav-item">
                         <a href="{{ item.url }}" class="nav-link"{% if item.full_title %} aria-label="{{ item.full_title }}"{% endif %}>
                             {% if item.icon %}<span class="material-icons" aria-hidden="true">{{ item.icon }}</span>{% endif %}

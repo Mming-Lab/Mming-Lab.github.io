@@ -130,13 +130,29 @@ class AptitudeCheckSystem {
             </label>
         `).join('');
 
+        // 発達特性の可能性セクション（存在する場合のみ表示）
+        const neurodivergentSection = question.neurodivergent_potential ? `
+            <div class="neurodivergent-potential">
+                <h4 class="neurodivergent-title">発達特性の可能性</h4>
+                <p class="neurodivergent-text">${question.neurodivergent_potential}</p>
+            </div>
+        ` : '';
+
         return `
             <div class="question-card">
-                <h3 class="question-title" tabindex="-1">${question.title}</h3>
-                <p class="question-description">${question.description}</p>
+                <div class="question-header">
+                    <h3 class="question-title" tabindex="-1">${question.title}</h3>
+                </div>
+                <div class="question-context">
+                    <p class="context-text"><strong>状況：</strong>${question.description}</p>
+                </div>
                 <div class="options-container">
                     ${optionsHTML}
                 </div>
+                <div class="question-evidence">
+                    <p class="evidence-text"><strong>根拠：</strong>${question.context}</p>
+                </div>
+                ${neurodivergentSection}
             </div>
         `;
     }
@@ -300,15 +316,33 @@ class AptitudeCheckSystem {
      * @returns {string} 結果のHTML
      */
     generateResultHTML(result) {
-        // スコア表示（保護者向けには非表示）
-        const scoreDisplay = `
-            <!-- スコア詳細は内部処理のみ、保護者には表示しない -->
-        `;
+        // 発達特性の活用可能性セクション（高適性の場合）
+        const neurodivergentAdvantages = (this.totalScore >= 50 && this.coreScore >= 20) ? `
+            <div class="neurodivergent-advantages">
+                <h4>発達特性の活用可能性</h4>
+                <p>お子さんが持つ発達特性は、プログラミング学習において以下のような形で活かされる可能性があります：</p>
+                <ul>
+                    <li><strong>集中力の発揮</strong>：興味を持った分野での深い取り組み</li>
+                    <li><strong>細部への注意</strong>：丁寧で正確な作業への適性</li>
+                    <li><strong>体系的思考</strong>：整理された考え方によるプログラム理解</li>
+                    <li><strong>独創的発想</strong>：新しいアイデアや解決方法の創出</li>
+                </ul>
+                <p><em>ただし、これらは個人差があり、すべてのお子さんに当てはまるわけではありません。</em></p>
+            </div>
+        ` : '';
         
-        // 代替提案（低適性の場合）
-        const alternativeSuggestions = result.alternative_suggestions ? `
-            <div class="alternative-suggestions">
-                ${result.alternative_suggestions.replace(/\n/g, '<br>')}
+        // 代替提案は削除済み
+
+        // 重要注意事項
+        const importantNotice = this.aptitudeData.important_notice ? `
+            <div class="important-notice">
+                <h4>${this.aptitudeData.important_notice.title}</h4>
+                <div class="notice-content">
+                    ${this.aptitudeData.important_notice.content.replace(/\n/g, '<br>')}
+                </div>
+                <div class="notice-footer">
+                    <strong>${this.aptitudeData.important_notice.footer}</strong>
+                </div>
             </div>
         ` : '';
 
@@ -322,12 +356,13 @@ class AptitudeCheckSystem {
                     ${result.message.replace(/\n/g, '<br>')}
                 </div>
                 <p class="result-sub-message">${result.sub_message}</p>
-                ${alternativeSuggestions}
+                ${neurodivergentAdvantages}
                 ${result.encouragement ? `
                     <div class="result-encouragement">
                         ${result.encouragement.replace(/\n/g, '<br>')}
                     </div>
                 ` : ''}
+                ${importantNotice}
                 <div class="result-actions">
                     ${result.cta.action !== 'close' && result.cta.action !== 'consult' ? `
                         <button class="cta-button primary" id="show-trial-form">

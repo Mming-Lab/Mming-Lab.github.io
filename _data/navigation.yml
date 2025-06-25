@@ -1,4 +1,4 @@
-# メインナビゲーション
+# メインナビゲーション（index.html用）
 main:
   - title: 教室について
     url: "#about"
@@ -9,22 +9,47 @@ main:
   - title: FAQ
     url: "#faq"
     icon: help
-    full_title: "よくある質問"  # aria-label用
+    full_title: "よくある質問" # aria-label用
   - title: 料金
     url: "#pricing-schedule"
     icon: schedule
-    full_title: "料金・スケジュール"  # aria-label用
+    full_title: "料金・スケジュール" # aria-label用
   - title: アクセス
     url: "#access"
     icon: place
   - title: お知らせ
     url: "/blog/"
     icon: article
-    full_title: "お知らせ・学習コンテンツ"  # aria-label用
+    full_title: "お知らせ・学習コンテンツ" # aria-label用
   - title: 体験
     url: "/trial/"
     icon: event
-    full_title: "体験申込み"  # aria-label用
+    full_title: "体験申込み" # aria-label用
+
+# 統一ナビゲーション（全ページ共通）
+global:
+  - title: トップページ
+    url: "/"
+    icon: home
+  - title: 教室について
+    url: "/#about"
+    icon: info
+  - title: 特徴
+    url: "/#features"
+    icon: star
+  - title: FAQ
+    url: "/#faq"
+    icon: help
+    full_title: "よくある質問"
+  - title: アクセス
+    url: "/#access"
+    icon: place
+  - title: お知らせ
+    url: "/blog/"
+    icon: article
+  - title: 体験申込み
+    url: "/trial/"
+    icon: event
 
 # フッターCTA
 footer_cta:

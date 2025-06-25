@@ -319,21 +319,103 @@
   }
 }
 
+// 質問ヘッダー
+.question-header {
+  margin-bottom: $space-4;
+}
+
 // 質問タイトル
 .question-title {
   font-size: 1.5rem;                      // フォントサイズ
   font-weight: 700;                       // ボールド
   color: $text-color;                     // テキストカラー
-  margin-bottom: 1rem;                    // 下マージン
+  margin: 0;                              // マージンリセット
   line-height: 1.4;                      // 行高
 }
 
-// 質問説明
-.question-description {
-  font-size: 1rem;                        // フォントサイズ
-  color: $text-secondary;                  // セカンダリテキストカラー
-  margin-bottom: 1.5rem;                  // 下マージン
-  line-height: 1.6;                      // 読みやすい行高
+// 質問コンテキスト（状況説明）
+.question-context {
+  background: rgba($surface-color, 0.3);
+  border-left: 4px solid $primary-color;
+  border-radius: $border-radius;
+  padding: $space-3 $space-4;
+  margin-bottom: $space-3;
+  
+  .context-text {
+    font-size: $font-size-base;
+    color: $text-color;
+    margin: 0;
+    line-height: $line-height-relaxed;
+    
+    strong {
+      color: $primary-color;
+      font-weight: 600;
+    }
+  }
+}
+
+// 質問根拠（科学的根拠）
+.question-evidence {
+  background: rgba($secondary-color, 0.05);
+  border-left: 4px solid $secondary-color;
+  border-radius: $border-radius;
+  padding: $space-3 $space-4;
+  margin-top: $space-6;
+  margin-bottom: $space-4;
+  
+  .evidence-text {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    margin: 0;
+    line-height: $line-height-relaxed;
+    font-style: italic;
+    
+    strong {
+      color: $secondary-color;
+      font-weight: 600;
+      font-style: normal;
+    }
+  }
+}
+
+// 発達特性の可能性セクション
+.neurodivergent-potential {
+  background: linear-gradient(135deg, rgba($success-color, 0.05), rgba($info-color, 0.05));
+  border: 2px solid rgba($success-color, 0.2);
+  border-radius: $border-radius-lg;
+  padding: $space-4;
+  margin-bottom: $space-4;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, $success-color, $info-color);
+    border-radius: $border-radius-lg;
+    z-index: -1;
+    opacity: 0.1;
+  }
+  
+  .neurodivergent-title {
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: $success-color;
+    margin: 0 0 $space-2 0;
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+  }
+  
+  .neurodivergent-text {
+    font-size: $font-size-sm;
+    color: $text-color;
+    margin: 0;
+    line-height: $line-height-relaxed;
+  }
 }
 
 // 選択肢コンテナ
@@ -383,6 +465,83 @@
   font-size: 1rem;                        // フォントサイズ
   color: $text-color;                     // テキストカラー
   line-height: 1.5;                      // 行高
+  flex: 1;                               // 残りスペースを占有
+}
+
+// 発達特性の活用可能性セクション（結果画面用）
+.neurodivergent-advantages {
+  background: linear-gradient(135deg, rgba($success-color, 0.05), rgba($info-color, 0.05));
+  border: 2px solid rgba($success-color, 0.3);
+  border-radius: $border-radius-lg;
+  padding: $space-4;
+  margin: $space-4 0;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(135deg, $success-color, $info-color);
+    border-radius: $border-radius-lg;
+    z-index: -1;
+    opacity: 0.1;
+  }
+  
+  h4 {
+    font-size: $font-size-lg;
+    color: $success-color;
+    font-weight: 600;
+    margin: 0 0 $space-3 0;
+    text-align: center;
+  }
+  
+  p {
+    font-size: $font-size-base;
+    color: $text-color;
+    line-height: $line-height-relaxed;
+    margin-bottom: $space-3;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 $space-3 0;
+    
+    li {
+      position: relative;
+      padding-left: $space-6;
+      margin-bottom: $space-2;
+      font-size: $font-size-sm;
+      color: $text-color;
+      line-height: $line-height-relaxed;
+      
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: $success-color;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      
+      strong {
+        color: $success-color;
+        font-weight: 600;
+      }
+    }
+  }
+  
+  p:last-child {
+    margin-bottom: 0;
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    font-style: italic;
+    text-align: center;
+  }
 }
 
 // ========================================
@@ -496,6 +655,120 @@
   color: $text-secondary;                  // セカンダリテキストカラー
   margin-bottom: 2rem;                    // 下マージン
   line-height: 1.5;                      // 行高
+}
+
+// スコア詳細表示
+.score-breakdown {
+  background: rgba($surface-color, 0.5);
+  border: 2px solid rgba($primary-color, 0.2);
+  border-radius: $border-radius-lg;
+  padding: $space-4;
+  margin: $space-4 0;
+  
+  h4 {
+    font-size: $font-size-lg;
+    color: $primary-color;
+    font-weight: 600;
+    margin: 0 0 $space-3 0;
+    text-align: center;
+  }
+  
+  .score-summary {
+    .total-score {
+      text-align: center;
+      font-size: $font-size-lg;
+      color: $text-color;
+      margin-bottom: $space-3;
+      
+      strong {
+        background: linear-gradient(135deg, $primary-color, $secondary-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+    
+    .score-details {
+      display: flex;
+      flex-direction: column;
+      gap: $space-2;
+      
+      .score-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $space-2;
+        background: white;
+        border-radius: $border-radius;
+        
+        .score-label {
+          font-size: $font-size-sm;
+          color: $text-secondary;
+        }
+        
+        .score-value {
+          font-size: $font-size-base;
+          font-weight: 600;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+// 代替提案セクションは削除済み
+
+// 重要注意事項
+.important-notice {
+  background: linear-gradient(135deg, rgba($success-color, 0.05), rgba($info-color, 0.05));
+  border: 2px solid rgba($success-color, 0.3);
+  border-radius: $border-radius-lg;
+  padding: $space-4;
+  margin: $space-4 0;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(135deg, $success-color, $info-color);
+    border-radius: $border-radius-lg;
+    z-index: -1;
+    opacity: 0.1;
+  }
+  
+  h4 {
+    font-size: $font-size-base;
+    color: $success-color;
+    font-weight: 600;
+    margin: 0 0 $space-3 0;
+    text-align: center;
+  }
+  
+  .notice-content {
+    font-size: $font-size-sm;
+    color: $text-color;
+    line-height: $line-height-relaxed;
+    margin-bottom: $space-3;
+  }
+  
+  .notice-footer {
+    font-size: $font-size-xs;
+    color: $text-secondary;
+    line-height: $line-height-relaxed;
+    font-style: italic;
+    text-align: center;
+    border-top: 1px solid rgba($success-color, 0.2);
+    padding-top: $space-2;
+    
+    strong {
+      color: $success-color;
+      font-weight: 600;
+    }
+  }
 }
 
 // 結果の励ましメッセージ（Low判定用）
