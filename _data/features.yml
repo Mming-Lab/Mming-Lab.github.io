@@ -137,19 +137,19 @@ items:
     title: "個別と協働のハイブリッド授業"
     summary: "60分で『できる』と『つながる』を両立。スキル習得と社会性向上を同時にサポート"
     icon: groups
-    # images:
-    #   main:
-    #     src: "assets/images/features/method_main.jpg"
-    #     alt: "マインクラフトでプログラミングを学ぶ様子"
-    #     caption: "マイクラでプログラミング"
-    #     width: 600
-    #     height: 600
-    #   detail:
-    #     src: "assets/images/features/method_detail.jpg"
-    #     alt: "協働活動で楽しく学ぶ子どもたち"
-    #     caption: "ワークスペース"
-    #     width: 600
-    #     height: 600
+    images:
+      main:
+        src: "assets/images/features/method_main.png"
+        alt: "マインクラフト風のハイブリッド授業"
+        caption: "ハイブリッド授業"
+        width: 600
+        height: 600
+      detail:
+        src: "assets/images/features/method_detail.png"
+        alt: "マインクラフトでの協働実践イメージ図"
+        caption: "マインクラフトでの協働実践"
+        width: 600
+        height: 600
     details:
       - title: "前半30分：マンツーマンでじっくり学習"
         content: "周りを気にせず、自分のペースで確実にスキルを身につけます"
