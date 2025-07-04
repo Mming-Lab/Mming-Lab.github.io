@@ -26,6 +26,10 @@ lang: ja_JP
 encoding: utf-8
 timezone: Asia/Tokyo
 
+# Google Analytics設定
+analytics:
+  google: G-7LTNR6JLNM
+
 # Jekyll設定（GitHub Pages準拠）
 markdown: kramdown
 kramdown:

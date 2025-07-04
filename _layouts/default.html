@@ -116,6 +116,18 @@ mmingプログラミング教室 - ベースレイアウトテンプレート
     }
     </script>
     
+    <!-- Google Analytics -->
+    {% if site.analytics.google and jekyll.environment == 'production' %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.analytics.google }}');
+    </script>
+    {% endif %}
+    
     <!-- JavaScript早期初期化 -->
     <script>
         // no-jsクラスを削除
