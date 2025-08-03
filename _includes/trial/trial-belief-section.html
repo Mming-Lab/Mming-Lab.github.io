@@ -3,18 +3,16 @@
     <div class="section-container">
         <div class="belief-banner">
             <div class="belief-header">
-                <h2>{{ site.data.aptitude_check.our_belief.title }}</h2>
-                {% if site.data.aptitude_check.our_belief.subtitle %}
-                <p class="belief-subtitle">{{ site.data.aptitude_check.our_belief.subtitle }}</p>
-                {% endif %}
+                <h2>{{ site.data.trial.belief.title }}</h2>
+                <p class="belief-subtitle">{{ site.data.trial.belief.subtitle }}</p>
             </div>
             
             <div class="belief-message">
-                <p>{{ site.data.aptitude_check.our_belief.message }}</p>
+                <p>{{ site.data.trial.belief.message }}</p>
             </div>
             
             <ul class="belief-ribbon-list">
-                {% for item in site.data.aptitude_check.our_belief.items %}
+                {% for item in site.data.trial.belief.items %}
                 <li class="belief-ribbon">
                     <span class="material-icons belief-icon" aria-hidden="true">{{ item.icon }}</span>
                     <span class="belief-text">{{ item.text }}</span>
@@ -22,11 +20,9 @@
                 {% endfor %}
             </ul>
             
-            {% if site.data.aptitude_check.our_belief.additional_message %}
             <div class="belief-additional-message">
-                <p>{{ site.data.aptitude_check.our_belief.additional_message }}</p>
+                <p>{{ site.data.trial.belief.additional_message }}</p>
             </div>
-            {% endif %}
         </div>
     </div>
 </section>

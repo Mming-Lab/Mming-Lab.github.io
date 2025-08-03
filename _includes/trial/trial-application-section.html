@@ -3,34 +3,34 @@
     <div class="section-container">
         <!-- セクションヘッダー（常時表示） -->
         <div class="section-header">
-            <h2>{{ site.data.aptitude_check.trial_application.title }}</h2>
-            <p>{{ site.data.aptitude_check.trial_application.description }}</p>
+            <h2>{{ site.data.trial.application.title }}</h2>
+            <p>{{ site.data.trial.application.description }}</p>
         </div>
         
         <!-- 対象者の確認 -->
         <div class="eligibility-notice">
             <div class="notice-header">
                 <span class="material-icons" aria-hidden="true">verified</span>
-                <h3>対象となるお子様</h3>
+                <h3>{{ site.data.trial.application.eligibility.title }}</h3>
             </div>
-            <p>以下のいずれかに該当するお子様が対象です：</p>
+            <p>{{ site.data.trial.application.eligibility.description }}</p>
             <ul class="eligibility-list">
-                <li>療育・放課後等デイサービス・特別支援学級に在籍中のお子様</li>
-                <li>過去に上記サービスを利用されていたお子様</li>
-                <li>発達障害・グレーゾーンなど特性をお持ちのお子様</li>
+                {% for item in site.data.trial.application.eligibility.items %}
+                <li>{{ item }}</li>
+                {% endfor %}
             </ul>
         </div>
         
         <div class="application-accordion">
             <button class="application-toggle" aria-expanded="false" aria-controls="application-form" onclick="toggleApplication(this)">
                 <div class="toggle-header">
-                    <span class="material-icons" aria-hidden="true">{{ site.data.aptitude_check.trial_application.icon }}</span>
+                    <span class="material-icons" aria-hidden="true">{{ site.data.trial.application.icon }}</span>
                     <div class="toggle-content">
-                        <h3>申し込みフォームを開く</h3>
-                        <p>上記の条件を確認してから、こちらをクリックしてお申し込みください</p>
+                        <h3>{{ site.data.trial.application.form.toggle_title }}</h3>
+                        <p>{{ site.data.trial.application.form.toggle_description }}</p>
                     </div>
                 </div>
-                <span class="material-icons toggle-icon" aria-hidden="true">{{ site.data.aptitude_check.trial_application.expand_icon }}</span>
+                <span class="material-icons toggle-icon" aria-hidden="true">{{ site.data.trial.application.expand_icon }}</span>
             </button>
             
             <div class="application-form" id="application-form" aria-hidden="true">
@@ -76,8 +76,8 @@
     let accordionOpened = false;
     
     // アイコン名をYAMLから取得
-    const expandIcon = '{{ site.data.aptitude_check.trial_application.expand_icon }}';
-    const collapseIcon = '{{ site.data.aptitude_check.trial_application.collapse_icon }}';
+    const expandIcon = '{{ site.data.trial.application.expand_icon }}';
+    const collapseIcon = '{{ site.data.trial.application.collapse_icon }}';
     
     // ページ読み込み完了後にiframeの準備状況をチェック
     document.addEventListener('DOMContentLoaded', function() {
