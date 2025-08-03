@@ -16,14 +16,16 @@ $primary-500: #0066CC; // スタンダード（メインカラー）
 $primary-700: #1976D2; // ダーク（ホバー用）
 $primary-900: #0D47A1; // 極濃（アクティブ用）
 
-// セカンダリーカラー（デジタル庁準拠・コントラスト確保）
-$secondary-color: #42A5F5; // セカンダリカラー（コントラスト比3.8:1）
-$secondary-light: $primary-50; // セカンダリライト
-$secondary-dark: $primary-700; // セカンダリダーク（濃色）
+// セカンダリーカラー階層（デジタル庁準拠v2.4.0・完全階層）
+$secondary-50: #E1F5FE;   // 極薄セカンダリ（バックグラウンド用）
+$secondary-100: #B3E5FC;  // 薄セカンダリ（ライト用）
+$secondary-200: #81D4FA;  // ライトセカンダリ（インタラクション用）
+$secondary-300: #4FC3F7;  // ミディアムライト（アクセント用）
+$secondary-color: #42A5F5; // セカンダリカラー（標準・コントラスト比3.8:1）
+$secondary-500: #42A5F5;  // スタンダード（メインセカンダリ）
+$secondary-700: #1976D2;  // ダークセカンダリ（ホバー用）
+$secondary-900: #0D47A1;  // 極濃セカンダリ（アクティブ用）
 
-// Legacy compatibility (既存コードとの互換性)
-$primary-light: $primary-300; // プライマリライト
-$primary-dark: $primary-700; // プライマリダーク
 
 // ターシャリーカラー（支援色）
 $tertiary-color: #4FC3F7; // シアン系（情報表示用）

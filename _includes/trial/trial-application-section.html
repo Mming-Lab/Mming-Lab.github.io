@@ -7,19 +7,7 @@
             <p>{{ site.data.trial.application.description }}</p>
         </div>
         
-        <!-- 対象者の確認 -->
-        <div class="eligibility-notice">
-            <div class="notice-header">
-                <span class="material-icons" aria-hidden="true">verified</span>
-                <h3>{{ site.data.trial.application.eligibility.title }}</h3>
-            </div>
-            <p>{{ site.data.trial.application.eligibility.description }}</p>
-            <ul class="eligibility-list">
-                {% for item in site.data.trial.application.eligibility.items %}
-                <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
-        </div>
+        <!-- 対象者・確認事項は上記のbeliefセクションに統合済み -->
         
         <div class="application-accordion">
             <button class="application-toggle" aria-expanded="false" aria-controls="application-form" onclick="toggleApplication(this)">

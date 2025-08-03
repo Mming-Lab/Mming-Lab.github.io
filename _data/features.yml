@@ -156,8 +156,8 @@ items:
         points:
           - icon: "speed"
             text: "その子のペースに完全に合わせる"
-          - icon: "adjust"
-            text: "習得度に応じて内容を柔軟に調整"
+          - icon: "track_changes"
+            text: "ゲーミフィケーションで自分のペースで自走"
           - icon: "celebration"
             text: "小さな成功体験を積み重ねる"
       - title: "後半30分：マインクラフトで協働実践"

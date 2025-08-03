@@ -24,5 +24,33 @@
                 <p>{{ site.data.trial.belief.additional_message }}</p>
             </div>
         </div>
+        
+        <!-- 統合された対象者情報セクション -->
+        <div class="eligibility-combined">
+            <h3>{{ site.data.trial.eligibility_combined.title }}</h3>
+            
+            <!-- 必要条件 -->
+            <div class="requirements-section">
+                <h4>{{ site.data.trial.eligibility_combined.requirements.title }}</h4>
+                <p>{{ site.data.trial.eligibility_combined.requirements.description }}</p>
+                <ul class="requirements-list">
+                    {% for item in site.data.trial.eligibility_combined.requirements.items %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <!-- 十分条件 -->
+            <div class="ideal-traits-section">
+                <h4>{{ site.data.trial.eligibility_combined.ideal_traits.title }}</h4>
+                <p>{{ site.data.trial.eligibility_combined.ideal_traits.description }}</p>
+                <ul class="ideal-traits-list">
+                    {% for item in site.data.trial.eligibility_combined.ideal_traits.items %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+                <p class="ideal-traits-note">{{ site.data.trial.eligibility_combined.ideal_traits.note }}</p>
+            </div>
+        </div>
     </div>
 </section>
