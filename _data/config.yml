@@ -43,7 +43,7 @@ site:
   # 注: timezone は _config.yml で管理（Jekyll設定のため重複削除）
 
   # SNSシェア用画像（og:imageタグに使用、1200x630px推奨）
-  og_image: "/assets/images/site-assets/mming_ogp.png"
+  og_image: "/assets/images/site-assets/mming_ogp.webp"
 
   # サイトロゴ（ヘッダーに表示、40x40px推奨）
   logo: "/assets/images/logos/mmingロゴアイコン青.png"
@@ -89,7 +89,7 @@ seo:
     - "発達特性" # 包括的キーワード
 
   # デフォルトのSNSシェア画像
-  default_image: "/assets/images/site-assets/mming_ogp.png"
+  default_image: "/assets/images/site-assets/mming_ogp.webp"
 
   # 注: Twitter、Facebook、Google Analytics等の外部サービス設定は
   # 必要に応じて将来追加予定（現在は未使用のため削除）

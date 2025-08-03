@@ -107,8 +107,8 @@ defaults:
 # Sass設定
 sass:
   sass_dir: _sass
-  style: expanded
-  sourcemap: true
+  style: compressed  # プロダクション用に圧縮
+  sourcemap: false   # ファイルサイズ削減
 
 # GitHub Pages互換性
 github: [metadata]
@@ -124,6 +124,16 @@ github: [metadata]
 future: false
 show_drafts: false
 unpublished: false
+
+# パフォーマンス最適化設定
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+
+# ビルド最適化
+profile: false
+strict_front_matter: false
 
 # 開発時設定
 livereload: true

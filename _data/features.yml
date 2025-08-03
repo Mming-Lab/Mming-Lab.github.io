@@ -139,13 +139,13 @@ items:
     icon: groups
     images:
       main:
-        src: "assets/images/features/method_main.png"
+        src: "assets/images/features/method_main.webp"
         alt: "マインクラフト風のハイブリッド授業"
         caption: "ハイブリッド授業"
         width: 600
         height: 600
       detail:
-        src: "assets/images/features/method_detail.png"
+        src: "assets/images/features/method_detail.webp"
         alt: "マインクラフトでの協働実践イメージ図"
         caption: "マインクラフトでの協働実践"
         width: 600

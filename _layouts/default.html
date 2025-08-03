@@ -14,6 +14,11 @@ mmingプログラミング教室 - ベースレイアウトテンプレート
     <!-- DNS プリフェッチ（パフォーマンス最適化） -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- リソースプリロード（重要なアセット） -->
+    <link rel="preload" href="{{ '/assets/images/site-assets/hero_main.webp' | relative_url }}" as="image" type="image/webp">
+    <link rel="preload" href="{{ '/assets/js/simple-main.js' | relative_url }}" as="script">
     
     <!-- SEOメタタグ -->
     <title>{% if page.title %}{{ page.title }} | {{ site.data.config.site.name }}{% else %}{{ site.data.config.site.name }} - {{ site.data.config.site.tagline }}{% endif %}</title>

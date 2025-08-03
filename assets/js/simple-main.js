@@ -29,6 +29,21 @@
     'use strict';
     
     // ========================================
+    // WebP対応検出とCSS適用
+    // ========================================
+    
+    function detectWebP() {
+        const webpElement = document.createElement('canvas');
+        const webpSupported = webpElement.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+        
+        if (webpSupported) {
+            document.documentElement.classList.add('webp');
+        } else {
+            document.documentElement.classList.add('no-webp');
+        }
+    }
+    
+    // ========================================
     // モバイルナビゲーション管理
     // ========================================
     
@@ -178,6 +193,7 @@
     // ========================================
     
     function initializeApp() {
+        detectWebP();              // WebP対応検出
         initializeNavigation();
         initializeLazyLoading();
         initializeAccessibility();

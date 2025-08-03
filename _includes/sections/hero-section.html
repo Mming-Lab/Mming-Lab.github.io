@@ -28,9 +28,12 @@
         
         {% if site.data.hero.background_image.enabled %}
         <div class="hero-image">
-            <img src="{{ site.data.hero.background_image.src | relative_url }}" 
-                 alt="{{ site.data.hero.background_image.alt }}" 
-                 loading="eager">
+            <picture>
+                <source srcset="{{ site.data.hero.background_image.src | relative_url }}" type="image/webp">
+                <img src="{{ site.data.hero.background_image.src | relative_url }}" 
+                     alt="{{ site.data.hero.background_image.alt }}" 
+                     loading="eager">
+            </picture>
         </div>
         {% endif %}
     </div>

@@ -191,6 +191,35 @@ html {
 }
 
 // ========================================
+// WebP画像対応
+// ========================================
+
+// WebP対応ブラウザでの最適化画像読み込み
+.webp-hero {
+  background-image: url('/assets/images/site-assets/hero_main.webp');
+  
+  // WebP非対応時のフォールバック
+  .no-webp & {
+    background-image: url('/assets/images/site-assets/hero_main.png');
+  }
+}
+
+// プリロード最適化
+.hero-section {
+  // 重要画像のプリロード
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background: url('/assets/images/site-assets/hero_main.webp') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}
+
+// ========================================
 // レスポンシブ最適化
 // ========================================
 
