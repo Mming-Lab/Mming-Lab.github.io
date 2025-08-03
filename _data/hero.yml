@@ -33,7 +33,6 @@ sub_copy: "発達多様性のお子様のための、もう一つの安心でき
 background_image:
   enabled: true # 画像表示フラグ
   src: "assets/images/site-assets/hero_main.webp" # WebP最適化画像
-  src_fallback: "assets/images/site-assets/hero_main.png" # PNG フォールバック（削除済みのため一時的にWebP使用）
   alt: "マイクラ風、希望と冒険が始まる" # アクセシビリティ：スクリーンリーダー用
 
 # コールトゥアクション（CTA）設定

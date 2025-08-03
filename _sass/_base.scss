@@ -59,6 +59,7 @@ h6 { font-size: $font-size-base; }   // 16px（本文基準）
 p {
   margin: 0 0 $space-2 0;             // 下マージン（8pxベース）
   line-height: $line-height-relaxed;  // 本文標準行高（1.6）
+  text-align: inherit;                // 親要素のtext-alignを継承（論理プロパティのリセット）
 }
 
 // ========================================

@@ -1,0 +1,277 @@
+/**
+ * 適性診断システム - ユーティリティ
+ * 共通ボタン、トランジション、レスポンシブ対応
+ */
+
+// ========================================
+// 共通ボタンスタイル
+// ========================================
+
+// CTAボタン（共通）
+.cta-button {
+  display: inline-flex;                   // インラインフレックス
+  align-items: center;                    // 垂直中央寄せ
+  gap: 0.5rem;                          // アイコンとテキストの間隔
+  padding: 1rem 2rem;                   // 内側余白
+  border-radius: 50px;                   // 丸い角
+  text-decoration: none;                  // 下線なし
+  font-weight: 700;                      // ボールド
+  font-size: 1rem;                      // フォントサイズ
+  transition: $transition-base;           // ホバーアニメーション
+  border: none;                          // ボーダーなし
+  cursor: pointer;                       // ポインターカーソル
+  min-height: 44px;                      // アクセシビリティ準拠の最小高さ
+  
+  // プライマリボタン
+  &.primary {
+    background: $primary-color;           // プライマリカラー背景
+    color: white;                        // 白テキスト
+    box-shadow: 0 4px 12px rgba($primary-color, 0.3); // 影効果
+    
+    &:hover,
+    &:focus {
+      background: darken($primary-color, 10%); // 暗いプライマリカラー
+      transform: translateY(-2px);        // 上に浮く効果
+      box-shadow: 0 6px 16px rgba($primary-color, 0.4); // 強い影
+    }
+    
+    &:disabled {
+      background: rgba($primary-color, 0.5); // 薄いプライマリカラー
+      cursor: not-allowed;                // 禁止カーソル
+      transform: none;                    // 変形なし
+      box-shadow: none;                   // 影なし
+    }
+  }
+  
+  // セカンダリボタン
+  &.secondary {
+    background: white;                    // 白背景
+    color: $primary-color;               // プライマリカラーテキスト
+    border: 2px solid $primary-color;    // プライマリカラーボーダー
+    
+    &:hover,
+    &:focus {
+      background: $primary-color;         // プライマリカラー背景
+      color: white;                      // 白テキスト
+      transform: translateY(-2px);       // 上に浮く効果
+    }
+  }
+  
+  .material-icons {
+    font-size: 1.2rem;                   // アイコンサイズ
+  }
+}
+
+// ========================================
+// アニメーション定義
+// ========================================
+
+// スライドインアニメーション
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// スライドダウンアニメーション
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+// ========================================
+// トランジション効果の改善
+// ========================================
+
+.question-card,
+.result-card,
+.option-label,
+.cta-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// ========================================
+// レスポンシブデザイン
+// ========================================
+
+// モバイル・タブレット対応
+@media (max-width: $breakpoint-md) {
+  
+  // ヒーローセクションの調整
+  .trial-hero {
+    padding: 3rem 1rem;
+    
+    .section-header h1 {
+      font-size: 2rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+  
+  // 質問カードのパディング調整
+  .question-card {
+    padding: 1.5rem;                     // パディング削減
+  }
+  
+  // 質問タイトルのフォントサイズ調整
+  .question-title {
+    font-size: 1.25rem;                  // フォントサイズ削減
+  }
+  
+  // 選択肢ラベルの調整
+  .option-label {
+    padding: 0.875rem;                   // パディング削減
+    gap: 0.75rem;                       // ギャップ削減
+  }
+  
+  // ナビゲーションボタンの調整
+  .question-navigation {
+    flex-direction: column;               // 縦方向配置
+    gap: 1rem;                          // ギャップ
+    
+    .cta-button {
+      width: 100%;                      // 全幅
+      justify-content: center;           // 中央寄せ
+    }
+  }
+  
+  // 結果カードの調整
+  .result-card {
+    padding: 2rem 1.5rem;               // パディング削減
+  }
+  
+  // 結果タイトルの調整
+  .result-title {
+    font-size: 1.5rem;                   // フォントサイズ削減
+  }
+  
+  // introduction-section モバイル調整
+  .introduction-section {
+    padding: 2rem 1rem;                 // パディング削減
+    
+    .introduction-banner {
+      padding: 2rem 1.5rem;             // パディング削減
+      
+      .banner-decoration {
+        top: -15px;                     // 位置調整
+        right: -15px;                   // 位置調整
+        width: 60px;                    // サイズ削減
+        height: 60px;                   // サイズ削減
+        
+        .decoration-icon {
+          font-size: 1.5rem;            // アイコンサイズ削減
+        }
+      }
+      
+      .banner-content h2 {
+        font-size: 1.5rem;              // フォントサイズ削減
+      }
+      
+      .duration-badge {
+        padding: 0.5rem 1rem;           // パディング削減
+        font-size: $font-size-sm;       // 14px デジタル庁準拠
+      }
+    }
+  }
+  
+  // belief-section モバイル調整
+  .belief-section {
+    padding: $space-4 $space-2;         // パディング削減（32px 16px）
+    
+    .belief-banner {
+      padding: $space-4 $space-3;       // パディング削減（32px 24px）
+      
+      h2 {
+        font-size: $font-size-lg;        // 20px フォントサイズ削減
+      }
+      
+      .belief-ribbon {
+        padding: $space-2 $space-3;     // パディング削減（16px 24px）
+        flex-direction: column;          // 縦方向配置
+        gap: $space-1;                  // ギャップ削減（8px）
+        text-align: center;             // 中央揃え維持
+        
+        .belief-text {
+          font-size: $font-size-sm;     // 14px デジタル庁準拠
+        }
+      }
+    }
+  }
+  
+  // eligibility-notice モバイル調整
+  .eligibility-notice {
+    padding: $space-4;
+    
+    .notice-header {
+      flex-direction: column;
+      gap: $space-1;
+      
+      h3 {
+        font-size: $font-size-lg;
+      }
+    }
+    
+    .eligibility-list {
+      padding: 0;
+      
+      li {
+        font-size: $font-size-sm;
+        padding-left: $space-4;
+      }
+    }
+  }
+  
+  // application-accordion モバイル調整
+  .application-accordion {
+    margin: 0 1rem;
+  }
+  
+  .application-toggle {
+    padding: $space-3;
+    
+    .toggle-header {
+      gap: $space-2;
+      
+      .material-icons {
+        font-size: 1.5rem;
+      }
+    }
+    
+    .toggle-content {
+      h3 {
+        font-size: 1.25rem;
+      }
+      
+      p {
+        font-size: $font-size-sm;
+      }
+    }
+  }
+  
+  .application-form {
+    padding: $space-4 $space-3;
+    
+    .form-intro {
+      h4 {
+        font-size: $font-size-lg;
+      }
+      
+      p {
+        font-size: $font-size-sm;
+      }
+    }
+  }
+}

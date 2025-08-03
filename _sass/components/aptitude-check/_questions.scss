@@ -1,0 +1,341 @@
+/**
+ * 適性診断システム - 質問UI
+ * 質問表示、選択肢、ナビゲーション
+ */
+
+// ========================================
+// 適性診断 プログレスバー
+// ========================================
+
+// プログレスバーコンテナ
+.progress-container {
+  margin-bottom: $space-6;                 // 48px 下マージン
+  background: rgba($surface-color, 0.3);   // 薄い青背景
+  padding: $space-4 $space-2;             // 32px 16px
+  border-radius: $border-radius;           // 角丸
+  text-align: center;                     // 中央揃え
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-4;                    // 32px
+  }
+}
+
+// プログレスバーラベル
+.progress-label {
+  font-size: $font-size-sm;               // 14px 小さめ
+  color: $text-secondary;                 // セカンダリテキスト
+  margin-bottom: $space-2;                // 16px 下マージン
+  font-weight: 500;                       // ミディアムウェイト
+}
+
+// プログレスバー本体
+.progress-bar {
+  background: rgba($border-color, 0.3);   // 薄いグレー背景
+  border-radius: 10px;                    // 角丸
+  height: 8px;                           // 高さ
+  overflow: hidden;                       // 溢れ隠し
+  position: relative;                     // 相対位置
+  margin-bottom: $space-2;                // 16px 下マージン
+}
+
+// プログレス進行部分
+.progress-fill {
+  height: 100%;                          // 高さ100%
+  background: linear-gradient(90deg, $primary-color, $secondary-color); // グラデーション
+  border-radius: 10px;                   // 角丸
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1); // スムーズアニメーション
+  position: relative;                    // 相対位置
+  
+  // 進行中の光効果
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(white, 0.3), transparent);
+    animation: shimmer 2s infinite;       // シマー効果
+  }
+}
+
+// プログレステキスト
+.progress-text {
+  font-size: $font-size-sm;               // 14px
+  color: $primary-color;                  // プライマリカラー
+  font-weight: 600;                       // セミボールド
+}
+
+// シマーアニメーション
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+// ========================================
+// 適性診断 質問UI
+// ========================================
+
+// 質問コンテナ
+.question-container {
+  margin-bottom: 2rem;                     // 下マージン
+}
+
+// 質問カード
+.question-card {
+  @include card-interactive;
+  border-radius: 16px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  
+  // カードの装飾的な背景
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba($secondary-color, 0.1) 0%, transparent 70%);
+    border-radius: 0 0 0 100px;
+  }
+}
+
+// 質問ヘッダー
+.question-header {
+  margin-bottom: $space-4;
+}
+
+// 質問タイトル
+.question-title {
+  font-size: 1.5rem;                      // フォントサイズ
+  font-weight: 700;                       // ボールド
+  color: $text-color;                     // テキストカラー
+  margin: 0;                              // マージンリセット
+  line-height: 1.4;                      // 行高
+}
+
+// 質問コンテキスト（状況説明）
+.question-context {
+  background: rgba($surface-color, 0.3);
+  border-left: 4px solid $primary-color;
+  border-radius: $border-radius;
+  padding: $space-3 $space-4;
+  margin-bottom: $space-3;
+  
+  .context-text {
+    font-size: $font-size-base;
+    color: $text-color;
+    margin: 0;
+    line-height: $line-height-relaxed;
+    
+    strong {
+      color: $primary-color;
+      font-weight: 600;
+    }
+  }
+}
+
+// 質問根拠（科学的根拠）
+.question-evidence {
+  background: rgba($secondary-color, 0.05);
+  border-left: 4px solid $secondary-color;
+  border-radius: $border-radius;
+  padding: $space-3 $space-4;
+  margin-top: $space-6;
+  margin-bottom: $space-4;
+  
+  .evidence-text {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    margin: 0;
+    line-height: $line-height-relaxed;
+    font-style: italic;
+    
+    strong {
+      color: $secondary-color;
+      font-weight: 600;
+      font-style: normal;
+    }
+  }
+}
+
+// 発達特性の可能性セクション
+.neurodivergent-potential {
+  background: linear-gradient(135deg, rgba($success-color, 0.05), rgba($info-color, 0.05));
+  border: 2px solid rgba($success-color, 0.2);
+  border-radius: $border-radius-lg;
+  padding: $space-4;
+  margin-bottom: $space-4;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, $success-color, $info-color);
+    border-radius: $border-radius-lg;
+    z-index: -1;
+    opacity: 0.1;
+  }
+  
+  .neurodivergent-title {
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: $success-color;
+    margin: 0 0 $space-2 0;
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+  }
+  
+  .neurodivergent-text {
+    font-size: $font-size-sm;
+    color: $text-color;
+    margin: 0;
+    line-height: $line-height-relaxed;
+  }
+}
+
+// 選択肢コンテナ
+.options-container {
+  display: flex;                           // フレックスレイアウト
+  flex-direction: column;                  // 縦方向配置
+  gap: 1rem;                              // 選択肢間のスペース
+}
+
+// 選択肢ラベル
+.option-label {
+  display: flex;                           // フレックスレイアウト
+  align-items: center;                     // 中央寄せに変更
+  gap: 1rem;                              // ラジオボタンとテキストの間隔
+  padding: 1rem;                          // 内側余白
+  border: 2px solid rgba($primary-color, 0.1); // 薄いボーダー
+  border-radius: 8px;                      // 角丸
+  cursor: pointer;                         // ポインターカーソル
+  transition: $transition-base;            // ホバーアニメーション
+  background: rgba($surface-color, 0.3);   // 薄い背景色
+  
+  // ホバー状態
+  &:hover {
+    border-color: rgba($primary-color, 0.3); // ボーダー色変更
+    background: rgba($primary-color, 0.05);  // 背景色変更
+  }
+  
+  // 選択状態（ラジオボタンがチェックされている時）
+  &:has(input:checked) {
+    border-color: $primary-color;           // プライマリカラーボーダー
+    background: rgba($primary-color, 0.1);  // プライマリカラー背景
+    box-shadow: 0 2px 8px rgba($primary-color, 0.2); // 影効果
+  }
+  
+  // ラジオボタン
+  input[type="radio"] {
+    flex-shrink: 0;                        // 縮小しない
+    width: 1.25rem;                        // 幅
+    height: 1.25rem;                       // 高さ
+    margin: 0;                             // マージンなし
+    accent-color: $primary-color;          // アクセントカラー
+  }
+}
+
+// 選択肢テキスト
+.option-text {
+  font-size: 1rem;                        // フォントサイズ
+  color: $text-color;                     // テキストカラー
+  line-height: 1.5;                      // 行高
+  flex: 1;                               // 残りスペースを占有
+}
+
+// 発達特性の活用可能性セクション（結果画面用）
+.neurodivergent-advantages {
+  background: linear-gradient(135deg, rgba($success-color, 0.05), rgba($info-color, 0.05));
+  border: 2px solid rgba($success-color, 0.3);
+  border-radius: $border-radius-lg;
+  padding: $space-4;
+  margin: $space-4 0;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(135deg, $success-color, $info-color);
+    border-radius: $border-radius-lg;
+    z-index: -1;
+    opacity: 0.1;
+  }
+  
+  h4 {
+    font-size: $font-size-lg;
+    color: $success-color;
+    font-weight: 600;
+    margin: 0 0 $space-3 0;
+    text-align: center;
+  }
+  
+  p {
+    font-size: $font-size-base;
+    color: $text-color;
+    line-height: $line-height-relaxed;
+    margin-bottom: $space-3;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 $space-3 0;
+    
+    li {
+      position: relative;
+      padding-left: $space-6;
+      margin-bottom: $space-2;
+      font-size: $font-size-sm;
+      color: $text-color;
+      line-height: $line-height-relaxed;
+      
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: $success-color;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      
+      strong {
+        color: $success-color;
+        font-weight: 600;
+      }
+    }
+  }
+  
+  p:last-child {
+    margin-bottom: 0;
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    font-style: italic;
+    text-align: center;
+  }
+}
+
+// ========================================
+// 適性診断 ナビゲーション
+// ========================================
+
+// ナビゲーションコンテナ
+.question-navigation {
+  display: flex;                           // フレックスレイアウト
+  justify-content: space-between;          // 両端揃え
+  align-items: center;                     // 垂直中央寄せ
+  margin-top: 2rem;                       // 上マージン
+  gap: 1rem;                              // ボタン間のスペース
+}

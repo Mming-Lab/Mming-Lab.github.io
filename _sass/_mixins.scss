@@ -5,6 +5,41 @@
  */
 
 // ========================================
+// セクション配置ユーティリティ（新規追加）
+// ========================================
+
+// 中央寄せセクション（統一パターン）
+@mixin section-center {
+  text-align: center;
+  
+  .section-container {
+    text-align: center;
+  }
+  
+  p, .banner-content, .section-content {
+    text-align: inherit; // 親から継承（統一性確保）
+  }
+}
+
+// 左寄せセクション
+@mixin section-left {
+  text-align: left;
+  
+  .section-container {
+    text-align: left;
+  }
+}
+
+// レスポンシブ配置（モバイル中央・デスクトップ左）
+@mixin section-responsive-align {
+  text-align: center; // モバイルデフォルト
+  
+  @media (min-width: $breakpoint-md) {
+    text-align: left; // デスクトップ
+  }
+}
+
+// ========================================
 // デジタル庁準拠ボタンコンポーネント
 // ========================================
 

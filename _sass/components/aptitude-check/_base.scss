@@ -1,0 +1,262 @@
+/**
+ * 適性診断システム - ベーススタイル
+ * 基本レイアウト、共通スタイル、体験ページ基盤
+ */
+
+// ========================================
+// アニメーション定義
+// ========================================
+
+// フローティングアニメーション
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+// ========================================
+// 適性診断 メインセクション
+// ========================================
+
+// 体験ページヒーロー装飾（デジタル庁準拠）
+.trial-hero {
+  background: linear-gradient(135deg, $surface-color 0%, rgba($secondary-color, 0.5) 100%);
+  padding: $space-6 $space-2;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-6 $space-4;           // 48px 32px（統一）
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(26, 115, 232, 0.1) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .section-container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .section-header {
+    h1 {
+      font-size: $font-size-4xl;
+      color: $primary-color;
+      font-weight: 700;
+      margin-bottom: $space-3;
+      line-height: $line-height-tight;
+    }
+    
+    .section-subtitle {
+      font-size: $font-size-xl;
+      color: $text-color;
+      font-weight: 600;
+      margin-bottom: $space-2;
+      line-height: $line-height-normal;
+    }
+    
+    .section-message {
+      font-size: $font-size-lg;
+      color: $text-secondary;
+      margin-bottom: $space-2;
+      line-height: $line-height-normal;
+    }
+    
+    .section-note {
+      font-size: $font-size-base;
+      color: $primary-color;
+      background: rgba($primary-color, 0.05);
+      padding: $space-2;
+      border-radius: $border-radius;
+      border-left: 4px solid $primary-color;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+}
+
+// ========================================
+// 適性診断開始セクション
+// ========================================
+
+// 適性診断開始セクション
+.aptitude-check-section {
+  @include section-center;                 // 統一中央寄せミックスイン
+  background: white;                       // 白背景
+  padding: $space-6 $space-2;             // 48px 16px
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-6 $space-4;           // 48px 32px
+  }
+}
+
+// 適性診断スタートコンテナ
+.aptitude-start {
+  max-width: 800px;                       // 最大幅制限
+  margin: 0 auto;                         // 中央寄せ
+}
+
+// スタートコンテンツ
+.start-content {
+  text-align: inherit;                    // 親の中央寄せを継承
+  
+  h2 {
+    font-size: $font-size-3xl;           // 30px デジタル庁準拠
+    color: $text-color;                   // テキストカラー
+    margin-bottom: $space-4;              // 32px 下マージン
+    font-weight: 700;                     // ボールド
+    line-height: $line-height-tight;      // タイトな行高
+  }
+  
+  p {
+    font-size: $font-size-lg;            // 18px 重要本文
+    color: $text-secondary;              // セカンダリテキスト
+    margin-bottom: $space-6;             // 48px 下マージン
+    line-height: $line-height-relaxed;   // リラックスした行高
+    text-align: inherit;                 // 親の中央寄せを明示的に継承
+  }
+}
+
+// スタートアクション（ボタンエリア）
+.start-actions {
+  margin-top: $space-6;                   // 48px 上マージン
+  text-align: center;                     // ボタンを中央寄せ
+}
+
+// ========================================
+// 体験ページ 共通セクション
+// ========================================
+
+// 適性診断の紹介セクション（デジタル庁準拠）
+.introduction-section {
+  @include section-center;                 // 統一中央寄せミックスイン
+  background: rgba($surface-color, 0.3);   // 薄い青背景
+  padding: $space-6 $space-2;             // 48px 16px
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-6 $space-4;           // 48px 32px
+  }
+  
+  .introduction-banner {
+    @include info-banner($primary-color); // 統一された情報バナースタイル
+    max-width: 800px;                      // 最大幅制限
+    margin: 0 auto;                        // 中央寄せ
+    padding: $space-6 $space-4;          // 内側余白（8pxベース）
+    overflow: hidden;
+    
+    .banner-decoration {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 80px;
+      height: 80px;
+      background: rgba($secondary-color, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      .decoration-icon {
+        font-size: 2rem;
+        color: $secondary-color;
+      }
+    }
+    
+    .banner-content {
+      position: relative;
+      z-index: 1;
+      
+      h2 {
+        font-size: 1.8rem;                  // フォントサイズ
+        color: $text-color;                 // テキストカラー
+        margin-bottom: 1.5rem;              // 下マージン
+        font-weight: 700;                   // ボールド
+      }
+      
+      .introduction-message {
+        color: $text-secondary;             // セカンダリテキストカラー
+        margin-bottom: 1.5rem;              // 下マージン
+        line-height: 1.6;                  // 読みやすい行高
+        
+        p {
+          margin-bottom: 1rem;              // 段落間のマージン
+        }
+      }
+      
+      .duration-badge {
+        display: inline-flex;               // インラインフレックス
+        align-items: center;                // 垂直中央寄せ
+        gap: 0.5rem;                       // 間隔
+        color: $primary-color;             // プライマリカラー
+        font-weight: 600;                  // セミボールド
+        background: white;                 // 白背景
+        padding: 0.75rem 1.5rem;          // 内側余白
+        border-radius: 25px;               // 丸い角
+        box-shadow: 0 2px 8px rgba($primary-color, 0.15); // 軽い影
+        border: 2px solid rgba($primary-color, 0.2);
+        
+        .material-icons {
+          font-size: 1.2rem;               // アイコンサイズ
+        }
+      }
+    }
+  }
+}
+
+// mmingの価値観セクション
+.belief-section {
+  @include section-center;                 // 統一中央寄せミックスイン
+  background: white;                      // 白背景
+  padding: $space-6 $space-2;             // 48px 16px
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $space-6 $space-4;           // 48px 32px
+  }
+  
+  .belief-banner {
+    @include info-banner($secondary-color); // 統一された情報バナースタイル
+    max-width: 800px;                    // 最大幅制限
+    margin: 0 auto;                      // 中央寄せ
+    padding: $space-6 $space-4;         // 内側余白（48px 32px 統一）
+    
+    h2 {
+      font-size: $font-size-xl;          // 24px デジタル庁準拠
+      color: $text-color;                // テキストカラー
+      margin-bottom: $space-4;           // 32px 下マージン
+      font-weight: 700;                  // ボールド
+    }
+    
+    .belief-ribbon-list {
+      list-style: none;                  // リストスタイルなし
+      padding: 0;                        // パディングなし
+      margin: 0;                         // マージンなし
+      display: flex;                     // フレックスレイアウト
+      flex-direction: column;            // 縦方向配置
+      gap: $space-3;                     // アイテム間のスペース（24px）
+    }
+    
+    .belief-ribbon {
+      @include info-ribbon($secondary-color); // 統一された情報リボンスタイル
+      display: flex;                     // フレックスレイアウト
+      align-items: center;               // 垂直中央寄せ
+      justify-content: center;           // 水平中央寄せ
+      gap: $space-3;                    // アイコンとテキストの間隔（24px）
+      padding: $space-3 $space-4;      // 内側余白（24px 32px）
+      font-weight: 600;                 // セミボールド
+      color: $text-color;               // テキストカラー
+      
+      .material-icons {
+        font-size: 1.5rem;               // アイコンサイズ
+        color: $secondary-color;          // セカンダリカラー
+      }
+    }
+  }
+}
