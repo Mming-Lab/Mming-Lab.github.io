@@ -14,13 +14,13 @@
 # ========================================
 
 # セクションヘッダー
-title: "最新のお知らせ"
-subtitle: "お知らせをお届けします"
+title: "ブログ"
+subtitle: "記事一覧"
 
 # トップページ表示設定
 show_on_homepage: true
 posts_count: 3 # トップページに表示する最新記事数
 
 # ブログページ設定
-blog_page_title: "お知らせコンテンツ"
-blog_page_description: "mmingのお知らせをお届けします。"
+blog_page_title: "ブログ"
+blog_page_description: "記事一覧"

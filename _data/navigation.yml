@@ -17,10 +17,10 @@ main:
   - title: アクセス
     url: "#access"
     icon: place
-  - title: お知らせ
+  - title: ブログ
     url: "/blog/"
     icon: article
-    full_title: "お知らせ・学習コンテンツ" # aria-label用
+    full_title: "ブログ" # aria-label用
   - title: 体験
     url: "/trial/"
     icon: event
@@ -44,7 +44,7 @@ global:
   - title: アクセス
     url: "/#access"
     icon: place
-  - title: お知らせ
+  - title: ブログ
     url: "/blog/"
     icon: article
   - title: 体験申込み
