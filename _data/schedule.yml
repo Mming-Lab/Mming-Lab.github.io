@@ -3,7 +3,7 @@ title: "スケジュール"
 
 # スケジュール表
 schedule_table:
-  title: "月間授業スケジュール"
+  title: "授業時間割"
   headers:
     - "土曜日"
     #- "09:00-10:00"
@@ -12,26 +12,25 @@ schedule_table:
     - "14:30-15:30"
   rows:
     - week: "第1土曜"
-      slots: ["A", "B", "×"]
+      slots: ["A", "B", "E"]
     - week: "第2土曜"
       slots: ["×", "C", "D"]
     - week: "第3土曜"
-      slots: ["A", "B", "×"]
+      slots: ["A", "B", "E"]
     - week: "第4土曜"
       slots: ["×", "C", "D"]
     - week: "第5土曜"
       slots: ["×", "×", "×"]
 # 満員クラス設定
 full_classes:
-  - "B"
-  - "C"
+  # - "B"
+  # - "C"
 
-# 凡例
+# 凡例・受講方法
 legend:
-  available: "同じ色・文字 = 同じクラス（隔週通学）"
-  unavailable: "× 休み"
-
-# クラス情報
-class_info:
-  title: "受講方法"
-  description: "月2回、隔週で同じクラスに通学"
+  title: "授業時間割の見方・受講方法"
+  items:
+    - "同じ色・文字 = 同じクラス（月2回、隔週通学）"
+    - "× = 休み"
+    - "満員のクラスもあるので、体験時にご確認ください"
+    # - "打消し線 = 満員"

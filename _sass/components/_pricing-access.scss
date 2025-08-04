@@ -444,6 +444,32 @@
     border-radius: $border-radius-md; // 8px 角丸
     margin-bottom: $space-3; // 24px 下マージン
 
+    .legend-list {
+      list-style: none; // リストマーカーなし
+      margin: 0; // マージンリセット
+      padding: 0; // パディングリセット
+      display: block; // 縦並び
+      font-size: $font-size-sm; // 14px
+
+      li {
+        margin-bottom: $space-2; // 8px 下マージン
+        padding-left: $space-4; // 16px 左パディング
+        position: relative; // 疑似要素用
+
+        &::before {
+          content: '•'; // ブレット記号
+          position: absolute; // 絶対配置
+          left: 0; // 左端配置
+          color: $primary-color; // プライマリカラー
+          font-weight: 600; // セミボールド
+        }
+
+        &:last-child {
+          margin-bottom: 0; // 最後の項目はマージンなし
+        }
+      }
+    }
+
     p {
       font-size: $font-size-sm; // 14px
       margin-bottom: $space-1; // 8px 下マージン

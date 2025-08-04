@@ -83,19 +83,14 @@
                     </table>
                 </div>
 
-                <!-- 凡例 -->
+                <!-- 凡例・受講方法 -->
                 <div class="schedule-legend">
-                    <p>
-                        <span class="legend-available">{{ site.data.schedule.legend.available }}</span> / 
-                        <span class="legend-unavailable">{{ site.data.schedule.legend.unavailable }}</span> / 
-                        <span class="legend-full">打消し線 = 満員</span>
-                    </p>
-                </div>
-
-                <!-- 受講方法 -->
-                <div class="class-info">
-                    <h4>{{ site.data.schedule.class_info.title }}</h4>
-                    <p class="class-description">{{ site.data.schedule.class_info.description }}</p>
+                    <h4>{{ site.data.schedule.legend.title }}</h4>
+                    <ul class="legend-list">
+                        {% for item in site.data.schedule.legend.items %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
 
             </div>
