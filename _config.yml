@@ -121,7 +121,7 @@ github: [metadata]
 # google_analytics: UA-XXXXXXXXX-X
 
 # その他設定
-future: false
+future: true
 show_drafts: false
 unpublished: false
 
