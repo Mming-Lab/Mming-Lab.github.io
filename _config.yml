@@ -120,22 +120,22 @@ github: [metadata]
 # Google Analytics（必要に応じて設定）
 # google_analytics: UA-XXXXXXXXX-X
 
-# その他設定
-future: true
-show_drafts: false
-unpublished: false
+# 投稿表示設定
+future: false         # 未来日付の記事を表示
+show_drafts: false    # _drafts/フォルダの下書きを非表示
+unpublished: false    # published: false の記事を非表示
 
-# パフォーマンス最適化設定
+# Liquidテンプレート最適化設定
 liquid:
-  error_mode: warn
-  strict_filters: false
-  strict_variables: false
+  error_mode: warn          # Liquidエラー時は警告表示（ビルド継続）
+  strict_filters: false     # 厳密なフィルター検証を無効化（パフォーマンス向上）
+  strict_variables: false   # 厳密な変数検証を無効化（パフォーマンス向上）
 
-# ビルド最適化
-profile: false
-strict_front_matter: false
+# Jekyllビルド最適化設定
+profile: false              # ビルド時間プロファイルを無効化（本番用）
+strict_front_matter: false # Front Matter厳密検証を無効化（ビルド高速化）
 
-# 開発時設定
-livereload: true
-port: 4000
-host: 0.0.0.0
+# ローカル開発サーバー設定
+livereload: true            # ファイル変更時の自動リロード機能
+port: 4000                  # 開発サーバーのポート番号
+host: 0.0.0.0              # 全IPアドレスからのアクセスを許可（Docker対応）
