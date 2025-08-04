@@ -36,7 +36,7 @@ eligibility_combined:
   
   # 必要条件（基本資格）
   requirements:
-    title: "基本的な対象者（必要条件）"
+    title: "対象となるお子様（必要条件）"
     description: "以下のいずれかに該当するお子様が対象です："
     items:
       - "療育・放課後等デイサービス・特別支援学級に在籍中のお子様"
