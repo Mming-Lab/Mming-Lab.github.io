@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Minecraft Bedrock MCP Server を開発しました"
-date: 2025-01-04
+date: 2024-08-04
 slug: minecraft-bedrock-mcp-server
 categories: [開発]
 tags: [Minecraft, TypeScript, MCP, WebSocket, オープンソース]
