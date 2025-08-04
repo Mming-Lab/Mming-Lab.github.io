@@ -9,7 +9,7 @@
 
 // 料金・スケジュールセクション全体
 .pricing-schedule-section {
-  background: $surface-color; // 薄青背景
+  background: $background-color; // 白背景（デジタル庁統一）
   padding: $section-padding; // セクション標準パディング
 }
 
@@ -626,6 +626,31 @@
         font-weight: 600; // セミボールド
         margin-right: $space-2; // 16px 右マージン
       }
+    }
+  }
+
+  // 交通注意事項
+  .traffic-note {
+    display: flex; // フレックスレイアウト
+    align-items: center; // 垂直中央寄せ
+    gap: $space-2; // 8px アイコンとテキストの間隔
+    background: rgba($warning-color, 0.1); // 薄い警告背景
+    border: 1px solid rgba($warning-color, 0.3); // 警告ボーダー
+    border-radius: $border-radius-md; // 8px 角丸
+    padding: $space-3; // 24px パディング
+    margin-top: $space-3; // 24px 上マージン
+    font-size: $font-size-sm; // 14px
+    color: $warning-color; // 警告カラー
+
+    .material-icons {
+      color: $warning-color; // 警告カラー
+      font-size: 1.25rem; // 20px アイコンサイズ
+      flex-shrink: 0; // 縮小しない
+    }
+
+    strong {
+      color: $warning-color; // 警告カラー
+      font-weight: 600; // セミボールド
     }
   }
 
