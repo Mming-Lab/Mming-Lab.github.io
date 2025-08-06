@@ -39,13 +39,13 @@ items:
     # 画像設定（画像スライダー用）
     images:
       main: # メイン画像（最初に表示）
-        src: "assets/images/features/safety_main.jpg" # 画像パス
+        src: "assets/images/features/safety_main.webp" # 画像パス
         alt: "テントがあるセンサリ―スペースの様子" # アクセシビリティ用alt属性
         caption: "センサリ―スペース"
         width: 600 # 推奨幅（iPhone最適化: 600x600推奨）
         height: 600 # 推奨高さ
       detail: # 詳細画像（スライダーで切り替え）
-        src: "assets/images/features/safety_detail.jpg"
+        src: "assets/images/features/safety_detail.webp"
         alt: "寄り添った声掛けの様子"
         caption: "寄り添った声掛け"
         width: 600 # 注: iPhone向けは正方形(600x600)が最適
@@ -81,33 +81,33 @@ items:
     icon: settings # Material Icons（設定・調整を表現）
     images:
       main:
-        src: "assets/images/features/environment_main.jpg"
+        src: "assets/images/features/environment_main.webp"
         alt: "最適化された学習環境の全体像"
         caption: "上下昇降デスクとバランスボール"
         width: 600
         height: 600
       detail:
-        - src: "assets/images/features/workspace.jpg"
+        - src: "assets/images/features/workspace.webp"
           alt: "ワークスペースの様子"
           caption: "ワークスペース"
           width: 600
           height: 600
-        - src: "assets/images/features/individual_space.jpg"
+        - src: "assets/images/features/individual_space.webp"
           alt: "仕切りで区切られた個別スペース"
           caption: "個別スペース"
           width: 600
           height: 600
-        - src: "assets/images/features/mc_furigana.jpg"
+        - src: "assets/images/features/mc_furigana.webp"
           alt: "マイクラにふりがな対応"
           caption: "独自開発：マイクラにふりがな対応"
           width: 600
           height: 600
-        - src: "assets/images/features/furigana_block.png"
+        - src: "assets/images/features/furigana_block.webp"
           alt: "ふりがな対応ブロックの画面"
           caption: "独自開発：<br>プログラミングブロックにふりがな対応"
           width: 600
           height: 600
-        - src: "assets/images/features/agent_left_right.png"
+        - src: "assets/images/features/agent_left_right.webp"
           alt: "エージェントの航行灯仕様"
           caption: "独自開発：左右弁別補助<br>航行灯仕様"
           width: 600

@@ -200,7 +200,7 @@ html {
   
   // WebP非対応時のフォールバック
   .no-webp & {
-    background-image: url('/assets/images/site-assets/hero_main.png');
+    background-image: url('/assets/images/site-assets/hero_main.webp');
   }
 }
 

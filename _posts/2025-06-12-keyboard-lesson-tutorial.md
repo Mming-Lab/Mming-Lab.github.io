@@ -12,12 +12,12 @@ redirect_from:
 description: "教育版マインクラフトのキーボード操作チュートリアルを日本語で学べるリソースパックの使い方を詳しく解説します。"
 ---
 
-![日本語チュートリアル_サムネイル](/assets/images/blog/2025-06-24-keyboard-lesson-tutorial/00_日本語チュートリアル_サムネイル.png){:class="img-fluid d-block mx-auto"}
+![日本語チュートリアル_サムネイル](/assets/images/blog/2025-06-24-keyboard-lesson-tutorial/00_日本語チュートリアル_サムネイル.webp){:class="img-fluid d-block mx-auto"}
 教育版マインクラフトのキーボード操作が学べるチュートリアルは英語表示です。操作方法の基礎が学べるように日本語化リソースパックを公開します。
 
 
 ### 日本語化の出来るテンプレート
-![ライブラリ](/assets/images/blog/2025-06-24-keyboard-lesson-tutorial/03_ライブラリ.png){:class="img-fluid d-block mx-auto"}
+![ライブラリ](/assets/images/blog/2025-06-24-keyboard-lesson-tutorial/03_ライブラリ.webp){:class="img-fluid d-block mx-auto"}
 
 上記画像の赤色線が囲む３つのテンプレートだけですが、日本語化が出来ます。
 1. 移動(Movement Tutorial)
@@ -36,13 +36,13 @@ mcpackファイル（マインクラフト用のパッケージファイル）�
 ### ワールドを日本語化する
 - テンプレートは「プレイ」⇒「ライブラリを表示」⇒「遊び方」⇒「ここから開始 – キーボード」にあります。  
 テンプレートをダブルクリックして開始してください。
-![ライブラリ](/assets/images/blog/2025-06-24-keyboard-lesson-tutorial/03_ライブラリ.png){:class="img-fluid d-block mx-auto"}
+![ライブラリ](/assets/images/blog/2025-06-24-keyboard-lesson-tutorial/03_ライブラリ.webp){:class="img-fluid d-block mx-auto"}
 
 - 最初は英語で表示されます。[ESC]⇒[レッスンを終了]を押下して一度終了してください。
-![英語表示](/assets/images/blog/2025-06-24-keyboard-lesson-tutorial/01_英語表示.png){:class="img-fluid d-block mx-auto"}
+![英語表示](/assets/images/blog/2025-06-24-keyboard-lesson-tutorial/01_英語表示.webp){:class="img-fluid d-block mx-auto"}
 
 - 作成したワールドの設定からリソースパックを適用してください。
-![設定方法](/assets/images/blog/2025-06-24-keyboard-lesson-tutorial/04_設定方法.png){:class="img-fluid d-block mx-auto"}
+![設定方法](/assets/images/blog/2025-06-24-keyboard-lesson-tutorial/04_設定方法.webp){:class="img-fluid d-block mx-auto"}
 
 - リソースパック適用後にはこのように日本語表示になります。
-![日本語表示](/assets/images/blog/2025-06-24-keyboard-lesson-tutorial/02_日本語表示.png){:class="img-fluid d-block mx-auto"}
+![日本語表示](/assets/images/blog/2025-06-24-keyboard-lesson-tutorial/02_日本語表示.webp){:class="img-fluid d-block mx-auto"}

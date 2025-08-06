@@ -5,7 +5,7 @@ subtitle: "代表は当事者として、メンターは技術者として、専
 members:
   - name: "宮永　あかり"
     role: "代表・ASD/ADHDの当事者"
-    photo: "/assets/images/team/MIYANAGA_akari.jpg"
+    photo: "/assets/images/team/MIYANAGA_akari.webp"
 
     # 主要資格
     qualifications:
@@ -18,7 +18,7 @@ members:
     # ソーシャル
     social:
       - url: "https://yutari.link/"
-        icon: "/assets/images/icons/yutari-link.png"
+        icon: "/assets/images/icons/yutari-link.webp"
         name: "じぶんらしい暮らしYUTARI"
         type: "image"
       - url: "https://www.instagram.com/akari_dekoboko/"
@@ -28,7 +28,7 @@ members:
 
   - name: "宮永　ともひさ"
     role: "メンター・システムエンジニア"
-    photo: "/assets/images/team/MIYANAGA_Tomohisa.jpg"
+    photo: "/assets/images/team/MIYANAGA_Tomohisa.webp"
 
     # 主要資格
     qualifications:
@@ -41,7 +41,7 @@ members:
     # ソーシャル
     social:
       - url: "https://www.credly.com/badges/cd089180-e5f5-44bf-bb25-b3dafb703f8e/public_url"
-        icon: "/assets/images/icons/minecraft-education-ambassador.png"
+        icon: "/assets/images/icons/minecraft-education-ambassador.webp"
         name: "教育版マインクラフトアンバサダー"
         type: "image"
       - url: "https://x.com/Tomohisa_YUTARI"
