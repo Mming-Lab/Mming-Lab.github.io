@@ -17,7 +17,7 @@
 # サイト基本設定
 # ========================================
 title: mming
-description: 合理的な配慮が必要な子ども向けプログラミング教室
+description: 特別な配慮が必要な子ども向けプログラミング教室
 baseurl: ""
 url: "https://mming-lab.github.io"
 
