@@ -62,11 +62,11 @@ mmingでは、発達多様性のある子どもたちを含め、すべての子
 
 教育版マインクラフトは視覚的で直感的な学習環境を提供しますが、より高度な機能を使うには複雑なコマンドが必要でした。これらの拡張機能により、子どもたちが「やりたいこと」を簡単に実現できるようになります。
 
-### Microsoft Innovative Educator Expert活動の一環
+### Microsoft Innovative Educator Expert 2025-2026認定
 
-この教材公開は、Microsoft Innovative Educator Expert（MIEE）2025-2026の活動の一環として行っています。
+継続的な教材開発と教育実践の取り組みが評価され、Microsoft Innovative Educator Expert（MIEE）2025-2026に認定されました。
 
-MIEEは、Microsoft技術を活用した教育イノベーションを実践する教育者のグローバルコミュニティです。今回の教材公開を通じて、より多くの教育現場でプログラミング学習の機会を提供することを目指しています。
+MIEEは、Microsoft技術を活用した教育イノベーションを実践する教育者のグローバルコミュニティです。引き続き、より多くの教育現場でプログラミング学習の機会を提供できるよう教材開発を進めていきます。
 
 **[MIEE認定バッジ](https://www.credly.com/badges/e717e402-900b-4cef-898b-f66641aaec50/public_url){:target="_blank"}**
 
