@@ -121,10 +121,7 @@ BikeToKeyはMITライセンスで公開しています。教育現場や個人�
 ### BikeToKey
 - [BikeToKey GitHubリポジトリ](https://github.com/Mming-Lab/bike-to-key){:target="_blank"}
 
-### その他のmming開発プロジェクト
-- [Minecraft Bedrock MCP Server](https://mming-lab.github.io/posts/minecraft-bedrock-mcp-server/){:target="_blank"}
-- [教育版マインクラフト用MakeCode拡張機能](https://mming-lab.github.io/posts/minecraft-makecode-extensions/){:target="_blank"}
-
 ### 参考情報
 - [Node-RED公式サイト](https://nodered.org/){:target="_blank"}
+- [Node-RED日本ユーザ会](https://nodered.jp/){:target="_blank"}
 - [FTMS仕様（Bluetooth SIG）](https://www.bluetooth.com/specifications/specs/fitness-machine-service-1-0/){:target="_blank"}
