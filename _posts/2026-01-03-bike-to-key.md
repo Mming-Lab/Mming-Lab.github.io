@@ -102,13 +102,9 @@ ADHD特性のある子どもの中には、座ってじっとしているより�
 
 これは単なる「落ち着きのなさ」ではなく、脳の特性によるものです。
 
-### なぜ動くと集中できるのか
+### 研究で分かっていること
 
-米国の研究で、体を動かすこと（フィジェッティング：そわそわ動くこと）がADHD児の集中力を高めることが分かっています（[NPR教育](https://www.npr.org/sections/ed/2015/05/14/404959284/fidgeting-may-help-concentration-for-students-with-adhd){:target="_blank"}、[UC Davis](https://health.ucdavis.edu/news/headlines/does-fidgeting-help-people-with-adhd-focus-/2024/10){:target="_blank"}）。
-
-- **脳が覚醒する**: 動くことでドーパミンとノルエピネフリンが増え、注意力が高まる（[ADDitude Magazine](https://www.additudemag.com/focus-factors/){:target="_blank"}）
-- **血流が増える**: 前頭前皮質（集中に関わる脳部位）への血流が増加する
-- **長く続くほど効果的**: タスクが長引くほど、動くことの効果が大きくなる（[CHADD](https://chadd.org/attention-article/how-does-fidgeting-enhance-focus-for-individuals-with-adhd/){:target="_blank"}）
+米国の研究で、体を動かすこと（フィジェッティング：そわそわ動くこと）がADHD児の集中力を高めることが報告されています（[NPR教育](https://www.npr.org/sections/ed/2015/05/14/404959284/fidgeting-may-help-concentration-for-students-with-adhd){:target="_blank"}、[UC Davis](https://health.ucdavis.edu/news/headlines/does-fidgeting-help-people-with-adhd-focus-/2024/10){:target="_blank"}）。
 
 BikeToKeyは、この「動きながら集中できる」特性を活かして、好きなゲームに没頭しながら自然に運動できるツールです。「じっと座って勉強しなさい」ではなく、「動きながら集中する」環境を作ることで、発達特性のある子どもたちの学びを支援します。
 
