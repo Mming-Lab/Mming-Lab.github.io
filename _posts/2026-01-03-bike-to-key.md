@@ -106,7 +106,7 @@ ADHD特性のある子どもの中には、座ってじっとしているより�
 
 米国の研究で、体を動かすこと（フィジェッティング：そわそわ動くこと）がADHD児の集中力を高めることが報告されています（[NPR教育](https://www.npr.org/sections/ed/2015/05/14/404959284/fidgeting-may-help-concentration-for-students-with-adhd){:target="_blank"}、[UC Davis](https://health.ucdavis.edu/news/headlines/does-fidgeting-help-people-with-adhd-focus-/2024/10){:target="_blank"}）。
 
-BikeToKeyは、この「動きながら集中できる」特性を活かして、好きなゲームに没頭しながら自然に運動できるツールです。「じっと座って勉強しなさい」ではなく、「動きながら集中する」環境を作ることで、発達特性のある子どもたちの学びを支援します。
+BikeToKeyは、この「動きながら集中できる」特性を活かして、デジタル活動に取り組みながら自然に運動できるツールです。「じっと座って勉強しなさい」ではなく、「動きながら集中する」環境を作ることで、発達特性のある子どもたちの学びを支援します。
 
 ---
 
