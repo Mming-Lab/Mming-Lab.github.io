@@ -12,8 +12,8 @@
 #
 
 # セクション基本情報
-title: "mmingが選ばれる3つの理由" # メインタイトル（h2要素として表示）
-subtitle: "発達特性のあるお子様に、本当に必要な支援を" # サブタイトル（補足説明）
+title: "居場所であるために、していること"
+subtitle: "毎回の授業のあとに記録を取りながら、少しずつ整えてきたことです"
 # ========================================
 # 3つの特徴詳細定義
 # ========================================
@@ -24,7 +24,8 @@ subtitle: "発達特性のあるお子様に、本当に必要な支援を" # �
 # - 詳細説明: details配列（タイトル + 内容 + ポイント）
 #
 # 表示形式: アコーディオンカード + 画像スライダー
-# JavaScript: simple-main.js の toggleFeature() 関数で制御
+# 注: images.detail は常に配列で書く（単一画像でも - src: から始める）
+# JavaScript: assets/js/sections.js で制御
 #
 
 items:
@@ -33,8 +34,8 @@ items:
   # ========================================
   - id: "safety" # 識別子（CSS・JavaScript用）
     number: "01" # 表示番号（視覚的順序）
-    title: "当事者による共感ベースの支援" # 特徴名（h3要素）
-    summary: "代表自身が発達障害当事者。同じ経験をしてきたからこそ、お子様の気持ちに寄り添えます" # 要約（カード表面に表示）
+    title: "伝わらなかったときは、伝え方を変えます"
+    summary: "代表自身が発達障害の当事者です。できない理由をお子様に求めず、こちらの渡し方を見直します"
     icon: favorite # Material Iconsアイコン名
     # 画像設定（画像スライダー用）
     images:
@@ -45,11 +46,11 @@ items:
         width: 600 # 推奨幅（iPhone最適化: 600x600推奨）
         height: 600 # 推奨高さ
       detail: # 詳細画像（スライダーで切り替え）
-        src: "assets/images/features/safety_detail.webp"
-        alt: "寄り添った声掛けの様子"
-        caption: "寄り添った声掛け"
-        width: 600 # 注: iPhone向けは正方形(600x600)が最適
-        height: 600
+        - src: "assets/images/features/safety_detail.webp"
+          alt: "寄り添った声掛けの様子"
+          caption: "寄り添った声掛け"
+          width: 600 # 注: iPhone向けは正方形(600x600)が最適
+          height: 600
     # 詳細説明（アコーディオン展開時に表示）
     details:
       - title: "同じ経験をしてきた指導者" # 詳細見出し
@@ -60,7 +61,7 @@ items:
           - icon: "visibility"
             text: "「できない」の裏にある本当の困りごとに気づけます"
           - icon: "chat_bubble"
-            text: "お子様が安心できる声かけとタイミングを心得ています"
+            text: "どんな声のかけ方なら届くか、どのタイミングなら届くかを探します"
       - title: "保護者の方とも同じ目線で"
         content: "お子様だけでなく、保護者の方の不安や悩みにも当事者視点でお応えします"
         points:
@@ -69,15 +70,15 @@ items:
           # - icon: "lightbulb"
           #   text: "家庭での接し方のヒントも具体的にアドバイス"
           - icon: "feedback"
-            text: "月次報告でお子様の様子をフィードバックします"
+            text: "毎月、お子様の様子をおたよりにしてお届けしています"
 
   # ========================================
   # 特徴02: 学習環境の個別最適化
   # ========================================
   - id: "environment" # 識別子
     number: "02" # 表示番号
-    title: "完全カスタマイズされた学習環境" # 特徴名
-    summary: "感覚特性も学習スタイルも十人十色。だから環境も教材も、お子様一人ひとりに合わせて調整します" # 要約
+    title: "その日の調子で、居場所を選べます"
+    summary: "体調や気分は日によって変わります。テントのある静かな場所も、みんなのいる場所も選べます"
     icon: settings # Material Icons（設定・調整を表現）
     images:
       main:
@@ -99,17 +100,17 @@ items:
           height: 600
         - src: "assets/images/features/mc_furigana.webp"
           alt: "マイクラにふりがな対応"
-          caption: "独自開発：マイクラにふりがな対応"
+          caption: "漢字が読めなくても止まらないように、ふりがなを付けました"
           width: 600
           height: 600
         - src: "assets/images/features/furigana_block.webp"
           alt: "ふりがな対応ブロックの画面"
-          caption: "独自開発：<br>プログラミングブロックにふりがな対応"
+          caption: "プログラミングのブロックにも、<br>ふりがなを付けました"
           width: 600
           height: 600
         - src: "assets/images/features/agent_left_right.webp"
           alt: "エージェントの航行灯仕様"
-          caption: "独自開発：左右弁別補助<br>航行灯仕様"
+          caption: "左右が分かりにくいときのために、<br>光の色で向きが分かるようにしました"
           width: 600
           height: 600
     details:
@@ -124,18 +125,28 @@ items:
             text: "考えるときに動きたい子のための上下昇降デスク"
           # - icon: "light_mode"
           #   text: "照明：300〜1000ルクスで調整可能"
-      - title: "お子様専用にカスタマイズした教材"
-        content: "市販教材では対応できない、一人ひとりの特性に合わせた学習ツール"
+      - title: "決まったカリキュラムはありません"
+        content: "お子様の様子を見ながら、進め方も教材も変えていきます"
+        points:
+          - icon: "tune"
+            text: "同じ教材で全員を進めることはしません。合わないと感じたら別のものに切り替えます"
+          - icon: "speed"
+            text: "読むのが負担なら、文字の少ないものへ。手を動かしたい子には、動かせるものへ"
+          - icon: "track_changes"
+            text: "「まだ一歩手前の段階かもしれない」と思えば、戻ることもあります"
+
+      - title: "足りない道具は、作ります"
+        content: "売っているものでは足りないところは、こちらで作っています"
         points:
           - icon: "translate"
-            text: "ふりがな対応：読み書き困難をサポート"
+            text: "漢字でつまずかないように、マインクラフトとプログラミングのブロックにふりがなを付けました"
           - icon: "navigation"
-            text: "航行灯仕様：左右弁別サポート"
+            text: "左右が分かりにくいときのために、光の色で向きが分かるようにしました"
 
   - id: "method"
     number: "03"
-    title: "個別と協働のハイブリッド授業"
-    summary: "60分で『できる』と『つながる』を両立。スキル習得と社会性向上を同時にサポート"
+    title: "ひとりの時間と、みんなの時間があります"
+    summary: "前半はひとりで、後半はみんなと。同じ場所にいられた日を、成長として数えています"
     icon: groups
     images:
       main:
@@ -145,37 +156,35 @@ items:
         width: 600
         height: 600
       detail:
-        src: "assets/images/features/method_detail.webp"
-        alt: "マインクラフトでの協働実践イメージ図"
-        caption: "マインクラフトでの協働実践"
-        width: 600
-        height: 600
+        - src: "assets/images/features/method_detail.webp"
+          alt: "マインクラフトでの協働実践イメージ図"
+          caption: "マインクラフトでの協働実践"
+          width: 600
+          height: 600
     details:
       - title: "前半30分：マンツーマンでじっくり学習"
         content: "周りを気にせず、自分のペースで確実にスキルを身につけます"
         points:
           - icon: "speed"
-            text: "その子のペースに完全に合わせる"
+            text: "その日のペースに合わせます。進まない日があっても構いません"
           - icon: "track_changes"
-            text: "ゲーミフィケーションで自分のペースで自走"
+            text: "ゲームのように進められる教材で、自分のペースで取り組めます"
           - icon: "celebration"
-            text: "小さな成功体験を積み重ねる"
+            text: "できたことも、できなかったことも、そのまま受け止めます"
       - title: "後半30分：マインクラフトで協働実践"
-        content: "世界中の研究で実証された、発達特性のある子どもに最適な協働環境で実践"
+        # 注: 以前はここに研究論文3本を引用し「認知的柔軟性が有意に改善」
+        # 「社会性スキルが実生活にも向上」と書いていた。この位置に置くと
+        # 治療効果の主張に近く読めてしまうため、教室で実際に見てきたことに
+        # 差し替えている。療育の代替をうたわないこと。
+        content: "好きなものを通じて、自然に関わりが生まれる場をつくっています"
         points:
           - icon: "construction"
-            text: "Minecraft を活用した共同制作：建築家・採掘者・デザイナー等の役割を通じて、子どもたちが自然に協力し合う学び"
-            link: "https://www.researchgate.net/publication/315682057"
-          - icon: "psychology"
-            text: "認知的柔軟性が有意に改善：ADHD傾向のある子どもにおいて、Minecraft 遊びによって実行機能の向上が科学的に確認"
-            link: "https://www.researchgate.net/publication/359214738"
+            text: "建築・採掘・デザインなど役割を分けて、一緒にひとつのものを作ります"
+          - icon: "chat_bubble"
+            text: "好きなものの話題だと、言葉が出やすくなることがあります"
+          - icon: "favorite"
+            text: "「好きなものを通じて誰かと関われた」という経験を大切にしています"
           - icon: "groups"
-            text: "社会性スキルが実生活にも向上：仮想環境で練習することで、日常の対人コミュニケーションにもスキルが効果的に移行"
-            link: "https://games.jmir.org/2020/2/e14369/"
+            text: "助け合う雰囲気ができてくると、こちらが促さなくても話し合いが進みます"
 
 # 画像スライダー設定
-slider:
-  enabled: true
-  autoplay: false # 自動再生はしない（アクセシビリティ配慮）
-  indicators: true
-  swipe: true

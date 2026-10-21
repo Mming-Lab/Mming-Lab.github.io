@@ -12,37 +12,35 @@ $primary-color: #0066CC; // デジタル庁ブルー（標準）
 $primary-50: #E3F2FD; // 極薄ブルー（バックグラウンド用）
 $primary-100: #BBDEFB; // 薄ブルー（セカンダリ用）
 $primary-300: #64B5F6; // ミディアムライト（アクセント用）
-$primary-500: #0066CC; // スタンダード（メインカラー）
 $primary-700: #1976D2; // ダーク（ホバー用）
 $primary-900: #0D47A1; // 極濃（アクティブ用）
 
 // セカンダリーカラー階層（デジタル庁準拠v2.4.0・完全階層）
-$secondary-50: #E1F5FE;   // 極薄セカンダリ（バックグラウンド用）
 $secondary-100: #B3E5FC;  // 薄セカンダリ（ライト用）
-$secondary-200: #81D4FA;  // ライトセカンダリ（インタラクション用）
-$secondary-300: #4FC3F7;  // ミディアムライト（アクセント用）
-$secondary-color: #42A5F5; // セカンダリカラー（標準・コントラスト比3.8:1）
-$secondary-500: #42A5F5;  // スタンダード（メインセカンダリ）
+// 前景（文字・アイコン・罫線）用のセカンダリ。明色背景の上で 4.80:1
+// $secondary-color (#42A5F5) は白上 2.65:1 しかなく、前景には使えない
+$secondary-on-light: #0277BD;
+
+$secondary-color: #42A5F5; // 背景・装飾専用（白上 2.65:1。前景には $secondary-on-light を使う）
 $secondary-700: #1976D2;  // ダークセカンダリ（ホバー用）
 $secondary-900: #0D47A1;  // 極濃セカンダリ（アクティブ用）
 
-
 // ターシャリーカラー（支援色）
-$tertiary-color: #4FC3F7; // シアン系（情報表示用）
 
 // 実用機能カラー（ビジネス必須）
 $success-color: #2E7D32; // サクセス（緑）
+// 前景用の警告色。明色背景の上で 5.02:1
+// $warning-color (#F57C00) は白上 2.70:1 しかなく、文字色には使えない
+$warning-on-light: #B45309;
+
 $warning-color: #F57C00; // 警告（オレンジ）
 $error-color: #C62828; // エラー（赤）
 $info-color: $primary-color; // 情報（プライマリ使用）
 
 // アクセントカラー（控えめな強調用）
-$accent-color: $primary-300; // アクセント（ミディアムライト使用）
 
 // アイコンカラー（デジタル庁準拠・コントラスト比確保）
-$icon-color-primary: $primary-700; // プライマリアイコン（7:1）
-$icon-color-secondary: #1565C0; // セカンダリアイコン（5:1）
-$icon-color-muted: #666666; // ミュートアイコン（5.74:1）
+$icon-color-primary: $primary-700; // プライマリアイコン（白上 4.60:1）
 
 // ベースカラー
 $background-color: #FFFFFF; // メイン背景（白）
@@ -57,11 +55,10 @@ $gray-200: #EEEEEE;
 $gray-300: #E0E0E0; // ライトグレー
 $gray-400: #BDBDBD;
 $gray-500: #9E9E9E; // ミディアムグレー
-$gray-600: #6D4C41;
+$gray-600: #757575; // Material 準拠のグレー（旧値 #6D4C41 は茶系でスケールが壊れていた）
 $gray-700: #616161; // ダークグレー
 $gray-800: #424242;
 $gray-900: #212121; // 極濃グレー
-
 
 // テキストカラー（デジタル庁準拠）
 $text-color: $gray-900; // メインテキスト（極濃グレー）
@@ -70,27 +67,23 @@ $text-muted: #666666; // ミュートテキスト（コントラスト比5.74:1�
 $text-inverse: #FFFFFF; // 反転テキスト（白）
 
 // インタラクションカラー（デジタル庁準拠v2.4.0）
-$hover-color: rgba($primary-color, 0.08); // ホバー背景（薄く）
-$hover-surface: $primary-50; // ホバー時サーフェス
 $focus-color: $primary-color; // フォーカス色
-$focus-ring: rgba($primary-color, 0.3); // フォーカスリング
-$active-color: $primary-900; // アクティブ色（極濃）
-$pressed-color: $primary-700; // プレス時色
 
 // リンクカラー（デジタル庁準拠・コントラスト強化）
 $link-color: $primary-color; // リンクデフォルト（4.5:1準拠）
-$link-visited: #551A8B; // 訪問済み（紫・識別性考慮）
 $link-hover: $primary-700; // ホバー時（ダーク）
-$link-active: $primary-900; // アクティブ時（極濃）
-$link-focus: $primary-color; // フォーカス時（標準）
 
 // ========================================
 // タイポグラフィ
 // ========================================
 
 // フォントファミリー
-$font-family-base: 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-$font-family-heading: $font-family-base;
+// ユニバーサルデザインフォント優先。Webフォントは使わない（BIZ UDPGothic は Google Fonts では
+// サブセット分割されず 1ウェイト 4.3MB の TTF 配信のため採用不可。端末搭載版を使う）
+// Windows 10 1809+ : BIZ UDPGothic / BIZ UDGothic（モリサワ製UDフォント）
+// macOS / iOS     : Hiragino Sans（UDではないが高可読）
+// Android         : Noto Sans CJK JP
+$font-family-base: 'BIZ UDPGothic', 'BIZ UDGothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'Yu Gothic UI', Meiryo, system-ui, -apple-system, sans-serif;
 $font-family-monospace: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 
 // フォントサイズ（デジタル庁準拠v2.4.0 - 完全階層）
@@ -108,23 +101,12 @@ $font-size-4xl: 2.25rem; // 36px（主要見出し）
 
 // ディスプレイサイズ（視覚的インパクト用）
 $font-size-5xl: 3rem; // 48px（Display Small）
-$font-size-6xl: 3.5rem; // 56px（Display Medium）
-$font-size-7xl: 4rem; // 64px（Display Large）
 
 // デジタル庁テキストスタイル分類（Display/Standard/Dense/Oneline）
 
 // Standard (Std) - 記事・見出し・本文用
-$font-size-heading-lg: $font-size-4xl; // 36px
-$font-size-heading-md: $font-size-3xl; // 30px
-$font-size-heading-sm: $font-size-2xl; // 24px
-$font-size-body-lg: $font-size-lg; // 18px
-$font-size-body-md: $font-size-base; // 16px
-
 
 // Oneline (Oln) - UI要素・ボタン・ラベル用
-$font-size-ui-lg: $font-size-base; // 16px
-$font-size-ui-md: $font-size-sm; // 14px
-$font-size-ui-sm: $font-size-xs; // 12px
 
 // ライン高（デジタル庁準拠v2.4.0 - 詳細分類）
 $line-height-none: 1.0; // 100%（タイトなレイアウト用）
@@ -135,30 +117,16 @@ $line-height-relaxed: 1.6; // 160%（本文標準）
 $line-height-loose: 1.8; // 180%（読みやすさ重視）
 
 // テキストスタイル別ライン高
-$line-height-display: $line-height-tight; // Display用（視覚的インパクト）
-$line-height-heading: $line-height-snug; // 見出し用（バランス重視）
-$line-height-body: $line-height-relaxed; // 本文用（読みやすさ）
-$line-height-ui: $line-height-normal; // UI用（コンパクト）
-$line-height-dense: $line-height-normal; // Dense用（情報密度重視）
 
 // Letter Spacing（デジタル庁準拠）
-$letter-spacing-tighter: -0.025em; // -2.5%（大見出し用）
-$letter-spacing-tight: -0.01em; // -1%（見出し用）
-$letter-spacing-normal: 0; // 0%（標準）
-$letter-spacing-wide: 0.01em; // 1%（本文強調用）
 $letter-spacing-wider: 0.02em; // 2%（UI要素用）
-$letter-spacing-widest: 0.05em; // 5%（キャプション用）
 
 // Legacy compatibility（既存コードとの互換性）
 $line-height-base: $line-height-relaxed; // 本文標準
 
 // フォントウェイト
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
-$font-weight-extrabold: 800;
 
 // ========================================
 // レスポンシブブレークポイント
@@ -181,7 +149,7 @@ $breakpoint-tablet: $breakpoint-lg;
 // ========================================
 
 // 基本8pxベーススペーシング
-$space-0: 0; // 0px（リセット用）
+$space-0: 0; // 0（リセット用）
 $space-px: 1px; // 1px（ボーダー用）
 $space-0-5: 0.125rem; // 2px（マイクロスペーシング）
 $space-1: 0.25rem; // 4px（極小）
@@ -205,16 +173,8 @@ $space-20: 5rem; // 80px（セクション特大）
 $space-24: 6rem; // 96px（セクション最大）
 
 // ネガティブスペーシング（オーバーラップ用）
-$space-n-1: -0.25rem; // -4px
-$space-n-2: -0.5rem; // -8px
-$space-n-4: -1rem; // -16px
 
 // 従来互換（レガシーサポート）
-$space-xs: $space-1; // 4px
-$space-sm: $space-3; // 12px
-$space-md: $space-4; // 16px
-$space-lg: $space-6; // 24px
-$space-xl: $space-8; // 32px
 
 // ========================================
 // レイアウト
@@ -222,31 +182,15 @@ $space-xl: $space-8; // 32px
 
 // コンテナとセクション（デジタル庁準拠v2.4.0）
 $max-width: 1200px; // コンテナ最大幅
-$max-width-sm: 640px; // 小コンテナ
-$max-width-md: 768px; // 中コンテナ
-$max-width-lg: 1024px; // 大コンテナ
-$max-width-xl: 1280px; // 特大コンテナ
 
 // セクションパディング（デジタル庁階層）
-$section-padding-sm: $space-12 $space-4; // 48px 16px（小セクション）
-$section-padding-md: $space-16 $space-4; // 64px 16px（標準セクション）
-$section-padding-lg: $space-20 $space-4; // 80px 16px（大セクション）
-$section-padding-xl: $space-24 $space-4; // 96px 16px（特大セクション）
 
 // レスポンシブセクションパディング
 $section-padding: $space-12 $space-4; // モバイル（48px 16px）
-$section-padding-desktop: $space-16 $space-8; // デスクトップ（64px 32px）
 
 // コンテナパディング
-$container-padding: 0 $space-4; // 標準（0 16px）
-$container-padding-lg: 0 $space-8; // 大（0 32px）
 
 // デジタル庁グリッドシステム準拠
-$grid-margin: $space-4; // グリッドマージン（16px）
-$grid-margin-lg: $space-8; // グリッドマージン大（32px）
-$grid-gutter: $space-4; // グリッドガター（16px）
-$grid-gutter-lg: $space-6; // グリッドガター大（24px）
-$grid-columns: 12; // 12カラムシステム
 
 // Border radius
 $border-radius-sm: 0.25rem; // 4px
@@ -254,18 +198,11 @@ $border-radius-md: 0.5rem; // 8px
 $border-radius: 0.5rem; // 8px（デフォルト）
 $border-radius-lg: 0.75rem; // 12px
 $border-radius-xl: 1rem; // 16px
-$border-radius-2xl: 1.5rem; // 24px
-$border-radius-full: 9999px;
 
 // Z-index layers
 $z-dropdown: 1000;
 $z-sticky: 1020;
 $z-fixed: 1030;
-$z-modal-backdrop: 1040;
-$z-modal: 1050;
-$z-popover: 1060;
-$z-tooltip: 1070;
-$z-toast: 1080;
 
 // ========================================
 // アニメーション・トランジション
@@ -289,8 +226,6 @@ $ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
 // Combined transitions
 $transition-base: all $duration-200 $ease-out;
-$transition-fast: all $duration-150 $ease-out;
-$transition-slow: all $duration-300 $ease-out;
 
 // ========================================
 // シャドウ
@@ -300,9 +235,6 @@ $shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 $shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 $shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-$shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 
 // ========================================
 // アクセシビリティ（デジタル庁準拠v2.4.0・WCAG AA準拠）
@@ -312,43 +244,19 @@ $shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 $min-touch-target: 44px; // 最小タッチターゲット
 
 // フォーカス管理（WCAG 2.1準拠）
-$focus-ring-width: 2px; // フォーカスリング幅
-$focus-ring-offset: 2px; // フォーカスリングオフセット
-$focus-ring-color: $focus-color; // フォーカスリング色
-$focus-ring-style: solid; // フォーカスリングスタイル
 
 // ハイコントラストモード対応
-$high-contrast-outline: 2px solid; // ハイコントラストアウトライン
-$high-contrast-bg: ButtonFace; // ハイコントラスト背景
-$high-contrast-text: ButtonText; // ハイコントラストテキスト
-$high-contrast-border: ButtonBorder; // ハイコントラストボーダー
 
 // カラーコントラスト比（WCAG AA準拠）
-$contrast-ratio-normal: 4.5; // 通常テキスト（4.5:1）
-$contrast-ratio-large: 3.0; // 大テキスト（3:1）
-$contrast-ratio-ui: 3.0; // UI要素（3:1）
-$contrast-ratio-aaa: 7.0; // AAA レベル（7:1）
 
 // 動きの軽減対応（prefers-reduced-motion）
-$reduced-motion-duration: 0.01ms; // 動き軽減時の最小時間
-$reduced-motion-scale: 1; // 動き軽減時のスケール
 
 // スクリーンリーダー対応
-$sr-only-clip: rect(0, 0, 0, 0); // スクリーンリーダー専用クリップ
-$sr-only-position: absolute; // スクリーンリーダー専用ポジション
-$sr-only-width: 1px; // スクリーンリーダー専用幅
-$sr-only-height: 1px; // スクリーンリーダー専用高さ
-$sr-only-margin: -1px; // スクリーンリーダー専用マージン
-$sr-only-padding: 0; // スクリーンリーダー専用パディング
-$sr-only-overflow: hidden; // スクリーンリーダー専用オーバーフロー
-$sr-only-border: 0; // スクリーンリーダー専用ボーダー
 
 // ========================================
 // パフォーマンス最適化
 // ========================================
 
 // Content visibility
-$content-visibility-hidden: hidden;
 
 // Will-change optimization
-$will-change-scroll: scroll-position;

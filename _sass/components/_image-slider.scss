@@ -217,8 +217,8 @@
   
   // フォーカス状態（アクセシビリティ）
   &:focus {
-    outline: 1px solid $primary-color;  // フォーカスアウトライン（細く）
-    outline-offset: 1px;                // オフセット
+    outline: 2px solid $focus-color;    // フォーカスリング（WCAG 2.4.11: 1px では細すぎる）
+    outline-offset: 2px;                // オフセット
   }
 }
 

@@ -27,11 +27,11 @@
         <!-- 最新記事一覧 -->
         <div class="latest-posts-grid">
             {% for post in site.posts limit:site.data.blog.posts_count %}
-            <article class="post-card" itemscope itemtype="http://schema.org/BlogPosting">
+            <article class="post-card">
                 <a href="{{ post.url | relative_url }}" class="post-card-wrapper" aria-label="{{ post.title }}を読む">
                     <div class="post-card-content">
                         <div class="post-meta">
-                            <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+                            <time datetime="{{ post.date | date_to_xmlschema }}">
                                 {{ post.date | date: "%Y年%m月%d日" }}
                             </time>
                             {% if post.categories %}
@@ -43,10 +43,10 @@
                             {% endif %}
                         </div>
                         
-                        <h3 itemprop="name headline">{{ post.title }}</h3>
+                        <h3>{{ post.title }}</h3>
                         
                         {% if post.description %}
-                        <p class="post-excerpt" itemprop="description">{{ post.description | truncate: 100 }}</p>
+                        <p class="post-excerpt">{{ post.description | truncate: 100 }}</p>
                         {% else %}
                         <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
                         {% endif %}

@@ -1,0 +1,34 @@
+<!-- ========================================
+     記事末尾の教室紹介
+
+     データソース: _data/post_note.yml, _data/core/eligibility.yml
+     対応 SCSS: _sass/components/_blog.scss（.post-classroom-note）
+     対応 JS: なし
+
+     表示のみのブロックなので info-banner を使う（細い枠線・影なし・
+     ホバーなし）。card-accordion を使うとクリックできるように見える。
+     ======================================== -->
+{%- assign n = site.data.post_note -%}
+{%- assign e = site.data.core.eligibility -%}
+<aside class="post-classroom-note" aria-labelledby="post-classroom-note-title">
+    <h2 id="post-classroom-note-title">{{ n.title }}</h2>
+
+    {% for paragraph in n.body %}
+    <p>{{ paragraph }}</p>
+    {% endfor %}
+
+    <p>{{ n.referral_lead }}</p>
+    <ul class="post-classroom-note-targets">
+        {% for item in e.requirements.items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <p class="post-classroom-note-caution">{{ e.ideal_traits.note }}</p>
+
+    <p class="post-classroom-note-links">
+        {% for link in n.links %}
+        <a href="{{ link.url | relative_url }}">{{ link.text }}</a>
+        {% endfor %}
+    </p>
+</aside>

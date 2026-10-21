@@ -1,0 +1,79 @@
+# ========================================
+# Material Symbols アイコン一覧
+# ========================================
+#
+# 【重要】このリストにある名前だけがフォントに含まれます。
+# 新しいアイコンを使うときは、必ずここに名前を追加してください。
+# 追加を忘れるとフォントにグリフが無く、画面にリガチャ名（例: menu）が
+# 英単語としてそのまま表示されます。
+#
+# 使用箇所:
+# - _layouts/default.html が icon_names パラメータを組み立てて
+#   Google Fonts からサブセット版を読み込む
+# - 全グリフ版は 125KB、このサブセットは約6KB
+#
+# 名前の確認先:
+# https://fonts.google.com/icons （Material Symbols Outlined）
+#
+# 現在の使用箇所の内訳:
+# - HTML 直書き: _includes/ 配下の <span class="material-icons">～</span>
+# - YAML 指定  : _data/navigation.yml, features.yml, faq.yml, trial.yml ほかの icon:
+# ========================================
+
+# 【消してはいけないもの】
+# expand_more / expand_less は assets/js/sections.js がアコーディオンの開閉で
+# textContent に入れ替えている。検査スクリプトからは「未使用」に見えるが消さないこと。
+#
+# 【検査】
+#   bash check-icons.sh
+# 登録漏れがあると画面にリガチャ名が英単語で表示され、レイアウトも崩れる。
+
+material_symbols:
+  - arrow_back
+  - arrow_forward
+  - article
+  - assignment
+  - backpack
+  - celebration
+  - chat_bubble
+  - check
+  - chevron_left
+  - chevron_right
+  - construction
+  - description
+  - edit_calendar
+  - event
+  - event_available
+  - expand_less
+  - expand_more
+  - favorite
+  - feedback
+  - groups
+  - hearing
+  - height
+  - help
+  - home
+  - info
+  - light_mode
+  - lightbulb
+  - mail
+  - menu
+  - navigation
+  - open_in_new
+  - payments
+  - person
+  - place
+  - psychology
+  - question_answer
+  - schedule
+  - school
+  - self_improvement
+  - settings
+  - speed
+  - sports_esports
+  - star
+  - track_changes
+  - translate
+  - tune
+  - visibility
+  - warning

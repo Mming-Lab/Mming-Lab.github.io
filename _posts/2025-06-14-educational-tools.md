@@ -4,7 +4,7 @@ title: "共に創る未来 - 教育版マイクラの可能性を広げて"
 date: 2025-06-14
 slug: educational-tools
 categories: [MinecraftEducation]
-tags: [教育版マインクラフト, 教育支援ツール, ]
+tags: [教育版マインクラフト, 教育支援ツール]
 description: "教育現場での活用を想定した教育版マインクラフトの支援ツールを無償公開。より良い教育環境の実現に貢献します。"
 ---
 

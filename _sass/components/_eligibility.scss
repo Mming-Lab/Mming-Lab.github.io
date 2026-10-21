@@ -10,8 +10,8 @@
 
 .eligibility-combined {
   max-width: 800px;                        // 最大幅制限
-  margin: $space-6 auto 0;                 // 上マージン48px、中央寄せ
-  padding: $space-6 $space-4;             // 内側余白 48px 32px
+  margin: $space-6 auto 0;                 // 上マージン24px、中央寄せ
+  padding: $space-6 $space-4;             // 内側余白 24px 16px
   background: rgba($primary-50, 0.3);      // 薄いプライマリ背景
   border-radius: $border-radius-lg;        // 大きな角丸
   border: 1px solid rgba($primary-100, 0.5); // 薄いプライマリボーダー
@@ -20,8 +20,8 @@
   h3 {
     font-size: $font-size-2xl;             // 24px デジタル庁準拠
     color: $text-color;                     // テキストカラー
-    margin-bottom: $space-4;                // 下マージン32px
-    font-weight: 700;                       // ボールド
+    margin-bottom: $space-4;                // 下マージン16px
+    font-weight: $font-weight-bold;                       // ボールド
     text-align: center;                     // 中央寄せ
     line-height: $line-height-tight;        // タイトな行高
   }
@@ -31,8 +31,8 @@
   // ========================================
   
   .requirements-section {
-    margin-bottom: $space-6;                // 下マージン48px
-    padding: $space-4;                      // 内側余白32px
+    margin-bottom: $space-6;                // 下マージン24px
+    padding: $space-4;                      // 内側余白16px
     background: white;                      // 白背景
     border-radius: $border-radius;          // 角丸
     border-left: 4px solid $primary-color; // 左ボーダー（プライマリ）
@@ -41,14 +41,14 @@
     h4 {
       font-size: $font-size-xl;             // 20px 小見出し
       color: $primary-color;               // プライマリカラー
-      margin-bottom: $space-2;             // 下マージン16px
-      font-weight: 600;                    // セミボールド
+      margin-bottom: $space-2;             // 下マージン8px
+      font-weight: $font-weight-semibold;                    // セミボールド
       line-height: $line-height-tight;     // タイトな行高
     }
     
     p {
       color: $text-secondary;              // セカンダリテキストカラー
-      margin-bottom: $space-3;             // 下マージン24px
+      margin-bottom: $space-3;             // 下マージン12px
       line-height: $line-height-relaxed;   // リラックスした行高
       font-size: $font-size-base;         // 16px 標準本文
     }
@@ -59,10 +59,10 @@
       margin: 0;                           // マージンなし
       
       li {
-        padding: $space-2 0;               // 縦パディング16px
+        padding: $space-2 0;               // 縦パディング8px
         border-bottom: 1px solid rgba($gray-200, 0.5); // 下ボーダー
         position: relative;                // 相対位置指定
-        padding-left: $space-4;           // 左パディング32px（チェック用）
+        padding-left: $space-4;           // 左パディング16px（チェック用）
         color: $text-color;               // テキストカラー
         font-size: $font-size-base;       // 16px 標準本文
         line-height: $line-height-normal; // 通常行高
@@ -76,7 +76,7 @@
           position: absolute;              // 絶対位置指定
           left: 0;                         // 左端配置
           color: $primary-color;          // プライマリカラー
-          font-weight: 700;               // ボールド
+          font-weight: $font-weight-bold;               // ボールド
           font-size: $font-size-lg;      // 18px やや大きめ
         }
       }
@@ -88,7 +88,7 @@
   // ========================================
   
   .ideal-traits-section {
-    padding: $space-4;                      // 内側余白32px
+    padding: $space-4;                      // 内側余白16px
     background: rgba($secondary-100, 0.3);    // 薄いセカンダリ背景
     border-radius: $border-radius;          // 角丸
     border-left: 4px solid $secondary-color; // 左ボーダー（セカンダリ）
@@ -97,14 +97,14 @@
     h4 {
       font-size: $font-size-xl;             // 20px 小見出し
       color: $secondary-700;                // セカンダリダークカラー
-      margin-bottom: $space-2;             // 下マージン16px
-      font-weight: 600;                    // セミボールド
+      margin-bottom: $space-2;             // 下マージン8px
+      font-weight: $font-weight-semibold;                    // セミボールド
       line-height: $line-height-tight;     // タイトな行高
     }
     
     p {
       color: $text-secondary;              // セカンダリテキストカラー
-      margin-bottom: $space-3;             // 下マージン24px
+      margin-bottom: $space-3;             // 下マージン12px
       line-height: $line-height-relaxed;   // リラックスした行高
       font-size: $font-size-base;         // 16px 標準本文
     }
@@ -112,12 +112,12 @@
     .ideal-traits-list {
       list-style: none;                    // リストスタイルなし
       padding: 0;                          // パディングなし
-      margin: 0 0 $space-4 0;             // 下マージン32px
+      margin: 0 0 $space-4 0;             // 下マージン16px
       
       li {
-        padding: $space-2 0;               // 縦パディング16px
+        padding: $space-2 0;               // 縦パディング8px
         position: relative;                // 相対位置指定
-        padding-left: $space-4;           // 左パディング32px（星用）
+        padding-left: $space-4;           // 左パディング16px（星用）
         color: $text-color;               // テキストカラー
         font-size: $font-size-base;       // 16px 標準本文
         line-height: $line-height-normal; // 通常行高
@@ -126,8 +126,8 @@
           content: "★";                    // 星マーク
           position: absolute;              // 絶対位置指定
           left: 0;                         // 左端配置
-          color: $secondary-color;         // セカンダリカラー
-          font-weight: 700;               // ボールド
+          color: $secondary-on-light;      // 前景用（白上 4.80:1）
+          font-weight: $font-weight-bold;               // ボールド
           font-size: $font-size-lg;      // 18px やや大きめ
         }
       }
@@ -137,7 +137,7 @@
     .ideal-traits-note {
       background: rgba($secondary-700, 0.08); // 薄いセカンダリダーク背景
       color: $secondary-900;               // セカンダリ極濃（強調）
-      padding: $space-3;                   // 内側余白24px
+      padding: $space-3;                   // 内側余白12px
       border-radius: $border-radius;       // 角丸
       border-left: 3px solid $secondary-700; // 左ボーダー（セカンダリダーク）
       font-size: $font-size-sm;           // 14px 小テキスト
@@ -154,35 +154,35 @@
 
 @media (max-width: $breakpoint-md) {
   .eligibility-combined {
-    margin: $space-4 0 0;                  // 上マージン32px、横マージンなし
-    padding: $space-4 $space-3;           // 内側余白 32px 24px
+    margin: $space-4 0 0;                  // 上マージン16px、横マージンなし
+    padding: $space-4 $space-3;           // 内側余白 16px 12px
     
     // メインタイトル調整
     h3 {
       font-size: $font-size-xl;           // 20px フォントサイズ削減
-      margin-bottom: $space-3;            // 下マージン24px
+      margin-bottom: $space-3;            // 下マージン12px
     }
     
     // 必要条件・十分条件セクション共通調整
     .requirements-section,
     .ideal-traits-section {
-      padding: $space-3;                  // 内側余白24px
+      padding: $space-3;                  // 内側余白12px
       
       h4 {
         font-size: $font-size-lg;         // 18px フォントサイズ削減
-        margin-bottom: $space-2;          // 下マージン16px
+        margin-bottom: $space-2;          // 下マージン8px
       }
       
       p {
         font-size: $font-size-sm;         // 14px フォントサイズ削減
-        margin-bottom: $space-2;          // 下マージン16px
+        margin-bottom: $space-2;          // 下マージン8px
       }
       
       // リストアイテムのフォントサイズ調整
       li {
         font-size: $font-size-sm;         // 14px フォントサイズ削減
-        padding: $space-1-5 0;            // 縦パディング12px
-        padding-left: $space-3;           // 左パディング24px
+        padding: $space-1-5 0;            // 縦パディング6px
+        padding-left: $space-3;           // 左パディング12px
         
         &:before {
           font-size: $font-size-base;     // 16px アイコンサイズ調整
@@ -193,7 +193,7 @@
     // 十分条件セクションの注意書き調整
     .ideal-traits-section {
       .ideal-traits-note {
-        padding: $space-2;                // 内側余白16px
+        padding: $space-2;                // 内側余白8px
         font-size: $font-size-xs;        // 12px フォントサイズ削減
       }
     }

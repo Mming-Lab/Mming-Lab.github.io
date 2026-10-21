@@ -304,14 +304,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages (~> 232)
-  jekyll-default-layout
-  jekyll-feed
-  jekyll-optional-front-matter
-  jekyll-readme-index
-  jekyll-relative-links
-  jekyll-seo-tag
-  jekyll-sitemap
-  jekyll-titles-from-headings
   tzinfo (>= 1, < 3)
   tzinfo-data
   wdm (~> 0.1.1)

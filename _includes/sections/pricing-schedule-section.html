@@ -2,30 +2,30 @@
 <section class="pricing-schedule-section" id="pricing-schedule">
     <div class="section-container">
         <div class="section-header">
-            <h2>{{ site.data.pricing.title }}</h2>
+            <h2>{{ site.data.pricing_schedule.title }}</h2>
         </div>
         
         <div class="pricing-schedule-grid">
             <!-- 料金 -->
             <div class="pricing-card">
-                <h3>{{ site.data.pricing.plan.name }}</h3>
+                <h3>{{ site.data.pricing_schedule.plan.name }}</h3>
                 
                 <!-- 入会金 -->
                 <div class="enrollment-fee">
                     <span class="fee-label">入会金</span>
-                    <span class="fee-amount">{{ site.data.pricing.enrollment_fee.amount }}</span>
-                    <span class="fee-note">（{{ site.data.pricing.enrollment_fee.note }}）</span>
+                    <span class="fee-amount">{{ site.data.pricing_schedule.enrollment_fee.amount }}</span>
+                    <span class="fee-note">（{{ site.data.pricing_schedule.enrollment_fee.note }}）</span>
                 </div>
                 
                 <!-- 月謝 -->
                 <div class="price">
                     <span class="price-label">月謝</span>
-                    <span class="price-amount">{{ site.data.pricing.plan.price }}</span>
-                    <span class="price-period">{{ site.data.pricing.plan.period }}</span>
+                    <span class="price-amount">{{ site.data.pricing_schedule.plan.price }}</span>
+                    <span class="price-period">{{ site.data.pricing_schedule.plan.period }}</span>
                 </div>
                 
                 <ul class="pricing-features">
-                    {% for feature in site.data.pricing.plan.features %}
+                    {% for feature in site.data.pricing_schedule.plan.features %}
                     <li>
                         <span class="material-icons" aria-hidden="true">check</span>
                         {{ feature }}
@@ -33,23 +33,23 @@
                     {% endfor %}
                 </ul>
                 
-                {% if site.data.pricing.plan.note %}
-                <p class="pricing-note">{{ site.data.pricing.plan.note }}</p>
+                {% if site.data.pricing_schedule.plan.note %}
+                <p class="pricing-note">{{ site.data.pricing_schedule.plan.note }}</p>
                 {% endif %}
             </div>
             
             <!-- スケジュール -->
             <div class="schedule-info">
-                <h3>{{ site.data.schedule.title }}</h3>
+                <h3>{{ site.data.pricing_schedule.schedule.title }}</h3>
                 
 
                 <!-- スケジュール表 -->
                 <div class="schedule-table-wrapper">
-                    <h4>{{ site.data.schedule.schedule_table.title }}</h4>
+                    <h4>{{ site.data.pricing_schedule.schedule.table.title }}</h4>
                     <table class="schedule-table">
                         <thead>
                             <tr>
-                                {% for header in site.data.schedule.schedule_table.headers %}
+                                {% for header in site.data.pricing_schedule.schedule.table.headers %}
                                 {% if forloop.first %}
                                 <th class="day-header">{{ header }}</th>
                                 {% else %}
@@ -62,7 +62,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for row in site.data.schedule.schedule_table.rows %}
+                            {% for row in site.data.pricing_schedule.schedule.table.rows %}
                             <tr>
                                 <td class="week-cell">{{ row.week }}</td>
                                 {% for slot in row.slots %}
@@ -70,7 +70,7 @@
                                 <td class="slot-cell unavailable">{{ slot }}</td>
                                 {% else %}
                                 {% comment %}満員クラスの判定（YMLデータから取得）{% endcomment %}
-                                {% if site.data.schedule.full_classes contains slot %}
+                                {% if site.data.pricing_schedule.schedule.full_classes contains slot %}
                                 <td class="slot-cell available class-{{ slot | downcase }} full">{{ slot }}</td>
                                 {% else %}
                                 <td class="slot-cell available class-{{ slot | downcase }}">{{ slot }}</td>
@@ -85,9 +85,9 @@
 
                 <!-- 凡例・受講方法 -->
                 <div class="schedule-legend">
-                    <h4>{{ site.data.schedule.legend.title }}</h4>
+                    <h4>{{ site.data.pricing_schedule.schedule.legend.title }}</h4>
                     <ul class="legend-list">
-                        {% for item in site.data.schedule.legend.items %}
+                        {% for item in site.data.pricing_schedule.schedule.legend.items %}
                         <li>{{ item }}</li>
                         {% endfor %}
                     </ul>

@@ -20,8 +20,14 @@
             </div>
             
             <!-- モバイルメニュートグル -->
-            <button class="mobile-menu-toggle" aria-label="{{ site.data.ui_text.navigation.mobile_menu_open }}" aria-expanded="false" aria-controls="main-menu">
-                <span class="material-icons">menu</span>
+            <button type="button"
+                    class="mobile-menu-toggle"
+                    aria-label="{{ site.data.ui_text.navigation.mobile_menu_open }}"
+                    aria-expanded="false"
+                    aria-controls="main-menu"
+                    data-label-open="{{ site.data.ui_text.navigation.mobile_menu_open }}"
+                    data-label-close="{{ site.data.ui_text.navigation.mobile_menu_close }}">
+                <span class="material-icons" aria-hidden="true">menu</span>
             </button>
             
             <!-- ナビゲーションメニュー -->

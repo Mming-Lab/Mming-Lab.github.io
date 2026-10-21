@@ -1,9 +1,20 @@
-<!-- ヒーローセクション -->
+<!-- ヒーローセクション
+     データソース: _data/hero.yml
+     CSS: _sass/components/_hero.scss
+
+     DOM の順序 = 視覚の順序 = 読み上げの順序 にしている（CSS で並べ替えていない）。
+       1. catch_copy … 共感文。視覚的に最も大きい。読者が最初に目にする言葉
+       2. heading(h1) … 地域・対象・業種を名乗る見出し。検索と支援者向け
+       3. sub_copy   … 補足
+
+     以前は catch_copy が h1 で、サイト上に地域名が住所の1行しか存在しなかった。
+     共感文は申込率の資産なので捨てず、h1 を別に立てて両立させている。
+-->
 <section class="hero-section" id="hero" aria-labelledby="hero-title">
     <div class="hero-container">
         <div class="hero-content">
-            <h1 class="hero-title" id="hero-title">
-                {% for item in site.data.hero.main_copy %}
+            <p class="hero-catch">
+                {% for item in site.data.hero.catch_copy %}
                     {% if item.emphasis == 'strong' %}
                         <strong>{{ item.text }}</strong>
                     {% else %}
@@ -11,29 +22,35 @@
                     {% endif %}
                     {% unless forloop.last %}<br>{% endunless %}
                 {% endfor %}
-            </h1>
-            
-            <p class="hero-subtitle">{{ site.data.hero.sub_copy }}</p>
-            
+            </p>
+
+            <h1 class="hero-title" id="hero-title">{{ site.data.hero.heading }}</h1>
+
+            <p class="hero-subtitle" id="hero-subtitle">{{ site.data.hero.sub_copy }}</p>
+
             <div class="hero-cta">
-                <a href="{{ site.data.hero.cta.primary.url }}" 
-                   class="cta-button primary" 
-                   aria-describedby="hero-subtitle"
-                   role="button">
+                {%- comment -%}
+                  role="button" は付けない。アンカーに付けると支援技術には
+                  ボタンと読まれるのに Space キーでは作動せず、実際の挙動は
+                  遷移（リンク）なので、ロールと挙動が食い違う。
+                {%- endcomment -%}
+                <a href="{{ site.data.hero.cta.primary.url }}"
+                   class="cta-button primary"
+                   aria-describedby="hero-subtitle">
                     <span class="material-icons" aria-hidden="true">{{ site.data.hero.cta.primary.icon }}</span>
                     {{ site.data.hero.cta.primary.text }}
                 </a>
             </div>
         </div>
-        
+
         {% if site.data.hero.background_image.enabled %}
         <div class="hero-image">
-            <picture>
-                <source srcset="{{ site.data.hero.background_image.src | relative_url }}" type="image/webp">
-                <img src="{{ site.data.hero.background_image.src | relative_url }}" 
-                     alt="{{ site.data.hero.background_image.alt }}" 
-                     loading="eager">
-            </picture>
+            <img src="{{ site.data.hero.background_image.src | relative_url }}"
+                 alt="{{ site.data.hero.background_image.alt }}"
+                 width="1080"
+                 height="1080"
+                 loading="eager"
+                 fetchpriority="high">
         </div>
         {% endif %}
     </div>

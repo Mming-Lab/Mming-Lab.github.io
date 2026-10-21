@@ -1,5 +1,6 @@
 # Jekyll build files
 _site/
+_site_backup_*/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata

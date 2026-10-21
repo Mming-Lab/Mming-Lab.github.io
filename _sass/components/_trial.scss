@@ -1,0 +1,271 @@
+// ========================================
+// 体験ページ（trial/index.html）
+// ========================================
+//
+// 注: 体験ページのスタイルは長らく存在せず、_base.scss の素のタグスタイルだけで
+// 表示されていた。ここでは最低限の「表示契約」と button のリセットのみを定義する。
+// 本格的なデザイン実装は別タスク。
+//
+// 表示状態の真実は aria-hidden に1つだけ置く（JS は style.display を触らない）
+
+// 申込アコーディオンのトグル（ネイティブ button）
+.application-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-4;
+  width: 100%;
+  padding: $space-4;
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
+  appearance: none;
+  background: rgba($primary-color, 0.08);
+  border: 1px solid $primary-color;   // 薄い枠線だと「向いていません」の注記より弱く見えた
+  box-shadow: $shadow-sm;
+  border-radius: $border-radius-lg;
+  cursor: pointer;
+  min-height: $space-11; // 44px（タッチターゲット）
+  transition: $transition-base;
+
+  &:hover {
+    background: rgba($primary-color, 0.1);
+    border-color: rgba($primary-color, 0.3);
+  }
+
+  .toggle-header {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+  }
+
+  .toggle-content {
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+  }
+
+  .toggle-title {
+    font-weight: $font-weight-semibold;
+    color: $primary-color;
+  }
+
+  .toggle-description {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+  }
+
+  .toggle-icon {
+    color: $primary-color;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+}
+
+// 申込フォーム本体（初期状態は非表示）
+.application-form {
+  display: none;
+
+  &[aria-hidden="false"] {
+    display: block;
+  }
+}
+
+.google-form-container {
+  margin-top: $space-4;
+
+  iframe {
+    // display:block は hidden 属性を上書きするため明示的に打ち消す
+    &[hidden] { display: none; }
+    display: block;
+    width: 100%;
+    border: none;
+    background: $background-color;
+    min-height: 600px;
+  }
+}
+
+// 読み込み中・エラー表示
+.form-loading-placeholder {
+  padding: $space-8 $space-4;
+  text-align: center;
+  background: $surface-color;
+  border-radius: $border-radius-lg;
+
+  .material-icons {
+    font-size: $font-size-5xl;
+    color: $primary-color;
+  }
+
+  .form-status-title {
+    font-weight: $font-weight-semibold;
+    margin: $space-3 0 $space-1;
+  }
+
+  .form-status-note {
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+// ========================================
+// 体験ページのセクション
+// ========================================
+// 注: 以下は「読める・構造が分かる・申込が目的地に見える」ための最小限。
+// クラス名（belief-ribbon 等）が示唆する装飾は実装していない。
+
+// セクションの視覚的な分離
+// 「約束」「対象」「申込」の3ブロックを読み分けられるようにする
+.trial-belief-section {
+  background: $surface-color;
+}
+
+.trial-application-section {
+  border-top: 1px solid $border-color;
+}
+
+// 注記（section-note）
+// 体験ページで最も安心に効く一文なのに、スタイルが無く p の既定で
+// 最も弱い見た目になっていた。表示専用なので info-banner を使う
+.section-note {
+  @include info-banner;
+  padding: $space-4;
+  margin-top: $space-4;
+  color: $text-secondary;
+}
+
+// mmingの約束リスト
+// _base.scss に ul のリセットが無いため、ブラウザ既定の黒丸と
+// Material Icons が並んで二重マーカーになっていた
+.belief-ribbon-list {
+  list-style: none;
+  padding-left: 0;
+  margin: $space-6 0 0;
+  display: grid;
+  gap: $space-3;
+}
+
+.belief-ribbon {
+  @include info-banner;
+  display: flex;
+  align-items: flex-start;
+  gap: $space-3;
+  padding: $space-4;
+
+  .belief-icon {
+    color: $primary-color;
+    flex-shrink: 0;
+  }
+}
+
+// 対象者リスト（必要条件・十分条件）も同様に二重マーカーを防ぐ
+.requirements-list,
+.ideal-traits-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+// 固定フッターCTA は体験ページでは描画されないため、
+// _footer.scss の main { padding-bottom: 80px } 分の空白を打ち消す
+.trial-application-section:last-child {
+  padding-bottom: 0;
+}
+
+// ========================================
+// 体験当日の事実（day_of）
+// ========================================
+// 定義リスト（dt/dd）で「項目名 → 事実」を対にする。
+// 装飾は足さない。読み取りやすさだけを担保する。
+
+.trial-day-of-section {
+  background: $background-color;
+}
+
+.day-of-list {
+  margin: $space-6 0 0;
+  display: grid;
+  gap: $space-4;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.day-of-item {
+  @include info-banner;
+  padding: $space-4;
+}
+
+.day-of-label {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  font-weight: $font-weight-semibold;
+  color: $primary-color;
+  margin-bottom: $space-2;
+}
+
+.day-of-icon {
+  font-size: $font-size-xl;
+  flex-shrink: 0;
+}
+
+.day-of-text {
+  margin: 0;
+  color: $text-color;
+  line-height: $line-height-relaxed;
+
+  // 外部リンク。トップページのアクセスセクション（.map-link a）と
+  // 同じ扱いにする。素の a だと下線付きになり、この文脈では浮く
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-1;
+    margin-top: $space-2;
+    color: $primary-color;
+    font-weight: $font-weight-semibold;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+
+    .material-icons {
+      font-size: $font-size-base;
+    }
+  }
+}
+
+.day-of-access {
+  list-style: none;
+  padding-left: 0;
+  margin: $space-2 0 0;
+  color: $text-secondary;
+  font-size: $font-size-sm;
+}
+
+// 「体験の内容」などの入れ子リスト
+.day-of-sublist {
+  list-style: none;
+  padding-left: 0;
+  margin: $space-2 0 0;
+
+  li {
+    position: relative;
+    padding-left: $space-4;
+    color: $text-secondary;
+    font-size: $font-size-sm;
+    line-height: $line-height-relaxed;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 6px;
+      height: 2px;
+      background: $primary-color;
+    }
+  }
+}

@@ -146,7 +146,7 @@ start_jekyll() {
     print_status "サーバーURL: http://localhost:4000"
     print_status "停止するには Ctrl+C を押してください"
     
-    docker exec -it $CONTAINER_NAME bash -c "cd /workspace && bundle install && bundle exec jekyll serve --host 0.0.0.0 --livereload --incremental --drafts --future"
+    docker exec -it $CONTAINER_NAME bash -c "cd /workspace && bundle install && bundle exec jekyll serve --host 0.0.0.0 --livereload --drafts"
 }
 
 # 状態確認
@@ -189,8 +189,6 @@ cleanup() {
         print_status "イメージを削除しました"
     fi
     
-    # 未使用のボリューム・ネットワーク削除
-    docker system prune -f
     
     print_success "クリーンアップ完了"
 }

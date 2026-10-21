@@ -37,6 +37,7 @@
 .faq-item {
   @include card-accordion;               // 統一されたアコーディオンスタイル
   background: rgba($surface-color, 0.5); // 薄い青背景
+  cursor: default;                       // クリック可能なのは .faq-question のみ
   overflow: hidden;                      // はみ出し防止
 }
 
@@ -75,7 +76,7 @@
   // 質問テキスト
   .question-text {
     font-size: 1.1rem;                   // フォントサイズ
-    font-weight: 600;                     // セミボールド
+    font-weight: $font-weight-semibold;                     // セミボールド
     color: $text-color;                   // テキストカラー
     line-height: 1.4;                    // 行高
     flex: 1;                             // 残りスペースを占有
@@ -105,7 +106,7 @@
   background: white;                     // 白背景
   
   // 展開状態
-  &.expanded {
+  &[aria-hidden="false"] {
     display: block;                      // 表示状態
   }
 }
@@ -146,21 +147,9 @@
   // 強調テキスト
   strong {
     color: $primary-color;              // プライマリカラー
-    font-weight: 600;                   // セミボールド
+    font-weight: $font-weight-semibold;                   // セミボールド
   }
   
-  // リンクスタイル
-  a {
-    color: $primary-color;              // プライマリカラー
-    text-decoration: underline;          // 下線
-    transition: $transition-base;        // ホバーアニメーション
-    
-    &:hover,
-    &:focus {
-      color: darken($primary-color, 15%); // 暗いプライマリカラー
-      text-decoration: none;             // 下線なし
-    }
-  }
 }
 
 // ========================================
@@ -265,7 +254,7 @@
     transition: none;                    // アニメーションなし
   }
   
-  .faq-answer.expanded {
+  .faq-answer[aria-hidden="false"] {
     display: block;                      // 表示状態（アニメーション削減時も）
   }
 }
@@ -279,4 +268,10 @@
   .faq-question:focus {
     outline: 3px solid $text-color;      // より濃いアウトライン
   }
+}
+
+// 全問ページへの導線（トップページのみ）
+.faq-more {
+  margin: $space-6 0 0;
+  text-align: center;
 }

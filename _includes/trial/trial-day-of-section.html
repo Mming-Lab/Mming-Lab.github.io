@@ -1,0 +1,70 @@
+<!-- 体験当日の事実セクション
+     データソース: _data/trial.yml（day_of）、_data/core/contact.yml（住所）、
+                   _data/access.yml（アクセス方法・地図リンク）
+     CSS: _sass/components/_trial.scss
+
+     このセクションの目的:
+     申込を判断するために必要な「確認できる事実」を、申込フォームの手前で読めるようにする。
+     以前は体験ページに所要時間も場所も保護者の同席可否も書かれておらず、
+     「無料」の文字さえ無かった。
+-->
+<section class="trial-day-of-section" id="day-of" aria-labelledby="day-of-title">
+    <div class="section-container">
+        <div class="section-header">
+            <h2 id="day-of-title">{{ site.data.trial.day_of.title }}</h2>
+            <p class="section-subtitle">{{ site.data.trial.day_of.lead }}</p>
+        </div>
+
+        <dl class="day-of-list">
+            {% for item in site.data.trial.day_of.items %}
+            <div class="day-of-item">
+                <dt class="day-of-label">
+                    <span class="material-icons day-of-icon" aria-hidden="true">{{ item.icon }}</span>
+                    {{ item.label }}
+                </dt>
+                <dd class="day-of-text">
+                    {{ item.text }}
+                    {% if item.list %}
+                    <ul class="day-of-sublist">
+                        {% for line in item.list %}
+                        <li>{{ line }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </dd>
+            </div>
+            {% endfor %}
+
+            {%- comment -%}
+              場所はデータを横断して組み立てる。
+              住所の正本は _data/core/contact.yml、アクセス方法と地図は _data/access.yml。
+            {%- endcomment -%}
+            <div class="day-of-item">
+                <dt class="day-of-label">
+                    <span class="material-icons day-of-icon" aria-hidden="true">place</span>
+                    {{ site.data.trial.day_of.location_label }}
+                </dt>
+                <dd class="day-of-text">
+                    {{ site.data.core.contact.address.full }}
+                    {% if site.data.access.info.access_methods %}
+                    <ul class="day-of-access">
+                        {% for method in site.data.access.info.access_methods %}
+                        <li>{{ method.type }}：{{ method.description }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% if site.data.access.map.link_url %}
+                    <a href="{{ site.data.access.map.link_url }}" target="_blank" rel="noopener noreferrer">
+                        {{ site.data.access.map.link_text }}
+                        <span class="material-icons" aria-hidden="true">open_in_new</span>
+                    </a>
+                    {% endif %}
+                </dd>
+            </div>
+        </dl>
+
+        {% if site.data.trial.day_of.closing %}
+        <p class="section-note">{{ site.data.trial.day_of.closing }}</p>
+        {% endif %}
+    </div>
+</section>

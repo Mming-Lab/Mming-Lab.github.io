@@ -1,9 +1,9 @@
 <!-- 固定フッターCTA（トライアルページでは非表示） -->
 {% unless page.url contains 'trial' %}
-<div class="fixed-footer-cta" role="complementary" aria-label="行動を促すボタン">
+<div class="fixed-footer-cta" role="complementary" aria-label="{{ site.data.ui_text.aria.cta_section }}">
     <div class="cta-container">
         <a href="{{ site.data.navigation.footer_cta.url }}" class="cta-button primary" aria-label="{{ site.data.navigation.footer_cta.text }}">
-            <span class="material-icons" aria-hidden="true">edit_calendar</span>
+            <span class="material-icons" aria-hidden="true">{{ site.data.navigation.footer_cta.icon }}</span>
             {{ site.data.navigation.footer_cta.text }}
         </a>
     </div>
@@ -19,15 +19,15 @@
                 <p>{{ site.data.config.site.description }}</p>
                 
                 <!-- SNSリンク -->
-                {% if site.data.footer.social %}
+                {% if site.data.core.contact.social %}
                 <div class="footer-social">
-                    <h4>フォローしてください</h4>
+                    <h4>{{ site.data.ui_text.footer.social_heading }}</h4>
                     <div class="social-links">
-                        {% for social in site.data.footer.social %}
+                        {% for social in site.data.core.contact.social %}
                         {% if social.url %}
                         <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" 
                            aria-label="{{ social.platform }}をフォロー" class="social-link">
-                            <i class="{{ social.icon }}" aria-hidden="true"></i>
+                            {% include components/brand-icon.html name=social.icon %}
                             <span class="social-label">{{ social.platform }}</span>
                         </a>
                         {% endif %}
@@ -37,32 +37,30 @@
                 {% endif %}
                 
                 <!-- Minecraft 免責事項 -->
-                {% if site.data.footer.mcDisclaimer %}
+                {% if site.data.footer.minecraft_disclaimer %}
                 <div class="footer-disclaimer">
-                    <p class="disclaimer-text">{{ site.data.footer.mcDisclaimer }}</p>
+                    <p class="disclaimer-text">{{ site.data.footer.minecraft_disclaimer }}</p>
                 </div>
                 {% endif %}
             </div>
             
             <!-- リンクセクション -->
-            {% if site.data.footer.links %}
+            {% if site.data.core.contact.links %}
             <div class="footer-section">
-                <h3>サイト情報</h3>
+                <h3>{{ site.data.ui_text.footer.links_heading }}</h3>
                 <ul class="footer-links">
-                    {% for link in site.data.footer.links %}
+                    {% for link in site.data.core.contact.links %}
                     <li>
-                        {% if link.url contains '.pdf' %}
-                        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
-                            <span class="material-icons" aria-hidden="true">description</span>
+                        {%- comment -%}
+                          外部リンクの判定は URL 文字列マッチではなく
+                          _data/core/contact.yml の external フラグで行う。
+                          以前は contains 'forms.google.com' で判定していたが、
+                          実URLは docs.google.com のため永久に偽だった。
+                        {%- endcomment -%}
+                        <a href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>
+                            {% if link.url contains '.pdf' %}<span class="material-icons" aria-hidden="true">description</span>{% endif %}
                             {{ link.text }}
                         </a>
-                        {% elsif link.url contains 'forms.google.com' %}
-                        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
-                            {{ link.text }}
-                        </a>
-                        {% else %}
-                        <a href="{{ link.url }}">{{ link.text }}</a>
-                        {% endif %}
                     </li>
                     {% endfor %}
                 </ul>
@@ -71,7 +69,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; {{ site.data.footer.copyright.year }} {{ site.data.config.site.name }}. {{ site.data.footer.copyright.text }}</p>
+            <p>&copy; {{ "now" | date: "%Y" }} {{ site.data.config.site.name }}. {{ site.data.ui_text.footer.copyright }}</p>
         </div>
     </div>
 </footer>

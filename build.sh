@@ -71,7 +71,7 @@ install_dependencies() {
         bundle install
     else
         print_status "依存関係を更新しています..."
-        bundle install --deployment --without development test
+        bundle install
     fi
     
     print_success "依存関係の準備完了"

@@ -72,7 +72,7 @@
 // サイトタイトル（デジタル庁準拠・レスポンシブ）
 .site-title {
   font-size: $font-size-2xl;               // フォントサイズ（24px）
-  font-weight: 700;                         // ボールド
+  font-weight: $font-weight-bold;                         // ボールド
   color: $primary-color;                    // プライマリカラー
   line-height: $line-height-tight;         // 行高（1.2）
   margin: 0;                               // マージンリセット
@@ -251,7 +251,7 @@
   
   // ナビゲーションコンテナのパディング調整
   .nav-container {
-    padding: 0 $space-4;                   // 大画面では左右32px
+    padding: 0 $space-4;                   // 大画面では左右16px
   }
   
   // ナビゲーションリンクのパディング調整

@@ -41,7 +41,7 @@ body {
 // 見出し要素の統一スタイル（デジタル庁準拠）
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-base;     // フォントファミリー統一
-  font-weight: 700;                   // ボールドウェイト
+  font-weight: $font-weight-bold;                   // ボールドウェイト
   line-height: $line-height-normal;   // 見出し用の行高（1.4）
   margin: 0 0 $space-2 0;             // 下マージン（8pxベース）
   color: $text-color;                 // テキストカラー統一
@@ -76,36 +76,77 @@ p {
 // セクションヘッダー（中央寄せ・下マージン設定）
 .section-header {
   text-align: center;                 // 中央寄せ
-  margin-bottom: $space-6;            // 下マージン（8pxベース）
+  margin-bottom: $space-6;            // 下マージン（24pxベース）
+}
+
+
+// ========================================
+// Material Symbols 互換レイヤ
+// ========================================
+// Google が配信する CSS は .material-symbols-outlined にスタイルを当てるが、
+// サイト側のマークアップは .material-icons を使っている（40箇所以上）。
+// クラス名を全置換する代わりに、ここで .material-icons を
+// Material Symbols Outlined に対応づける。
+// 各コンポーネントの .material-icons への font-size / color 指定はそのまま効く。
+.material-icons {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }
 
 // ========================================
-// アクセシビリティ機能
+// 共通CTAボタンのバリアント
 // ========================================
+// 注: .cta-button のベーススタイルは各コンポーネント（_hero / _footer / _blog）が
+// 個別に定義している。ここでは variant だけを共通化する。
+//
+// .cta-button.secondary は以前どこにも定義が無く、
+// latest-posts-section.html が使っているのに素のリンクとして描画されていた。
+.cta-button.secondary {
+  @include button-secondary;
+}
 
-// フォントサイズ調整機能
-.font-size-controls {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  
-  button {
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
-    background: rgba(26, 115, 232, 0.1);
-    border: 1px solid rgba(26, 115, 232, 0.3);
-    
-    &:hover {
-      background: rgba(26, 115, 232, 0.2);
-    }
+// ========================================
+// リンクの既定
+// ========================================
+//
+// このサイトのリンクは大半が UI リンク（ナビ・カード・詳細への導線）なので、
+// 既定を「下線なし・ホバーで下線」にする。
+// 本文中のリンクは色だけに頼らず下線を出す（下の .legal-section 等）。
+//
+// 以前はグローバルな a の定義が無く、素のリンクはブラウザ既定
+// （青＋下線）のままだった。そのため14ファイルがそれぞれ上書きしており、
+// 新しいリンクを置くたびに周りと揃うかどうかが運任せになっていた。
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: $transition-base;
+
+  &:hover,
+  &:focus-visible {
+    color: $link-hover;
+    text-decoration: underline;
   }
 }
 
-// 行間の調整
-.readable-mode {
-  p, li {
-    line-height: 2;
-    letter-spacing: 0.05em;
+// 本文中のリンクは下線を出す。
+// 周囲が地の文なので、下線が無いとリンクだと分からない
+.legal-section,
+.faq-answer-content,
+.post-content,
+.promises-body {
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
   }
 }

@@ -97,7 +97,7 @@ MIEEは、Microsoft技術を活用した教育イノベーションを実践す�
 - [キーボード操作チュートリアル日本語化](https://kyouzai.jp/material/7585/){:target="_blank"}
 
 ### その他のmming開発プロジェクト
-- [Minecraft Bedrock MCP Server](https://mming-lab.github.io/posts/minecraft-bedrock-mcp-server/){:target="_blank"}
+- [Minecraft Bedrock MCP Server](/blog/minecraft-bedrock-mcp-server/)
 
 ### 参考情報
 - [授業・校務活用素材ポータル](https://kyouzai.jp/){:target="_blank"}

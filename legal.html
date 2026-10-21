@@ -4,7 +4,7 @@ title: プライバシーポリシー
 description: mmingプログラミング教室のプライバシーポリシー（個人情報保護方針）について
 ---
 
-<main class="legal-page">
+<div class="legal-page">
     <div class="legal-container">
         <header class="legal-header">
             <h1 id="privacy-policy-title">プライバシーポリシー</h1>
@@ -130,13 +130,13 @@ description: mmingプログラミング教室のプライバシーポリシー�
             <section class="legal-section" id="contact">
                 <h2>お問い合わせ</h2>
                 <p>
-                    当社の個人情報の取り扱いに関する詳細、またはご質問については、<a href="{{ site.data.config.integrations.google_forms.contact_form }}" target="_blank" rel="noopener noreferrer">お問い合わせフォーム</a>よりご連絡ください。
+                    当社の個人情報の取り扱いに関する詳細、またはご質問については、<a href="{{ site.data.core.contact.forms.contact }}" target="_blank" rel="noopener noreferrer">お問い合わせフォーム</a>よりご連絡ください。
                 </p>
                 
                 <div class="contact-info">
                     <p><strong>事業者名:</strong> {{ site.data.config.site.name }}</p>
-                    <p><strong>所在地:</strong> {{ site.data.config.contact.address.full }}</p>
-                    <p><strong>メールアドレス:</strong> {{ site.data.config.contact.email }}</p>
+                    <p><strong>所在地:</strong> {{ site.data.core.contact.address.full }}</p>
+                    <p><strong>メールアドレス:</strong> {{ site.data.core.contact.email }}</p>
                 </div>
             </section>
         </div>
@@ -145,4 +145,4 @@ description: mmingプログラミング教室のプライバシーポリシー�
             <p>&copy; {{ 'now' | date: '%Y' }} {{ site.data.config.site.name }}. All rights reserved.</p>
         </footer>
     </div>
-</main>
+</div>

@@ -11,7 +11,7 @@
 .hero-section {
   // グラデーション背景（薄青からプライマリカラーへ）
   background: linear-gradient(135deg, $surface-color 0%, rgba($primary-color, 0.1) 100%);
-  padding: $space-10 $space-2 $space-8;     // 上下左右のパディング（8pxベース）
+  padding: $space-10 $space-2 $space-8;     // 40px 8px 32px
   position: relative;                        // 装飾要素の配置用
   overflow: hidden;                          // 装飾要素のはみ出し防止
 }
@@ -25,11 +25,11 @@
   display: grid;                            // グリッドレイアウト
   grid-template-columns: 1fr 1fr;           // 2列レイアウト
   align-items: center;                      // 垂直中央寄せ
-  gap: $space-6;                           // 列間のスペース（8pxベース）
+  gap: $space-6;                           // 列間のスペース（24pxベース）
   
   @media (max-width: $breakpoint-mobile) {
     grid-template-columns: 1fr;            // モバイルでは1列
-    gap: $space-4;                        // スペース削減（8pxベース）
+    gap: $space-4;                        // スペース削減（16pxベース）
   }
 }
 
@@ -69,11 +69,11 @@
 }
 
 // メインタイトル（デジタル庁準拠）
-.hero-title {
+.hero-catch {
   font-size: clamp($font-size-3xl, 5vw, $font-size-4xl); // レスポンシブ（30px-36px・実用サイズ）
-  font-weight: 700;                         // ボールド
+  font-weight: $font-weight-bold;                         // ボールド
   color: $text-color;                       // テキストカラー
-  margin-bottom: $space-3;                  // 下マージン（8pxベース）
+  margin-bottom: $space-3;                  // 下マージン（12pxベース）
   line-height: $line-height-tight;         // 行高（1.2）
   
   // ハイライト部分（強調テキスト）
@@ -95,11 +95,22 @@
   }
 }
 
+// 見出し（h1）
+// 視覚的には共感文（.hero-catch）より一段小さくする。
+// 地域・対象・業種を名乗る役割なので、消さないこと
+.hero-title {
+  font-size: clamp($font-size-lg, 3.5vw, $font-size-2xl); // 18px-24px
+  font-weight: $font-weight-semibold;
+  color: $primary-color;
+  margin-bottom: $space-3;
+  line-height: $line-height-snug;
+}
+
 // サブタイトル（デジタル庁準拠）
 .hero-subtitle {
   font-size: clamp($font-size-lg, 3vw, $font-size-2xl); // レスポンシブ（18px-24px）
   color: $text-secondary;                   // セカンダリテキストカラー
-  margin-bottom: $space-4;                  // 下マージン（8pxベース）
+  margin-bottom: $space-4;                  // 下マージン（16pxベース）
   line-height: $line-height-relaxed;       // 行高（1.5）
   max-width: 600px;                        // 最大幅制限
   margin-left: auto;                       // 中央寄せ

@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<article class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="blog-post">
     <header class="post-header">
         <div class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            <time datetime="{{ page.date | date_to_xmlschema }}">
                 {{ page.date | date: "%Y年%m月%d日" }}
             </time>
             {% if page.categories %}
@@ -16,13 +16,13 @@ layout: default
             </div>
             {% endif %}
         </div>
-        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+        <h1 class="post-title">{{ page.title }}</h1>
         {% if page.description %}
-        <p class="post-description" itemprop="description">{{ page.description }}</p>
+        <p class="post-description">{{ page.description }}</p>
         {% endif %}
     </header>
 
-    <div class="post-content" itemprop="articleBody">
+    <div class="post-content">
         {{ content }}
     </div>
 
@@ -37,6 +37,37 @@ layout: default
     </footer>
     {% endif %}
 </article>
+
+{%- comment -%}
+  関連記事。記事9本のうち7本が本文内リンクゼロの行き止まりだったため、
+  同じカテゴリの記事を自動で並べる。手で書くと記事を増やすたびに既存記事の
+  書き換えが必要になり、必ず抜ける。
+  where_exp は Liquid の条件式をそのまま書けるので contains が効く。
+  同カテゴリが1本も無いときだけ、新しい記事で埋める。
+{%- endcomment -%}
+{%- assign others = site.posts | where_exp: "p", "p.url != page.url" -%}
+{%- assign current_category = page.categories | first -%}
+{%- assign related = others | where_exp: "p", "p.categories contains current_category" -%}
+{%- if related.size == 0 -%}
+  {%- assign related = others -%}
+{%- endif -%}
+{% if related.size > 0 %}
+<nav class="post-related" aria-labelledby="post-related-title">
+    <h2 id="post-related-title">関連する記事</h2>
+    <ul>
+        {% for item in related limit: 3 %}
+        <li>
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {% if item.description %}
+            <span class="post-related-description">{{ item.description | strip_html | truncate: 70 }}</span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}
+
+{% include components/post-classroom-note.html %}
 
 <nav class="post-navigation">
     <a href="/blog/" class="back-to-blog">

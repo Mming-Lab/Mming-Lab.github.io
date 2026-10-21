@@ -1,23 +1,27 @@
 ---
 layout: default
-title: 特別な配慮が必要な子どものための専門プログラミング教室 | mming
-description: 発達多様性の子ども向けプログラミング教室。適性診断を通じて、お子様が本当に夢中になれることを見つけるサポートをします。
+title: 鹿児島市の発達特性のあるお子様専門のマイクラ・プログラミング教室
+description: 鹿児島市照国町の、発達特性のあるお子様専門のプログラミング教室。教育版マインクラフトを使います。考えることが好きで、うまくいかないことも含めて試すのが面白いお子様に向いています。療育・放課後等デイサービス・特別支援学級などに通うお子様が対象。無料体験を実施しています。
 ---
 
 {% include sections/hero-section.html %}
 
-<main>
+<div class="home-sections">
   {% include sections/about-section.html %}
 
   {% include sections/features-section.html %}
 
   {% include sections/team-section.html %}
 
-  {% comment %}{% include sections/latest-posts-section.html %}{% endcomment %}
+  {%- comment -%}
+    料金は FAQ の前に置く。月謝・入会金・土曜のみという条件は判断の前提なので、
+    終盤に置くと「ここまで読んで期待を高めた直後に条件を知る」という
+    終盤での期待値の裏切りになる。
+    全文は /pricing/ で、ここは要約。
+  {%- endcomment -%}
+  {% include sections/pricing-summary-section.html %}
 
   {% include sections/faq-section.html %}
 
-  {% include sections/pricing-schedule-section.html %}
-
   {% include sections/access-section.html %}
-</main>
+</div>

@@ -1,134 +1,71 @@
 # ========================================
-# mmingプログラミング教室 - サイトコンテンツデータ設定
-# 全体リファクタリング 2024年12月・重複データ整理済み
+# サイト基本情報・SEO設定
 # ========================================
 #
 # 【このファイルの役割】
-# サイト表示用のコンテンツデータを管理（サイト名、説明、連絡先等）
-# Jekyll設定は _config.yml で管理し、役割を明確に分離
+# サイトのアイデンティティ（名前・説明・ロゴ）と SEO 設定。
+# 連絡先・住所・外部フォームURL・SNS は _data/core/contact.yml が正本。
 #
 # 【使用方法】
-# ここで設定した値は {{ site.data.config.設定名 }} でアクセスできます。
-# 例: {{ site.data.config.site.name }} でサイト名を呼び出せます。
+# {{ site.data.config.site.name }} のように参照する。
 #
 # 【_config.yml との役割分担】
-# _config.yml: Jekyll動作設定（プラグイン、ビルド、SEO基本設定）
-# _data/config.yml: サイト表示データ（名前、説明、連絡先、詳細情報）
+# _config.yml      : Jekyll の動作設定（プラグイン、ビルド、permalink）
+#                    および jekyll-feed / jekyll-sitemap / absolute_url が
+#                    参照する title / description / url
+# _data/config.yml : サイト表示データ
+#
+# 【注意】
+# データファイルは Liquid を通らない。{{ }} を書いても展開されず
+# 文字列のまま出力される。
+# ========================================
 
 # ========================================
 # サイト基本情報
 # ========================================
 site:
-  # サイト名（ヘッダーやタイトルタグに使用）
+  # サイト名（ヘッダー、タイトルタグ、構造化データ）
   name: "mming プログラミング教室"
 
-  # 短縮名（ファビコンやソーシャルメディア用）
-  short_name: "mming"
+  # キャッチフレーズ（ヘッダー下部）
+  tagline: "発達特性のあるお子様の、もう一つの居場所"
 
-  # サイトのキャッチフレーズ（ヘッダー下部に表示）
-  tagline: "特別な配慮が必要な子どものための専門教室"
+  # 説明文（フッター、構造化データの description、meta description の
+  # フォールバック。全ページの3箇所に出る、サイトで最も多く出る一文）
+  #
+  # 【軸を外さないこと】
+  # 以前は「お子様の『好きなこと』『得意なこと』を大切に、一人ひとりの特性に
+  # 合わせた指導を行います」だった。発達特性だけが条件に読め、プログラミングへの
+  # 興味が必要条件であることが入っていなかった。ここは Google が
+  # 「この教室とは何か」として読む文なので、対象を曖昧にしない。
+  description: "鹿児島市の、発達特性のあるお子様専門のプログラミング教室。教育版マインクラフトを使います。考えることが好きで、うまくいかないことも含めて試すのが面白いお子様に向いています。"
 
-  # サイトの説明文（SEOのdescriptionタグや構造化データに使用）
-  description: "特別な配慮が必要な子ども向けのプログラミング教室。お子様の「好きなこと」「得意なこと」を大切に、一人ひとりの特性に合わせた指導を行います。"
-
-  # サイト運営者名（著者情報やフッターに使用）
+  # 運営者名（meta author）
   author: "mming プログラミング教室"
 
-  # サイトのベースURL（本番環境のURL）
-  url: "https://mming-lab.github.io/"
-
-  # 言語・地域設定（構造化データやメタタグに使用）
+  # 言語・地域（og:locale）
   locale: "ja_JP"
 
-  # 注: timezone は _config.yml で管理（Jekyll設定のため重複削除）
+  # 注: 本番URLは _config.yml の url を正本とする（absolute_url と
+  # jekyll-sitemap が参照するため）。ここには置かない。
+  # 注: timezone も _config.yml で管理。
 
-  # SNSシェア用画像（og:imageタグに使用、1200x630px推奨）
+  # SNSシェア用画像（og:image、1200x630px推奨）
   og_image: "/assets/images/site-assets/mming_ogp.webp"
 
-  # サイトロゴ（ヘッダーに表示、40x40px推奨）
+  # サイトロゴ（ヘッダー、40x40px表示）
   logo: "/assets/images/logos/mmingロゴアイコン青.webp"
 
 # ========================================
-# 連絡先情報
-# ========================================
-contact:
-  # メールアドレス（問い合わせ用、構造化データに使用）
-  email: "mming.lab＠gmail.com"
-
-  # 電話番号（現在は非表示設定）
-  # phone: ""  # 電話番号は表示しない
-
-  # 住所情報（アクセスページや構造化データに使用）
-  address:
-    # 郵便番号
-    postal_code: "892-0841"
-    # 都道府県
-    prefecture: "鹿児島県"
-    # 市区町村
-    city: "鹿児島市"
-    # 番地・建物名
-    street: "照国町２−１１ 第一天神ビル 1-D"
-    # 完全な住所（表示用）
-    full: "鹿児島市照国町２−１１ 第一天神ビル 1-D"
-
-# ========================================
-# SEO設定（検索エンジン最適化）
+# SEO設定
 # ========================================
 seo:
-  # 検索キーワード（メタタグのkeywordsに使用）
-  keywords:
-    - "プログラミング教室" # メインキーワード
-    - "発達障害" # ターゲット1
-    - "ADHD" # ターゲット2
-    - "ASL" # ターゲット3
-    - "学習支援" # サービス内容1
-    - "個別指導" # サービス内容2
-    - "子ども" # 対象者
-    - "適性チェック" # 独自サービス
-    - "感覚過敏" # 特性
-    - "発達特性" # 包括的キーワード
-
-  # デフォルトのSNSシェア画像
-  default_image: "/assets/images/site-assets/mming_ogp.webp"
-
-  # 注: Twitter、Facebook、Google Analytics等の外部サービス設定は
-  # 必要に応じて将来追加予定（現在は未使用のため削除）
-
-  # 構造化データ設定（検索結果のリッチスニペット用）
+  # 構造化データ（検索結果のリッチリザルト用）
   structured_data:
-    # 組織タイプ（教育機関として認識される）
+    # 組織タイプ（_layouts/default.html で LocalBusiness と複合型にしている）
     type: "EducationalOrganization"
-    # 価格帯表示（$$は中程度の価格帯を示す）
-    price_range: "$$$$"
+    # 価格帯。$ が少ないほど安価という Google のシグナル
+    price_range: "$$"
 
-# ========================================
-# 外部サービス連携設定
-# ========================================
-integrations:
-  # Google Forms（問い合わせフォーム）
-  google_forms:
-    # 体験申込みフォームURL
-    trial_application: "https://docs.google.com/forms/d/e/1FAIpQLSdpJMkKE6E3jgdn3uXRG1mxbPDXIUhHMaCSPmASvwjRuHvC9g/viewform"
-    # お問い合わせフォームURL
-    contact_form: "https://docs.google.com/forms/d/e/1FAIpQLScXEQViRPCFZ6kSRIc_pFx8tHfPEG9dGkiDTLsPPR0xdmo5Gg/viewform"
-# ========================================
-# 設定項目の使用方法
-# ========================================
-#
-# このファイルの設定値は、サイト内で以下のように使用できます：
-#
-# HTML/Liquid テンプレート内で：
-# - サイト名: {{ site.data.config.site.name }}
-# - メールアドレス: {{ site.data.config.contact.email }}
-# - ロゴ画像: {{ site.data.config.site.logo | relative_url }}
-#
-# 新しい設定を追加したい場合：
-# 1. 適切なセクションに新しい項目を追加
-# 2. HTMLテンプレートで {{ site.data.config.セクション.項目名 }} で呼び出し
-# 3. 必要に応じてdefault.htmlやCSSでも参照可能
-#
-# 注意事項：
-# - YAMLの構文に注意（インデントはスペース2個）
-# - 文字列に特殊文字が含まれる場合は "" で囲む
-# - リスト項目は - で始める
-# - ファイル変更後はJekyllサーバーの再起動が必要
+  # 注: meta keywords は Google が完全に無視するため削除した。
+  # 注: default_image は site.og_image と同値で二重持ちだったため削除した。

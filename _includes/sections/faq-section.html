@@ -1,50 +1,40 @@
-<!-- よくある質問セクション -->
-<section class="faq-section" id="faq">
+<!-- よくある質問セクション（トップページ用・抜粋）
+     データソース: _data/faq.yml
+     CSS: _sass/components/_faq.scss
+     JavaScript: assets/js/sections.js（initFAQ）
+
+     全問は /faq/（faq.html）。ここは on_homepage: true のものだけを出す。
+     全問を両方のページに置くと重複コンテンツになる。
+-->
+<section class="faq-section" id="faq" aria-labelledby="faq-title">
     <div class="section-container">
         <div class="section-header">
-            <h2>{{ site.data.faq.title }}</h2>
+            <h2 id="faq-title">{{ site.data.faq.title }}</h2>
         </div>
-        
+
         <div class="faq-list">
             {% for item in site.data.faq.items %}
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <div class="faq-question" aria-expanded="false" aria-controls="faq-answer-{{ forloop.index }}">
+            {% if item.on_homepage %}
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-{{ forloop.index }}">
                     <span class="question-text">{{ item.question }}</span>
                     <span class="material-icons toggle-icon" aria-hidden="true">expand_more</span>
-                </div>
+                </button>
                 <div class="faq-answer" id="faq-answer-{{ forloop.index }}" aria-hidden="true">
                     <div class="faq-answer-content">
                         {{ item.answer | markdownify }}
                     </div>
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
         </div>
 
-        <script>
-        function toggleFAQ(faqItem) {
-            const question = faqItem.querySelector('.faq-question');
-            const answer = faqItem.querySelector('.faq-answer');
-            const icon = faqItem.querySelector('.toggle-icon');
-            
-            const isExpanded = question.getAttribute('aria-expanded') === 'true';
-            
-            if (isExpanded) {
-                // 閉じる
-                question.setAttribute('aria-expanded', 'false');
-                answer.setAttribute('aria-hidden', 'true');
-                answer.style.display = 'none';
-                icon.textContent = 'expand_more';
-                faqItem.classList.remove('expanded');
-            } else {
-                // 開く
-                question.setAttribute('aria-expanded', 'true');
-                answer.setAttribute('aria-hidden', 'false');
-                answer.style.display = 'block';
-                icon.textContent = 'expand_less';
-                faqItem.classList.add('expanded');
-            }
-        }
-        </script>
+        <p class="faq-more">
+            <a href="{{ '/faq/' | relative_url }}" class="cta-button secondary">
+                {{ site.data.faq.homepage_link_text }}
+                <span class="material-icons" aria-hidden="true">arrow_forward</span>
+            </a>
+        </p>
     </div>
 </section>

@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "ブログ"
-description: "記事一覧"
+breadcrumb: "ブログ"
+description: "教育版マインクラフトの教材・ツールの公開や、教室での取り組みについての記事。鹿児島市の発達特性のあるお子様専門プログラミング教室 mming が書いています。"
 ---
 
 <section class="blog-section">
@@ -13,11 +14,11 @@ description: "記事一覧"
 
         <div class="blog-posts">
             {% for post in site.posts %}
-            <article class="blog-card" itemscope itemtype="http://schema.org/BlogPosting">
+            <article class="blog-card">
                 <a href="{{ post.url | relative_url }}" class="blog-card-wrapper" aria-label="{{ post.title }}を読む">
                     <div class="blog-card-content">
                         <div class="blog-meta">
-                            <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+                            <time datetime="{{ post.date | date_to_xmlschema }}">
                                 {{ post.date | date: "%Y年%m月%d日" }}
                             </time>
                             {% if post.categories %}
@@ -29,10 +30,10 @@ description: "記事一覧"
                             {% endif %}
                         </div>
                         
-                        <h2 itemprop="name headline">{{ post.title }}</h2>
+                        <h2>{{ post.title }}</h2>
                         
                         {% if post.description %}
-                        <p class="blog-excerpt" itemprop="description">{{ post.description }}</p>
+                        <p class="blog-excerpt">{{ post.description }}</p>
                         {% else %}
                         <p class="blog-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
                         {% endif %}

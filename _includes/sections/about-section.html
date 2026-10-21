@@ -36,7 +36,7 @@
         <div class="target-info-section">
             <p class="target-lead">{{ site.data.about.target_info.lead_text }}</p>
             <ul class="target-list">
-                {% for target in site.data.about.target_info.target_list %}
+                {% for target in site.data.core.eligibility.requirements.items %}
                 <li>{{ target }}</li>
                 {% endfor %}
             </ul>
@@ -48,11 +48,14 @@
                 <span class="material-icons" aria-hidden="true">{{ site.data.about.promises.icon }}</span>
                 {{ site.data.about.promises.title }}
             </h3>
-            <ul class="promises-list">
-                {% for promise in site.data.about.promises.items %}
-                <li>{{ promise }}</li>
-                {% endfor %}
-            </ul>
+            {%- comment -%}
+              段落形式で描画する。以前は箇条書き4項目だったが、
+              保護者に向けて書くときは箇条書きを避けるという方針
+              （おたよりテンプレート）に合わせた。
+            {%- endcomment -%}
+            <div class="promises-body">
+                {{ site.data.about.promises.body | markdownify }}
+            </div>
         </div>
     </div>
 </section>

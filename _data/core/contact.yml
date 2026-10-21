@@ -1,0 +1,64 @@
+# ========================================
+# 連絡先・外部リンク（正本）
+# ========================================
+#
+# 【このファイルの役割】
+# メールアドレス・住所・外部フォームURL・SNSを1箇所にまとめたもの。
+# 以前は問い合わせフォームのURLが config.yml と footer.yml に、
+# 住所が config.yml と access.yml に重複していた。
+#
+# 【YAMLアンカーについて】
+# & でアンカーを定義し * で参照している。Jekyll（safe_yaml）はこれを
+# 解決するが、アンカーの射程は同一ファイル内のみ。他のデータファイルから
+# 参照することはできないため、共有すべき値は必ずこのファイルに置く。
+#
+# 【Liquid は使えない】
+# データファイルは SafeYAML.load_file で読まれるだけで Liquid を通らない。
+# {{ site.data.X }} と書いても展開されず文字列のまま出力される。
+#
+# 参照元: _layouts/default.html, _includes/footer.html,
+#         _includes/sections/access-section.html, legal.html
+# ========================================
+
+# メールアドレス
+# 注: スパム対策で全角アットマーク（＠）。表示専用で、mailto: や
+# 構造化データには使わない（機械可読であることが前提の箇所には不正な値）
+email: "mming.lab＠gmail.com"
+
+# 外部フォーム
+forms:
+  trial: &trial_form "https://docs.google.com/forms/d/e/1FAIpQLSdpJMkKE6E3jgdn3uXRG1mxbPDXIUhHMaCSPmASvwjRuHvC9g/viewform"
+  contact: &contact_form "https://docs.google.com/forms/d/e/1FAIpQLScXEQViRPCFZ6kSRIc_pFx8tHfPEG9dGkiDTLsPPR0xdmo5Gg/viewform"
+
+# 住所
+address:
+  # 表示用の完全な住所（正本）
+  full: "鹿児島市照国町２−１１ 第一天神ビル 1-D"
+  # 構造化データ用の分解
+  postal_code: "892-0841"
+  prefecture: "鹿児島県"
+  city: "鹿児島市"
+  street: "照国町２−１１ 第一天神ビル 1-D"
+
+# SNS
+# icon は _includes/components/brand-icon.html が解釈するブランド名
+social:
+  - platform: "Github"
+    url: "https://github.com/Mming-Lab"
+    icon: "github"
+  - platform: "Instagram"
+    url: "https://www.instagram.com/mming.lab/"
+    icon: "instagram"
+
+# フッターのサイト情報リンク
+links:
+  - text: "お問合せ"
+    url: *contact_form
+    external: true
+  - text: "実績と掲載"
+    url: "/about/media/"
+  - text: "プライバシーポリシー"
+    url: "/legal"
+  - text: "会員規約"
+    url: "/assets/pdf/会員規約.pdf"
+    external: true

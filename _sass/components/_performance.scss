@@ -1,96 +1,21 @@
-/**
- * mmingプログラミング教室 - パフォーマンス最適化スタイル
- * 読み込み速度とレンダリング性能の最適化
- */
-
 // ========================================
-// 画像最適化
+// 横断的な表示設定（レンダリング・動きの軽減・印刷）
 // ========================================
-
-// 画像遅延読み込み
-img[loading="lazy"] {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  
-  &.loaded {
-    opacity: 1;
-  }
-}
-
-// 画像プレースホルダー
-.image-placeholder {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading-shimmer 1.5s infinite;
-}
-
-@keyframes loading-shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-// ========================================
-// レンダリング最適化
-// ========================================
-
-// GPUアクセラレーション対象要素
-.hero-image,
-.question-card,
-.result-card,
-.cta-button {
-  will-change: transform;
-  
-  // アニメーション完了後にwill-changeを削除
-  &:not(:hover):not(:focus) {
-    will-change: auto;
-  }
-}
-
-// レイアウトシフト防止
-.aspect-ratio-container {
-  position: relative;
-  width: 100%;
-  
-  &::before {
-    content: '';
-    display: block;
-    padding-top: var(--aspect-ratio, 56.25%); // デフォルト16:9
-  }
-  
-  > * {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-// 16:9アスペクト比
-.aspect-ratio-16-9 {
-  --aspect-ratio: 56.25%;
-}
-
-// 4:3アスペクト比
-.aspect-ratio-4-3 {
-  --aspect-ratio: 75%;
-}
-
-// 1:1アスペクト比
-.aspect-ratio-1-1 {
-  --aspect-ratio: 100%;
-}
-
-// ========================================
-// フォント最適化
-// ========================================
-
-// フォント表示最適化
-@font-face {
-  font-family: 'Noto Sans JP';
-  font-display: swap; // フォント読み込み中もテキストを表示
-}
+//
+// 元は「パフォーマンス最適化」と称して 273行あったが、中身の大半は
+// 以下のいずれかだった:
+//   - マークアップに存在しないクラス（.aspect-ratio-*, .fade-in,
+//     .image-placeholder, .scroll-container, .off-screen, .modal,
+//     .dropdown, .accordion-content, .responsive-*, .page-break-*）
+//   - 無効な CSS（loading をプロパティとして書く、src を持たない @font-face）
+//   - 他ファイルとの重複（scroll-behavior、prefers-reduced-motion）
+//   - 害のある指定（will-change の常時宣言、.hero-section::before による
+//     _hero.scss の装飾円の上書き）
+// 生きていた3つの規則だけを残している。
+//
+// 注: このファイルは main.scss の最後に近い位置で読まれるため、
+// ここに書いた規則は他コンポーネントを後勝ちで上書きする。
+// コンポーネント固有のスタイルをここに置かないこと。
 
 // テキストレンダリング最適化
 body {
@@ -100,46 +25,12 @@ body {
 }
 
 // ========================================
-// スクロール最適化
+// 動きの軽減設定（prefers-reduced-motion）
 // ========================================
-
-// スムーズスクロール
-html {
-  scroll-behavior: smooth;
-  
-  @media (prefers-reduced-motion: reduce) {
-    scroll-behavior: auto;
-  }
-}
-
-// パッシブスクロール
-.scroll-container {
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; // iOS対応
-}
-
-// ========================================
-// アニメーション最適化
-// ========================================
-
-// transform/opacityのみのアニメーション（リフロー回避）
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// ========================================
-// 動きの軽減設定対応
-// ========================================
+// サイト全体のアニメーションをここで一括無効化しているので、
+// 各コンポーネントで個別に @media (prefers-reduced-motion) を書く必要はない
 
 @media (prefers-reduced-motion: reduce) {
-  // すべてのアニメーションを無効化
   *,
   *::before,
   *::after {
@@ -148,127 +39,34 @@ html {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
-  // ホバー効果のtransformを無効化
+
+  // ホバー時の浮き上がりを無効化
   .cta-button:hover,
-  .question-card:hover,
-  .result-card:hover {
+  .faq-item:hover,
+  .feature-item:hover,
+  .feature-details-accordion:hover,
+  .application-toggle:hover {
     transform: none !important;
   }
 }
 
 // ========================================
-// コンテンツ可視性最適化
-// ========================================
-
-// 非表示コンテンツのレンダリングをスキップ
-.accordion-content:not(.expanded),
-.modal:not(.active),
-.dropdown:not(.open) {
-  content-visibility: hidden;
-}
-
-// ビューポート外のコンテンツの最適化
-.off-screen {
-  content-visibility: auto;
-  contain-intrinsic-size: 0 500px; // 推定サイズ
-}
-
-// ========================================
-// 重要なリソースの優先読み込み
-// ========================================
-
-// 重要な画像の即座読み込み
-.hero-image img,
-.logo img {
-  loading: eager;
-}
-
-// 重要でない画像の遅延読み込み
-.feature-image img,
-.material-image img {
-  loading: lazy;
-}
-
-// ========================================
-// WebP画像対応
-// ========================================
-
-// WebP対応ブラウザでの最適化画像読み込み
-.webp-hero {
-  background-image: url('/assets/images/site-assets/hero_main.webp');
-  
-  // WebP非対応時のフォールバック
-  .no-webp & {
-    background-image: url('/assets/images/site-assets/hero_main.webp');
-  }
-}
-
-// プリロード最適化
-.hero-section {
-  // 重要画像のプリロード
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    background: url('/assets/images/site-assets/hero_main.webp') no-repeat center;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-  }
-}
-
-// ========================================
-// レスポンシブ最適化
-// ========================================
-
-// コンテナクエリ対応（将来対応）
-@supports (container-type: inline-size) {
-  .responsive-container {
-    container-type: inline-size;
-  }
-  
-  @container (min-width: 768px) {
-    .responsive-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-}
-
-// ========================================
-// 印刷最適化
+// 印刷
 // ========================================
 
 @media print {
-  // 印刷不要な要素を非表示
+  // 印刷に不要な要素
   .mobile-menu-toggle,
   .fixed-footer-cta,
-  .scroll-to-top,
   video,
   iframe {
     display: none !important;
   }
-  
-  // 印刷用スタイル
+
   body {
     font-size: 12pt;
     line-height: 1.4;
     color: black;
     background: white;
-  }
-  
-  // ページ区切り制御
-  .page-break-before {
-    page-break-before: always;
-  }
-  
-  .page-break-after {
-    page-break-after: always;
-  }
-  
-  .page-break-avoid {
-    page-break-inside: avoid;
   }
 }

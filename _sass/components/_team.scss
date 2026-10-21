@@ -17,8 +17,8 @@
 .team-grid {
   display: grid;                         // グリッドレイアウト
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); // レスポンシブグリッド
-  gap: $space-6;                        // 48px メンバー間のスペース
-  margin-top: $space-6;                 // 48px 上マージン
+  gap: $space-6;                        // 24px メンバー間のスペース
+  margin-top: $space-6;                 // 24px 上マージン
 }
 
 // ========================================
@@ -29,7 +29,7 @@
 .team-member-card {
   background: white;                     // 白背景
   border-radius: $border-radius-lg;     // 16px 角丸
-  padding: $space-6;                    // 48px 内側余白
+  padding: $space-6;                    // 24px 内側余白
   box-shadow: $shadow;                  // 標準影効果
   border: 2px solid transparent;         // 透明ボーダー
   transition: $transition-base;          // ホバーアニメーション
@@ -48,7 +48,7 @@
 
 // 写真コンテナ
 .member-photo {
-  margin-bottom: $space-4;              // 32px 下マージン
+  margin-bottom: $space-4;              // 16px 下マージン
   text-align: center;                   // 中央寄せ
   
   img {
@@ -68,9 +68,9 @@
 // 名前
 .member-name {
   font-size: $font-size-xl;            // 24px
-  font-weight: 700;                     // ボールド
+  font-weight: $font-weight-bold;                     // ボールド
   color: $text-color;                   // テキストカラー
-  margin-bottom: $space-1;              // 8px 下マージン
+  margin-bottom: $space-1;              // 4px 下マージン
   text-align: center;                   // 中央寄せ
 }
 
@@ -78,9 +78,9 @@
 .member-role {
   font-size: $font-size-base;          // 16px
   color: $primary-color;                // プライマリカラー
-  font-weight: 600;                     // セミボールド
+  font-weight: $font-weight-semibold;                     // セミボールド
   text-align: center;                   // 中央寄せ
-  margin-bottom: $space-4;              // 32px 下マージン
+  margin-bottom: $space-4;              // 16px 下マージン
   line-height: $line-height-normal;     // 1.4
 }
 
@@ -90,13 +90,13 @@
 
 // 資格セクション
 .member-qualifications {
-  margin-bottom: $space-4;              // 32px 下マージン
+  margin-bottom: $space-4;              // 16px 下マージン
   
   h4 {
     font-size: $font-size-sm;           // 14px
-    font-weight: 600;                   // セミボールド
+    font-weight: $font-weight-semibold;                   // セミボールド
     color: $text-secondary;             // セカンダリテキストカラー
-    margin-bottom: $space-2;            // 16px 下マージン
+    margin-bottom: $space-2;            // 8px 下マージン
     text-transform: uppercase;          // 大文字
     letter-spacing: 0.5px;              // 文字間隔
   }
@@ -107,19 +107,19 @@
     padding: 0;                         // パディングなし
     
     li {
-      padding: $space-1 $space-2;       // 8px 16px パディング
-      margin-bottom: $space-1;          // 8px 下マージン
+      padding: $space-1 $space-2;       // 4px 8px パディング
+      margin-bottom: $space-1;          // 4px 下マージン
       background: rgba($primary-color, 0.05); // 薄いプライマリ背景
       border-radius: $border-radius-sm; // 4px 角丸
       font-size: $font-size-sm;         // 14px
       color: $text-color;               // テキストカラー
       position: relative;               // アイコン配置用
-      padding-left: $space-6;           // 48px 左パディング（間隔拡大）
+      padding-left: $space-6;           // 24px 左パディング（間隔拡大）
       
       &::before {
         content: '✓';                   // チェックマーク
         position: absolute;             // 絶対配置
-        left: $space-3;                 // 24px 左位置（中央寄り）
+        left: $space-3;                 // 12px 左位置（中央寄り）
         color: $primary-color;          // プライマリカラー
         font-weight: bold;              // ボールド
       }
@@ -139,8 +139,8 @@
 .member-philosophy {
   background: linear-gradient(135deg, rgba($primary-color, 0.05), rgba($secondary-color, 0.05)); // グラデーション背景
   border-left: 4px solid $primary-color; // 左ボーダー
-  padding: $space-3;                    // 24px パディング
-  margin: $space-4 0;                   // 32px 上下マージン
+  padding: $space-3;                    // 12px パディング
+  margin: $space-4 0;                   // 16px 上下マージン
   border-radius: 0 $border-radius-md $border-radius-md 0; // 右側のみ角丸
   position: relative;                   // 引用符配置用
   
@@ -160,17 +160,17 @@
 
 // ソーシャルリンクコンテナ（フッターと同じスタイル）
 .member-social {
-  margin-top: $space-4;                // 32px 上マージン
+  margin-top: $space-4;                // 16px 上マージン
   display: flex;                       // フレックスレイアウト
   justify-content: center;             // 中央寄せ
-  gap: $space-2;                      // 16px リンク間のスペース
+  gap: $space-2;                      // 8px リンク間のスペース
   
   // ソーシャルリンク（フッターと同じスタイル）
   a {
     display: inline-flex;               // inline-flexに変更でより自然な幅
     align-items: center;
-    gap: $space-2;                     // 16px アイコンとテキストの間隔（拡大）
-    padding: $space-2 $space-3;       // 16px 24px パディング
+    gap: $space-2;                     // 8px アイコンとテキストの間隔（拡大）
+    padding: $space-2 $space-3;       // 8px 12px パディング
     background: white;                 // 白背景
     border: 1px solid rgba($primary-color, 0.2);
     border-radius: $border-radius-md;   // 8px 角丸
@@ -226,12 +226,12 @@
   // チームグリッドを1カラムに
   .team-grid {
     grid-template-columns: 1fr;        // 1カラム
-    gap: $space-4;                     // 32px ギャップ削減
+    gap: $space-4;                     // 16px ギャップ削減
   }
   
   // メンバーカードの調整
   .team-member-card {
-    padding: $space-4;                  // 32px パディング削減
+    padding: $space-4;                  // 16px パディング削減
   }
   
   // 写真サイズ調整
@@ -247,17 +247,17 @@
   // チームグリッド
   .team-grid {
     grid-template-columns: 1fr;        // 1カラム
-    gap: $space-3;                     // 24px さらにギャップ削減
+    gap: $space-3;                     // 12px さらにギャップ削減
   }
   
   // メンバーカードの調整
   .team-member-card {
-    padding: $space-3;                  // 24px パディング削減
+    padding: $space-3;                  // 12px パディング削減
   }
   
   // 写真サイズ調整
   .member-photo {
-    margin-bottom: $space-3;            // 24px 下マージン削減
+    margin-bottom: $space-3;            // 12px 下マージン削減
     
     img {
       width: 80px;                      // さらに幅削減
@@ -273,8 +273,8 @@
   
   // 理念ブロックの調整
   .member-philosophy {
-    padding: $space-2;                  // 16px パディング削減
-    margin: $space-3 0;                // 24px マージン削減
+    padding: $space-2;                  // 8px パディング削減
+    margin: $space-3 0;                // 12px マージン削減
   }
   
   // ソーシャルリンクの調整（フッターと同じスタイル）
@@ -324,4 +324,10 @@
   .social-link:hover {
     transform: none;                    // 移動効果無効
   }
+}
+
+// 実績ページへの導線
+.team-more {
+  margin: $space-8 0 0;
+  text-align: center;
 }

@@ -39,24 +39,26 @@ highlighter: rouge
 permalink: pretty
 incremental: false
 
-# プラグイン（GitHub Pagesでサポートされているもの）
+# プラグイン
+# GitHub Pages がサポートするもののうち、実際に機能しているものだけを有効にする。
+#
+# 以前は8つ有効だったが、以下の5つは何も仕事をしていなかった:
+#   jekyll-optional-front-matter … front matter の無い .md をページ化する。
+#       _posts/ の記事は全て front matter を持つので不要。
+#       かつ CLAUDE.md が /CLAUDE/ として公開される事故の原因だった
+#   jekyll-readme-index          … README.md は exclude 済み
+#   jekyll-titles-from-headings  … 全ページ・全記事が title を持つ。
+#       「本文に h1 を書くと title に昇格して重複する」罠だけが残っていた
+#   jekyll-relative-links        … 記事内の内部リンクは /blog/... の絶対パス
+#   jekyll-default-layout        … defaults で layout を指定している
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-relative-links
-  - jekyll-optional-front-matter
-  - jekyll-readme-index
-  - jekyll-default-layout
-  - jekyll-titles-from-headings
-  - jekyll-redirect-from
+  - jekyll-feed          # /feed.xml を生成
+  - jekyll-sitemap       # /sitemap.xml を生成
+  - jekyll-redirect-from # 記事の旧URLを維持（_posts の redirect_from）
 
 # ビルド設定
 source: .
 destination: ./_site
-keep_files:
-  - .git
-  - .nojekyll
-
 # 除外ファイル
 exclude:
   - Gemfile
@@ -67,6 +69,8 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - README.md
+  - CLAUDE.md
+  - _site_backup_*
   - LICENSE
   - CHANGELOG.md
   - docker-compose.yml
@@ -74,22 +78,11 @@ exclude:
   - "*.sh"
   - .claude/
 
-# 含めるファイル
-include:
-  - _pages
-  - .htaccess
-
-# コレクション（必要に応じて）
-collections:
-  pages:
-    output: true
-    permalink: /:name/
-
 # デフォルト設定
 defaults:
+  # ルート直下の *.html など（type を指定しないと全ドキュメントが対象）
   - scope:
       path: ""
-      type: "pages"
     values:
       layout: "default"
   - scope:
@@ -110,8 +103,6 @@ sass:
   style: compressed  # プロダクション用に圧縮
   sourcemap: false   # ファイルサイズ削減
 
-# GitHub Pages互換性
-github: [metadata]
 
 # SEO設定（プラグイン用のため維持）
 # Jekyll SEOプラグインが参照するため、基本情報のみ保持
@@ -121,7 +112,7 @@ github: [metadata]
 # google_analytics: UA-XXXXXXXXX-X
 
 # 投稿表示設定
-future: false         # 未来日付の記事を表示
+future: false         # 未来日付の記事は非表示（dev.sh でも --future を付けないこと）
 show_drafts: false    # _drafts/フォルダの下書きを非表示
 unpublished: false    # published: false の記事を非表示
 
@@ -133,7 +124,7 @@ liquid:
 
 # Jekyllビルド最適化設定
 profile: false              # ビルド時間プロファイルを無効化（本番用）
-strict_front_matter: false # Front Matter厳密検証を無効化（ビルド高速化）
+strict_front_matter: true  # Front Matterの不正はビルド失敗にする（壊れた記事の公開を防ぐ）
 
 # ローカル開発サーバー設定
 livereload: true            # ファイル変更時の自動リロード機能

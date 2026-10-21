@@ -38,7 +38,7 @@
                             {% if social.type == "image" %}
                                 <img src="{{ social.icon }}" alt="{{ social.name }}">
                             {% else %}
-                                <i class="{{ social.icon }}" aria-hidden="true"></i>
+                                {% include components/brand-icon.html name=social.icon %}
                             {% endif %}
                             <span>{{ social.name }}</span>
                         </a>
@@ -49,5 +49,15 @@
             </div>
             {% endfor %}
         </div>
+        {%- comment -%}
+          実績ページへの導線。チーム紹介は信頼の中核で、
+          「この人たちは誰か」の次に「何を根拠に信用できるか」が来る
+        {%- endcomment -%}
+        <p class="team-more">
+            <a href="{{ '/about/media/' | relative_url }}" class="cta-button secondary">
+                メディア掲載・資格・公開教材を見る
+                <span class="material-icons" aria-hidden="true">arrow_forward</span>
+            </a>
+        </p>
     </div>
 </section>

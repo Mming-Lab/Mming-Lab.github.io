@@ -80,7 +80,7 @@ start_server() {
     echo ""
     
     # ライブリロード付きでサーバー起動
-    bundle exec jekyll serve --livereload --incremental --drafts --future --host=0.0.0.0 --port=4000
+    bundle exec jekyll serve --livereload --drafts --host=0.0.0.0 --port=4000
 }
 
 # Docker環境チェック（オプション）

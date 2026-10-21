@@ -1,0 +1,35 @@
+---
+layout: default
+permalink: /pricing/
+title: 料金・スケジュール（鹿児島市）
+breadcrumb: 料金・スケジュール
+description: 鹿児島市照国町のプログラミング教室 mming の料金とスケジュール。月謝14,000円（月2回 各60分）、入会金24,000円。土曜開講。無料体験を実施しています。
+---
+
+{%- comment -%}
+  料金・スケジュールの独立ページ。
+
+  「〇〇 料金」は検討後期の最も申込に近い検索クエリだが、以前は
+  index.html 内のアンカー（#pricing-schedule）でしか存在せず、
+  このクエリで露出できる URL が無かった。
+
+  トップページ側は要約（_includes/sections/pricing-summary-section.html）に
+  差し替えている。全文を両方に置くと重複コンテンツになるため。
+{%- endcomment -%}
+
+{% include sections/pricing-schedule-section.html %}
+
+<section class="pricing-next-section" aria-labelledby="pricing-next-title">
+    <div class="section-container">
+        <h2 id="pricing-next-title" class="sr-only">次に読むもの</h2>
+        <p class="section-note">
+            {{ site.data.pricing_schedule.trial_note }}
+        </p>
+        <p>
+            <a href="{{ '/trial/' | relative_url }}" class="cta-button primary">
+                <span class="material-icons" aria-hidden="true">{{ site.data.navigation.footer_cta.icon | default: 'edit_calendar' }}</span>
+                {{ site.data.navigation.footer_cta.text }}
+            </a>
+        </p>
+    </div>
+</section>

@@ -13,132 +13,6 @@
   padding: $section-padding; // セクション標準パディング
 }
 
-// 料金・スケジュールコンテナ
-.pricing-schedule-container {
-  max-width: $max-width; // 最大幅制限
-  margin: 0 auto; // 中央寄せ
-}
-
-// ========================================
-// 料金プラン
-// ========================================
-
-// 料金プランリスト
-.pricing-plans {
-  display: grid; // グリッドレイアウト
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // レスポンシブグリッド
-  gap: 2rem; // プラン間のスペース
-  margin-top: 3rem; // 上マージン
-}
-
-// 料金プランカード
-.pricing-plan {
-  background: white; // 白背景
-  border-radius: 16px; // 角丸
-  padding: 2.5rem 2rem; // 内側余白
-  text-align: center; // 中央寄せ
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); // 影効果
-  border: 2px solid transparent; // 透明ボーダー
-  transition: $transition-base; // ホバーアニメーション
-  position: relative; // 推奨バッジの配置用
-
-  // ホバー状態
-  &:hover {
-    transform: translateY(-4px); // 上に浮く効果
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); // 強い影
-  }
-
-  // 推奨プラン
-  &.recommended {
-    border-color: $primary-color; // プライマリカラーボーダー
-    transform: scale(1.05); // 少し大きく表示
-
-    // 推奨バッジ
-    &::before {
-      content: '推奨'; // バッジテキスト
-      position: absolute; // 絶対配置
-      top: -12px; // 上端から少し外に
-      left: 50%; // 中央配置
-      transform: translateX(-50%); // 中央寄せ
-      background: $secondary-color; // セカンダリカラー背景
-      color: white; // 白テキスト
-      padding: 0.5rem 1rem; // 内側余白
-      border-radius: 20px; // 丸い角
-      font-size: $font-size-sm; // 14px デジタル庁準拠
-      font-weight: 700; // ボールド
-      box-shadow: 0 2px 8px rgba($secondary-color, 0.3); // 影効果
-    }
-
-    &:hover {
-      transform: scale(1.05) translateY(-4px); // ホバー時も拡大維持
-    }
-  }
-}
-
-// プラン名
-.plan-name {
-  font-size: 1.5rem; // フォントサイズ
-  font-weight: 700; // ボールド
-  color: $text-color; // テキストカラー
-  margin-bottom: 1rem; // 下マージン
-}
-
-// プラン価格
-.plan-price {
-  margin-bottom: 2rem; // 下マージン
-
-  .price-amount {
-    font-size: 3rem; // 大きなフォント
-    font-weight: 700; // ボールド
-    color: $primary-color; // プライマリカラー
-    line-height: 1; // 行高
-
-    .currency {
-      font-size: 1.5rem; // 通貨記号は小さく
-      vertical-align: top; // 上寄せ
-    }
-  }
-
-  .price-period {
-    font-size: 1rem; // フォントサイズ
-    color: $text-secondary; // セカンダリテキストカラー
-    margin-top: 0.5rem; // 上マージン
-  }
-}
-
-// プラン特徴リスト
-.plan-features {
-  list-style: none; // リストマーカーなし
-  margin: 0 0 2rem 0; // マージン
-  padding: 0; // パディングなし
-
-  li {
-    display: flex; // フレックスレイアウト
-    align-items: center; // 垂直中央寄せ
-    gap: 0.75rem; // アイコンとテキストの間隔
-    margin-bottom: 1rem; // 下マージン
-    font-size: 1rem; // フォントサイズ
-    color: $text-color; // テキストカラー
-    line-height: 1.4; // 行高
-
-    // チェックアイコン
-    .material-icons {
-      color: $primary-color; // プライマリカラー
-      font-size: 1.25rem; // アイコンサイズ
-      flex-shrink: 0; // 縮小しない
-    }
-
-    &:last-child {
-      margin-bottom: 0; // 最後のアイテムはマージンなし
-    }
-  }
-}
-
-// プランCTAボタン
-.plan-cta {
-  width: 100%; // 全幅
-  justify-content: center; // 中央寄せ
-}
 
 // ========================================
 // アクセスセクション メイン
@@ -150,11 +24,6 @@
   padding: $section-padding; // セクション標準パディング
 }
 
-// アクセスコンテナ
-.access-container {
-  max-width: $max-width; // 最大幅制限
-  margin: 0 auto; // 中央寄せ
-}
 
 // 料金・スケジュールのメイングリッド
 .pricing-schedule-grid {
@@ -180,22 +49,22 @@
   max-width: none; // 最大幅制限なし
   background: white; // 白背景
   border-radius: $border-radius-xl; // 16px 角丸
-  padding: $space-6; // 48px 内側余白
+  padding: $space-6; // 24px 内側余白
   box-shadow: $shadow; // 標準影効果
   border: 2px solid transparent; // 透明ボーダー
   text-align: center; // 中央寄せ
 
   h3 {
     font-size: $font-size-xl; // 24px
-    font-weight: 700; // ボールド
+    font-weight: $font-weight-bold; // ボールド
     color: $text-color; // テキストカラー
-    margin-bottom: $space-3; // 24px 下マージン
+    margin-bottom: $space-3; // 12px 下マージン
   }
 
   // 入会金
   .enrollment-fee {
-    margin-bottom: $space-3; // 24px 下マージン
-    padding: $space-2 $space-3; // 16px 24px パディング
+    margin-bottom: $space-3; // 12px 下マージン
+    padding: $space-2 $space-3; // 8px 12px パディング
     background: rgba($secondary-color, 0.1); // 薄いセカンダリ背景
     border-radius: $border-radius-md; // 8px 角丸
     border: 1px solid rgba($secondary-color, 0.2); // 薄いボーダー
@@ -205,13 +74,13 @@
       font-size: $font-size-sm; // 14px
       color: $text-secondary; // セカンダリテキストカラー
       display: block; // ブロック表示
-      margin-bottom: $space-1; // 8px 下マージン
+      margin-bottom: $space-1; // 4px 下マージン
     }
 
     .fee-amount {
       font-size: $font-size-xl; // 24px
-      font-weight: 700; // ボールド
-      color: $secondary-color; // セカンダリカラー
+      font-weight: $font-weight-bold; // ボールド
+      color: $secondary-on-light; // 前景用（白上 4.80:1）
       display: block; // ブロック表示
       line-height: 1.2; // 行高
     }
@@ -219,26 +88,26 @@
     .fee-note {
       font-size: $font-size-xs; // 12px
       color: $text-secondary; // セカンダリテキストカラー
-      margin-top: $space-1; // 8px 上マージン
+      margin-top: $space-1; // 4px 上マージン
       display: block; // ブロック表示
     }
   }
 
   // 月謝
   .price {
-    margin-bottom: $space-4; // 32px 下マージン
+    margin-bottom: $space-4; // 16px 下マージン
     text-align: center; // 中央寄せ
 
     .price-label {
       font-size: $font-size-base; // 16px
       color: $text-secondary; // セカンダリテキストカラー
       display: block; // ブロック表示
-      margin-bottom: $space-2; // 16px 下マージン
+      margin-bottom: $space-2; // 8px 下マージン
     }
 
     .price-amount {
       font-size: 2.5rem; // 40px 大きなフォント
-      font-weight: 700; // ボールド
+      font-weight: $font-weight-bold; // ボールド
       color: $primary-color; // プライマリカラー
       line-height: 1; // 行高
       display: block; // ブロック表示
@@ -247,7 +116,7 @@
     .price-period {
       font-size: $font-size-base; // 16px
       color: $text-secondary; // セカンダリテキストカラー
-      margin-top: $space-1; // 8px 上マージン
+      margin-top: $space-1; // 4px 上マージン
       display: block; // ブロック表示
     }
   }
@@ -261,8 +130,8 @@
     li {
       display: flex; // フレックスレイアウト
       align-items: center; // 垂直中央寄せ
-      gap: $space-2; // 16px アイコンとテキストの間隔
-      margin-bottom: $space-2; // 16px 下マージン
+      gap: $space-2; // 8px アイコンとテキストの間隔
+      margin-bottom: $space-2; // 8px 下マージン
       font-size: $font-size-base; // 16px フォントサイズ
       color: $text-color; // テキストカラー
       line-height: $line-height-normal; // 1.4 行高
@@ -283,7 +152,7 @@
     font-size: $font-size-sm; // 14px
     color: $text-secondary; // セカンダリテキストカラー
     margin: 0; // マージンなし
-    padding: $space-3; // 24px パディング
+    padding: $space-3; // 12px パディング
     background: rgba($primary-color, 0.05); // 薄いプライマリ背景
     border-radius: $border-radius-md; // 8px 角丸
   }
@@ -297,23 +166,23 @@
 .schedule-info {
   background: white; // 白背景
   border-radius: $border-radius-xl; // 16px 角丸
-  padding: $space-6; // 48px 内側余白
+  padding: $space-6; // 24px 内側余白
   box-shadow: $shadow; // 標準影効果
   border: 2px solid transparent; // 透明ボーダー
 
   h3 {
     font-size: $font-size-xl; // 24px
-    font-weight: 700; // ボールド
+    font-weight: $font-weight-bold; // ボールド
     color: $text-color; // テキストカラー
-    margin-bottom: $space-4; // 32px 下マージン
+    margin-bottom: $space-4; // 16px 下マージン
   }
 
   h4 {
     font-size: $font-size-lg; // 20px
-    font-weight: 600; // セミボールド
+    font-weight: $font-weight-semibold; // セミボールド
     color: $primary-color; // プライマリカラー
-    margin-bottom: $space-2; // 16px 下マージン
-    margin-top: $space-4; // 32px 上マージン
+    margin-bottom: $space-2; // 8px 下マージン
+    margin-top: $space-4; // 16px 上マージン
 
     &:first-of-type {
       margin-top: 0; // 最初のh4は上マージンなし
@@ -321,13 +190,13 @@
   }
 
   .schedule-basic {
-    padding: $space-3; // 24px パディング
+    padding: $space-3; // 12px パディング
     background: rgba($primary-color, 0.05); // 薄いプライマリ背景
     border-radius: $border-radius-md; // 8px 角丸
-    margin-bottom: $space-4; // 32px 下マージン
+    margin-bottom: $space-4; // 16px 下マージン
 
     p {
-      margin-bottom: $space-1; // 8px 下マージン
+      margin-bottom: $space-1; // 4px 下マージン
 
       &:last-child {
         margin-bottom: 0; // 最後の要素はマージンなし
@@ -336,13 +205,13 @@
 
     .schedule-note {
       font-size: $font-size-sm; // 14px
-      color: $warning-color; // 警告カラー
-      font-weight: 600; // セミボールド
+      color: $warning-on-light; // 警告（白上 5.02:1）
+      font-weight: $font-weight-semibold; // セミボールド
     }
   }
 
   .schedule-table-wrapper {
-    margin-bottom: $space-4; // 32px 下マージン
+    margin-bottom: $space-4; // 16px 下マージン
     overflow-x: auto; // 横スクロール対応
   }
 
@@ -354,7 +223,7 @@
 
     th,
     td {
-      padding: $space-2; // 16px パディング
+      padding: $space-2; // 8px パディング
       text-align: center; // 中央寄せ
       border: 1px solid $primary-color; // ボーダー
       font-size: $font-size-sm; // 14px
@@ -363,7 +232,7 @@
     th {
       background: $primary-color; // プライマリカラー背景
       color: white; // 白テキスト
-      font-weight: 700; // ボールド
+      font-weight: $font-weight-bold; // ボールド
       word-break: break-word; // 単語で改行
       hyphens: auto; // ハイフン自動挿入
 
@@ -374,18 +243,18 @@
 
     .week-cell {
       background: rgba($primary-color, 0.1); // 薄いプライマリ背景
-      font-weight: 600; // セミボールド
+      font-weight: $font-weight-semibold; // セミボールド
       color: $primary-color; // プライマリカラー
     }
 
     .slot-cell {
-      font-weight: 700; // ボールド
+      font-weight: $font-weight-bold; // ボールド
       font-size: 1.1rem; // 少し大きめ
       font-family: $font-family-monospace; // 等幅フォント（クラス名表示用）
 
       &.unavailable {
         background: $gray-300; // グレー背景
-        color: $gray-500; // グレーテキスト
+        color: $gray-700; // 受講不可枠の文字（#E0E0E0 上で 4.69:1）
         font-family: $font-family-base; // 通常フォント
       }
 
@@ -423,7 +292,7 @@
       // 満員クラス表示（打消し線 + 薄いグレー背景）
       &.full {
         background: $gray-400 ; // 薄いグレー背景（元の色を上書き）
-        color: $gray-600 !important; // グレー文字色
+        color: $gray-800 !important; // 満員枠の文字（#BDBDBD 上で 5.35:1）
         text-decoration: line-through; // 打消し線
         text-decoration-color: $error-color; // 赤色の打消し線
         text-decoration-thickness: 2px; // 線の太さ
@@ -432,17 +301,17 @@
         // ホバー時の効果を無効化
         &:hover {
           background: $gray-400 ;
-          color: $gray-600 !important;
+          color: $gray-800 !important;
         }
       }
     }
   }
 
   .schedule-legend {
-    padding: $space-3; // 24px パディング
+    padding: $space-3; // 12px パディング
     background: $gray-50; // 薄いグレー背景
     border-radius: $border-radius-md; // 8px 角丸
-    margin-bottom: $space-3; // 24px 下マージン
+    margin-bottom: $space-3; // 12px 下マージン
 
     .legend-list {
       list-style: none; // リストマーカーなし
@@ -461,7 +330,7 @@
           position: absolute; // 絶対配置
           left: 0; // 左端配置
           color: $primary-color; // プライマリカラー
-          font-weight: 600; // セミボールド
+          font-weight: $font-weight-semibold; // セミボールド
         }
 
         &:last-child {
@@ -472,7 +341,7 @@
 
     p {
       font-size: $font-size-sm; // 14px
-      margin-bottom: $space-1; // 8px 下マージン
+      margin-bottom: $space-1; // 4px 下マージン
 
       &:last-child {
         margin-bottom: 0; // 最後の要素はマージンなし
@@ -481,23 +350,23 @@
 
     .legend-available {
       color: $success-color; // 緑
-      font-weight: 600; // セミボールド
+      font-weight: $font-weight-semibold; // セミボールド
     }
 
     .legend-unavailable {
       color: $gray-500; // グレー
-      font-weight: 600; // セミボールド
+      font-weight: $font-weight-semibold; // セミボールド
     }
 
     .legend-full {
       color: $error-color; // エラーカラー（赤）
-      font-weight: 600; // セミボールド
+      font-weight: $font-weight-semibold; // セミボールド
       // 打消し線は実際のクラスに適用されるため、凡例テキストには適用しない
     }
 
     .legend-note {
-      color: $warning-color; // 警告カラー
-      font-weight: 600; // セミボールド
+      color: $warning-on-light; // 警告（白上 5.02:1）
+      font-weight: $font-weight-semibold; // セミボールド
     }
   }
 
@@ -512,23 +381,23 @@
 
   // 営業時間セクション
   .business-hours {
-    margin-top: $space-4; // 32px 上マージン
+    margin-top: $space-4; // 16px 上マージン
 
     h4 {
       font-size: $font-size-lg; // 20px
-      font-weight: 600; // セミボールド
+      font-weight: $font-weight-semibold; // セミボールド
       color: $primary-color; // プライマリカラー
-      margin-bottom: $space-2; // 16px 下マージン
+      margin-bottom: $space-2; // 8px 下マージン
     }
 
     .hours-info {
-      padding: $space-3; // 24px パディング
+      padding: $space-3; // 12px パディング
       background: rgba($primary-color, 0.05); // 薄いプライマリ背景
       border-radius: $border-radius-md; // 8px 角丸
       border: 1px solid rgba($primary-color, 0.2); // 薄いボーダー
 
       p {
-        margin-bottom: $space-1; // 8px 下マージン
+        margin-bottom: $space-1; // 4px 下マージン
         font-size: $font-size-base; // 16px
         color: $text-color; // テキストカラー
 
@@ -537,21 +406,14 @@
         }
 
         &.holiday-note {
-          color: $warning-color; // 警告カラー（祝日休み）
-          font-weight: 600; // セミボールド
+          color: $warning-on-light; // 警告（白上 5.02:1）（祝日休み）
+          font-weight: $font-weight-semibold; // セミボールド
         }
       }
     }
   }
 }
 
-// アクセス情報（アクセス詳細と地図の横並び）
-.access-info {
-  display: grid; // グリッドレイアウト
-  grid-template-columns: 1fr 1fr; // 2カラム（左：アクセス詳細 | 右：地図）
-  gap: 3rem; // カラム間のスペース
-  align-items: start; // 上寄せ
-}
 
 // アクセス詳細セクション（左側）
 .access-section-left {
@@ -559,9 +421,9 @@
   // 左側のコンテンツ
   h3 {
     font-size: $font-size-xl; // 24px
-    font-weight: 700; // ボールド
+    font-weight: $font-weight-bold; // ボールド
     color: $text-color; // テキストカラー
-    margin-bottom: $space-4; // 32px 下マージン
+    margin-bottom: $space-4; // 16px 下マージン
   }
 }
 
@@ -577,14 +439,14 @@
 // アクセス詳細
 .access-details {
   p {
-    margin-bottom: $space-3; // 24px 下マージン
+    margin-bottom: $space-3; // 12px 下マージン
     font-size: $font-size-base; // 16px
     line-height: $line-height-relaxed; // 1.6
     color: $text-color; // テキストカラー
 
     strong {
       color: $primary-color; // 強調部分はプライマリカラー
-      font-weight: 600; // セミボールド
+      font-weight: $font-weight-semibold; // セミボールド
     }
 
     &:last-child {
@@ -594,18 +456,18 @@
 
   // アクセス方法グループ
   .access-methods {
-    margin-bottom: $space-4; // 32px 下マージン
+    margin-bottom: $space-4; // 16px 下マージン
 
     strong {
       display: block; // ブロック表示
-      margin-bottom: $space-2; // 16px 下マージン
+      margin-bottom: $space-2; // 8px 下マージン
       color: $primary-color; // プライマリカラー
-      font-weight: 600; // セミボールド
+      font-weight: $font-weight-semibold; // セミボールド
     }
 
     .access-method {
-      margin-left: $space-4; // 32px 左マージン（インデント）
-      margin-bottom: $space-1; // 8px 下マージン
+      margin-left: $space-4; // 16px 左マージン（インデント）
+      margin-bottom: $space-1; // 4px 下マージン
       position: relative; // アイコン配置用
 
       &::before {
@@ -613,18 +475,18 @@
         color: $primary-color; // プライマリカラー
         font-weight: bold; // ボールド
         position: absolute; // 絶対配置
-        left: -$space-3; // -24px（アイコン位置）
+        left: -$space-3; // -12px（アイコン位置）
       }
 
       .access-type {
         display: inline-block; // インラインブロック
         background: rgba($primary-color, 0.1); // 薄いプライマリ背景
         color: $primary-color; // プライマリカラー
-        padding: $space-1 $space-2; // 8px 16px
+        padding: $space-1 $space-2; // 4px 8px
         border-radius: $border-radius-sm; // 4px角丸
         font-size: $font-size-sm; // 14px
-        font-weight: 600; // セミボールド
-        margin-right: $space-2; // 16px 右マージン
+        font-weight: $font-weight-semibold; // セミボールド
+        margin-right: $space-2; // 8px 右マージン
       }
     }
   }
@@ -637,20 +499,20 @@
     background: rgba($warning-color, 0.1); // 薄い警告背景
     border: 1px solid rgba($warning-color, 0.3); // 警告ボーダー
     border-radius: $border-radius-md; // 8px 角丸
-    padding: $space-3; // 24px パディング
-    margin-top: $space-3; // 24px 上マージン
+    padding: $space-3; // 12px パディング
+    margin-top: $space-3; // 12px 上マージン
     font-size: $font-size-sm; // 14px
-    color: $warning-color; // 警告カラー
+    color: $warning-on-light; // 警告（白上 5.02:1）
 
     .material-icons {
-      color: $warning-color; // 警告カラー
+      color: $warning-on-light; // 警告（白上 5.02:1）
       font-size: 1.25rem; // 20px アイコンサイズ
       flex-shrink: 0; // 縮小しない
     }
 
     strong {
-      color: $warning-color; // 警告カラー
-      font-weight: 600; // セミボールド
+      color: $warning-on-light; // 警告（白上 5.02:1）
+      font-weight: $font-weight-semibold; // セミボールド
     }
   }
 
@@ -666,7 +528,7 @@
       display: flex; // フレックスレイアウト
       align-items: center; // 垂直中央寄せ
       gap: 0.5rem; // アイコンとテキストの間隔
-      font-weight: 600; // セミボールド
+      font-weight: $font-weight-semibold; // セミボールド
       color: $primary-color; // プライマリカラー
       margin-bottom: 0.5rem; // 下マージン
       font-size: 1.1rem; // フォントサイズ
@@ -692,7 +554,7 @@
 // 地図コンテナ
 .map-container {
   margin-top: $space-4; // デフォルトは通常マージン
-  margin-bottom: $space-4; // 32px 下マージン
+  margin-bottom: $space-4; // 16px 下マージン
   border-radius: 16px; // より丸い角
   overflow: hidden; // はみ出し防止
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); // より立体的な影
@@ -714,7 +576,7 @@
 
   // 地図リンク
   .map-link {
-    padding: $space-2 $space-3; // 16px 24px
+    padding: $space-2 $space-3; // 8px 12px
     text-align: center; // 中央寄せ
     background: rgba($primary-color, 0.05); // 薄い背景
     margin: 0; // マージンなし
@@ -722,7 +584,7 @@
     a {
       color: $primary-color; // プライマリカラー
       text-decoration: none; // 下線なし
-      font-weight: 600; // セミボールド
+      font-weight: $font-weight-semibold; // セミボールド
       font-size: $font-size-sm; // 14px
 
       &:hover {
@@ -755,50 +617,6 @@
   }
 }
 
-// ========================================
-// 問い合わせCTA
-// ========================================
-
-// 問い合わせCTAセクション
-.contact-cta-section {
-  background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%)); // グラデーション背景
-  color: white; // 白テキスト
-  padding: 3rem 1rem; // パディング
-  text-align: center; // 中央寄せ
-  margin-top: 4rem; // 上マージン
-  border-radius: 12px; // 角丸
-
-  h3 {
-    font-size: 1.75rem; // フォントサイズ
-    margin-bottom: 1rem; // 下マージン
-    color: white; // 白テキスト
-  }
-
-  p {
-    font-size: 1.1rem; // フォントサイズ
-    margin-bottom: 2rem; // 下マージン
-    opacity: 0.9; // 少し透明
-    line-height: 1.6; // 行高
-  }
-
-  .cta-buttons {
-    display: flex; // フレックスレイアウト
-    gap: 1rem; // ボタン間のスペース
-    justify-content: center; // 中央寄せ
-    flex-wrap: wrap; // 改行許可
-
-    .cta-button {
-      background: white; // 白背景
-      color: $primary-color; // プライマリカラーテキスト
-
-      &:hover,
-      &:focus {
-        background: rgba(255, 255, 255, 0.9); // 少し透明な白
-        transform: translateY(-2px); // 上に浮く効果
-      }
-    }
-  }
-}
 
 // ========================================
 // レスポンシブデザイン
@@ -942,14 +760,72 @@
       font-size: 1.5rem; // フォントサイズ削減
     }
 
-    .cta-buttons {
-      flex-direction: column; // 縦方向配置
-      align-items: center; // 中央寄せ
+  }
+}
 
-      .cta-button {
-        width: 100%; // 全幅
-        max-width: 300px; // 最大幅制限
-      }
+// ========================================
+// 料金・スケジュールの要約（トップページ）
+// ========================================
+// 全文は /pricing/。ここは要約＋リンクに留める
+
+.pricing-summary {
+  @include info-banner;
+  padding: $space-6;
+  max-width: 640px;
+  margin: $space-6 auto 0;
+}
+
+.pricing-summary-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: $space-2;
+  margin: 0 0 $space-2;
+}
+
+.pricing-summary-label {
+  font-weight: $font-weight-semibold;
+  color: $text-secondary;
+  font-size: $font-size-sm;
+}
+
+.pricing-summary-amount {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+}
+
+.pricing-summary-period {
+  color: $text-secondary;
+  font-size: $font-size-sm;
+}
+
+.pricing-summary-points {
+  list-style: none;
+  padding-left: 0;
+  margin: $space-4 0 0;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-2;
+    margin-bottom: $space-2;
+    line-height: $line-height-relaxed;
+
+    .material-icons {
+      color: $primary-color;
+      font-size: $font-size-lg;
+      flex-shrink: 0;
     }
   }
+}
+
+.pricing-summary-link {
+  margin: $space-4 0 0;
+}
+
+// 料金ページ末尾の体験への誘導
+.pricing-next-section {
+  padding-bottom: $space-12;
+  text-align: center;
 }

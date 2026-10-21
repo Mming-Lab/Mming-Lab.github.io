@@ -24,7 +24,7 @@
       display: inline-flex;
       align-items: center;
       gap: $space-1;
-      font-weight: 700;
+      font-weight: $font-weight-bold;
       font-size: 1rem;
       transition: $transition-base;
       border: none;
@@ -60,8 +60,8 @@ main {
 .site-footer {
   background: $text-color;
   color: white;
-  padding: $space-4 $space-2;      // 大幅縮小（32px 16px）
-  margin-top: $space-8;            // 64px
+  padding: $space-4 $space-2;      // 大幅縮小（16px 8px）
+  margin-top: $space-8;            // 32px
 }
 
 .footer-container {
@@ -72,8 +72,8 @@ main {
 .footer-content {
   display: grid;
   grid-template-columns: 2fr 1fr;  // 左2:右1の比率
-  gap: $space-6;                   // 48px セクション間の間隔
-  margin-bottom: $space-4;         // 32px 下マージン
+  gap: $space-6;                   // 24px セクション間の間隔
+  margin-bottom: $space-4;         // 16px 下マージン
   align-items: start;              // 上寄せ
   
   @media (max-width: $breakpoint-tablet) {
@@ -88,7 +88,7 @@ main {
     color: white;
     font-size: 1.25rem;
     margin-bottom: 1rem;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
   }
   
   p {
@@ -119,48 +119,6 @@ main {
   }
 }
 
-.footer-cta {
-  background: rgba($primary-color, 0.1);
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  border: 1px solid rgba($primary-color, 0.2);
-  
-  h3 {
-    color: white;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-  
-  p {
-    color: rgba(white, 0.9);
-    margin-bottom: 1.5rem;
-  }
-  
-  .cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: $secondary-color;
-    color: $text-color;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: $transition-base;
-    
-    &:hover,
-    &:focus {
-      background: lighten($secondary-color, 10%);
-      transform: translateY(-2px);
-    }
-    
-    .material-icons {
-      font-size: 1.2rem;
-    }
-  }
-}
 
 .footer-bottom {
   border-top: 1px solid rgba(white, 0.2);
@@ -176,21 +134,21 @@ main {
 
 // 連絡先情報セクション
 .footer-contact {
-  margin-top: $space-4;              // 32px 上マージン
+  margin-top: $space-4;              // 16px 上マージン
   
   h4 {
     color: white;
     font-size: $font-size-base;      // 16px
-    margin-bottom: $space-2;         // 16px 下マージン
-    font-weight: 600;
+    margin-bottom: $space-2;         // 8px 下マージン
+    font-weight: $font-weight-semibold;
   }
   
   .contact-info {
     .contact-item {
       display: flex;
       align-items: center;
-      gap: $space-2;                 // 16px アイコンとテキストの間隔
-      margin-bottom: $space-2;       // 16px 下マージン
+      gap: $space-2;                 // 8px アイコンとテキストの間隔
+      margin-bottom: $space-2;       // 8px 下マージン
       color: rgba(white, 0.8);
       
       .material-icons {
@@ -221,7 +179,7 @@ main {
   padding: 0;
   
   li {
-    margin-bottom: $space-2;         // 16px 下マージン
+    margin-bottom: $space-2;         // 8px 下マージン
     
     &:last-child {
       margin-bottom: 0;
@@ -230,12 +188,12 @@ main {
     a {
       display: flex;
       align-items: center;
-      gap: $space-1;                 // 8px アイコンとテキストの間隔
+      gap: $space-1;                 // 4px アイコンとテキストの間隔
       color: rgba(white, 0.8);
       text-decoration: none;
       transition: $transition-base;
       font-size: $font-size-sm;     // 14px
-      padding: $space-1 0;           // 8px 縦パディング（クリック領域拡大）
+      padding: $space-1 0;           // 4px 縦パディング（クリック領域拡大）
       
       &:hover,
       &:focus {
@@ -253,26 +211,26 @@ main {
 }
 
 .footer-social {
-  margin-top: $space-4;              // 32px 上マージン
+  margin-top: $space-4;              // 16px 上マージン
   
   h4 {
     color: white;
     font-size: $font-size-base;      // 16px
-    margin-bottom: $space-2;         // 16px 下マージン
-    font-weight: 600;
+    margin-bottom: $space-2;         // 8px 下マージン
+    font-weight: $font-weight-semibold;
   }
   
   .social-links {
     display: flex;
-    gap: $space-2;                   // 16px アイコン間のスペース
+    gap: $space-2;                   // 8px アイコン間のスペース
     justify-content: flex-start;     // 左寄せ
     flex-wrap: wrap;                 // 改行許可
     
     .social-link {
       display: inline-flex;          // inline-flexに変更でより自然な幅
       align-items: center;
-      gap: $space-2;                 // 16px アイコンとテキストの間隔（拡大）
-      padding: $space-2 $space-3;   // 16px 24px パディング
+      gap: $space-2;                 // 8px アイコンとテキストの間隔（拡大）
+      padding: $space-2 $space-3;   // 8px 12px パディング
       background: rgba(white, 0.1);  // 薄い白背景
       border: 1px solid rgba(white, 0.2);
       border-radius: $border-radius-md; // 8px 角丸
@@ -312,8 +270,8 @@ main {
 
 // Minecraft免責事項
 .footer-disclaimer {
-  margin-top: $space-4;              // 32px 上マージン
-  padding: $space-3;                 // 24px パディング
+  margin-top: $space-4;              // 16px 上マージン
+  padding: $space-3;                 // 12px パディング
   background: rgba(white, 0.05);     // 非常に薄い白背景
   border: 1px solid rgba(white, 0.1);
   border-radius: $border-radius-md;  // 8px 角丸
@@ -419,14 +377,6 @@ main {
     }
   }
   
-  .footer-cta {
-    padding: 1.5rem;
-    
-    .cta-button {
-      padding: 0.875rem 1.5rem;
-      font-size: 1rem;
-    }
-  }
   
   .footer-social {
     gap: 0.75rem;
@@ -440,4 +390,15 @@ main {
       }
     }
   }
+}
+// ========================================
+// ブランドアイコン（インラインSVG）
+// ========================================
+// Font Awesome を廃止し _includes/components/brand-icon.html に置き換えた際に追加。
+// fill="currentColor" なので色は親の color を継承する
+.brand-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  vertical-align: middle;
 }

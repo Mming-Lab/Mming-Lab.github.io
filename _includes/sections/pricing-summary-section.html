@@ -1,0 +1,46 @@
+<!-- 料金・スケジュールの要約（トップページ用）
+     データソース: _data/pricing_schedule.yml（summary / plan / enrollment_fee）
+     CSS: _sass/components/_pricing-access.scss
+
+     全文は /pricing/（pricing.html）。
+     全文を両方のページに置くと重複コンテンツになるため、ここは要約に留める。
+     金額は plan / enrollment_fee から組み立てているので、
+     料金改定のときに直す場所は _data/pricing_schedule.yml の1箇所だけ。
+-->
+{%- assign ps = site.data.pricing_schedule -%}
+<section class="pricing-summary-section" id="pricing-schedule" aria-labelledby="pricing-summary-title">
+    <div class="section-container">
+        <div class="section-header">
+            <h2 id="pricing-summary-title">{{ ps.summary.title }}</h2>
+        </div>
+
+        <div class="pricing-summary">
+            <p class="pricing-summary-price">
+                <span class="pricing-summary-label">月謝</span>
+                <span class="pricing-summary-amount">{{ ps.plan.price }}</span>
+                <span class="pricing-summary-period">{{ ps.plan.period }}</span>
+            </p>
+            <p class="pricing-summary-price">
+                <span class="pricing-summary-label">入会金</span>
+                <span class="pricing-summary-amount">{{ ps.enrollment_fee.amount }}</span>
+                <span class="pricing-summary-period">（{{ ps.enrollment_fee.note }}）</span>
+            </p>
+
+            <ul class="pricing-summary-points">
+                {% for point in ps.summary.points %}
+                <li>
+                    <span class="material-icons" aria-hidden="true">check</span>
+                    {{ point }}
+                </li>
+                {% endfor %}
+            </ul>
+
+            <p class="pricing-summary-link">
+                <a href="{{ '/pricing/' | relative_url }}" class="cta-button secondary">
+                    {{ ps.summary.link_text }}
+                    <span class="material-icons" aria-hidden="true">arrow_forward</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>

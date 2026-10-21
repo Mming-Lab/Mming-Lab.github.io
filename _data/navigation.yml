@@ -1,4 +1,19 @@
-# メインナビゲーション（index.html用）
+# ========================================
+# ナビゲーション
+# ========================================
+#
+# main   … トップページで表示（同一ページ内アンカーを含む）
+# global … トップページ以外で表示（アンカーは /#xxx 形式）
+#
+# 【注意】
+# main と global は項目がほぼ同じだが、URL の形式（#xxx と /#xxx）と
+# メンバー構成が違うため分けている。項目を増やすときは両方に入れること。
+#
+# icon は _data/icons.yml に登録済みのものだけを使う。
+# 未登録の名前を書くと、フォントにグリフが無く画面に英単語が表示される。
+# ========================================
+
+# メインナビゲーション（トップページ用）
 main:
   - title: 教室について
     url: "#about"
@@ -6,27 +21,26 @@ main:
   - title: 特徴
     url: "#features"
     icon: star
-  - title: FAQ
-    url: "#faq"
-    icon: help
-    full_title: "よくある質問" # aria-label用
   - title: 料金
-    url: "#pricing-schedule"
+    url: "/pricing/"
     icon: schedule
-    full_title: "料金・スケジュール" # aria-label用
+    full_title: "料金・スケジュール"
+  - title: FAQ
+    url: "/faq/"
+    icon: help
+    full_title: "よくある質問"
   - title: アクセス
     url: "#access"
     icon: place
   - title: ブログ
     url: "/blog/"
     icon: article
-    full_title: "ブログ" # aria-label用
   - title: 体験
     url: "/trial/"
     icon: event
-    full_title: "体験申込み" # aria-label用
+    full_title: "体験申込み"
 
-# 統一ナビゲーション（全ページ共通）
+# 統一ナビゲーション（トップページ以外の全ページ）
 global:
   - title: トップページ
     url: "/"
@@ -37,8 +51,12 @@ global:
   - title: 特徴
     url: "/#features"
     icon: star
+  - title: 料金
+    url: "/pricing/"
+    icon: schedule
+    full_title: "料金・スケジュール"
   - title: FAQ
-    url: "/#faq"
+    url: "/faq/"
     icon: help
     full_title: "よくある質問"
   - title: アクセス
@@ -51,8 +69,9 @@ global:
     url: "/trial/"
     icon: event
 
-# フッターCTA
+# 固定フッターCTA
+# 注: 体験ページでは描画しない判定を _includes/footer.html が持っている
 footer_cta:
   text: "体験申込み"
   url: "/trial/"
-  show_always: true
+  icon: edit_calendar

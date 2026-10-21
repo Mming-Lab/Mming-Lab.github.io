@@ -1,0 +1,48 @@
+---
+layout: default
+permalink: /faq/
+title: よくある質問（鹿児島市）
+breadcrumb: よくある質問
+description: 鹿児島市照国町の発達特性のあるお子様専門プログラミング教室 mming へのよくある質問。対象となるお子様、体験の流れ、保護者の同席、持ち物、クラスの決まり方などにお答えしています。
+---
+
+{%- comment -%}
+  よくある質問の独立ページ。全問を出す。
+
+  保護者は質問文そのままの形で検索するため、設問ごとに受け皿が必要になる。
+  トップページ（faq-section.html）は on_homepage: true のものだけを出し、
+  ここへ誘導している。
+
+  体験当日の詳細は _data/trial.yml の day_of が正本。
+  ここでは短く答えて /trial/ に誘導しており、長文を両方に置かない。
+{%- endcomment -%}
+
+<section class="faq-section" id="faq" aria-labelledby="faq-page-title">
+    <div class="section-container">
+        <div class="section-header">
+            <h1 id="faq-page-title">{{ site.data.faq.title }}</h1>
+            <p class="section-subtitle">{{ page.description | truncate: 60 }}</p>
+        </div>
+
+        <div class="faq-list">
+            {% for item in site.data.faq.items %}
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-{{ forloop.index }}">
+                    <span class="question-text">{{ item.question }}</span>
+                    <span class="material-icons toggle-icon" aria-hidden="true">expand_more</span>
+                </button>
+                <div class="faq-answer" id="faq-answer-{{ forloop.index }}" aria-hidden="true">
+                    <div class="faq-answer-content">
+                        {{ item.answer | markdownify }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <p class="section-note">
+            ここに無いことは、体験のときにお気軽にお尋ねください。
+            体験当日のことは<a href="{{ '/trial/' | relative_url }}">体験申込みのページ</a>にまとめています。
+        </p>
+    </div>
+</section>

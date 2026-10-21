@@ -1,0 +1,78 @@
+---
+layout: default
+permalink: /about/media/
+title: 実績と掲載（鹿児島市）
+breadcrumb: 実績と掲載
+description: 鹿児島市の発達特性のあるお子様専門プログラミング教室 mming の実績。FNNプライムオンライン等のメディア掲載、発達障害児支援士・教育版マインクラフトアンバサダー等の資格、授業・校務活用素材ポータルでの教材公開。
+---
+
+{%- comment -%}
+  実績・掲載の常設ページ。
+
+  以前は _posts/2025-06-01-media-coverage.md（日付付きの記事）と
+  _data/team.yml（資格）に散らばっており、記事は時系列に埋もれていた。
+  「この教室は信用できるのか」に答える材料なので、鮮度を要求されない
+  常設ページに置く。
+
+  データは _data/credentials.yml が正本。
+  外部のURLで確認できる事実だけを書く（内部の目標値は書かない）。
+{%- endcomment -%}
+
+{%- assign c = site.data.credentials -%}
+
+<section class="credentials-section" aria-labelledby="credentials-title">
+    <div class="section-container">
+        <div class="section-header">
+            <h1 id="credentials-title">{{ c.title }}</h1>
+            <p class="section-subtitle">{{ c.lead }}</p>
+        </div>
+
+        <h2>{{ c.media.title }}</h2>
+        <dl class="credential-list">
+            {% for item in c.media.items %}
+            <div class="credential-item">
+                <dt class="credential-name">
+                    <span class="material-icons credential-icon" aria-hidden="true">article</span>
+                    {% if item.url %}
+                    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer{% if item.nofollow %} nofollow{% endif %}">
+                        {{ item.name }}
+                        <span class="material-icons" aria-hidden="true">open_in_new</span>
+                    </a>
+                    {% else %}
+                    {{ item.name }}
+                    {% endif %}
+                </dt>
+                <dd class="credential-note">{{ item.note }}</dd>
+            </div>
+            {% endfor %}
+        </dl>
+
+        <h2>{{ c.credentials.title }}</h2>
+        <dl class="credential-list">
+            {% for item in c.credentials.items %}
+            <div class="credential-item">
+                <dt class="credential-name">
+                    <span class="material-icons credential-icon" aria-hidden="true">check</span>
+                    {{ item.name }}
+                </dt>
+                <dd class="credential-note">{{ item.holder }}</dd>
+            </div>
+            {% endfor %}
+        </dl>
+
+        <h2>{{ c.materials.title }}</h2>
+        <p>{{ c.materials.lead }}</p>
+        <p>
+            <a href="{{ c.materials.portal_url }}" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                {{ c.materials.portal_name }}
+                <span class="material-icons" aria-hidden="true">open_in_new</span>
+            </a>
+        </p>
+        <p>{{ c.materials.note }}</p>
+        <ul class="credential-posts">
+            {% for p in c.materials.related_posts %}
+            <li><a href="{{ p.url | relative_url }}">{{ p.text }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
