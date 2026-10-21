@@ -344,6 +344,26 @@
 // ========================================
 // 記事の行き止まりを無くすためのブロック。_layouts/post.html が
 // 同じカテゴリの記事を最大3本まで自動で並べる。
+// 記事本文（.blog-post）の外側に置かれる3ブロックを、本文と同じ幅・
+// 同じ左右パディングに揃える。これが無いと画面の左端に貼り付く。
+// .blog-post 側の値（max-width: 800px / padding: $space-8 $space-4）と対。
+.post-related,
+.post-classroom-note,
+.post-navigation {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $space-4;
+  padding-right: $space-4;
+
+  // 注: モバイル指定はここにネストする。ファイル上部の @media ブロックに
+  // 書くと、この基本指定のほうが後に出力されて上書きされる
+  @media (max-width: $breakpoint-mobile) {
+    padding-left: $space-3;
+    padding-right: $space-3;
+  }
+}
+
 .post-related {
   margin-top: $space-10;
 
@@ -387,10 +407,14 @@
 // 技術記事の読者（授業で教育版マインクラフトを使う先生）に、教室の存在と
 // 対象を伝えるブロック。表示のみなので info-banner を使う
 // （細い枠線・影なし・ホバーなし・cursor: default）。
+// 注: 上の共通指定で左右パディングが入るため、枠線の内側の余白は
+// padding ではなく、内側のラッパーではなく上下だけで持つ。
+// 枠が画面幅いっぱいに広がらないよう box-sizing は border-box 前提。
 .post-classroom-note {
   @include info-banner;
   margin-top: $space-10;
-  padding: $space-6;
+  padding-top: $space-6;
+  padding-bottom: $space-6;
 
   h2 {
     margin: 0 0 $space-4;
