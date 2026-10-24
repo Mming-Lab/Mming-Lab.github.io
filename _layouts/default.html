@@ -228,7 +228,38 @@ mmingプログラミング教室 - ベースレイアウトテンプレート
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '{{ site.analytics.google }}');
+
+        // 内部トラフィックの除外。
+        // ?internal=1 を付けて開くと、その端末に印を保存する（?internal=0 で解除）。
+        // 印のある端末からは traffic_type: 'internal' を送り、GA4 側のデータフィルタで除外する。
+        //
+        // 注: ここだけ localStorage を使う（CLAUDE.md の禁止の例外）。
+        //     ページをまたいで覚える必要があり、JS 変数では実現できないため。
+        //     UI の状態保存には引き続き使わない。
+        //
+        // 注: GA4 側で「内部トラフィック」のデータフィルタを**アクティブ**にしないと
+        //     除外されない。既定ではテスト状態で、テストのままでは素通りする。
+        (function () {
+            var KEY = 'mming_internal_traffic';
+            var internal = false;
+            try {
+                var flag = new URLSearchParams(window.location.search).get('internal');
+                if (flag === '1') {
+                    localStorage.setItem(KEY, '1');
+                } else if (flag === '0') {
+                    localStorage.removeItem(KEY);
+                }
+                internal = localStorage.getItem(KEY) === '1';
+            } catch (e) {
+                // プライベートウィンドウや Cookie 無効の環境では例外が出る。
+                // その場合は通常のトラフィックとして扱う。
+            }
+            if (internal) {
+                gtag('config', '{{ site.analytics.google }}', { traffic_type: 'internal' });
+            } else {
+                gtag('config', '{{ site.analytics.google }}');
+            }
+        })();
     </script>
     {% endif %}
     
