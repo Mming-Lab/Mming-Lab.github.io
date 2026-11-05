@@ -96,6 +96,11 @@ defaults:
       path: ""
     values:
       lang: "ja"
+  # PDF は sitemap.xml に載せない（Search Console に送るのはHTMLページのみ）
+  - scope:
+      path: "assets/pdf"
+    values:
+      sitemap: false
 
 # Sass設定
 sass:
