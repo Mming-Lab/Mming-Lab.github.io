@@ -159,6 +159,14 @@
     max-width: 100%;                     // モバイルでは幅制限を緩和
     margin: 2rem auto;
     padding: 1.5rem;
+
+    // リード文も左揃えにする。
+    // 同じ枠の中でリード文だけ中央、下の条件リストは左、と揃え方が
+    // 混在していた（.target-list の li は text-align: start）。
+    // 375px の実測で行頭のズレは最大68px。
+    .target-lead {
+      text-align: left;
+    }
   }
   
   .promises-section {
