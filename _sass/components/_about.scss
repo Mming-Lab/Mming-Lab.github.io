@@ -145,6 +145,16 @@
 }
 
 @media (max-width: $breakpoint-mobile) {
+  // 長い本文は左揃えにする。
+  // .section-header が中央揃えなので philosophy の段落まで中央に寄っていた。
+  // 中央揃えは行頭の位置が行ごとにずれるため、画面が狭くて1行が短いほど
+  // 読みにくくなる（約20文字で折り返す幅では6行すべて行頭が違う）。
+  // 見出し（h2・.section-subtitle）は中央のまま。
+  // .section-message は /trial/ でも使っているので .about-section で限定する。
+  .about-section .section-message {
+    text-align: left;
+  }
+
   .target-info-section {
     max-width: 100%;                     // モバイルでは幅制限を緩和
     margin: 2rem auto;

@@ -13,20 +13,25 @@
 <section class="hero-section" id="hero" aria-labelledby="hero-title">
     <div class="hero-container">
         <div class="hero-content">
+            {%- comment -%}
+              文節の境目に <wbr>（折り返してよい位置）を入れる。
+              join で連結するので文節の間に空白文字は入らない。和文に空白が
+              混ざると読み上げと選択コピーが壊れるため、Liquid の空白制御を
+              省略しないこと。
+              <wbr> は「折ってよい」と示すだけで、単独では見た目を変えない。
+              実際に折り返し位置を固定するのはスマホ幅の word-break: keep-all。
+            {%- endcomment -%}
             <p class="hero-catch">
-                {% for item in site.data.hero.catch_copy %}
-                    {% if item.emphasis == 'strong' %}
-                        <strong>{{ item.text }}</strong>
-                    {% else %}
-                        {{ item.text }}
-                    {% endif %}
-                    {% unless forloop.last %}<br>{% endunless %}
-                {% endfor %}
+                {%- for item in site.data.hero.catch_copy -%}
+                {%- assign line = item.segments | join: '<wbr>' -%}
+                {%- if item.emphasis == 'strong' %}<strong>{{ line }}</strong>{% else %}{{ line }}{% endif -%}
+                {%- unless forloop.last %}<br>{% endunless -%}
+                {%- endfor -%}
             </p>
 
-            <h1 class="hero-title" id="hero-title">{{ site.data.hero.heading }}</h1>
+            <h1 class="hero-title" id="hero-title">{{- site.data.hero.heading | join: '<wbr>' -}}</h1>
 
-            <p class="hero-subtitle" id="hero-subtitle">{{ site.data.hero.sub_copy }}</p>
+            <p class="hero-subtitle" id="hero-subtitle">{{- site.data.hero.sub_copy | join: '<wbr>' -}}</p>
 
             <div class="hero-cta">
                 {%- comment -%}
