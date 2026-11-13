@@ -109,6 +109,36 @@ mmingプログラミング教室 - ベースレイアウトテンプレート
         {% if site.data.config.site.logo %}"logo": "{{ site.data.config.site.logo | absolute_url }}",{% endif %}
         {% if og_image %}"image": "{{ og_image | absolute_url }}",{% endif %}
         {% if site.data.config.seo.structured_data.price_range %}"priceRange": "{{ site.data.config.seo.structured_data.price_range }}",{% endif %}
+        {%- comment -%}
+          月謝と入会金を機械可読にする。金額の正本は _data/pricing_schedule.yml で、
+          表示用の「¥14,000」から記号とカンマを落として数値にしている。
+          料金改定のときに直すのは pricing_schedule.yml だけでよい。
+        {%- endcomment -%}
+        {% if site.data.pricing_schedule.plan.price %}
+        "makesOffer": [
+            {
+                "@type": "Offer",
+                "name": "{{ site.data.pricing_schedule.plan.price_label }}",
+                "description": "{{ site.data.pricing_schedule.plan.period }}",
+                "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": "{{ site.data.pricing_schedule.plan.price | remove: '¥' | remove: ',' }}",
+                    "priceCurrency": "JPY",
+                    "billingDuration": "P1M"
+                }
+            }{% if site.data.pricing_schedule.enrollment_fee.amount %},
+            {
+                "@type": "Offer",
+                "name": "{{ site.data.pricing_schedule.enrollment_fee.label }}",
+                "description": "{{ site.data.pricing_schedule.enrollment_fee.note }}",
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "{{ site.data.pricing_schedule.enrollment_fee.amount | remove: '¥' | remove: ',' }}",
+                    "priceCurrency": "JPY"
+                }
+            }{% endif %}
+        ],
+        {% endif %}
         "address": {
             "@type": "PostalAddress",
             {% if site.data.core.contact.address.street %}"streetAddress": "{{ site.data.core.contact.address.street }}",{% endif %}

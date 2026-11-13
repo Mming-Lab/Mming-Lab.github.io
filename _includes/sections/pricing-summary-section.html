@@ -16,12 +16,12 @@
 
         <div class="pricing-summary">
             <p class="pricing-summary-price">
-                <span class="pricing-summary-label">月謝</span>
+                <span class="pricing-summary-label">{{ ps.plan.price_label }}</span>
                 <span class="pricing-summary-amount">{{ ps.plan.price }}</span>
                 <span class="pricing-summary-period">{{ ps.plan.period }}</span>
             </p>
             <p class="pricing-summary-price">
-                <span class="pricing-summary-label">入会金</span>
+                <span class="pricing-summary-label">{{ ps.enrollment_fee.label }}</span>
                 <span class="pricing-summary-amount">{{ ps.enrollment_fee.amount }}</span>
                 <span class="pricing-summary-period">（{{ ps.enrollment_fee.note }}）</span>
             </p>

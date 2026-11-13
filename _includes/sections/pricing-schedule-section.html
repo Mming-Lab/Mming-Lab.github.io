@@ -12,14 +12,14 @@
                 
                 <!-- 入会金 -->
                 <div class="enrollment-fee">
-                    <span class="fee-label">入会金</span>
+                    <span class="fee-label">{{ site.data.pricing_schedule.enrollment_fee.label }}</span>
                     <span class="fee-amount">{{ site.data.pricing_schedule.enrollment_fee.amount }}</span>
                     <span class="fee-note">（{{ site.data.pricing_schedule.enrollment_fee.note }}）</span>
                 </div>
                 
                 <!-- 月謝 -->
                 <div class="price">
-                    <span class="price-label">月謝</span>
+                    <span class="price-label">{{ site.data.pricing_schedule.plan.price_label }}</span>
                     <span class="price-amount">{{ site.data.pricing_schedule.plan.price }}</span>
                     <span class="price-period">{{ site.data.pricing_schedule.plan.period }}</span>
                 </div>

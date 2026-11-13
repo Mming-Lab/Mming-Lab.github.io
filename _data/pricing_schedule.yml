@@ -48,6 +48,8 @@ trial_note: "ご不明な点は、無料体験のときにお気軽にお尋ね�
 
 plan:
   name: "料金"
+  # 注: price_label / enrollment_fee.label は表示と構造化データ（makesOffer）で共用する
+  price_label: "月謝"
   price: "¥14,000"
   period: "月2回 各60分"
   what_we_do: "前半30分はひとりで考える時間、後半30分はみんなで作る時間です。分からないまま先へ進ませません。"
@@ -61,6 +63,7 @@ plan:
 
 # 入会金
 enrollment_fee:
+  label: "入会金"
   amount: "¥24,000"
   note: "初回のみ"
 
