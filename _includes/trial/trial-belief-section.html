@@ -1,14 +1,17 @@
-<!-- mmingの価値観セクション -->
-<section class="belief-section">
+<!-- mmingの価値観セクション（約束 ＋ 対象者の条件）
+     データソース: _data/trial.yml（belief / eligibility_heading）、
+                   _data/core/eligibility.yml（対象者の条件の正本）
+     CSS: _sass/components/_trial.scss
+
+     注: クラス名は _trial.scss の .trial-belief-section と一致させる。
+     以前は belief-section で、背景色（surface）が当たっていなかった。
+-->
+<section class="trial-belief-section">
     <div class="section-container">
         <div class="belief-banner">
             <div class="belief-header">
                 <h2>{{ site.data.trial.belief.title }}</h2>
                 <p class="belief-subtitle">{{ site.data.trial.belief.subtitle }}</p>
-            </div>
-            
-            <div class="belief-message">
-                <p>{{ site.data.trial.belief.message }}</p>
             </div>
             
             <ul class="belief-ribbon-list">
