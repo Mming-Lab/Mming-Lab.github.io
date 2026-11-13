@@ -1,7 +1,7 @@
 /**
- * 統合対象者情報セクション - eligibility_combined
- * デジタル庁デザインシステムv2.4.0準拠
- * 必要条件と十分条件を統合表示
+ * 対象者の条件カード（必要条件 + 十分条件）
+ * 使用箇所: _includes/trial/trial-eligibility-section.html
+ * セクション見出し（h2）は section-header 側。ここはカードの中だけを持つ
  */
 
 // ========================================
@@ -16,16 +16,6 @@
   border-radius: $border-radius-lg;        // 大きな角丸
   border: 1px solid rgba($primary-100, 0.5); // 薄いプライマリボーダー
   
-  // メインタイトル
-  h3 {
-    font-size: $font-size-2xl;             // 24px デジタル庁準拠
-    color: $text-color;                     // テキストカラー
-    margin-bottom: $space-4;                // 下マージン16px
-    font-weight: $font-weight-bold;                       // ボールド
-    text-align: center;                     // 中央寄せ
-    line-height: $line-height-tight;        // タイトな行高
-  }
-  
   // ========================================
   // 必要条件セクション
   // ========================================
@@ -38,7 +28,7 @@
     border-left: 4px solid $primary-color; // 左ボーダー（プライマリ）
     box-shadow: 0 2px 8px rgba($primary-color, 0.1); // 軽い影
     
-    h4 {
+    h3 {
       font-size: $font-size-xl;             // 20px 小見出し
       color: $primary-color;               // プライマリカラー
       margin-bottom: $space-2;             // 下マージン8px
@@ -94,7 +84,7 @@
     border-left: 4px solid $secondary-color; // 左ボーダー（セカンダリ）
     box-shadow: 0 2px 8px rgba($secondary-color, 0.1); // 軽い影
     
-    h4 {
+    h3 {
       font-size: $font-size-xl;             // 20px 小見出し
       color: $secondary-700;                // セカンダリダークカラー
       margin-bottom: $space-2;             // 下マージン8px
@@ -157,18 +147,12 @@
     margin: $space-4 0 0;                  // 上マージン16px、横マージンなし
     padding: $space-4 $space-3;           // 内側余白 16px 12px
     
-    // メインタイトル調整
-    h3 {
-      font-size: $font-size-xl;           // 20px フォントサイズ削減
-      margin-bottom: $space-3;            // 下マージン12px
-    }
-    
     // 必要条件・十分条件セクション共通調整
     .requirements-section,
     .ideal-traits-section {
       padding: $space-3;                  // 内側余白12px
       
-      h4 {
+      h3 {
         font-size: $font-size-lg;         // 18px フォントサイズ削減
         margin-bottom: $space-2;          // 下マージン8px
       }

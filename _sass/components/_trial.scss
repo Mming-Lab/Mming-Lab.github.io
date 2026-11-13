@@ -115,8 +115,8 @@
 // クラス名（belief-ribbon 等）が示唆する装飾は実装していない。
 
 // セクションの視覚的な分離
-// 「約束」「対象」「申込」の3ブロックを読み分けられるようにする
-.trial-belief-section {
+// 「対象」「体験について」「申込」の3ブロックを読み分けられるようにする
+.trial-eligibility-section {
   background: $surface-color;
 }
 
@@ -134,31 +134,8 @@
   color: $text-secondary;
 }
 
-// mmingの約束リスト
-// _base.scss に ul のリセットが無いため、ブラウザ既定の黒丸と
-// Material Icons が並んで二重マーカーになっていた
-.belief-ribbon-list {
-  list-style: none;
-  padding-left: 0;
-  margin: $space-6 0 0;
-  display: grid;
-  gap: $space-3;
-}
-
-.belief-ribbon {
-  @include info-banner;
-  display: flex;
-  align-items: flex-start;
-  gap: $space-3;
-  padding: $space-4;
-
-  .belief-icon {
-    color: $primary-color;
-    flex-shrink: 0;
-  }
-}
-
-// 対象者リスト（必要条件・十分条件）も同様に二重マーカーを防ぐ
+// 対象者リスト（必要条件・十分条件）。_base.scss に ul のリセットが無いため
+// ブラウザ既定の黒丸が出る
 .requirements-list,
 .ideal-traits-list {
   list-style: none;
@@ -181,8 +158,19 @@
   background: $background-color;
 }
 
+// group ごとの見出し。12項目が並列だと読み順の手がかりがないため挟む
+.day-of-group-heading {
+  margin: $space-8 0 $space-3;
+  font-size: $font-size-xl;
+  color: $text-color;
+
+  &:first-of-type {
+    margin-top: $space-6;
+  }
+}
+
 .day-of-list {
-  margin: $space-6 0 0;
+  margin: $space-3 0 0;
   display: grid;
   gap: $space-4;
 

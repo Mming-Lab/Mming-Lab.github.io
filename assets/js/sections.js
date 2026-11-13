@@ -243,7 +243,14 @@
                 if (next) icon.textContent = next;
             }
 
-            if (willExpand) startLoading();
+            if (willExpand) {
+                startLoading();
+                // 申込フォームを開いた回数。ページビューだけでは
+                // 文面を変えた前後を比べられないため1本だけ送る
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'trial_form_open');
+                }
+            }
         });
     }
 

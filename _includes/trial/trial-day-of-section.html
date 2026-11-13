@@ -1,22 +1,29 @@
 <!-- 体験当日の事実セクション
      データソース: _data/trial.yml（day_of）、_data/core/contact.yml（住所）、
-                   _data/access.yml（アクセス方法・地図リンク）
+                   _data/access.yml（アクセス方法・駐車・一方通行・地図リンク）
      CSS: _sass/components/_trial.scss
 
      このセクションの目的:
      申込を判断するために必要な「確認できる事実」を、申込フォームの手前で読めるようにする。
-     以前は体験ページに所要時間も場所も保護者の同席可否も書かれておらず、
-     「無料」の文字さえ無かった。
+
+     注: 項目は day_of.group_order の順に h3 でまとめて出す。
+     12項目が並列だと読み順の手がかりがないため。
 -->
+{%- assign day_of = site.data.trial.day_of -%}
+{%- assign grouped = day_of.items | group_by: 'group' -%}
 <section class="trial-day-of-section" id="day-of" aria-labelledby="day-of-title">
     <div class="section-container">
         <div class="section-header">
-            <h2 id="day-of-title">{{ site.data.trial.day_of.title }}</h2>
-            <p class="section-subtitle">{{ site.data.trial.day_of.lead }}</p>
+            <h2 id="day-of-title">{{ day_of.title }}</h2>
+            <p class="section-subtitle">{{ day_of.lead }}</p>
         </div>
 
+        {% for group_name in day_of.group_order %}
+        {%- assign group = grouped | where: "name", group_name | first -%}
+        {% if group %}
+        <h3 class="day-of-group-heading">{{ group_name }}</h3>
         <dl class="day-of-list">
-            {% for item in site.data.trial.day_of.items %}
+            {% for item in group.items %}
             <div class="day-of-item">
                 <dt class="day-of-label">
                     <span class="material-icons day-of-icon" aria-hidden="true">{{ item.icon }}</span>
@@ -36,23 +43,33 @@
             {% endfor %}
 
             {%- comment -%}
-              場所はデータを横断して組み立てる。
-              住所の正本は _data/core/contact.yml、アクセス方法と地図は _data/access.yml。
+              場所はデータを横断して組み立てる。住所の正本は _data/core/contact.yml、
+              アクセス方法・駐車・一方通行・地図は _data/access.yml。
+              どの group の末尾に出すかは day_of.location_group で決める。
             {%- endcomment -%}
+            {% if group_name == day_of.location_group %}
             <div class="day-of-item">
                 <dt class="day-of-label">
                     <span class="material-icons day-of-icon" aria-hidden="true">place</span>
-                    {{ site.data.trial.day_of.location_label }}
+                    {{ day_of.location_label }}
                 </dt>
                 <dd class="day-of-text">
                     {{ site.data.core.contact.address.full }}
-                    {% if site.data.access.info.access_methods %}
                     <ul class="day-of-access">
                         {% for method in site.data.access.info.access_methods %}
                         <li>{{ method.type }}：{{ method.description }}</li>
                         {% endfor %}
+                        {%- comment -%}
+                          access.yml の labels は半角コロン（トップのアクセスセクションと共用）。
+                          ここは直前の access_methods が全角コロンなので、表記を揃える。
+                        {%- endcomment -%}
+                        {% if site.data.access.info.parking %}
+                        <li>{{ site.data.access.labels.parking | replace: ":", "：" }}{{ site.data.access.info.parking }}</li>
+                        {% endif %}
+                        {% if site.data.access.info.traffic_note %}
+                        <li>{{ site.data.access.info.traffic_note }}</li>
+                        {% endif %}
                     </ul>
-                    {% endif %}
                     {% if site.data.access.map.link_url %}
                     <a href="{{ site.data.access.map.link_url }}" target="_blank" rel="noopener noreferrer">
                         {{ site.data.access.map.link_text }}
@@ -61,10 +78,13 @@
                     {% endif %}
                 </dd>
             </div>
+            {% endif %}
         </dl>
+        {% endif %}
+        {% endfor %}
 
-        {% if site.data.trial.day_of.closing %}
-        <p class="section-note">{{ site.data.trial.day_of.closing }}</p>
+        {% if day_of.closing %}
+        <p class="section-note">{{ day_of.closing }}</p>
         {% endif %}
     </div>
 </section>

@@ -1,0 +1,41 @@
+<!-- 対象者の条件
+     データソース: _data/trial.yml（eligibility_heading）、
+                   _data/core/eligibility.yml（条件そのものの正本。トップの about と共有）
+     CSS: _sass/components/_eligibility.scss（カード本体）、
+          _sass/components/_trial.scss（セクションの背景）
+
+     注: ideal_traits.note（向いていない子の明示）を弱めないこと。
+     約束の語調を手前に挟むと、この言い切りが先に軟化する。
+-->
+<section class="trial-eligibility-section" id="eligibility" aria-labelledby="eligibility-title">
+    <div class="section-container">
+        <div class="section-header">
+            <h2 id="eligibility-title">{{ site.data.trial.eligibility_heading }}</h2>
+        </div>
+
+        <div class="eligibility-combined">
+            <!-- 必要条件 -->
+            <div class="requirements-section">
+                <h3>{{ site.data.core.eligibility.requirements.title }}</h3>
+                <p>{{ site.data.core.eligibility.requirements.lead }}</p>
+                <ul class="requirements-list">
+                    {% for item in site.data.core.eligibility.requirements.items %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- 十分条件 -->
+            <div class="ideal-traits-section">
+                <h3>{{ site.data.core.eligibility.ideal_traits.title }}</h3>
+                <p>{{ site.data.core.eligibility.ideal_traits.lead }}</p>
+                <ul class="ideal-traits-list">
+                    {% for item in site.data.core.eligibility.ideal_traits.items %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+                <p class="ideal-traits-note">{{ site.data.core.eligibility.ideal_traits.note }}</p>
+            </div>
+        </div>
+    </div>
+</section>
