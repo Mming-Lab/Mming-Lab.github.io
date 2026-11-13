@@ -53,3 +53,7 @@ yarn-error.log*
 # Development tools
 .claude/
 .CLAUDE.md
+
+# CLAUDE.md は追跡しない（運営の判断や事故の履歴を含むため公開しない）
+# 注: _config.yml の exclude からは外さないこと。ローカルビルドで _site に出る
+CLAUDE.md
