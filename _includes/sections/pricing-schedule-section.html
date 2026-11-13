@@ -24,6 +24,10 @@
                     <span class="price-period">{{ site.data.pricing_schedule.plan.period }}</span>
                 </div>
                 
+                {% if site.data.pricing_schedule.plan.what_we_do %}
+                <p class="pricing-what-we-do">{{ site.data.pricing_schedule.plan.what_we_do }}</p>
+                {% endif %}
+
                 <ul class="pricing-features">
                     {% for feature in site.data.pricing_schedule.plan.features %}
                     <li>

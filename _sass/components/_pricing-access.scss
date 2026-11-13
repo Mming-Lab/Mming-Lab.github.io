@@ -121,6 +121,16 @@
     }
   }
 
+  // 60分の中身。金額の直下に置き、period（月2回 各60分）の説明として読ませる。
+  // pricing-note は注記用（14px・薄い背景）なので流用しない
+  .pricing-what-we-do {
+    font-size: $font-size-base;
+    color: $text-color;
+    line-height: $line-height-relaxed;
+    text-align: left; // カードは中央寄せなので明示して戻す
+    margin: 0 0 $space-4 0;
+  }
+
   .pricing-features {
     list-style: none; // リストマーカーなし
     margin: 0 0 $space-4 0; // マージン
