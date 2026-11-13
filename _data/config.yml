@@ -51,7 +51,10 @@ site:
   # 注: timezone も _config.yml で管理。
 
   # SNSシェア用画像（og:image、1200x630px推奨）
-  og_image: "/assets/images/site-assets/mming_ogp.webp"
+  # 注: 画像を作り直すまで出力を止めている。この行をコメントのままにすると
+  #     og:image / twitter:image / JSON-LD の image がすべて出力されず、
+  #     Twitter カードは summary（画像なし）になる。戻すときはコメントを外すだけ。
+  # og_image: "/assets/images/site-assets/mming_ogp.webp"
 
   # サイトロゴ（ヘッダー、40x40px表示）
   logo: "/assets/images/logos/mmingロゴアイコン青.webp"

@@ -38,7 +38,7 @@ mmingプログラミング教室 - ベースレイアウトテンプレート
     {% endif %}
     
     <!-- SNSシェア用メタタグ（Twitter） -->
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="{% if og_image %}summary_large_image{% else %}summary{% endif %}">
     <meta name="twitter:url" content="{{ page.url | absolute_url }}">
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {{ site.data.config.site.name }}{% else %}{{ site.data.config.site.name }}{% endif %}">
     <meta name="twitter:description" content="{{ page.description | default: site.data.config.site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
